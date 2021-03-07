@@ -306,7 +306,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-03-05
+      更新于:&nbsp;2021-03-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -325,6 +325,10 @@
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -367,7 +371,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-03-04
+      更新于:&nbsp;2021-03-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -386,6 +390,10 @@
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -410,7 +418,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_inverse1</span><span class="params">(T n, T* inverse)</span> </span>&#123;</span><br><span class="line">	inverse[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">		inverse[i] = p - p / i * inverse[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+            <h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> get_inverse1(T n, T p, T* inverse) &#123;</span><br><span class="line">	inverse[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">		inverse[i] = p - p / i * inverse[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         </div>
         
@@ -424,7 +432,7 @@
       
       
         <div class="post-header"> 
-  <a class="post-header-title" href="/53088/">加法逆元</a>
+  <a class="post-header-title" href="/24044/">乘法逆元</a>
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
@@ -432,7 +440,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-03-03
+      更新于:&nbsp;2021-03-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -451,6 +459,77 @@
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E9%80%86%E5%85%83/ >逆元</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E4%B9%98%E6%B3%95%E9%80%86%E5%85%83/ >乘法逆元</a>
+      </i>
+    
+  </div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>费马小定理，要求 $p$ 是质数。</p>
+<p>由</p>
+<p>$$a \times a^{p - 2} \equiv 1 \pmod{p}$$</p>
+<p>得</p>
+<p>$$a^{-1} = a^{p - 2}$$</p>
+<p>然后就可以使用快速幂求逆元。</p>
+<h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\c...
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/24044/">阅读更多</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
+  <a class="post-header-title" href="/53088/">加法逆元</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-03-03
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-03-07
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+      
+      
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -489,7 +568,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-03-03
+      更新于:&nbsp;2021-03-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -508,6 +587,10 @@
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -544,7 +627,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-03-03
+      更新于:&nbsp;2021-03-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -566,15 +649,19 @@
       </i>
     
       <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E7%AD%9B%E6%B3%95/ >筛法</a>
       </i>
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E7%BA%BF%E6%80%A7%E7%AD%9B/ >线性筛</a>
+        <a rel="tag" href = /tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/ >欧拉函数</a>
       </i>
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/ >欧拉函数</a>
+        <a rel="tag" href = /tags/%E7%BA%BF%E6%80%A7%E7%AD%9B/ >线性筛</a>
       </i>
     
   </div>
@@ -605,7 +692,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-03-03
+      更新于:&nbsp;2021-03-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -624,6 +711,10 @@
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -658,7 +749,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-02-18
+      更新于:&nbsp;2021-03-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -677,6 +768,10 @@
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -719,7 +814,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-02-17
+      更新于:&nbsp;2021-03-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -738,6 +833,10 @@
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -772,7 +871,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-02-12
+      更新于:&nbsp;2021-03-07
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -791,6 +890,10 @@
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -809,59 +912,6 @@
         
         <div style="text-align:center;">
           <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/21676/">阅读更多</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/6782/">快速幂</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2021-02-07
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-03-03
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E5%BF%AB%E9%80%9F%E5%B9%82/ >快速幂</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T qpowimod(T b, T p, T mod) &#123;</span><br><span class="line">    <span class="keyword">register</span> T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s = s * b % mod;</span><br><span class="line">        b = b * b % mod;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s % mod;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T qpowi(T b, T p) &#123;</span><br><span class="line">    <span class="keyword">register</span> T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s *= b;</span><br><span class="line">        b *= b;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-          
-        </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/6782/">阅读更多</a>
         </div>
       </div>
     </article>
