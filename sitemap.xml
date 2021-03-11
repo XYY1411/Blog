@@ -193,6 +193,13 @@
   </url>
   
   <url>
+    <loc>https://xyy1411.github.io/tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/</loc>
+    <lastmod>2021-03-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xyy1411.github.io/tags/%E9%80%86%E5%85%83/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
@@ -201,13 +208,6 @@
   
   <url>
     <loc>https://xyy1411.github.io/tags/%E5%8A%A0%E6%B3%95%E9%80%86%E5%85%83/</loc>
-    <lastmod>2021-03-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyy1411.github.io/tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -249,13 +249,6 @@
   </url>
   
   <url>
-    <loc>https://xyy1411.github.io/tags/%E7%BA%BF%E6%80%A7%E7%AD%9B/</loc>
-    <lastmod>2021-03-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xyy1411.github.io/tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
@@ -270,6 +263,13 @@
   </url>
   
   <url>
+    <loc>https://xyy1411.github.io/tags/%E7%BA%BF%E6%80%A7%E7%AD%9B/</loc>
+    <lastmod>2021-03-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xyy1411.github.io/tags/%E5%BF%AB%E9%80%9F%E4%B9%98/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
@@ -277,14 +277,14 @@
   </url>
   
   <url>
-    <loc>https://xyy1411.github.io/tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</loc>
+    <loc>https://xyy1411.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xyy1411.github.io/tags/%E5%BF%AB%E9%80%9F%E5%B9%82/</loc>
+    <loc>https://xyy1411.github.io/tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</loc>
     <lastmod>2021-03-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
