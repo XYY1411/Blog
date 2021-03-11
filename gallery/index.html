@@ -56,8 +56,8 @@
     
     
     <title>
-          
-            寂静的角落
+        
+            图集 | 寂静的角落
         
     </title>
     
@@ -269,33 +269,76 @@
 </aside>
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
-    
-    
-    
-
-
-<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
-    <div class="posts-collapse">
-        <div class="collection-title">
-            <h2>题解<small>分类</small></h2>
-        </div>
-        
-            <div class="collection-item">
-                <h3><a href="/55212/">Luogu4139 上帝与集合的正确用法</a></h3>
-                <time itemprop="dateCreated" datetime=2021-02-04 >
-                    2021.02.04
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/35448/">Luogu1495 曹冲养猪</a></h3>
-                <time itemprop="dateCreated" datetime=2021-02-02 >
-                    2021.02.02
-                </time>
-            </div>
-        
+    <div class="mdui-card mdui-p-b-2 mdui-m-b-5">
+    <div class="post-header"> 
+        <a class="post-header-title" href="/gallery/index.html">图集</a>
     </div>
-</div>
+    <div id="page-card" class="mdui-card-content mdui-p-x-4">
+        
+            
+            
+            
+            
+            
+        </div>
+    </div>
+    
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">valine</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: 'abbb6c14a099600eedec',
+    clientSecret: '3acf6c1a87093a366e907d7250007c0e636d5b37',
+    repo: 'https://xyy1411.github.io/',
+    owner: 'XYY1411',
+    admin: ['XYY1411'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="vcomments"></div>
+<script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = ''.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  var notify = '' === 'true';
+  var verify = '' === 'true';
+  new Valine({
+    el: '#vcomments',
+    notify: notify,
+    verify: verify,
+    appId: '',
+    appKey: '',
+    placeholder: '',
+    pageSize: '',
+    avatar: '',
+    lang: '',
+    guest_info: guest_info
+  });
+</script>
+        </div>
+      
+    </div>
 
 
 
