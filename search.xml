@@ -1,40 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Luogu4139 上帝与集合的正确用法</title>
-    <url>/55212/</url>
-    <content><![CDATA[<h1 id="Luogu4139-上帝与集合的正确用法"><a href="#Luogu4139-上帝与集合的正确用法" class="headerlink" title="Luogu4139 上帝与集合的正确用法"></a><a href="https://www.luogu.com.cn/problem/P4139">Luogu4139 上帝与集合的正确用法</a></h1><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求 $2^{2^{2^\cdots}} \mod p$ 。</p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>有扩展欧拉定理：</p>
-<p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},,&amp;\gcd(a,,p)=1\\ a^b,&amp;\gcd(a,,p)\ne1,,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,,p)\ne1,,b\ge\varphi(p) \end{cases} \pmod p$$</p>
-<p>。</p>
-<p>我们发现可以求 $2^{2^{2^\cdots}} \mod p$ 了。</p>
-<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>欧拉函数（Euler’s totient function），即 $\varphi(n)$ ，表示的是小于等于 $n$ 的数中和 $n$ 互质的数的个数。</p>
-<p>易得 $\varphi(1) = 1$ ，当 $n$ 为质数时，只有 $n$ 不与 $n$ 互质，所以此时 $\varphi(n) = n - 1$ 。</p>
-<p>欧拉函数是积性函数，当 $a, b$ 互质时， $\varphi(a) \times \varphi(b) = \varphi(a \times b)$ ，因为与 $a$ 不互质的有 $a$ ，与 $b$ 不互质的有 $b$ ，与 $a \times b$ 不互质的有 $a, 2a, 3a, \cdots,ab, \cdots, 3b, 2b, b$ ，所以等式成立。</p>
-<p>当 $n$ 是奇数时 $\varphi(2n) = \varphi(n)$ ，可由上式推出。</p>
-<p>$n = \sum_{d \mid n} \varphi(d)$ ，用莫比乌斯反演证。</p>
-<p>若 $p$ 为质数， 则 $\varphi(p^k) = p^k - p^{k - 1} = p^{k - 1}\times(p - 1)$ ，因为与 $p^k$ 不互质的数只有 $p$ 的倍数，一共 $p^{k - 1}$<br> 个，所以上式成立。</p>
-<h3 id="求单独的欧拉函数（Pollard-Rho算法）"><a href="#求单独的欧拉函数（Pollard-Rho算法）" class="headerlink" title="求单独的欧拉函数（Pollard Rho算法）"></a>求单独的欧拉函数（Pollard Rho算法）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> ans = n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">      ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="筛欧拉函数"><a href="#筛欧拉函数" class="headerlink" title="筛欧拉函数"></a>筛欧拉函数</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">phi_table</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>* phi)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) phi[i] = <span class="number">0</span>;</span><br><span class="line">  phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (!phi[i])</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!phi[j]) phi[j] = j;</span><br><span class="line">        phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p>若 $a, m$ 互质，则有 $a^{\varphi(m)} \equiv \pmod m$ 。</p>
-<h3 id="剩余类"><a href="#剩余类" class="headerlink" title="剩余类"></a>剩余类</h3><p>剩余类也叫同余类，指全体整数按照对一个正整数的同余关系而分成的类。</p>
-<h3 id="完全剩余系"><a href="#完全剩余系" class="headerlink" title="完全剩余系"></a>完全剩余系</h3><p>从模 $n$ 的每个剩余类中各取一个数，得到一个由 $n$ 个数组成的集合，叫做模 $n$ 的一个完全剩余系。</p>
-<h3 id="简化剩余系"><a href="#简化剩余系" class="headerlink" title="简化剩余系"></a>简化剩余系</h3><p>简化剩余系(reduced residue system)也称既约剩余系或缩系，是 $m$ 的完全剩余系中与 $m$ 互素的数构成的子集，如果模 $m$ 的一个剩余类里所有数都与 $m$ 互素，就把它叫做与模 $m$ 互素的剩余类。在与模 $m$ 互素的全体剩余类中，从每一个类中各任取一个数作为代表组成的集合，叫做模 $m$ 的一个简化剩余系。</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>通过简化剩余系构造一个与 $m$ 互质的数列。</p>
-<p>设 $r_1, r_2, \cdots, r_{\varphi(m)}$ 为模 $m$ 意义下的一个简化剩余系，则 $ar_1, ar_2, \cdots, ar_{\varphi(m)}$ 也为模 $m$ 意义下的一个简化剩余系。所以 $r_1r_2 \cdots r_{\varphi(m)} \equiv ar_1 \cdot ar_2 \cdots ar_{\varphi(m)} \equiv a^{\varphi(m)}r_1r_2 \cdots r_{\varphi(m)} \pmod{m}$ ，可约去 $r_1r_2 \cdots r_{\varphi(m)}$ ，得证。</p>
-<h2 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a><a href="https://oi-wiki.org/math/fermat/#_5">扩展欧拉定理</a></h2><p>$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},,&amp;\gcd(a,,p)=1\\ a^b,&amp;\gcd(a,,p)\ne1,,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,,p)\ne1,,b\ge\varphi(p) \end{cases} \pmod p$</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>有了扩展欧拉定理我们就可以递推求解了。</p>
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxp = <span class="number">1e7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, p, phi[maxp + <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= maxp; i++)</span><br><span class="line">        <span class="keyword">if</span> (!phi[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = i; j &lt;= maxp; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi[j]) phi[j] = j; </span><br><span class="line">                phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qmul</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = ((ret % mod) + (a % mod)) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		a = ((a % mod) + (a % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = qmul(ret, a, mod) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		a = qmul(a, a, mod) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span> <span class="params">(<span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mod == <span class="number">1</span> ? <span class="number">0</span> :qpow(<span class="number">2</span>, work(phi[mod]) + phi[mod], mod);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    get_phi();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;p);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, work(p));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>扩展欧拉定理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Luogu1495 曹冲养猪</title>
     <url>/35448/</url>
     <content><![CDATA[<h1 id="Luogu1495-曹冲养猪"><a href="#Luogu1495-曹冲养猪" class="headerlink" title="Luogu1495 曹冲养猪"></a><a href="https://www.luogu.com.cn/problem/P1495">Luogu1495 曹冲养猪</a></h1><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求解一元线性同余方程组。</p>
@@ -72,6 +38,40 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>中国剩余定理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Luogu4139 上帝与集合的正确用法</title>
+    <url>/55212/</url>
+    <content><![CDATA[<h1 id="Luogu4139-上帝与集合的正确用法"><a href="#Luogu4139-上帝与集合的正确用法" class="headerlink" title="Luogu4139 上帝与集合的正确用法"></a><a href="https://www.luogu.com.cn/problem/P4139">Luogu4139 上帝与集合的正确用法</a></h1><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求 $2^{2^{2^\cdots}} \mod p$ 。</p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>有扩展欧拉定理：</p>
+<p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},,&amp;\gcd(a,,p)=1\\ a^b,&amp;\gcd(a,,p)\ne1,,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,,p)\ne1,,b\ge\varphi(p) \end{cases} \pmod p$$</p>
+<p>。</p>
+<p>我们发现可以求 $2^{2^{2^\cdots}} \mod p$ 了。</p>
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>欧拉函数（Euler’s totient function），即 $\varphi(n)$ ，表示的是小于等于 $n$ 的数中和 $n$ 互质的数的个数。</p>
+<p>易得 $\varphi(1) = 1$ ，当 $n$ 为质数时，只有 $n$ 不与 $n$ 互质，所以此时 $\varphi(n) = n - 1$ 。</p>
+<p>欧拉函数是积性函数，当 $a, b$ 互质时， $\varphi(a) \times \varphi(b) = \varphi(a \times b)$ ，因为与 $a$ 不互质的有 $a$ ，与 $b$ 不互质的有 $b$ ，与 $a \times b$ 不互质的有 $a, 2a, 3a, \cdots,ab, \cdots, 3b, 2b, b$ ，所以等式成立。</p>
+<p>当 $n$ 是奇数时 $\varphi(2n) = \varphi(n)$ ，可由上式推出。</p>
+<p>$n = \sum_{d \mid n} \varphi(d)$ ，用莫比乌斯反演证。</p>
+<p>若 $p$ 为质数， 则 $\varphi(p^k) = p^k - p^{k - 1} = p^{k - 1}\times(p - 1)$ ，因为与 $p^k$ 不互质的数只有 $p$ 的倍数，一共 $p^{k - 1}$<br> 个，所以上式成立。</p>
+<h3 id="求单独的欧拉函数（Pollard-Rho算法）"><a href="#求单独的欧拉函数（Pollard-Rho算法）" class="headerlink" title="求单独的欧拉函数（Pollard Rho算法）"></a>求单独的欧拉函数（Pollard Rho算法）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> ans = n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">      ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="筛欧拉函数"><a href="#筛欧拉函数" class="headerlink" title="筛欧拉函数"></a>筛欧拉函数</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">phi_table</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>* phi)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) phi[i] = <span class="number">0</span>;</span><br><span class="line">  phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (!phi[i])</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!phi[j]) phi[j] = j;</span><br><span class="line">        phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p>若 $a, m$ 互质，则有 $a^{\varphi(m)} \equiv \pmod m$ 。</p>
+<h3 id="剩余类"><a href="#剩余类" class="headerlink" title="剩余类"></a>剩余类</h3><p>剩余类也叫同余类，指全体整数按照对一个正整数的同余关系而分成的类。</p>
+<h3 id="完全剩余系"><a href="#完全剩余系" class="headerlink" title="完全剩余系"></a>完全剩余系</h3><p>从模 $n$ 的每个剩余类中各取一个数，得到一个由 $n$ 个数组成的集合，叫做模 $n$ 的一个完全剩余系。</p>
+<h3 id="简化剩余系"><a href="#简化剩余系" class="headerlink" title="简化剩余系"></a>简化剩余系</h3><p>简化剩余系(reduced residue system)也称既约剩余系或缩系，是 $m$ 的完全剩余系中与 $m$ 互素的数构成的子集，如果模 $m$ 的一个剩余类里所有数都与 $m$ 互素，就把它叫做与模 $m$ 互素的剩余类。在与模 $m$ 互素的全体剩余类中，从每一个类中各任取一个数作为代表组成的集合，叫做模 $m$ 的一个简化剩余系。</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>通过简化剩余系构造一个与 $m$ 互质的数列。</p>
+<p>设 $r_1, r_2, \cdots, r_{\varphi(m)}$ 为模 $m$ 意义下的一个简化剩余系，则 $ar_1, ar_2, \cdots, ar_{\varphi(m)}$ 也为模 $m$ 意义下的一个简化剩余系。所以 $r_1r_2 \cdots r_{\varphi(m)} \equiv ar_1 \cdot ar_2 \cdots ar_{\varphi(m)} \equiv a^{\varphi(m)}r_1r_2 \cdots r_{\varphi(m)} \pmod{m}$ ，可约去 $r_1r_2 \cdots r_{\varphi(m)}$ ，得证。</p>
+<h2 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a><a href="https://oi-wiki.org/math/fermat/#_5">扩展欧拉定理</a></h2><p>$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},,&amp;\gcd(a,,p)=1\\ a^b,&amp;\gcd(a,,p)\ne1,,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,,p)\ne1,,b\ge\varphi(p) \end{cases} \pmod p$</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>有了扩展欧拉定理我们就可以递推求解了。</p>
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxp = <span class="number">1e7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, p, phi[maxp + <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= maxp; i++)</span><br><span class="line">        <span class="keyword">if</span> (!phi[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = i; j &lt;= maxp; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi[j]) phi[j] = j; </span><br><span class="line">                phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qmul</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = ((ret % mod) + (a % mod)) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		a = ((a % mod) + (a % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = qmul(ret, a, mod) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		a = qmul(a, a, mod) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span> <span class="params">(<span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mod == <span class="number">1</span> ? <span class="number">0</span> :qpow(<span class="number">2</span>, work(phi[mod]) + phi[mod], mod);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    get_phi();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;p);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, work(p));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>扩展欧拉定理</tag>
       </tags>
   </entry>
   <entry>
@@ -168,19 +168,6 @@
       </tags>
   </entry>
   <entry>
-    <title>扩展欧几里得算法</title>
-    <url>/13399/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line">T extgcd(T a, T b, T &amp;x, T &amp;y) &#123;</span><br><span class="line">    T d = a;</span><br><span class="line">    <span class="keyword">if</span> (b) &#123;</span><br><span class="line">        d = extgcd&lt;T&gt;(b, a % b, y, x);</span><br><span class="line">        y -= (a / b) * x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>扩展欧几里得算法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>快速乘</title>
     <url>/21676/</url>
     <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qmul</span><span class="params">(<span class="keyword">int</span> x, <span class="keyword">int</span> y, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">0</span> || y == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>) ret = ((ret % mod) + (x % mod)) % mod;</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        x = ((x % mod) + (x % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -206,6 +193,19 @@
         <tag>素数</tag>
         <tag>筛法</tag>
         <tag>线性筛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>扩展欧几里得算法</title>
+    <url>/13399/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line">T extgcd(T a, T b, T &amp;x, T &amp;y) &#123;</span><br><span class="line">    T d = a;</span><br><span class="line">    <span class="keyword">if</span> (b) &#123;</span><br><span class="line">        d = extgcd&lt;T&gt;(b, a % b, y, x);</span><br><span class="line">        y -= (a / b) * x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>扩展欧几里得算法</tag>
       </tags>
   </entry>
   <entry>
@@ -239,49 +239,6 @@
       </tags>
   </entry>
   <entry>
-    <title>线性求欧拉函数</title>
-    <url>/58730/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> get_phi(<span class="keyword">const</span> T &amp;n, T *phi_table) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>筛法</tag>
-        <tag>欧拉函数</tag>
-        <tag>线性筛</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性求乘法逆元</title>
-    <url>/28476/</url>
-    <content><![CDATA[<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> get_inverse1(T n, T p, T* inverse) &#123;</span><br><span class="line">    inverse[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        inverse[i] = p - p / i * inverse[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> get_inverse2(T n, T p, T *a, T *inverse) &#123;</span><br><span class="line">    T *preprod, *invprod;</span><br><span class="line">    preprod = <span class="keyword">new</span> <span class="keyword">int</span>(n + <span class="number">5</span>);</span><br><span class="line">    invprod = <span class="keyword">new</span> <span class="keyword">int</span>(n + <span class="number">5</span>);</span><br><span class="line">    preprod[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) preprod[i] = preprod[i - <span class="number">1</span>] * a[i] % p;</span><br><span class="line">    T x;</span><br><span class="line">    extgcd(preprod[n], p, invprod[n], x);</span><br><span class="line">    invprod[n] = (invprod[n] % p + p) % p;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; --i) invprod[i] = invprod[i + <span class="number">1</span>] * a[i + <span class="number">1</span>] % p;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) inverse[i] = invprod[i] * preprod[i - <span class="number">1</span>] % p;</span><br><span class="line">    <span class="keyword">delete</span> preprod;</span><br><span class="line">    <span class="keyword">delete</span> invprod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>逆元</tag>
-        <tag>筛法</tag>
-        <tag>线性筛</tag>
-        <tag>乘法逆元</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/37773/</url>
-    <content><![CDATA[<h1 id="本博客已上线"><a href="#本博客已上线" class="headerlink" title="本博客已上线"></a>本博客已上线</h1><h2 id="评论功能尚未开启，将在我有时间时修复qwq"><a href="#评论功能尚未开启，将在我有时间时修复qwq" class="headerlink" title="评论功能尚未开启，将在我有时间时修复qwq"></a>评论功能尚未开启，将在我有时间时修复qwq</h2>]]></content>
-      <categories>
-        <category>维护</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>乘法逆元</title>
     <url>/24044/</url>
     <content><![CDATA[<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>使用费马小定理，这种方法要求 $p$ 是质数。</p>
@@ -308,6 +265,49 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>逆元</tag>
+        <tag>乘法逆元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性求欧拉函数</title>
+    <url>/58730/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> get_phi(<span class="keyword">const</span> T &amp;n, T *phi_table) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>筛法</tag>
+        <tag>欧拉函数</tag>
+        <tag>线性筛</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/37773/</url>
+    <content><![CDATA[<h1 id="本博客已上线"><a href="#本博客已上线" class="headerlink" title="本博客已上线"></a>本博客已上线</h1><h2 id="评论功能尚未开启，将在我有时间时修复qwq"><a href="#评论功能尚未开启，将在我有时间时修复qwq" class="headerlink" title="评论功能尚未开启，将在我有时间时修复qwq"></a>评论功能尚未开启，将在我有时间时修复qwq</h2>]]></content>
+      <categories>
+        <category>维护</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性求乘法逆元</title>
+    <url>/28476/</url>
+    <content><![CDATA[<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> get_inverse1(T n, T p, T* inverse) &#123;</span><br><span class="line">    inverse[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        inverse[i] = p - p / i * inverse[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">void</span> get_inverse2(T n, T p, T *a, T *inverse) &#123;</span><br><span class="line">    T *preprod, *invprod;</span><br><span class="line">    preprod = <span class="keyword">new</span> <span class="keyword">int</span>(n + <span class="number">5</span>);</span><br><span class="line">    invprod = <span class="keyword">new</span> <span class="keyword">int</span>(n + <span class="number">5</span>);</span><br><span class="line">    preprod[<span class="number">0</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) preprod[i] = preprod[i - <span class="number">1</span>] * a[i] % p;</span><br><span class="line">    T x;</span><br><span class="line">    extgcd(preprod[n], p, invprod[n], x);</span><br><span class="line">    invprod[n] = (invprod[n] % p + p) % p;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n - <span class="number">1</span>; i &gt;= <span class="number">1</span>; --i) invprod[i] = invprod[i + <span class="number">1</span>] * a[i + <span class="number">1</span>] % p;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) inverse[i] = invprod[i] * preprod[i - <span class="number">1</span>] % p;</span><br><span class="line">    <span class="keyword">delete</span> preprod;</span><br><span class="line">    <span class="keyword">delete</span> invprod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>逆元</tag>
+        <tag>筛法</tag>
+        <tag>线性筛</tag>
         <tag>乘法逆元</tag>
       </tags>
   </entry>
