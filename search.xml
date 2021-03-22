@@ -89,6 +89,19 @@
       </tags>
   </entry>
   <entry>
+    <title>判断单个素数</title>
+    <url>/26915/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> isprime(<span class="keyword">const</span> T &amp;n) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>素数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>中国剩余定理</title>
     <url>/8769/</url>
     <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T crt(T n, T *ai, T *mi) &#123;</span><br><span class="line">    T m = <span class="number">1</span>, ans = <span class="number">0</span>;</span><br><span class="line">    T *M = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    T *invM = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    T *c = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) m *= mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) M[i] = m / mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) invM[i] = inverse_extgcd(M[i], mi[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) c[i] = M[i] * invM[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) ans = (ans + ai[i] * c[i] % m) % m;</span><br><span class="line">    <span class="keyword">delete</span>[] M;</span><br><span class="line">    <span class="keyword">delete</span>[] invM;</span><br><span class="line">    <span class="keyword">delete</span>[] c;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -101,19 +114,6 @@
         <tag>中国剩余定理</tag>
         <tag>同余</tag>
         <tag>扩展欧几里得算法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>判断单个素数</title>
-    <url>/26915/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> isprime(<span class="keyword">const</span> T &amp;n) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>素数</tag>
       </tags>
   </entry>
   <entry>
@@ -139,6 +139,21 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>素数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>埃拉托斯特尼筛法</title>
+    <url>/48233/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T get_prime_eratosthenes(<span class="keyword">const</span> T &amp;n, <span class="keyword">bool</span> *isprime, T *prime_table) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    isprime[<span class="number">0</span>] = isprime[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) &#123;</span><br><span class="line">            prime_table[++p] = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> T j = i * i; j &lt;= n; j += i) isprime[j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>素数</tag>
+        <tag>筛法</tag>
+        <tag>埃拉托斯特尼筛法</tag>
       </tags>
   </entry>
   <entry>
@@ -168,21 +183,6 @@
       </tags>
   </entry>
   <entry>
-    <title>埃拉托斯特尼筛法</title>
-    <url>/48233/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T get_prime_eratosthenes(<span class="keyword">const</span> T &amp;n, <span class="keyword">bool</span> *isprime, T *prime_table) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    isprime[<span class="number">0</span>] = isprime[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) &#123;</span><br><span class="line">            prime_table[++p] = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> T j = i * i; j &lt;= n; j += i) isprime[j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>素数</tag>
-        <tag>筛法</tag>
-        <tag>埃拉托斯特尼筛法</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>欧拉筛</title>
     <url>/51755/</url>
     <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T get_prime_euler(<span class="keyword">const</span> T &amp;n, <span class="keyword">bool</span> *isprime, T *prime_table) &#123;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) prime_table[++p] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> T j = <span class="number">1</span>, t; j &lt; p &amp;&amp; (t = i * prime_table[j]) &lt;= n; ++j) &#123;</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime_table[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -198,21 +198,6 @@
       </tags>
   </entry>
   <entry>
-    <title>扩展中国剩余定理</title>
-    <url>/39570/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T extcrt(T n, T *b, T *a) &#123;</span><br><span class="line">    T ans = a[<span class="number">1</span>], M = b[<span class="number">1</span>], x, y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        T B = ((a[i] - ans) % b[i] + b[i]) % b[i];</span><br><span class="line">        T GCD = extgcd&lt;T&gt;(M, b[i], x, y);</span><br><span class="line">        x = qmul&lt;T&gt;(x, B / GCD, b[i]);</span><br><span class="line">        ans += M * x;</span><br><span class="line">        M *= b[i] / GCD;</span><br><span class="line">        ans = (ans + M) % M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>同余</tag>
-        <tag>扩展欧几里得算法</tag>
-        <tag>扩展中国剩余定理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>扩展欧几里得算法</title>
     <url>/13399/</url>
     <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line">T extgcd(T a, T b, T &amp;x, T &amp;y) &#123;</span><br><span class="line">    T d = a;</span><br><span class="line">    <span class="keyword">if</span> (b) &#123;</span><br><span class="line">        d = extgcd&lt;T&gt;(b, a % b, y, x);</span><br><span class="line">        y -= (a / b) * x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -223,6 +208,21 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>扩展欧几里得算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>扩展中国剩余定理</title>
+    <url>/39570/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T extcrt(T n, T *b, T *a) &#123;</span><br><span class="line">    T ans = a[<span class="number">1</span>], M = b[<span class="number">1</span>], x, y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        T B = ((a[i] - ans) % b[i] + b[i]) % b[i];</span><br><span class="line">        T GCD = extgcd&lt;T&gt;(M, b[i], x, y);</span><br><span class="line">        x = qmul&lt;T&gt;(x, B / GCD, b[i]);</span><br><span class="line">        ans += M * x;</span><br><span class="line">        M *= b[i] / GCD;</span><br><span class="line">        ans = (ans + M) % M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>同余</tag>
+        <tag>扩展欧几里得算法</tag>
+        <tag>扩展中国剩余定理</tag>
       </tags>
   </entry>
   <entry>
@@ -278,8 +278,8 @@
       <tags>
         <tag>数论</tag>
         <tag>数学</tag>
-        <tag>欧拉函数</tag>
         <tag>筛法</tag>
+        <tag>欧拉函数</tag>
         <tag>线性筛</tag>
       </tags>
   </entry>
