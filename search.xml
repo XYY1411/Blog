@@ -1,6 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>Luogu1495 曹冲养猪</title>
+    <url>/35448/</url>
+    <content><![CDATA[<h1 id="Luogu1495-曹冲养猪"><a href="#Luogu1495-曹冲养猪" class="headerlink" title="Luogu1495 曹冲养猪"></a><a href="https://www.luogu.com.cn/problem/P1495">Luogu1495 曹冲养猪</a></h1><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求解一元线性同余方程组。</p>
+<p>设母猪有 $x$ 头。</p>
+<p>求解<br>$$\begin{cases} x &amp;\equiv b_1 \pmod {a_1} \\ x &amp;\equiv b_2 \pmod {a_2} \\ &amp;\vdots \\ x &amp;\equiv b_k \pmod {a_k} \\ \end{cases} $$</p>
+<p>假定 $a_i, a_j$ 互质。</p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>显然中国剩余定理求解即可。</p>
+<h2 id="中国剩余定理（CRT）"><a href="#中国剩余定理（CRT）" class="headerlink" title="中国剩余定理（CRT）"></a>中国剩余定理（CRT）</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>中国剩余定理 (Chinese Remainder Theorem, CRT) 可以用来求解一元线性同余方程组</p>
+<p>$$\begin{cases} x &amp;\equiv a_1 \pmod {m_1} \\ x &amp;\equiv a_2 \pmod {m_2} \\ &amp;\vdots \\ x &amp;\equiv a_k \pmod {m_k} \\ \end{cases} $$</p>
+<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p>设所有模数的积为</p>
+<p>$$M = \prod m_i$$</p>
+<p>除了第 $i$ 个方程外模数的积为</p>
+<p>$$M_i = \frac{M}{m_i}$$</p>
+<p>， $M_i$ 在 $\mod{m_i}$ 下的逆元为 $M_i^{-1}$ ，</p>
+<p>设</p>
+<p>$$c_i = M_iM_i^{-1}$$</p>
+<p>。</p>
+<p>则有一解</p>
+<p>$$x = \sum a_ic_i \pmod{M}$$</p>
+<p>。</p>
+<p>注意， $M_iM_i^{-1} \ne 1$ ，因为 $M_i^{-1}$ 是在 $\mod{m_i}$ 的剩余系下的，所以在实数系下不一定成立。</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>有了做法我们还应保证其正确<del>交给数学家</del>。</p>
+<p>我们看到有 $ i = j$ 和 $i\ne j$ 两种情况，</p>
+<p>当 $i = j$ 时</p>
+<p>$$a_jM_iM_i^{-1} \equiv 0 \pmod m_i$$</p>
+<p>当 $i \ne j$ 时</p>
+<p>$$a_iM_iM_i^{-1} \equiv a_i \pmod{m_i}$$</p>
+<p>所以有</p>
+<p>$$\begin{aligned} a&amp;\equiv \sum_{j=1}^k a_jM_iM_i^{-1} &amp;\pmod {m_i} \\ &amp;\equiv a_iM_iM_i^{-1} &amp;\pmod {m_i} \\ &amp;\equiv a_iM_i(M^{-1}_i \bmod M_i) &amp;\pmod {m_i} \\ &amp;\equiv a_i &amp;\pmod {m_i} \end{aligned}$$</p>
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// by XYY1411</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="comment">// fastio</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = ll&gt;</span><br><span class="line"><span class="keyword">inline</span> T iread(<span class="keyword">void</span>) &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) ch = getchar();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//extgcd for inverse </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = ll&gt;</span><br><span class="line"><span class="keyword">inline</span> T extgcd(T a, T b, T &amp;x, T &amp;y) &#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;x = <span class="number">1</span>, y = <span class="number">0</span>; <span class="keyword">return</span> a;&#125;</span><br><span class="line">    T d = extgcd&lt;T&gt;(b, a % b, y, x);</span><br><span class="line">    y -= (a / b) * x;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll n, a[<span class="number">20</span>], m[<span class="number">20</span>], Mi[<span class="number">20</span>], M = <span class="number">1</span>, x;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    n=iread();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        M *= (m[i] = iread());</span><br><span class="line">        a[i] = iread();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        Mi[i] = M / m[i];</span><br><span class="line">        ll x = <span class="number">0</span>, y = <span class="number">0</span>;</span><br><span class="line">        extgcd(Mi[i], m[i], x, y);</span><br><span class="line">        ::x += a[i] * Mi[i] * (x &lt; <span class="number">0</span> ? x + m[i] : x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>, x % M);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>中国剩余定理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Luogu4139 上帝与集合的正确用法</title>
     <url>/55212/</url>
     <content><![CDATA[<h1 id="Luogu4139-上帝与集合的正确用法"><a href="#Luogu4139-上帝与集合的正确用法" class="headerlink" title="Luogu4139 上帝与集合的正确用法"></a><a href="https://www.luogu.com.cn/problem/P4139">Luogu4139 上帝与集合的正确用法</a></h1><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求 $2^{2^{2^\cdots}} \mod p$ 。</p>
@@ -49,43 +89,18 @@
       </tags>
   </entry>
   <entry>
-    <title>Luogu1495 曹冲养猪</title>
-    <url>/35448/</url>
-    <content><![CDATA[<h1 id="Luogu1495-曹冲养猪"><a href="#Luogu1495-曹冲养猪" class="headerlink" title="Luogu1495 曹冲养猪"></a><a href="https://www.luogu.com.cn/problem/P1495">Luogu1495 曹冲养猪</a></h1><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求解一元线性同余方程组。</p>
-<p>设母猪有 $x$ 头。</p>
-<p>求解<br>$$\begin{cases} x &amp;\equiv b_1 \pmod {a_1} \\ x &amp;\equiv b_2 \pmod {a_2} \\ &amp;\vdots \\ x &amp;\equiv b_k \pmod {a_k} \\ \end{cases} $$</p>
-<p>假定 $a_i, a_j$ 互质。</p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>显然中国剩余定理求解即可。</p>
-<h2 id="中国剩余定理（CRT）"><a href="#中国剩余定理（CRT）" class="headerlink" title="中国剩余定理（CRT）"></a>中国剩余定理（CRT）</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>中国剩余定理 (Chinese Remainder Theorem, CRT) 可以用来求解一元线性同余方程组</p>
-<p>$$\begin{cases} x &amp;\equiv a_1 \pmod {m_1} \\ x &amp;\equiv a_2 \pmod {m_2} \\ &amp;\vdots \\ x &amp;\equiv a_k \pmod {m_k} \\ \end{cases} $$</p>
-<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p>设所有模数的积为</p>
-<p>$$M = \prod m_i$$</p>
-<p>除了第 $i$ 个方程外模数的积为</p>
-<p>$$M_i = \frac{M}{m_i}$$</p>
-<p>， $M_i$ 在 $\mod{m_i}$ 下的逆元为 $M_i^{-1}$ ，</p>
-<p>设</p>
-<p>$$c_i = M_iM_i^{-1}$$</p>
-<p>。</p>
-<p>则有一解</p>
-<p>$$x = \sum a_ic_i \pmod{M}$$</p>
-<p>。</p>
-<p>注意， $M_iM_i^{-1} \ne 1$ ，因为 $M_i^{-1}$ 是在 $\mod{m_i}$ 的剩余系下的，所以在实数系下不一定成立。</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>有了做法我们还应保证其正确<del>交给数学家</del>。</p>
-<p>我们看到有 $ i = j$ 和 $i\ne j$ 两种情况，</p>
-<p>当 $i = j$ 时</p>
-<p>$$a_jM_iM_i^{-1} \equiv 0 \pmod m_i$$</p>
-<p>当 $i \ne j$ 时</p>
-<p>$$a_iM_iM_i^{-1} \equiv a_i \pmod{m_i}$$</p>
-<p>所以有</p>
-<p>$$\begin{aligned} a&amp;\equiv \sum_{j=1}^k a_jM_iM_i^{-1} &amp;\pmod {m_i} \\ &amp;\equiv a_iM_iM_i^{-1} &amp;\pmod {m_i} \\ &amp;\equiv a_iM_i(M^{-1}_i \bmod M_i) &amp;\pmod {m_i} \\ &amp;\equiv a_i &amp;\pmod {m_i} \end{aligned}$$</p>
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// by XYY1411</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="comment">// fastio</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = ll&gt;</span><br><span class="line"><span class="keyword">inline</span> T iread(<span class="keyword">void</span>) &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = getchar();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) ch = getchar();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = getchar();</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//extgcd for inverse </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = ll&gt;</span><br><span class="line"><span class="keyword">inline</span> T extgcd(T a, T b, T &amp;x, T &amp;y) &#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;x = <span class="number">1</span>, y = <span class="number">0</span>; <span class="keyword">return</span> a;&#125;</span><br><span class="line">    T d = extgcd&lt;T&gt;(b, a % b, y, x);</span><br><span class="line">    y -= (a / b) * x;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll n, a[<span class="number">20</span>], m[<span class="number">20</span>], Mi[<span class="number">20</span>], M = <span class="number">1</span>, x;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    n=iread();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        M *= (m[i] = iread());</span><br><span class="line">        a[i] = iread();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        Mi[i] = M / m[i];</span><br><span class="line">        ll x = <span class="number">0</span>, y = <span class="number">0</span>;</span><br><span class="line">        extgcd(Mi[i], m[i], x, y);</span><br><span class="line">        ::x += a[i] * Mi[i] * (x &lt; <span class="number">0</span> ? x + m[i] : x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>, x % M);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>中国剩余定理</title>
+    <url>/8769/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T crt(T n, T *ai, T *mi) &#123;</span><br><span class="line">    T m = <span class="number">1</span>, ans = <span class="number">0</span>;</span><br><span class="line">    T *M = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    T *invM = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    T *c = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) m *= mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) M[i] = m / mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) invM[i] = inverse_extgcd(M[i], mi[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) c[i] = M[i] * invM[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) ans = (ans + ai[i] * c[i] % m) % m;</span><br><span class="line">    <span class="keyword">delete</span>[] M;</span><br><span class="line">    <span class="keyword">delete</span>[] invM;</span><br><span class="line">    <span class="keyword">delete</span>[] c;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>题解</category>
+        <category>算法</category>
       </categories>
       <tags>
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>中国剩余定理</tag>
+        <tag>同余</tag>
+        <tag>扩展欧几里得算法</tag>
       </tags>
   </entry>
   <entry>
@@ -99,21 +114,6 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>素数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>中国剩余定理</title>
-    <url>/8769/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T crt(T n, T *ai, T *mi) &#123;</span><br><span class="line">    T m = <span class="number">1</span>, ans = <span class="number">0</span>;</span><br><span class="line">    T *M = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    T *invM = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    T *c = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) m *= mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) M[i] = m / mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) invM[i] = inverse_extgcd(M[i], mi[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) c[i] = M[i] * invM[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) ans = (ans + ai[i] * c[i] % m) % m;</span><br><span class="line">    <span class="keyword">delete</span>[] M;</span><br><span class="line">    <span class="keyword">delete</span>[] invM;</span><br><span class="line">    <span class="keyword">delete</span>[] c;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>中国剩余定理</tag>
-        <tag>同余</tag>
-        <tag>扩展欧几里得算法</tag>
       </tags>
   </entry>
   <entry>
@@ -139,21 +139,6 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>素数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>埃拉托斯特尼筛法</title>
-    <url>/48233/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T get_prime_eratosthenes(<span class="keyword">const</span> T &amp;n, <span class="keyword">bool</span> *isprime, T *prime_table) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    isprime[<span class="number">0</span>] = isprime[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) &#123;</span><br><span class="line">            prime_table[++p] = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> T j = i * i; j &lt;= n; j += i) isprime[j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>素数</tag>
-        <tag>筛法</tag>
-        <tag>埃拉托斯特尼筛法</tag>
       </tags>
   </entry>
   <entry>
@@ -183,6 +168,21 @@
       </tags>
   </entry>
   <entry>
+    <title>埃拉托斯特尼筛法</title>
+    <url>/48233/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T get_prime_eratosthenes(<span class="keyword">const</span> T &amp;n, <span class="keyword">bool</span> *isprime, T *prime_table) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    isprime[<span class="number">0</span>] = isprime[<span class="number">1</span>] = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) &#123;</span><br><span class="line">            prime_table[++p] = i;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> T j = i * i; j &lt;= n; j += i) isprime[j] = <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>素数</tag>
+        <tag>筛法</tag>
+        <tag>埃拉托斯特尼筛法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>欧拉筛</title>
     <url>/51755/</url>
     <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T get_prime_euler(<span class="keyword">const</span> T &amp;n, <span class="keyword">bool</span> *isprime, T *prime_table) &#123;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) prime_table[++p] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> T j = <span class="number">1</span>, t; j &lt; p &amp;&amp; (t = i * prime_table[j]) &lt;= n; ++j) &#123;</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime_table[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -200,7 +200,7 @@
   <entry>
     <title>扩展中国剩余定理</title>
     <url>/39570/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T extcrt(T n, T *bi, T *ai) &#123;</span><br><span class="line">    T ans = a[<span class="number">1</span>], M = b[<span class="number">1</span>], x, y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        T B = ((a[i] - ans) % b[i] + b[i]) % b[i];</span><br><span class="line">        T GCD = extgcd&lt;T&gt;(M, b[i], x, y);</span><br><span class="line">        x = qmul&lt;T&gt;(x, B / GCD, b[i]);</span><br><span class="line">        ans += M * x;</span><br><span class="line">        M *= b[i] / GCD;</span><br><span class="line">        ans = (ans + M) % M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T extcrt(T n, T *b, T *a) &#123;</span><br><span class="line">    T ans = a[<span class="number">1</span>], M = b[<span class="number">1</span>], x, y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        T B = ((a[i] - ans) % b[i] + b[i]) % b[i];</span><br><span class="line">        T GCD = extgcd&lt;T&gt;(M, b[i], x, y);</span><br><span class="line">        x = qmul&lt;T&gt;(x, B / GCD, b[i]);</span><br><span class="line">        ans += M * x;</span><br><span class="line">        M *= b[i] / GCD;</span><br><span class="line">        ans = (ans + M) % M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>算法</category>
       </categories>
@@ -278,8 +278,8 @@
       <tags>
         <tag>数论</tag>
         <tag>数学</tag>
-        <tag>筛法</tag>
         <tag>欧拉函数</tag>
+        <tag>筛法</tag>
         <tag>线性筛</tag>
       </tags>
   </entry>
@@ -320,7 +320,7 @@
 <p>$$ax \equiv 1 \pmod{b}$$</p>
 <p>$x$ 即为 $a$ 在模 $b$ 意义下的逆元。</p>
 <p>如下：</p>
-<h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T inverse_extgcd(T n, T p) &#123;</span><br><span class="line">    T x, y;</span><br><span class="line">    extgcd(n, p, x, y);</span><br><span class="line">    <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T inverse_extgcd(T n, T p) &#123;</span><br><span class="line">    T x, y;</span><br><span class="line">    extgcd(n, p, x, y);</span><br><span class="line">    <span class="keyword">return</span> (x % p + p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>算法</category>
       </categories>
