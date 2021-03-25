@@ -75,19 +75,6 @@
       </tags>
   </entry>
   <entry>
-    <title>判断单个素数</title>
-    <url>/26915/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> isprime(<span class="keyword">const</span> T &amp;n) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>素数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>加法逆元</title>
     <url>/53088/</url>
     <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T additive_inverse(T n) &#123;</span><br><span class="line">    <span class="keyword">return</span> -n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -99,6 +86,19 @@
         <tag>数学</tag>
         <tag>逆元</tag>
         <tag>加法逆元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>判断单个素数</title>
+    <url>/26915/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> isprime(<span class="keyword">const</span> T &amp;n) &#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>素数</tag>
       </tags>
   </entry>
   <entry>
@@ -170,6 +170,19 @@
       </tags>
   </entry>
   <entry>
+    <title>欧拉函数</title>
+    <url>/55226/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T phi(T n) &#123;</span><br><span class="line">    T ans = n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>欧拉函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>欧拉筛</title>
     <url>/51755/</url>
     <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T get_prime_euler(<span class="keyword">const</span> T &amp;n, <span class="keyword">bool</span> *isprime, T *prime_table) &#123;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) prime_table[++p] = i;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> T j = <span class="number">1</span>, t; j &lt; p &amp;&amp; (t = i * prime_table[j]) &lt;= n; ++j) &#123;</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime_table[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -185,24 +198,15 @@
       </tags>
   </entry>
   <entry>
-    <title>欧拉函数</title>
-    <url>/55226/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T phi(T n) &#123;</span><br><span class="line">    T ans = n;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>欧拉函数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2021-03-22 模拟赛</title>
     <url>/23060/</url>
     <content><![CDATA[<h1 id="emmmm"><a href="#emmmm" class="headerlink" title="emmmm~"></a>emmmm~</h1><p>T1 是区间DP，很容易就看出来了，然而题目出的却不知道如何合并……于是爆零。</p>
 <p>T2是原题 <a href="https://www.luogu.com.cn/problem/P1941">[NOIP2014 提高组] 飞扬的小鸟</a>，但是貌似特判写挂了卡掉了25pts。</p>
 <p>T3是树形DP + 二次扫描换根，然而没复习到想写暴力发现图论忘光 dfs 都写挂了。</p>
+<p>（占位行，不然 Hexo 渲染下面会 Bug）</p>
+<p>（占位行）</p>
+<p>（占位行）</p>
+<p>（占位行）</p>
 <h1 id="0-75-0-75"><a href="#0-75-0-75" class="headerlink" title="0 + 75 + 0 = 75"></a>0 + 75 + 0 = 75</h1><h1 id="对下面这位-¶凉笙-表示强烈谴责"><a href="#对下面这位-¶凉笙-表示强烈谴责" class="headerlink" title="对下面这位 @¶凉笙 表示强烈谴责"></a>对下面这位 @<a href="https://www.luogu.com.cn/blog/AG-Liangsheng/">¶凉笙</a> 表示强烈谴责</h1><p>他交的代码：</p>
 <p><a href="http://192.168.0.111:1926/submission/162">#162(内网)</a></p>
 <figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e4</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxm=<span class="number">2010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,k;</span><br><span class="line"><span class="keyword">int</span> x[maxn],y[maxn],low[maxn],high[maxn],f[maxn][maxm];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;k);</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,x+i,y+i);<span class="comment">//1-n </span></span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		low[i]=<span class="number">1</span>;</span><br><span class="line">		high[i]=m;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		vis[a]=<span class="literal">true</span>;</span><br><span class="line">		low[a]=b+<span class="number">1</span>;</span><br><span class="line">		high[a]=c<span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memset</span>(f,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> f);</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)f[<span class="number">0</span>][i] = <span class="number">0</span>;<span class="comment">//不需要点击 </span></span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;<span class="comment">//状态</span></span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=x[i]+<span class="number">1</span>;j&lt;=m+x[i];j++)<span class="comment">//完全背包 </span></span><br><span class="line">			f[i][j]=min(f[i][j-x[i]]+<span class="number">1</span>,f[i<span class="number">-1</span>][j-x[i]]+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=m+<span class="number">1</span>;j&lt;=m+x[i];j++)<span class="comment">//边界问题 </span></span><br><span class="line">			f[i][m]=min(f[i][m],f[i][j]);</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=m-y[i];j&gt;=<span class="number">1</span>;j--)<span class="comment">//0-1背包 </span></span><br><span class="line">			f[i][j]=min(f[i][j],f[i<span class="number">-1</span>][j+y[i]]);	</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;low[i];j++)<span class="comment">//注意是小于，定义的边界是可行的</span></span><br><span class="line">			f[i][j]=f[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=high[i]+<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">			f[i][j]=f[<span class="number">0</span>][<span class="number">0</span>];	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=f[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)ans=min(ans,f[n][i]);</span><br><span class="line">	<span class="keyword">if</span>(ans&lt;f[<span class="number">0</span>][<span class="number">0</span>])&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;1\n%d&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		re <span class="keyword">int</span> i,j;</span><br><span class="line">		<span class="keyword">for</span>(i=n;i&gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(f[i][j]&lt;f[<span class="number">0</span>][<span class="number">0</span>])<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(j&lt;=m)<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)<span class="keyword">if</span>(vis[j])ans++;	</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -299,8 +303,8 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>筛法</tag>
-        <tag>线性筛</tag>
         <tag>欧拉函数</tag>
+        <tag>线性筛</tag>
       </tags>
   </entry>
   <entry>
