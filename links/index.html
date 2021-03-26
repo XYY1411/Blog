@@ -50,14 +50,70 @@
 
 
 
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
           
 
 
     
     
     <title>
-          
-            寂静的角落
+        
+            友情链接 | 寂静的角落
         
     </title>
     
@@ -282,40 +338,77 @@
 </aside>
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
-    
-    
-    
-
-
-<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
-    <div class="posts-collapse">
-        <div class="collection-title">
-            <h2>线性筛<small>标签</small></h2>
-        </div>
-        
-            <div class="collection-item">
-                <h3><a href="/51755/">欧拉筛</a></h3>
-                <time itemprop="dateCreated" datetime=2021-03-05 >
-                    2021.03.05
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/28476/">线性求乘法逆元</a></h3>
-                <time itemprop="dateCreated" datetime=2021-03-04 >
-                    2021.03.04
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/58730/">线性求欧拉函数</a></h3>
-                <time itemprop="dateCreated" datetime=2021-03-03 >
-                    2021.03.03
-                </time>
-            </div>
-        
+    <div class="mdui-card mdui-p-b-2 mdui-m-b-5">
+    <div class="post-header"> 
+        <a class="post-header-title" href="/links/index.html">友情链接</a>
     </div>
-</div>
+    <div id="page-card" class="mdui-card-content mdui-p-x-4">
+        
+            
+            
+            
+            
+            
+        </div>
+    </div>
+    
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">valine</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '7c29d7473f0f58379edd',
+    clientSecret: '0d7f77d446726630a3b5bb8dd15bd4f7a8df2037',
+    repo: 'gitalk_storage',
+    owner: 'XYY1411',
+    admin: ['XYY1411'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="vcomments"></div>
+<script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = ''.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  var notify = '' === 'true';
+  var verify = '' === 'true';
+  new Valine({
+    el: '#vcomments',
+    notify: notify,
+    verify: verify,
+    appId: '',
+    appKey: '',
+    placeholder: '',
+    pageSize: '',
+    avatar: '',
+    lang: '',
+    guest_info: guest_info
+  });
+</script>
+        </div>
+      
+    </div>
+
 
 
   </main>
