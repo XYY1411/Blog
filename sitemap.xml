@@ -2,16 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://xyy1411.github.io/60602/</loc>
+    <loc>https://xyy1411.github.io/links/index.html</loc>
     
     <lastmod>2021-03-28</lastmod>
     
   </url>
   
   <url>
-    <loc>https://xyy1411.github.io/links/index.html</loc>
+    <loc>https://xyy1411.github.io/60602/</loc>
     
-    <lastmod>2021-03-26</lastmod>
+    <lastmod>2021-03-28</lastmod>
     
   </url>
   
@@ -235,14 +235,14 @@
   </url>
   
   <url>
-    <loc>https://xyy1411.github.io/tags/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/</loc>
+    <loc>https://xyy1411.github.io/tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/</loc>
     <lastmod>2021-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xyy1411.github.io/tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86/</loc>
+    <loc>https://xyy1411.github.io/tags/%E4%B8%AD%E5%9B%BD%E5%89%A9%E4%BD%99%E5%AE%9A%E7%90%86/</loc>
     <lastmod>2021-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -263,6 +263,13 @@
   </url>
   
   <url>
+    <loc>https://xyy1411.github.io/tags/%E7%B4%A0%E6%95%B0/</loc>
+    <lastmod>2021-03-28</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xyy1411.github.io/tags/%E5%90%8C%E4%BD%99/</loc>
     <lastmod>2021-03-28</lastmod>
     <changefreq>daily</changefreq>
@@ -271,13 +278,6 @@
   
   <url>
     <loc>https://xyy1411.github.io/tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95/</loc>
-    <lastmod>2021-03-28</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyy1411.github.io/tags/%E7%B4%A0%E6%95%B0/</loc>
     <lastmod>2021-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
