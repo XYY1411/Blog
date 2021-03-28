@@ -496,8 +496,6 @@
         
           <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
         
-          <a href="#comment-tab1" class="mdui-ripple">valine</a>
-        
       </div>
       
         <div id="comment-tab0" class="mdui-p-a-2">
@@ -516,33 +514,6 @@
     distractionFreeMode: 'true',
   });
   gitalk.render('gitalk-container');
-</script>
-        </div>
-      
-        <div id="comment-tab1" class="mdui-p-a-2">
-          <div id="vcomments"></div>
-<script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-<script>
-  var GUEST_INFO = ['nick', 'mail', 'link'];
-  var guest_info = ''.split(',').filter(function (item) {
-    return GUEST_INFO.indexOf(item) > -1;
-  });
-  var notify = '' === 'true';
-  var verify = '' === 'true';
-  new Valine({
-    el: '#vcomments',
-    notify: notify,
-    verify: verify,
-    appId: '',
-    appKey: '',
-    placeholder: '',
-    pageSize: '',
-    avatar: '',
-    lang: '',
-    guest_info: guest_info
-  });
 </script>
         </div>
       
