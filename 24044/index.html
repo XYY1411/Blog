@@ -513,28 +513,24 @@
         </div>
       
         <div id="comment-tab1" class="mdui-p-a-2">
-          <div id="vcomments"></div>
+          <div id="vcomment"></div>
 <script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
 <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 <script>
-  var GUEST_INFO = ['nick', 'mail', 'link'];
-  var guest_info = ''.split(',').filter(function (item) {
-    return GUEST_INFO.indexOf(item) > -1;
-  });
-  var notify = '' === 'true';
-  var verify = '' === 'true';
   new Valine({
-    el: '#vcomments',
-    notify: notify,
-    verify: verify,
-    app_id: 'zgj3OMN0s31zBieyUYDnUhmO-MdYXbMMI',
-    app_key: 'FxlRvrvQzz32kTFHuKnberaf',
-    placeholder: 'Just go go',
-    pageSize: '10',
-    avatar: 'mp',
-    lang: 'zh-CN',
-    guest_info: guest_info
+    el: '#vcomment',
+    appId: zgj3OMN0s31zBieyUYDnUhmO-MdYXbMMI,
+    appKey: FxlRvrvQzz32kTFHuKnberaf,
+    placeholder: Just go go,
+    path: window.location.pathname,
+    pageSize: 10,
+    avatar: mp,
+    lang: zh-CN,
+    meta: guest_info: ['nick', 'mail', 'link'],
+    visitor: false;,
+    enableQQ: true,
+    requiredFields: ['nick']
   });
 </script>
         </div>
