@@ -50,6 +50,62 @@
 
 
 
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
           
 
 
@@ -295,7 +351,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-01
+      更新于:&nbsp;2021-04-03
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -371,23 +427,23 @@
 <p>（占位行）</p>
 <p>（占位行）</p>
 <h2 id="NOIO2021-1-提高组-T1-愤怒的小N"><a href="#NOIO2021-1-提高组-T1-愤怒的小N" class="headerlink" title="NOIO2021 #1 提高组 T1 愤怒的小N"></a>NOIO2021 #1 提高组 T1 愤怒的小N</h2><p><a href="angry.cpp" download="angry.cpp">考场代码</a></p>
-<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7468">洛谷</a></p>
+<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7468">洛谷 NOIO2021 #1 提高组</a></p>
 <p>数学， 不会，打了个暴力，估计也没多少分，有 10 pts，看了看题解，还是直接放弃为好。</p>
 <h2 id="NOIO2021-1-提高组-T2-积木小赛"><a href="#NOIO2021-1-提高组-T2-积木小赛" class="headerlink" title="NOIO2021 #1 提高组 T2 积木小赛"></a>NOIO2021 #1 提高组 T2 积木小赛</h2><p><a href="block.cpp" download="block.cpp">考场代码</a></p>
-<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7469">洛谷</a></p>
+<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7469">洛谷 NOIO2021 #1 提高组</a></p>
 <p>字符串匹配， 匹配两个字符串的子串和子序列，写了个哈希，有 60 pts，正解是贪心。</p>
 <h2 id="NOIO2021-1-提高组-T3-岛屿探险"><a href="#NOIO2021-1-提高组-T3-岛屿探险" class="headerlink" title="NOIO2021 #1 提高组 T3 岛屿探险"></a>NOIO2021 #1 提高组 T3 岛屿探险</h2><p><a href="island.cpp" download="island.cpp">考场代码</a></p>
-<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7470">洛谷</a></p>
+<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7470">洛谷 NOIO2021 #1 提高组</a></p>
 <p>区间异或和奇怪的东西，不会，打暴力， 20 pts，正解 CDQ 分治。</p>
 <h1 id="提高合计"><a href="#提高合计" class="headerlink" title="提高合计"></a>提高合计</h1><p>合计 $10 + 60 + 20 = 80$ ，压线前 $25%$ 。</p>
 <h2 id="NOIO2021-1-入门组-T1-切蛋糕"><a href="#NOIO2021-1-入门组-T1-切蛋糕" class="headerlink" title="NOIO2021 #1 入门组 T1 切蛋糕"></a>NOIO2021 #1 入门组 T1 切蛋糕</h2><p><a href="cake.cpp" download="cake.cpp">考场代码</a></p>
-<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7471">洛谷</a></p>
+<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7471">洛谷 NOIO2021 #1 入门组</a></p>
 <p>特判的水题， AC。</p>
 <h2 id="NOIO2021-1-入门组-T2-吃豆人"><a href="#NOIO2021-1-入门组-T2-吃豆人" class="headerlink" title="NOIO2021 #1 入门组 T2 吃豆人"></a>NOIO2021 #1 入门组 T2 吃豆人</h2><p><a href="pacman.cpp" download="pacman.cpp">考场代码</a></p>
-<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7472">洛谷</a></p>
+<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7472">洛谷 NOIO2021 #1 入门组</a></p>
 <p>写了特判 30 pts，正解暴力……不过没时间写了，毕竟只写了一个小时。</p>
 <h2 id="NOIO2021-1-入门组-T3-重力球"><a href="#NOIO2021-1-入门组-T3-重力球" class="headerlink" title="NOIO2021 #1 入门组 T3 重力球"></a>NOIO2021 #1 入门组 T3 重力球</h2><p><a href="ball.cpp" download="ball.cpp">考场代码</a></p>
-<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7473">洛谷</a></p>
+<p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P7473">洛谷 NOIO2021 #1 入门组</a></p>
 <p>写的暴力，没分，正解 BFS + 最短路？</p>
 <h1 id="普及合计"><a href="#普及合计" class="headerlink" title="普及合计"></a>普及合计</h1><p>合计 $100 + 30 + 0 = 130$ ，前 $25%$ 。</p>
 <h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>CCF 一直崩服务器，圈的钱都去哪里了？</p>
@@ -404,6 +460,11 @@
   <div class="mdui-divider"></div>
   
   <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/23275/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>2021-04-02 模拟赛</span>
+      </a>
     
     
       <a rel="next" class="post-nav-item mdui-float-right" href="/23060/">
@@ -434,6 +495,8 @@
         
           <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
         
+          <a href="#comment-tab1" class="mdui-ripple">valine</a>
+        
       </div>
       
         <div id="comment-tab0" class="mdui-p-a-2">
@@ -452,6 +515,33 @@
     distractionFreeMode: 'true',
   });
   gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="vcomments"></div>
+<script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = ''.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  var notify = '' === 'true';
+  var verify = '' === 'true';
+  new Valine({
+    el: '#vcomments',
+    notify: notify,
+    verify: verify,
+    appId: 'zgj3OMN0s31zBieyUYDnUhmO-MdYXbMMI',
+    appKey: 'FxlRvrvQzz32kTFHuKnberaf',
+    placeholder: 'Just go go',
+    pageSize: '10',
+    avatar: 'mp',
+    lang: 'zh-CN',
+    guest_info: guest_info
+  });
 </script>
         </div>
       

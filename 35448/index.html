@@ -351,7 +351,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-03-10
+      更新于:&nbsp;2021-04-03
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -423,7 +423,8 @@
 
   
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <h1 id="Luogu1495-曹冲养猪"><a href="#Luogu1495-曹冲养猪" class="headerlink" title="Luogu1495 曹冲养猪"></a><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1495">Luogu1495 曹冲养猪</a></h1><h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求解一元线性同余方程组。</p>
+    <h1 id="Luogu1495-曹冲养猪"><a href="#Luogu1495-曹冲养猪" class="headerlink" title="Luogu1495 曹冲养猪"></a>Luogu1495 曹冲养猪</h1><p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1495">洛谷 Luogu1495</a></p>
+<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求解一元线性同余方程组。</p>
 <p>设母猪有 $x$ 头。</p>
 <p>求解<br>$$\begin{cases} x &amp;\equiv b_1 \pmod {a_1} \\ x &amp;\equiv b_2 \pmod {a_2} \\ &amp;\vdots \\ x &amp;\equiv b_k \pmod {a_k} \\ \end{cases} $$</p>
 <p>假定 $a_i, a_j$ 互质。</p>
@@ -496,6 +497,8 @@
         
           <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
         
+          <a href="#comment-tab1" class="mdui-ripple">valine</a>
+        
       </div>
       
         <div id="comment-tab0" class="mdui-p-a-2">
@@ -514,6 +517,33 @@
     distractionFreeMode: 'true',
   });
   gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="vcomments"></div>
+<script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  var GUEST_INFO = ['nick', 'mail', 'link'];
+  var guest_info = ''.split(',').filter(function (item) {
+    return GUEST_INFO.indexOf(item) > -1;
+  });
+  var notify = '' === 'true';
+  var verify = '' === 'true';
+  new Valine({
+    el: '#vcomments',
+    notify: notify,
+    verify: verify,
+    appId: 'zgj3OMN0s31zBieyUYDnUhmO-MdYXbMMI',
+    appKey: 'FxlRvrvQzz32kTFHuKnberaf',
+    placeholder: 'Just go go',
+    pageSize: '10',
+    avatar: 'mp',
+    lang: 'zh-CN',
+    guest_info: guest_info
+  });
 </script>
         </div>
       
