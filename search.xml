@@ -1,54 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Luogu4139 上帝与集合的正确用法</title>
-    <url>/55212/</url>
-    <content><![CDATA[<h1 id="Luogu4139-上帝与集合的正确用法"><a href="#Luogu4139-上帝与集合的正确用法" class="headerlink" title="Luogu4139 上帝与集合的正确用法"></a>Luogu4139 上帝与集合的正确用法</h1><p>提交地址：<a href="https://www.luogu.com.cn/problem/P4139">洛谷 Luogu4139</a></p>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求 $2^{2^{2^\cdots}} \mod p$ 。</p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>有扩展欧拉定理：</p>
-<p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;\gcd(a,\,p)=1\\ a^b,&amp;\gcd(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
-<p>。</p>
-<p>我们发现可以求 $2^{2^{2^\cdots}} \mod p$ 了。</p>
-<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>欧拉函数（Euler’s totient function），即 $\varphi(n)$ ，表示的是小于等于 $n$ 的数中和 $n$ 互质的数的个数。</p>
-<p>易得 $\varphi(1) = 1$ ，当 $n$ 为质数时，只有 $n$ 不与 $n$ 互质，所以此时 $\varphi(n) = n - 1$ 。</p>
-<p>欧拉函数是积性函数，当 $a, b$ 互质时， $\varphi(a) \times \varphi(b) = \varphi(a \times b)$ ，因为与 $a$ 不互质的有 $a$ ，与 $b$ 不互质的有 $b$ ，与 $a \times b$ 不互质的有 $a, 2a, 3a, \cdots,ab, \cdots, 3b, 2b, b$ ，所以等式成立。</p>
-<p>当 $n$ 是奇数时 $\varphi(2n) = \varphi(n)$ ，可由上式推出。</p>
-<p>$n = \sum_{d \mid n} \varphi(d)$ ，用莫比乌斯反演证。</p>
-<p>若 $p$ 为质数， 则 $\varphi(p^k) = p^k - p^{k - 1} = p^{k - 1}\times(p - 1)$ ，因为与 $p^k$ 不互质的数只有 $p$ 的倍数，一共 $p^{k - 1}$<br> 个，所以上式成立。</p>
-<h3 id="求单独的欧拉函数（Pollard-Rho算法）"><a href="#求单独的欧拉函数（Pollard-Rho算法）" class="headerlink" title="求单独的欧拉函数（Pollard Rho算法）"></a>求单独的欧拉函数（Pollard Rho算法）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> ans = n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">      ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="筛欧拉函数"><a href="#筛欧拉函数" class="headerlink" title="筛欧拉函数"></a>筛欧拉函数</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">phi_table</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>* phi)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) phi[i] = <span class="number">0</span>;</span><br><span class="line">  phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (!phi[i])</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!phi[j]) phi[j] = j;</span><br><span class="line">        phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p>若 $a, m$ 互质，则有 $a^{\varphi(m)} \equiv \pmod m$ 。</p>
-<h3 id="剩余类"><a href="#剩余类" class="headerlink" title="剩余类"></a>剩余类</h3><p>剩余类也叫同余类，指全体整数按照对一个正整数的同余关系而分成的类。</p>
-<h3 id="完全剩余系"><a href="#完全剩余系" class="headerlink" title="完全剩余系"></a>完全剩余系</h3><p>从模 $n$ 的每个剩余类中各取一个数，得到一个由 $n$ 个数组成的集合，叫做模 $n$ 的一个完全剩余系。</p>
-<h3 id="简化剩余系"><a href="#简化剩余系" class="headerlink" title="简化剩余系"></a>简化剩余系</h3><p>简化剩余系(reduced residue system)也称既约剩余系或缩系，是 $m$ 的完全剩余系中与 $m$ 互素的数构成的子集，如果模 $m$ 的一个剩余类里所有数都与 $m$ 互素，就把它叫做与模 $m$ 互素的剩余类。在与模 $m$ 互素的全体剩余类中，从每一个类中各任取一个数作为代表组成的集合，叫做模 $m$ 的一个简化剩余系。</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>通过简化剩余系构造一个与 $m$ 互质的数列。</p>
-<p>设 $r_1, r_2, \cdots, r_{\varphi(m)}$ 为模 $m$ 意义下的一个简化剩余系，则 $ar_1, ar_2, \cdots, ar_{\varphi(m)}$ 也为模 $m$ 意义下的一个简化剩余系。所以 $r_1r_2 \cdots r_{\varphi(m)} \equiv ar_1 \cdot ar_2 \cdots ar_{\varphi(m)} \equiv a^{\varphi(m)}r_1r_2 \cdots r_{\varphi(m)} \pmod{m}$ ，可约去 $r_1r_2 \cdots r_{\varphi(m)}$ ，得证。</p>
-<h2 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a><a href="https://oi-wiki.org/math/fermat/#_5">扩展欧拉定理</a></h2><p>$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;\gcd(a,\,p)=1\\ a^b,&amp;\gcd(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>有了扩展欧拉定理我们就可以递推求解了。</p>
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxp = <span class="number">1e7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, p, phi[maxp + <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= maxp; i++)</span><br><span class="line">        <span class="keyword">if</span> (!phi[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = i; j &lt;= maxp; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi[j]) phi[j] = j; </span><br><span class="line">                phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qmul</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = ((ret % mod) + (a % mod)) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		a = ((a % mod) + (a % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = qmul(ret, a, mod) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		a = qmul(a, a, mod) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span> <span class="params">(<span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mod == <span class="number">1</span> ? <span class="number">0</span> :qpow(<span class="number">2</span>, work(phi[mod]) + phi[mod], mod);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    get_phi();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;p);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, work(p));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>扩展欧拉定理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>判断单个素数</title>
-    <url>/26915/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline bool isprime(T n);</span></span><br><span class="line"><span class="comment">  判断 n 是否为质数</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>素数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Luogu1495 曹冲养猪</title>
     <url>/35448/</url>
     <content><![CDATA[<h1 id="Luogu1495-曹冲养猪"><a href="#Luogu1495-曹冲养猪" class="headerlink" title="Luogu1495 曹冲养猪"></a>Luogu1495 曹冲养猪</h1><p>提交地址：<a href="https://www.luogu.com.cn/problem/P1495">洛谷 Luogu1495</a></p>
@@ -93,18 +45,38 @@
       </tags>
   </entry>
   <entry>
-    <title>中国剩余定理</title>
-    <url>/8769/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T crt(T n, T *ai, T *mi);</span></span><br><span class="line"><span class="comment">  求解中国剩余定理</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">crt</span><span class="params">(T n, T *ai, T *mi)</span> </span>&#123;</span><br><span class="line">    T m = <span class="number">1</span>, ans = <span class="number">0</span>;</span><br><span class="line">    T *M = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    T *invM = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    T *c = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) m *= mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) M[i] = m / mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) invM[i] = inverse_extgcd(M[i], mi[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) c[i] = M[i] * invM[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) ans = (ans + ai[i] * c[i] % m) % m;</span><br><span class="line">    <span class="keyword">delete</span>[] M;</span><br><span class="line">    <span class="keyword">delete</span>[] invM;</span><br><span class="line">    <span class="keyword">delete</span>[] c;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <title>Luogu4139 上帝与集合的正确用法</title>
+    <url>/55212/</url>
+    <content><![CDATA[<h1 id="Luogu4139-上帝与集合的正确用法"><a href="#Luogu4139-上帝与集合的正确用法" class="headerlink" title="Luogu4139 上帝与集合的正确用法"></a>Luogu4139 上帝与集合的正确用法</h1><p>提交地址：<a href="https://www.luogu.com.cn/problem/P4139">洛谷 Luogu4139</a></p>
+<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求 $2^{2^{2^\cdots}} \mod p$ 。</p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>有扩展欧拉定理：</p>
+<p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;\gcd(a,\,p)=1\\ a^b,&amp;\gcd(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
+<p>。</p>
+<p>我们发现可以求 $2^{2^{2^\cdots}} \mod p$ 了。</p>
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>欧拉函数（Euler’s totient function），即 $\varphi(n)$ ，表示的是小于等于 $n$ 的数中和 $n$ 互质的数的个数。</p>
+<p>易得 $\varphi(1) = 1$ ，当 $n$ 为质数时，只有 $n$ 不与 $n$ 互质，所以此时 $\varphi(n) = n - 1$ 。</p>
+<p>欧拉函数是积性函数，当 $a, b$ 互质时， $\varphi(a) \times \varphi(b) = \varphi(a \times b)$ ，因为与 $a$ 不互质的有 $a$ ，与 $b$ 不互质的有 $b$ ，与 $a \times b$ 不互质的有 $a, 2a, 3a, \cdots,ab, \cdots, 3b, 2b, b$ ，所以等式成立。</p>
+<p>当 $n$ 是奇数时 $\varphi(2n) = \varphi(n)$ ，可由上式推出。</p>
+<p>$n = \sum_{d \mid n} \varphi(d)$ ，用莫比乌斯反演证。</p>
+<p>若 $p$ 为质数， 则 $\varphi(p^k) = p^k - p^{k - 1} = p^{k - 1}\times(p - 1)$ ，因为与 $p^k$ 不互质的数只有 $p$ 的倍数，一共 $p^{k - 1}$<br> 个，所以上式成立。</p>
+<h3 id="求单独的欧拉函数（Pollard-Rho算法）"><a href="#求单独的欧拉函数（Pollard-Rho算法）" class="headerlink" title="求单独的欧拉函数（Pollard Rho算法）"></a>求单独的欧拉函数（Pollard Rho算法）</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> ans = n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">      ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="筛欧拉函数"><a href="#筛欧拉函数" class="headerlink" title="筛欧拉函数"></a>筛欧拉函数</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">phi_table</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>* phi)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) phi[i] = <span class="number">0</span>;</span><br><span class="line">  phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (!phi[i])</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!phi[j]) phi[j] = j;</span><br><span class="line">        phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p>若 $a, m$ 互质，则有 $a^{\varphi(m)} \equiv \pmod m$ 。</p>
+<h3 id="剩余类"><a href="#剩余类" class="headerlink" title="剩余类"></a>剩余类</h3><p>剩余类也叫同余类，指全体整数按照对一个正整数的同余关系而分成的类。</p>
+<h3 id="完全剩余系"><a href="#完全剩余系" class="headerlink" title="完全剩余系"></a>完全剩余系</h3><p>从模 $n$ 的每个剩余类中各取一个数，得到一个由 $n$ 个数组成的集合，叫做模 $n$ 的一个完全剩余系。</p>
+<h3 id="简化剩余系"><a href="#简化剩余系" class="headerlink" title="简化剩余系"></a>简化剩余系</h3><p>简化剩余系(reduced residue system)也称既约剩余系或缩系，是 $m$ 的完全剩余系中与 $m$ 互素的数构成的子集，如果模 $m$ 的一个剩余类里所有数都与 $m$ 互素，就把它叫做与模 $m$ 互素的剩余类。在与模 $m$ 互素的全体剩余类中，从每一个类中各任取一个数作为代表组成的集合，叫做模 $m$ 的一个简化剩余系。</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>通过简化剩余系构造一个与 $m$ 互质的数列。</p>
+<p>设 $r_1, r_2, \cdots, r_{\varphi(m)}$ 为模 $m$ 意义下的一个简化剩余系，则 $ar_1, ar_2, \cdots, ar_{\varphi(m)}$ 也为模 $m$ 意义下的一个简化剩余系。所以 $r_1r_2 \cdots r_{\varphi(m)} \equiv ar_1 \cdot ar_2 \cdots ar_{\varphi(m)} \equiv a^{\varphi(m)}r_1r_2 \cdots r_{\varphi(m)} \pmod{m}$ ，可约去 $r_1r_2 \cdots r_{\varphi(m)}$ ，得证。</p>
+<h2 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a><a href="https://oi-wiki.org/math/fermat/#_5">扩展欧拉定理</a></h2><p>$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;\gcd(a,\,p)=1\\ a^b,&amp;\gcd(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>有了扩展欧拉定理我们就可以递推求解了。</p>
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxp = <span class="number">1e7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, p, phi[maxp + <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= maxp; i++)</span><br><span class="line">        <span class="keyword">if</span> (!phi[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = i; j &lt;= maxp; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi[j]) phi[j] = j; </span><br><span class="line">                phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qmul</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = ((ret % mod) + (a % mod)) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		a = ((a % mod) + (a % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = qmul(ret, a, mod) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">		a = qmul(a, a, mod) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span> <span class="params">(<span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mod == <span class="number">1</span> ? <span class="number">0</span> :qpow(<span class="number">2</span>, work(phi[mod]) + phi[mod], mod);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    get_phi();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;p);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, work(p));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>算法</category>
+        <category>题解</category>
       </categories>
       <tags>
         <tag>数论</tag>
         <tag>数学</tag>
-        <tag>中国剩余定理</tag>
-        <tag>同余</tag>
-        <tag>扩展欧几里得算法</tag>
+        <tag>扩展欧拉定理</tag>
       </tags>
   </entry>
   <entry>
@@ -119,6 +91,59 @@
         <tag>数学</tag>
         <tag>逆元</tag>
         <tag>加法逆元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>判断单个素数</title>
+    <url>/26915/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline bool isprime(T n);</span></span><br><span class="line"><span class="comment">  判断 n 是否为质数</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>素数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>质因数分解</title>
+    <url>/42604/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T divide(T n, T *p, T *c);</span></span><br><span class="line"><span class="comment">  对 n 分解质因数</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">divide</span><span class="params">(T n, T *p, T *c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            p[++cnt] = i, c[cnt] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i, c[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) p[++cnt] = n, c[cnt] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>素数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中国剩余定理</title>
+    <url>/8769/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T crt(T n, T *ai, T *mi);</span></span><br><span class="line"><span class="comment">  求解中国剩余定理</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">crt</span><span class="params">(T n, T *ai, T *mi)</span> </span>&#123;</span><br><span class="line">    T m = <span class="number">1</span>, ans = <span class="number">0</span>;</span><br><span class="line">    T *M = <span class="keyword">new</span> T[n + <span class="number">5</span>];</span><br><span class="line">    T *invM = <span class="keyword">new</span> T[n + <span class="number">5</span>];</span><br><span class="line">    T *c = <span class="keyword">new</span> T[n + <span class="number">5</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) m *= mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) M[i] = m / mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) invM[i] = inverse_extgcd(M[i], mi[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) c[i] = M[i] * invM[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) ans = (ans + ai[i] * c[i] % m) % m;</span><br><span class="line">    <span class="keyword">delete</span>[] M;</span><br><span class="line">    <span class="keyword">delete</span>[] invM;</span><br><span class="line">    <span class="keyword">delete</span>[] c;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>中国剩余定理</tag>
+        <tag>同余</tag>
+        <tag>扩展欧几里得算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>普通快读</title>
+    <url>/40753/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline bool fqreadi(T &amp;n, FILE *fp);</span></span><br><span class="line"><span class="comment">  从 fp 中读入一个类型为 T 的整数</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline bool qreadi(T &amp;n);</span></span><br><span class="line"><span class="comment">  从标准输入中读入一个类型为 T 的整数</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">fqreadi</span><span class="params">(T &amp;n, FILE *fp)</span> </span>&#123;</span><br><span class="line">    n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">std</span>::getc(fp);</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">std</span>::<span class="built_in">isdigit</span>(ch) &amp;&amp; (ch ^ <span class="number">45</span>) &amp;&amp; (ch ^ EOF)) ch = <span class="built_in">std</span>::getc(fp);</span><br><span class="line">    <span class="keyword">if</span> (!(ch ^ EOF)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (!(ch ^ <span class="number">45</span>)) flag = <span class="literal">true</span>, ch = <span class="built_in">std</span>::getc(fp);</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">std</span>::<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">std</span>::getc(fp);</span><br><span class="line">    <span class="keyword">if</span> (flag) n = (~ n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (!(ch ^ EOF)) <span class="built_in">std</span>::ungetc(ch, fp);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">qreadi</span><span class="params">(T &amp;n)</span> </span>&#123;<span class="keyword">return</span> fqreadi(n, <span class="built_in">stdin</span>);&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>快读</tag>
+        <tag>卡常</tag>
       </tags>
   </entry>
   <entry>
@@ -147,19 +172,6 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>欧几里得算法，辗转相除法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>质因数分解</title>
-    <url>/42604/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T divide(T n, T *p, T *c);</span></span><br><span class="line"><span class="comment">  对 n 分解质因数</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">divide</span><span class="params">(T n, T *p, T *c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            p[++cnt] = i, c[cnt] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i, c[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) p[++cnt] = n, c[cnt] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>素数</tag>
       </tags>
   </entry>
   <entry>
@@ -207,6 +219,27 @@
       </tags>
   </entry>
   <entry>
+    <title>2021-03-22 模拟赛</title>
+    <url>/23060/</url>
+    <content><![CDATA[<h1 id="emmmm"><a href="#emmmm" class="headerlink" title="emmmm~"></a>emmmm~</h1><p>T1 是区间DP，很容易就看出来了，然而题目出的却不知道如何合并……于是爆零。</p>
+<p>T2是原题 <a href="https://www.luogu.com.cn/problem/P1941">[NOIP2014 提高组] 飞扬的小鸟</a>，但是貌似特判写挂了卡掉了25pts。</p>
+<p>T3是树形DP + 二次扫描换根，然而没复习到想写暴力发现图论忘光 dfs 都写挂了。</p>
+<p>（占位行，不然 Hexo 渲染下面会 Bug）</p>
+<h1 id="0-75-0-75"><a href="#0-75-0-75" class="headerlink" title="$0 + 75 + 0 = 75$"></a>$0 + 75 + 0 = 75$</h1><h1 id="对下面这位-¶凉笙-表示强烈谴责"><a href="#对下面这位-¶凉笙-表示强烈谴责" class="headerlink" title="对下面这位 @¶凉笙 表示强烈谴责"></a>对下面这位 @<a href="https://www.luogu.com.cn/blog/AG-Liangsheng/">¶凉笙</a> 表示强烈谴责</h1><p>他交的代码：</p>
+<p><a href="http://192.168.0.111:1926/submission/162">#162(内网)</a></p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e4</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxm=<span class="number">2010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,k;</span><br><span class="line"><span class="keyword">int</span> x[maxn],y[maxn],low[maxn],high[maxn],f[maxn][maxm];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;k);</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,x+i,y+i);<span class="comment">//1-n </span></span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		low[i]=<span class="number">1</span>;</span><br><span class="line">		high[i]=m;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		vis[a]=<span class="literal">true</span>;</span><br><span class="line">		low[a]=b+<span class="number">1</span>;</span><br><span class="line">		high[a]=c<span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memset</span>(f,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> f);</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)f[<span class="number">0</span>][i] = <span class="number">0</span>;<span class="comment">//不需要点击 </span></span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;<span class="comment">//状态</span></span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=x[i]+<span class="number">1</span>;j&lt;=m+x[i];j++)<span class="comment">//完全背包 </span></span><br><span class="line">			f[i][j]=min(f[i][j-x[i]]+<span class="number">1</span>,f[i<span class="number">-1</span>][j-x[i]]+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=m+<span class="number">1</span>;j&lt;=m+x[i];j++)<span class="comment">//边界问题 </span></span><br><span class="line">			f[i][m]=min(f[i][m],f[i][j]);</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=m-y[i];j&gt;=<span class="number">1</span>;j--)<span class="comment">//0-1背包 </span></span><br><span class="line">			f[i][j]=min(f[i][j],f[i<span class="number">-1</span>][j+y[i]]);	</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;low[i];j++)<span class="comment">//注意是小于，定义的边界是可行的</span></span><br><span class="line">			f[i][j]=f[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=high[i]+<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">			f[i][j]=f[<span class="number">0</span>][<span class="number">0</span>];	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=f[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)ans=min(ans,f[n][i]);</span><br><span class="line">	<span class="keyword">if</span>(ans&lt;f[<span class="number">0</span>][<span class="number">0</span>])&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;1\n%d&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		re <span class="keyword">int</span> i,j;</span><br><span class="line">		<span class="keyword">for</span>(i=n;i&gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(f[i][j]&lt;f[<span class="number">0</span>][<span class="number">0</span>])<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(j&lt;=m)<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)<span class="keyword">if</span>(vis[j])ans++;	</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>他曾经做题记录：</p>
+<p><a href="https://www.luogu.com.cn/record/46134608">R46134608</a></p>
+]]></content>
+      <categories>
+        <category>模拟赛</category>
+      </categories>
+      <tags>
+        <tag>模拟赛</tag>
+        <tag>日志</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021-04-02 模拟赛</title>
     <url>/23275/</url>
     <content><![CDATA[<h1 id="莫名其妙-color-Yellow-CE-了"><a href="#莫名其妙-color-Yellow-CE-了" class="headerlink" title="莫名其妙 $\color{Yellow}CE$ 了"></a>莫名其妙 $\color{Yellow}CE$ 了</h1><p>$\color{Yellow}CE$ 太难受了。</p>
@@ -230,27 +263,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-03-22 模拟赛</title>
-    <url>/23060/</url>
-    <content><![CDATA[<h1 id="emmmm"><a href="#emmmm" class="headerlink" title="emmmm~"></a>emmmm~</h1><p>T1 是区间DP，很容易就看出来了，然而题目出的却不知道如何合并……于是爆零。</p>
-<p>T2是原题 <a href="https://www.luogu.com.cn/problem/P1941">[NOIP2014 提高组] 飞扬的小鸟</a>，但是貌似特判写挂了卡掉了25pts。</p>
-<p>T3是树形DP + 二次扫描换根，然而没复习到想写暴力发现图论忘光 dfs 都写挂了。</p>
-<p>（占位行，不然 Hexo 渲染下面会 Bug）</p>
-<h1 id="0-75-0-75"><a href="#0-75-0-75" class="headerlink" title="$0 + 75 + 0 = 75$"></a>$0 + 75 + 0 = 75$</h1><h1 id="对下面这位-¶凉笙-表示强烈谴责"><a href="#对下面这位-¶凉笙-表示强烈谴责" class="headerlink" title="对下面这位 @¶凉笙 表示强烈谴责"></a>对下面这位 @<a href="https://www.luogu.com.cn/blog/AG-Liangsheng/">¶凉笙</a> 表示强烈谴责</h1><p>他交的代码：</p>
-<p><a href="http://192.168.0.111:1926/submission/162">#162(内网)</a></p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e4</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxm=<span class="number">2010</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> INF = <span class="number">0x3f3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> n,m,k;</span><br><span class="line"><span class="keyword">int</span> x[maxn],y[maxn],low[maxn],high[maxn],f[maxn][maxm];</span><br><span class="line"><span class="keyword">bool</span> vis[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;n,&amp;m,&amp;k);</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)<span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>,x+i,y+i);<span class="comment">//1-n </span></span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;</span><br><span class="line">		low[i]=<span class="number">1</span>;</span><br><span class="line">		high[i]=m;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=k;i++)&#123;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">&quot;%d%d%d&quot;</span>,&amp;a,&amp;b,&amp;c);</span><br><span class="line">		vis[a]=<span class="literal">true</span>;</span><br><span class="line">		low[a]=b+<span class="number">1</span>;</span><br><span class="line">		high[a]=c<span class="number">-1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">memset</span>(f,<span class="number">0x3f</span>,<span class="keyword">sizeof</span> f);</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)f[<span class="number">0</span>][i] = <span class="number">0</span>;<span class="comment">//不需要点击 </span></span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123;<span class="comment">//状态</span></span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=x[i]+<span class="number">1</span>;j&lt;=m+x[i];j++)<span class="comment">//完全背包 </span></span><br><span class="line">			f[i][j]=min(f[i][j-x[i]]+<span class="number">1</span>,f[i<span class="number">-1</span>][j-x[i]]+<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=m+<span class="number">1</span>;j&lt;=m+x[i];j++)<span class="comment">//边界问题 </span></span><br><span class="line">			f[i][m]=min(f[i][m],f[i][j]);</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=m-y[i];j&gt;=<span class="number">1</span>;j--)<span class="comment">//0-1背包 </span></span><br><span class="line">			f[i][j]=min(f[i][j],f[i<span class="number">-1</span>][j+y[i]]);	</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;low[i];j++)<span class="comment">//注意是小于，定义的边界是可行的</span></span><br><span class="line">			f[i][j]=f[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=high[i]+<span class="number">1</span>;j&lt;=m;j++)</span><br><span class="line">			f[i][j]=f[<span class="number">0</span>][<span class="number">0</span>];	</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=f[<span class="number">0</span>][<span class="number">0</span>];</span><br><span class="line">	<span class="keyword">for</span>(re <span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)ans=min(ans,f[n][i]);</span><br><span class="line">	<span class="keyword">if</span>(ans&lt;f[<span class="number">0</span>][<span class="number">0</span>])&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;1\n%d&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span>&#123;</span><br><span class="line">		<span class="built_in">puts</span>(<span class="string">&quot;0&quot;</span>);</span><br><span class="line">		re <span class="keyword">int</span> i,j;</span><br><span class="line">		<span class="keyword">for</span>(i=n;i&gt;=<span class="number">1</span>;i--)&#123;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">1</span>;j&lt;=m;j++)&#123;</span><br><span class="line">				<span class="keyword">if</span>(f[i][j]&lt;f[<span class="number">0</span>][<span class="number">0</span>])<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(j&lt;=m)<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">		ans = <span class="number">0</span>;</span><br><span class="line">		<span class="keyword">for</span>(re <span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=i;j++)<span class="keyword">if</span>(vis[j])ans++;	</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>,ans);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>他曾经做题记录：</p>
-<p><a href="https://www.luogu.com.cn/record/46134608">R46134608</a></p>
-]]></content>
-      <categories>
-        <category>模拟赛</category>
-      </categories>
-      <tags>
-        <tag>模拟赛</tag>
-        <tag>日志</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>扩展中国剩余定理</title>
     <url>/39570/</url>
     <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">extcrt</span><span class="params">(T n, T *b, T *a)</span> </span>&#123;</span><br><span class="line">    T ans = a[<span class="number">1</span>], M = b[<span class="number">1</span>], x, y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        T B = ((a[i] - ans) % b[i] + b[i]) % b[i];</span><br><span class="line">        T GCD = extgcd&lt;T&gt;(M, b[i], x, y);</span><br><span class="line">        x = qmul&lt;T&gt;(x, B / GCD, b[i]);</span><br><span class="line">        ans += M * x;</span><br><span class="line">        M *= b[i] / GCD;</span><br><span class="line">        ans = (ans + M) % M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -263,18 +275,6 @@
         <tag>同余</tag>
         <tag>扩展欧几里得算法</tag>
         <tag>扩展中国剩余定理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>普通快读</title>
-    <url>/40753/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline bool fqreadi(T &amp;n, FILE *fp);</span></span><br><span class="line"><span class="comment">  从 fp 中读入一个类型为 T 的整数</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline bool qreadi(T &amp;n);</span></span><br><span class="line"><span class="comment">  从标准输入中读入一个类型为 T 的整数</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">fqreadi</span><span class="params">(T &amp;n, FILE *fp)</span> </span>&#123;</span><br><span class="line">    n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">std</span>::getc(fp);</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">std</span>::<span class="built_in">isdigit</span>(ch) &amp;&amp; (ch ^ <span class="number">45</span>) &amp;&amp; (ch ^ EOF)) ch = <span class="built_in">std</span>::getc(fp);</span><br><span class="line">    <span class="keyword">if</span> (!(ch ^ EOF)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (!(ch ^ <span class="number">45</span>)) flag = <span class="literal">true</span>, ch = <span class="built_in">std</span>::getc(fp);</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">std</span>::<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">std</span>::getc(fp);</span><br><span class="line">    <span class="keyword">if</span> (flag) n = (~ n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (!(ch ^ EOF)) <span class="built_in">std</span>::ungetc(ch, fp);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">qreadi</span><span class="params">(T &amp;n)</span> </span>&#123;<span class="keyword">return</span> fqreadi(n, <span class="built_in">stdin</span>);&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>技巧</category>
-      </categories>
-      <tags>
-        <tag>快读</tag>
-        <tag>卡常</tag>
       </tags>
   </entry>
   <entry>
@@ -304,21 +304,6 @@
       </tags>
   </entry>
   <entry>
-    <title>扩展欧拉定理</title>
-    <url>/26296/</url>
-    <content><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;(a,\,p)=1\\ a^b,&amp;(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>扩展欧拉定理</tag>
-        <tag>欧拉函数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>快速幂</title>
     <url>/6782/</url>
     <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T qpowi(T b, T p);</span></span><br><span class="line"><span class="comment">  求 b^p</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T qpowimod(T b, T p, T mod);</span></span><br><span class="line"><span class="comment">  求 (b^p)%mod</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowi</span><span class="params">(T b, T p)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s *= b;</span><br><span class="line">        b *= b;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowimod</span><span class="params">(T b, T p, T mod)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s = s * b % mod;</span><br><span class="line">        b = b * b % mod;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s % mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
@@ -329,23 +314,6 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>快速幂</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>费马小定理</title>
-    <url>/19332/</url>
-    <content><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="形式一"><a href="#形式一" class="headerlink" title="形式一"></a>形式一</h2><p>若 $p$ 为质数，且  $a$ 与 $p$ 互质（即 $(a, p) = 1$ ），则有</p>
-<p>$$a^{p - 1} \equiv 1 \pmod{p}$$</p>
-<h2 id="形式二"><a href="#形式二" class="headerlink" title="形式二"></a>形式二</h2><p>若 $p$ 为质数，对于任意 $a$ 有</p>
-<p>$$a^p \equiv a \pmod{p}$$</p>
-]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>费马小定理</tag>
       </tags>
   </entry>
   <entry>
@@ -364,6 +332,21 @@
       </tags>
   </entry>
   <entry>
+    <title>扩展欧拉定理</title>
+    <url>/26296/</url>
+    <content><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;(a,\,p)=1\\ a^b,&amp;(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>扩展欧拉定理</tag>
+        <tag>欧拉函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线性求乘法逆元</title>
     <url>/28476/</url>
     <content><![CDATA[<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline void get_inverse1(T n, T p, T* inverse);</span></span><br><span class="line"><span class="comment">  线性求 n 以下关于模 p 的逆元</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_inverse1</span><span class="params">(T n, T p, T* inverse)</span> </span>&#123;</span><br><span class="line">    inverse[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        inverse[i] = p - p / i * inverse[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -379,6 +362,23 @@
         <tag>筛法</tag>
         <tag>线性筛</tag>
         <tag>乘法逆元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>费马小定理</title>
+    <url>/19332/</url>
+    <content><![CDATA[<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="形式一"><a href="#形式一" class="headerlink" title="形式一"></a>形式一</h2><p>若 $p$ 为质数，且  $a$ 与 $p$ 互质（即 $(a, p) = 1$ ），则有</p>
+<p>$$a^{p - 1} \equiv 1 \pmod{p}$$</p>
+<h2 id="形式二"><a href="#形式二" class="headerlink" title="形式二"></a>形式二</h2><p>若 $p$ 为质数，对于任意 $a$ 有</p>
+<p>$$a^p \equiv a \pmod{p}$$</p>
+]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>费马小定理</tag>
       </tags>
   </entry>
   <entry>
@@ -446,23 +446,10 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-04-03 杂谈</title>
-    <url>/41061/</url>
-    <content><![CDATA[<p>马上信息技术学业水平考试，班里一群对 $Python$ 一无所知的人， $MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
-]]></content>
-      <categories>
-        <category>杂谈</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
-        <tag>杂谈</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>预处理二进制对数表</title>
     <url>/52240/</url>
     <content><![CDATA[<p>预处理 $lb$ 表。</p>
-<h1 id="code-Green-code"><a href="#code-Green-code" class="headerlink" title="$\code{Green}code$"></a>$\code{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">mklb</span><span class="params">(T n, T *lb_table)</span> </span>&#123;</span><br><span class="line">    lb_table = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    lb_table[<span class="number">1</span>] = <span class="number">0</span>, lb_table[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= n; ++i) lb_table[i] = lb_table[<span class="number">1</span> &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">mklb</span><span class="params">(T n, T *lb_table)</span> </span>&#123;</span><br><span class="line">    lb_table = <span class="keyword">new</span> T(n + <span class="number">5</span>);</span><br><span class="line">    lb_table[<span class="number">1</span>] = <span class="number">0</span>, lb_table[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">3</span>; i &lt;= n; ++i) lb_table[i] = lb_table[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>技巧</category>
       </categories>
@@ -476,25 +463,28 @@
       </tags>
   </entry>
   <entry>
-    <title>测试</title>
-    <url>/37773/</url>
-    <content><![CDATA[<h1 id="本博客已上线"><a href="#本博客已上线" class="headerlink" title="本博客已上线"></a>本博客已上线</h1>]]></content>
+    <title>稀疏表</title>
+    <url>/59112/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  lb() 为二进制对数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sparse_table</span> &#123;</span></span><br><span class="line">	<span class="keyword">private</span>:</span><br><span class="line">		T **_table;</span><br><span class="line">		T _n;</span><br><span class="line">		T _logn;</span><br><span class="line">		<span class="keyword">template</span> &lt;<span class="keyword">typename</span> A&gt;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> A <span class="title">max</span><span class="params">(<span class="keyword">const</span> A &amp;a, <span class="keyword">const</span> A &amp;b)</span> </span>&#123;<span class="keyword">return</span> (a &gt; b) ? a : b;&#125;</span><br><span class="line">	<span class="keyword">public</span>:</span><br><span class="line">		sparse_table(T n, T *a) : _n(n), _logn(lb(n) + <span class="number">1</span>) &#123;</span><br><span class="line">			_table = <span class="keyword">new</span> T*[_n + <span class="number">5</span>];</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _n + <span class="number">5</span>; ++i) _table[i] = <span class="keyword">new</span> T[_logn + <span class="number">5</span>];</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= _n; ++i) _table[i][<span class="number">0</span>] = a[i];</span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= _logn; j++)</span><br><span class="line">				<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">					_table[i][j] = max&lt;T&gt;(_table[i][j - <span class="number">1</span>], _table[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="function"><span class="keyword">inline</span> T <span class="title">query</span><span class="params">(T l, T r)</span> </span>&#123;</span><br><span class="line">			T s = lb(r - l + <span class="number">1</span>);</span><br><span class="line">			<span class="keyword">return</span> max&lt;T&gt;(_table[l][s], _table[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">		&#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
-        <category>维护</category>
+        <category>数据结构</category>
       </categories>
       <tags>
-        <tag>日志</tag>
+        <tag>区间最值</tag>
+        <tag>稀疏表</tag>
       </tags>
   </entry>
   <entry>
-    <title>2021-03-22 更新</title>
-    <url>/33114/</url>
-    <content><![CDATA[<h1 id="Gitalk-评论功能已开启"><a href="#Gitalk-评论功能已开启" class="headerlink" title="Gitalk 评论功能已开启"></a>Gitalk 评论功能已开启</h1>]]></content>
+    <title>2021-04-03 杂谈</title>
+    <url>/41061/</url>
+    <content><![CDATA[<p>马上信息技术学业水平考试，班里一群对 $Python$ 一无所知的人， $MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
+]]></content>
       <categories>
-        <category>维护</category>
+        <category>杂谈</category>
       </categories>
       <tags>
         <tag>日志</tag>
+        <tag>杂谈</tag>
       </tags>
   </entry>
   <entry>
@@ -525,6 +515,28 @@
         <tag>数学</tag>
         <tag>逆元</tag>
         <tag>乘法逆元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021-03-22 更新</title>
+    <url>/33114/</url>
+    <content><![CDATA[<h1 id="Gitalk-评论功能已开启"><a href="#Gitalk-评论功能已开启" class="headerlink" title="Gitalk 评论功能已开启"></a>Gitalk 评论功能已开启</h1>]]></content>
+      <categories>
+        <category>维护</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/37773/</url>
+    <content><![CDATA[<h1 id="本博客已上线"><a href="#本博客已上线" class="headerlink" title="本博客已上线"></a>本博客已上线</h1>]]></content>
+      <categories>
+        <category>维护</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
       </tags>
   </entry>
   <entry>
