@@ -1,4 +1,297 @@
-<!doctype html>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon.ico">
+    
+
+    
+    
+        
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    
+
+    
+        <script data-ad-client="ca-" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
+
+
+
+
+
+
+
+
+
+
+
+
+          
+
+
+    
+    
+    <title>
+          
+            寂静的角落
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.3.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-cyan mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">寂静的角落</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">星空在前，路在脚下</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+                
+                <a href="/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-home"></i>
+                    </div>
+                    <div class="mdui-list-item-content">主页</div>
+                </a>
+            
+                
+                <a href="/tags/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-bookmark"></i>
+                    </div>
+                    <div class="mdui-list-item-content">标签</div>
+                </a>
+            
+                
+                <a href="/categories/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-folder"></i>
+                    </div>
+                    <div class="mdui-list-item-content">分类</div>
+                </a>
+            
+                
+                <a href="/archives/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-archive"></i>
+                    </div>
+                    <div class="mdui-list-item-content">归档</div>
+                </a>
+            
+                
+                <a href="/tools/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-tools"></i>
+                    </div>
+                    <div class="mdui-list-item-content">工具箱</div>
+                </a>
+            
+                
+                <a href="/links/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友链</div>
+                </a>
+            
+                
+                <a href="/about/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-user"></i>
+                    </div>
+                    <div class="mdui-list-item-content">关于</div>
+                </a>
+            
+                
+                <a href="/gallery/" class="mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-gallery"></i>
+                    </div>
+                    <div class="mdui-list-item-content">图集</div>
+                </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                    <img class="mdui-img-circle" src="/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">XYY1411</div>
+            <div class="sidebar-description">SJZEZ OIer</div>
+        </div>
+        <div style="text-align: center;">
+            <div style="margin: 0;color: #222;font-size: 16px;line-height: 32px;font-weight: 600;white-space: nowrap;">现在的时间是</div>
+            <canvas id="canvas" style="width:60%" height="100" width="700">时间</canvas>
+        </div>
+        <script>!function(){var t,o=[[[0,0,1,1,1,0,0],[0,1,1,0,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,0,1,1,0],[0,0,1,1,1,0,0]],[[0,0,0,1,1,0,0],[0,1,1,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[1,1,1,1,1,1,1]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,1,1],[1,1,1,1,1,1,1]],[[1,1,1,1,1,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,0,1,1,1,0],[0,0,1,1,1,1,0],[0,1,1,0,1,1,0],[1,1,0,0,1,1,0],[1,1,1,1,1,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,1,1]],[[1,1,1,1,1,1,1],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,1,1,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[1,1,1,1,1,1,1],[1,1,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,1,1,0,0,0,0]],[[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0]]],e=document.getElementById("canvas");if(e.getContext){var l=e.getContext("2d");e.height=100,e.width=700,l.fillStyle="#f00",l.fillRect(10,10,50,50);var r=[],f=[],i=e.height/20-1;function n(t,e){for(var n=0;n<o[e].length;n++)for(var a=0;a<o[e][n].length;a++)1==o[e][n][a]&&(l.beginPath(),l.arc(14*(i+2)*t+2*a*(i+1)+(i+1),2*n*(i+1)+(i+1),i,0,2*Math.PI),l.closePath(),l.fill())}function h(t,e){for(var n=[1,2,3],a=["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"],l=0;l<o[e].length;l++)for(var r=0;r<o[e][l].length;r++)if(1==o[e][l][r]){var h={x:14*(i+2)*t+2*r*(i+1)+(i+1),y:2*l*(i+1)+(i+1),stepX:Math.floor(4*Math.random()-2),stepY:-2*n[Math.floor(Math.random()*n.length)],color:a[Math.floor(Math.random()*a.length)],disY:1};f.push(h)}}t=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),r.push(t[1],t[2],10,t[3],t[4],10,t[5],t[6]),clearInterval(a);var a=setInterval(function(){!function(){var t=[],e=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),n=[];n.push(e[1],e[2],10,e[3],e[4],10,e[5],e[6]);for(var a=r.length-1;0<=a;a--)n[a]!==r[a]&&t.push(a+"_"+(Number(r[a])+1)%10);for(a=0;a<t.length;a++)h.apply(this,t[a].split("_"));r=n.concat()}(),function(){for(var t=0;t<f.length;t++)f[t].stepY+=f[t].disY,f[t].x+=f[t].stepX,f[t].y+=f[t].stepY,(f[t].x>700+i||f[t].y>100+i)&&(f.splice(t,1),t--)}(),function(){e.height=100;for(var t=0;t<r.length;t++)n(t,r[t]);for(t=0;t<f.length;t++)l.beginPath(),l.arc(f[t].x,f[t].y,i,0,2*Math.PI),l.fillStyle=f[t].color,l.closePath(),l.fill()}()},50)}}()</script>
+        <div class="sidebar-links">
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:xyy1411@gmail.com" class="mdui-chip-title">谷歌邮箱</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                    <a href="mailto:xiaoyuyu1411@qq.com" class="mdui-chip-title">QQ邮箱</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                    <a target="_blank" rel="noopener" href="https://github.com/XYY1411" class="mdui-chip-title">GitHub</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-twitter"></i></span>
+                    <a target="_blank" rel="noopener" href="https://twitter.com/XYY1411" class="mdui-chip-title">推特</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-bilibili"></i></span>
+                    <a target="_blank" rel="noopener" href="https://space.bilibili.com/470349774" class="mdui-chip-title">哔哩哔哩</a>
+                </div>
+            
+                
+                <div class="mdui-chip">
+                    <span class="mdui-chip-icon"><i class="iconfont icon-blog"></i></span>
+                    <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/129562" class="mdui-chip-title">洛谷</a>
+                </div>
+            
+        </div>
+        <ul class="mdui-list" mdui-collapse="{accordion: true}">
+            <li class="mdui-collapse-item">
+                <div class="mdui-collapse-item-header mdui-list-item mdui-ripple">
+                    <div class="mdui-list-item-icon">
+                        <i class="iconfont icon-link"></i>
+                    </div>
+                    <div class="mdui-list-item-content">友情链接</div>
+                    <div class="mdui-collapse-item-arrow">
+                        <i class="mdui-list-item-icon iconfont icon-angle-down"></i>
+                    </div>
+                </div>
+                <ul id="linksList" class="mdui-collapse-item-body mdui-list mdui-list-dense">
+                    
+                        <a target="_blank" rel="noopener" href="https://lawrencesivan.github.io/" class="mdui-list-item mdui-ripple">
+                            LawrenceSivan
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/AG-Liangsheng/" class="mdui-list-item mdui-ripple">
+                            ¶凉笙
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://renamoe.gitee.io/" class="mdui-list-item mdui-ripple">
+                            RenaMoe
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="http://121.89.192.123/" class="mdui-list-item mdui-ripple">
+                            Skirt!
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/wangdashen/" class="mdui-list-item mdui-ripple">
+                            王大神——A001
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/non-fried-chips/" class="mdui-list-item mdui-ripple">
+                            wiki
+                        </a>
+                    
+                        <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/blog/ycs-gg/" class="mdui-list-item mdui-ripple">
+                            YCS
+                        </a>
+                    
+                        <a href="mailto:xiaoyuyu1411@qq.com" class="mdui-list-item mdui-ripple">
+                            申请友链
+                        </a>
+                    
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <div class="mdui-card mdui-p-b-2 mdui-m-b-5">
+    <div class="post-header"> 
+        <a class="post-header-title" href="/404.html"></a>
+    </div>
+    <div id="page-card" class="mdui-card-content mdui-p-x-4">
+        
+            
+            
+            
+            <!DOCTYPE html>
 <html lang="zh-CN">
     <head>
         <meta charset="utf-8">
@@ -6,20 +299,467 @@
         <title>404 | 星空在前，路在脚下</title>
         <link rel="shortcut icon" href="/icons/favicon.ico">
         <script type="text/javascript" src="js/jquery.min.js"></script>
-        <style>
-html, body {
+        <style>html, body {
   background: #28254C;
   font-family: 'Ubuntu';
 }
+* {
+  box-sizing: border-box;
+}
+.box {
+  width: 350px;
+  height: 100%;
+  max-height: 600px;
+  min-height: 450px;
+  background: #332F63;
+  border-radius: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 50px;
+}
+.box .box__ghost {
+  padding: 15px 25px 25px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -30%);
+}
+.box .box__ghost .symbol:nth-child(1) {
+  opacity: .2;
+  animation: shine 4s ease-in-out 3s infinite;
+}
+.box .box__ghost .symbol:nth-child(1):before, .box .box__ghost .symbol:nth-child(1):after {
+  content: '';
+  width: 12px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+  bottom: 65px;
+  left: 0;
+}
+.box .box__ghost .symbol:nth-child(1):before {
+  transform: rotate(45deg);
+}
+.box .box__ghost .symbol:nth-child(1):after {
+  transform: rotate(-45deg);
+}
+.box .box__ghost .symbol:nth-child(2) {
+  position: absolute;
+  left: -5px;
+  top: 30px;
+  height: 18px;
+  width: 18px;
+  border: 4px solid;
+  border-radius: 50%;
+  border-color: #fff;
+  opacity: .2;
+  animation: shine 4s ease-in-out 1.3s infinite;
+}
+.box .box__ghost .symbol:nth-child(3) {
+  opacity: .2;
+  animation: shine 3s ease-in-out .5s infinite;
+}
+.box .box__ghost .symbol:nth-child(3):before, .box .box__ghost .symbol:nth-child(3):after {
+  content: '';
+  width: 12px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+  top: 5px;
+  left: 40px;
+}
+.box .box__ghost .symbol:nth-child(3):before {
+  transform: rotate(90deg);
+}
+.box .box__ghost .symbol:nth-child(3):after {
+  transform: rotate(180deg);
+}
+.box .box__ghost .symbol:nth-child(4) {
+  opacity: .2;
+  animation: shine 6s ease-in-out 1.6s infinite;
+}
+.box .box__ghost .symbol:nth-child(4):before, .box .box__ghost .symbol:nth-child(4):after {
+  content: '';
+  width: 15px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+  top: 10px;
+  right: 30px;
+}
+.box .box__ghost .symbol:nth-child(4):before {
+  transform: rotate(45deg);
+}
+.box .box__ghost .symbol:nth-child(4):after {
+  transform: rotate(-45deg);
+}
+.box .box__ghost .symbol:nth-child(5) {
+  position: absolute;
+  right: 5px;
+  top: 40px;
+  height: 12px;
+  width: 12px;
+  border: 3px solid;
+  border-radius: 50%;
+  border-color: #fff;
+  opacity: .2;
+  animation: shine 1.7s ease-in-out 7s infinite;
+}
+.box .box__ghost .symbol:nth-child(6) {
+  opacity: .2;
+  animation: shine 2s ease-in-out 6s infinite;
+}
+.box .box__ghost .symbol:nth-child(6):before, .box .box__ghost .symbol:nth-child(6):after {
+  content: '';
+  width: 15px;
+  height: 4px;
+  background: #fff;
+  position: absolute;
+  border-radius: 5px;
+  bottom: 65px;
+  right: -5px;
+}
+.box .box__ghost .symbol:nth-child(6):before {
+  transform: rotate(90deg);
+}
+.box .box__ghost .symbol:nth-child(6):after {
+  transform: rotate(180deg);
+}
+.box .box__ghost .box__ghost-container {
+  background: #fff;
+  width: 100px;
+  height: 100px;
+  border-radius: 100px 100px 0 0;
+  position: relative;
+  margin: 0 auto;
+  animation: upndown 3s ease-in-out infinite;
+}
+.box .box__ghost .box__ghost-container .box__ghost-eyes {
+  position: absolute;
+  left: 50%;
+  top: 45%;
+  height: 12px;
+  width: 70px;
+}
+.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-left {
+  width: 12px;
+  height: 12px;
+  background: #332F63;
+  border-radius: 50%;
+  margin: 0 10px;
+  position: absolute;
+  left: 0;
+}
+.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-right {
+  width: 12px;
+  height: 12px;
+  background: #332F63;
+  border-radius: 50%;
+  margin: 0 10px;
+  position: absolute;
+  right: 0;
+}
+.box .box__ghost .box__ghost-container .box__ghost-bottom {
+  display: flex;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+}
+.box .box__ghost .box__ghost-container .box__ghost-bottom div {
+  flex-grow: 1;
+  position: relative;
+  top: -10px;
+  height: 20px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+.box .box__ghost .box__ghost-container .box__ghost-bottom div:nth-child(2n) {
+  top: -12px;
+  margin: 0 -0px;
+  border-top: 15px solid #332F63;
+  background: transparent;
+}
+.box .box__ghost .box__ghost-shadow {
+  height: 20px;
+  box-shadow: 0 50px 15px 5px #3B3769;
+  border-radius: 50%;
+  margin: 0 auto;
+  animation: smallnbig 3s ease-in-out infinite;
+}
+.box .box__description {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.box .box__description .box__description-container {
+  color: #fff;
+  text-align: center;
+  width: 200px;
+  font-size: 16px;
+  margin: 0 auto;
+}
+.box .box__description .box__description-container .box__description-title {
+  font-size: 24px;
+  letter-spacing: .5px;
+}
+.box .box__description .box__description-container .box__description-text {
+  color: #8C8AA7;
+  line-height: 20px;
+  margin-top: 20px;
+}
+.box .box__description .box__button {
+  display: block;
+  position: relative;
+  background: #FF5E65;
+  border: 1px solid transparent;
+  border-radius: 50px;
+  height: 50px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  line-height: 50px;
+  font-size: 18px;
+  padding: 0 70px;
+  white-space: nowrap;
+  margin-top: 25px;
+  transition: background .5s ease;
+  overflow: hidden;
+}
+.box .box__description .box__button:before {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 100px;
+  background: #fff;
+  bottom: -25px;
+  left: 0;
+  border: 2px solid #fff;
+  transform: translateX(-50px) rotate(45deg);
+  transition: transform .5s ease;
+}
+.box .box__description .box__button:hover {
+  background: transparent;
+  border-color: #fff;
+}
+.box .box__description .box__button:hover:before {
+  transform: translateX(250px) rotate(45deg);
+}
+@keyframes upndown {
+  0% {
+    transform: translateY(5px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  100% {
+    transform: translateY(5px);
+  }
+}
+@keyframes smallnbig {
+  0% {
+    width: 90px;
+  }
+  50% {
+    width: 100px;
+  }
+  100% {
+    width: 90px;
+  }
+}
+@keyframes shine {
+  0% {
+    opacity: .2;
+  }
+  25% {
+    opacity: .1;
+  }
+  50% {
+    opacity: .2;
+  }
+  100% {
+    opacity: .2;
+  }
+}</style>
+    </head>
+    <body style>
 
-<ul>
-<li>{<br>box-sizing: border-box;<br>}</li>
-</ul>
-<p>.box {<br>  width: 350px;<br>  height: 100%;<br>  max-height: 600px;<br>  min-height: 450px;<br>  background: #332F63;<br>  border-radius: 20px;<br>  position: absolute;<br>  left: 50%;<br>  top: 50%;<br>  transform: translate(-50%, -50%);<br>  padding: 30px 50px;<br>}<br>.box .box__ghost {<br>  padding: 15px 25px 25px;<br>  position: absolute;<br>  left: 50%;<br>  top: 30%;<br>  transform: translate(-50%, -30%);<br>}<br>.box .box__ghost .symbol:nth-child(1) {<br>  opacity: .2;<br>  animation: shine 4s ease-in-out 3s infinite;<br>}<br>.box .box__ghost .symbol:nth-child(1):before, .box .box__ghost .symbol:nth-child(1):after {<br>  content: ‘’;<br>  width: 12px;<br>  height: 4px;<br>  background: #fff;<br>  position: absolute;<br>  border-radius: 5px;<br>  bottom: 65px;<br>  left: 0;<br>}<br>.box .box__ghost .symbol:nth-child(1):before {<br>  transform: rotate(45deg);<br>}<br>.box .box__ghost .symbol:nth-child(1):after {<br>  transform: rotate(-45deg);<br>}<br>.box .box__ghost .symbol:nth-child(2) {<br>  position: absolute;<br>  left: -5px;<br>  top: 30px;<br>  height: 18px;<br>  width: 18px;<br>  border: 4px solid;<br>  border-radius: 50%;<br>  border-color: #fff;<br>  opacity: .2;<br>  animation: shine 4s ease-in-out 1.3s infinite;<br>}<br>.box .box__ghost .symbol:nth-child(3) {<br>  opacity: .2;<br>  animation: shine 3s ease-in-out .5s infinite;<br>}<br>.box .box__ghost .symbol:nth-child(3):before, .box .box__ghost .symbol:nth-child(3):after {<br>  content: ‘’;<br>  width: 12px;<br>  height: 4px;<br>  background: #fff;<br>  position: absolute;<br>  border-radius: 5px;<br>  top: 5px;<br>  left: 40px;<br>}<br>.box .box__ghost .symbol:nth-child(3):before {<br>  transform: rotate(90deg);<br>}<br>.box .box__ghost .symbol:nth-child(3):after {<br>  transform: rotate(180deg);<br>}<br>.box .box__ghost .symbol:nth-child(4) {<br>  opacity: .2;<br>  animation: shine 6s ease-in-out 1.6s infinite;<br>}<br>.box .box__ghost .symbol:nth-child(4):before, .box .box__ghost .symbol:nth-child(4):after {<br>  content: ‘’;<br>  width: 15px;<br>  height: 4px;<br>  background: #fff;<br>  position: absolute;<br>  border-radius: 5px;<br>  top: 10px;<br>  right: 30px;<br>}<br>.box .box__ghost .symbol:nth-child(4):before {<br>  transform: rotate(45deg);<br>}<br>.box .box__ghost .symbol:nth-child(4):after {<br>  transform: rotate(-45deg);<br>}<br>.box .box__ghost .symbol:nth-child(5) {<br>  position: absolute;<br>  right: 5px;<br>  top: 40px;<br>  height: 12px;<br>  width: 12px;<br>  border: 3px solid;<br>  border-radius: 50%;<br>  border-color: #fff;<br>  opacity: .2;<br>  animation: shine 1.7s ease-in-out 7s infinite;<br>}<br>.box .box__ghost .symbol:nth-child(6) {<br>  opacity: .2;<br>  animation: shine 2s ease-in-out 6s infinite;<br>}<br>.box .box__ghost .symbol:nth-child(6):before, .box .box__ghost .symbol:nth-child(6):after {<br>  content: ‘’;<br>  width: 15px;<br>  height: 4px;<br>  background: #fff;<br>  position: absolute;<br>  border-radius: 5px;<br>  bottom: 65px;<br>  right: -5px;<br>}<br>.box .box__ghost .symbol:nth-child(6):before {<br>  transform: rotate(90deg);<br>}<br>.box .box__ghost .symbol:nth-child(6):after {<br>  transform: rotate(180deg);<br>}<br>.box .box__ghost .box__ghost-container {<br>  background: #fff;<br>  width: 100px;<br>  height: 100px;<br>  border-radius: 100px 100px 0 0;<br>  position: relative;<br>  margin: 0 auto;<br>  animation: upndown 3s ease-in-out infinite;<br>}<br>.box .box__ghost .box__ghost-container .box__ghost-eyes {<br>  position: absolute;<br>  left: 50%;<br>  top: 45%;<br>  height: 12px;<br>  width: 70px;<br>}<br>.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-left {<br>  width: 12px;<br>  height: 12px;<br>  background: #332F63;<br>  border-radius: 50%;<br>  margin: 0 10px;<br>  position: absolute;<br>  left: 0;<br>}<br>.box .box__ghost .box__ghost-container .box__ghost-eyes .box__eye-right {<br>  width: 12px;<br>  height: 12px;<br>  background: #332F63;<br>  border-radius: 50%;<br>  margin: 0 10px;<br>  position: absolute;<br>  right: 0;<br>}<br>.box .box__ghost .box__ghost-container .box__ghost-bottom {<br>  display: flex;<br>  position: absolute;<br>  top: 100%;<br>  left: 0;<br>  right: 0;<br>}<br>.box .box__ghost .box__ghost-container .box__ghost-bottom div {<br>  flex-grow: 1;<br>  position: relative;<br>  top: -10px;<br>  height: 20px;<br>  border-radius: 100%;<br>  background-color: #fff;<br>}<br>.box .box__ghost .box__ghost-container .box__ghost-bottom div:nth-child(2n) {<br>  top: -12px;<br>  margin: 0 -0px;<br>  border-top: 15px solid #332F63;<br>  background: transparent;<br>}<br>.box .box__ghost .box__ghost-shadow {<br>  height: 20px;<br>  box-shadow: 0 50px 15px 5px #3B3769;<br>  border-radius: 50%;<br>  margin: 0 auto;<br>  animation: smallnbig 3s ease-in-out infinite;<br>}<br>.box .box__description {<br>  position: absolute;<br>  bottom: 30px;<br>  left: 50%;<br>  transform: translateX(-50%);<br>}<br>.box .box__description .box__description-container {<br>  color: #fff;<br>  text-align: center;<br>  width: 200px;<br>  font-size: 16px;<br>  margin: 0 auto;<br>}<br>.box .box__description .box__description-container .box__description-title {<br>  font-size: 24px;<br>  letter-spacing: .5px;<br>}<br>.box .box__description .box__description-container .box__description-text {<br>  color: #8C8AA7;<br>  line-height: 20px;<br>  margin-top: 20px;<br>}<br>.box .box__description .box__button {<br>  display: block;<br>  position: relative;<br>  background: #FF5E65;<br>  border: 1px solid transparent;<br>  border-radius: 50px;<br>  height: 50px;<br>  text-align: center;<br>  text-decoration: none;<br>  color: #fff;<br>  line-height: 50px;<br>  font-size: 18px;<br>  padding: 0 70px;<br>  white-space: nowrap;<br>  margin-top: 25px;<br>  transition: background .5s ease;<br>  overflow: hidden;<br>}<br>.box .box__description .box__button:before {<br>  content: ‘’;<br>  position: absolute;<br>  width: 20px;<br>  height: 100px;<br>  background: #fff;<br>  bottom: -25px;<br>  left: 0;<br>  border: 2px solid #fff;<br>  transform: translateX(-50px) rotate(45deg);<br>  transition: transform .5s ease;<br>}<br>.box .box__description .box__button:hover {<br>  background: transparent;<br>  border-color: #fff;<br>}<br>.box .box__description .box__button:hover:before {<br>  transform: translateX(250px) rotate(45deg);<br>}</p>
-<p>@keyframes upndown {<br>  0% {<br>    transform: translateY(5px);<br>  }<br>  50% {<br>    transform: translateY(15px);<br>  }<br>  100% {<br>    transform: translateY(5px);<br>  }<br>}<br>@keyframes smallnbig {<br>  0% {<br>    width: 90px;<br>  }<br>  50% {<br>    width: 100px;<br>  }<br>  100% {<br>    width: 90px;<br>  }<br>}<br>@keyframes shine {<br>  0% {<br>    opacity: .2;<br>  }<br>  25% {<br>    opacity: .1;<br>  }<br>  50% {<br>    opacity: .2;<br>  }<br>  100% {<br>    opacity: .2;<br>  }<br>}<br>        </style><br>    </head><br>    <body><br>        <div class="box"><br>            <div class="box__ghost"><br>                <div class="symbol"></div><br>                <div class="symbol"></div><br>                <div class="symbol"></div><br>                <div class="symbol"></div><br>                <div class="symbol"></div><br>                <div class="symbol"></div><br>                <div class="box__ghost-container"><br>                    <div class="box__ghost-eyes"><br>                        <div class="box__eye-left"></div><br>                        <div class="box__eye-right"></div><br>                    </div><br>                    <div class="box__ghost-bottom"><br>                        <div></div><br>                        <div></div><br>                        <div></div><br>                        <div></div><br>                        <div></div><br>                    </div><br>                </div><br>                <div class="box__ghost-shadow"></div><br>            </div><br>            <div class="box__description"><br>                <div class="box__description-container"><br>                    <div class="box__description-title">404 Not Found!</div><br>                    <div class="box__description-text">看来我们找不到你要找的那一页。</div><br>                </div><br>                <a href="https://xyy1411.github.io/" class="box__button">返回</a><br>            </div><br>        </div><br>        <script><br>//based on <a href="https://dribbble.com/shots/3913847-404-page">https://dribbble.com/shots/3913847-404-page</a></p>
-<p>var pageX = $(document).width();<br>var pageY = $(document).height();<br>var mouseY=0;<br>var mouseX=0;</p>
-<p>$(document).mousemove(function( event ) {<br>  //verticalAxis<br>  mouseY = event.pageY;<br>  yAxis = (pageY/2-mouseY)/pageY*300;<br>  //horizontalAxis<br>  mouseX = event.pageX / -pageX;<br>  xAxis = -mouseX * 100 - 100;</p>
-<p>  $(‘.box__ghost-eyes’).css({ ‘transform’: ‘translate(‘+ xAxis +’%,-‘+ yAxis +’%)’ }); </p>
-<p>  //console.log(‘X: ‘ + xAxis);</p>
-<p>});<br>        </script><br>    </body></p>
+        <div class="box">
+            <div class="box__ghost">
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="symbol"></div>
+                <div class="box__ghost-container">
+                    <div class="box__ghost-eyes">
+                        <div class="box__eye-left"></div>
+                        <div class="box__eye-right"></div>
+                    </div>
+                    <div class="box__ghost-bottom">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
+                <div class="box__ghost-shadow"></div>
+            </div>
+            <div class="box__description">
+                <div class="box__description-container">
+                    <div class="box__description-title">404 Not Found!</div>
+                    <div class="box__description-text">看来我们找不到你要找的那一页。</div>
+                </div>
+                <a href="https://xyy1411.github.io/" class="box__button">返回</a>
+            </div>
+        </div>
+        <script>
+//based on https://dribbble.com/shots/3913847-404-page
+
+var pageX = $(document).width();
+var pageY = $(document).height();
+var mouseY=0;
+var mouseX=0;
+
+$(document).mousemove(function( event ) {
+  //verticalAxis
+  mouseY = event.pageY;
+  yAxis = (pageY/2-mouseY)/pageY*300; 
+  //horizontalAxis
+  mouseX = event.pageX / -pageX;
+  xAxis = -mouseX * 100 - 100;
+
+  $('.box__ghost-eyes').css({ 'transform': 'translate('+ xAxis +'%,-'+ yAxis +'%)' }); 
+
+  //console.log('X: ' + xAxis);
+
+});
+        </script>
+    </body>
 </html>
+            
+        </div>
+    </div>
+    
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">valine</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '7c29d7473f0f58379edd',
+    clientSecret: '0d7f77d446726630a3b5bb8dd15bd4f7a8df2037',
+    repo: 'gitalk_storage',
+    owner: 'XYY1411',
+    admin: ['XYY1411'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="vcomment"></div>
+<!--script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
+<!--script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: '#vcomment',
+    appId: 'zgj3OMN0s31zBieyUYDnUhmO-MdYXbMMI',
+    appKey: 'FxlRvrvQzz32kTFHuKnberaf',
+    placeholder: 'Just go go',
+    pageSize: 10,
+    avatar: 'mp',
+    lang: 'zh-CN',
+    meta: ['nick', 'mail', 'link'],
+    visitor: false,
+    enableQQ: true,
+    requiredFields: ['nick']
+  });
+</script>
+        </div>
+      
+    </div>
+
+
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2017 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        XYY1411
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>驱动 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>主题 <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a> 修改版</span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
