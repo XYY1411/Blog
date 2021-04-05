@@ -327,12 +327,20 @@
                 <a href="https://xyy1411.github.io/" class="box__button">返回</a>
             </div>
         </div>
-        <script>
-//based on https://dribbble.com/shots/3913847-404-page
-
-<p>var pageX = $(document).width();<br>var pageY = $(document).height();<br>var mouseY=0;<br>var mouseX=0;</p>
-<p>$(document).mousemove(function( event ) {<br>  //verticalAxis<br>  mouseY = event.pageY;<br>  yAxis = (pageY/2-mouseY)/pageY*300;<br>  //horizontalAxis<br>  mouseX = event.pageX / -pageX;<br>  xAxis = -mouseX * 100 - 100;</p>
-<p>  $(‘.box__ghost-eyes’).css({ ‘transform’: ‘translate(‘+ xAxis +’%,-‘+ yAxis +’%)’ }); </p>
-<p>  //console.log(‘X: ‘ + xAxis);</p>
-<p>});<br>        </script><br>    </body></p>
+        <script>//based on https://dribbble.com/shots/3913847-404-page
+var pageX = $(document).width();
+var pageY = $(document).height();
+var mouseY=0;
+var mouseX=0;
+$(document).mousemove(function( event ) {
+  //verticalAxis
+  mouseY = event.pageY;
+  yAxis = (pageY/2-mouseY)/pageY*300; 
+  //horizontalAxis
+  mouseX = event.pageX / -pageX;
+  xAxis = -mouseX * 100 - 100;
+  $('.box__ghost-eyes').css({ 'transform': 'translate('+ xAxis +'%,-'+ yAxis +'%)' }); 
+  //console.log('X: ' + xAxis);
+});</script>
+    </body>
 </html>
