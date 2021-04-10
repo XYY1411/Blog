@@ -50,14 +50,70 @@
 
 
 
+    
+        <script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        
+            load: ['[tex]/mhchem'],
+        
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        
+            packages: {'[+]': ['mhchem']},
+        
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
           
 
 
     
     
     <title>
-          
-            寂静的角落
+        
+            2021-04-10 杂谈 | 寂静的角落
         
     </title>
     
@@ -282,69 +338,176 @@
 </aside>
   
   <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
     
     
+      <div class="post-header"> 
+  <a class="post-header-title" href="/9512/">2021-04-10 杂谈</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-10
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-04-10
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
     
 
 
-<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
-    <div class="posts-collapse">
-        <div class="collection-title">
-            <h2>日志<small>标签</small></h2>
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=2021-04-10 杂谈&url=https://xyy1411.github.io/9512/&pic=https://xyy1411.github.io/null&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 新浪微博</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=2021-04-10 杂谈&url=https://xyy1411.github.io/9512/&via=XYY1411" target="_blank" class="mdui-ripple">分享到 推特</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://xyy1411.github.io/9512/" target="_blank" class="mdui-ripple">分享到 脸书</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://xyy1411.github.io/9512/" target="_blank" class="mdui-ripple">分享到 谷歌+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://xyy1411.github.io/9512/&title=2021-04-10 杂谈" target="_blank" class="mdui-ripple">分享到 领英</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=寂静的角落&title=2021-04-10 杂谈&summary=SJZEZ OIer&pics=https://xyy1411.github.io/null&url=https://xyy1411.github.io/9512/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://xyy1411.github.io/9512/&text=2021-04-10 杂谈" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%97%A5%E5%BF%97/ >日志</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%9D%82%E8%B0%88/ >杂谈</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <p>今天 $UNOI$ 开始了。</p>
+<p>今天突然知道<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%88%B1%E4%B8%81%E5%A0%A1%E5%85%AC%E7%88%B5%E8%8F%B2%E5%88%A9%E6%99%AE%E4%BA%B2%E7%8E%8B">菲利普亲王</a>去世了，经历过二战的人还活着的不多了</p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> --- 如无特殊说明本文采用<a style="text-decoration:none;" target="_blank" rel="noopener" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>许可证进行许可 --- </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/54665/">
+        <span>标记永久化线段树</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/9512/" id="toc-header" class="mdui-ripple">文章目录</a>
+        
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">valine</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '7c29d7473f0f58379edd',
+    clientSecret: '0d7f77d446726630a3b5bb8dd15bd4f7a8df2037',
+    repo: 'gitalk_storage',
+    owner: 'XYY1411',
+    admin: ['XYY1411'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
         </div>
-        
-            <div class="collection-item">
-                <h3><a href="/9512/">2021-04-10 杂谈</a></h3>
-                <time itemprop="dateCreated" datetime=2021-04-10 >
-                    2021.04.10
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/22936/">2021-04-03 更新</a></h3>
-                <time itemprop="dateCreated" datetime=2021-04-03 >
-                    2021.04.03
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/41061/">2021-04-03 杂谈</a></h3>
-                <time itemprop="dateCreated" datetime=2021-04-03 >
-                    2021.04.03
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/23275/">2021-04-02 模拟赛</a></h3>
-                <time itemprop="dateCreated" datetime=2021-04-03 >
-                    2021.04.03
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/23060/">2021-03-22 模拟赛</a></h3>
-                <time itemprop="dateCreated" datetime=2021-03-24 >
-                    2021.03.24
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/33114/">2021-03-22 更新</a></h3>
-                <time itemprop="dateCreated" datetime=2021-03-22 >
-                    2021.03.22
-                </time>
-            </div>
-        
-            <div class="collection-item">
-                <h3><a href="/37773/">测试</a></h3>
-                <time itemprop="dateCreated" datetime=2021-01-01 >
-                    2021.01.01
-                </time>
-            </div>
-        
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="vcomment"></div>
+<!--script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
+<!--script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: '#vcomment',
+    appId: 'zgj3OMN0s31zBieyUYDnUhmO-MdYXbMMI',
+    appKey: 'FxlRvrvQzz32kTFHuKnberaf',
+    placeholder: 'Just go go',
+    pageSize: 10,
+    avatar: 'mp',
+    lang: 'zh-CN',
+    meta: ['nick', 'mail', 'link'],
+    visitor: false,
+    enableQQ: true,
+    requiredFields: ['nick']
+  });
+</script>
+        </div>
+      
     </div>
-</div>
-
 
   </main>
   <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
@@ -392,6 +555,12 @@
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
 
 
 
