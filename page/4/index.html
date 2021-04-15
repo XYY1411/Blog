@@ -339,7 +339,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="color-Green-code"><...
+            <h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T qpowi(T b, T p);</span></span><br><span class="line"><span class="comment">  求 b^p</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T qpowimod(T b, T p, T mod);</span></span><br><span class="line"><span class="comment">  求 (b^p)%mod</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowi</span><span class="params">(T b, T p)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s *= b;</span><br><span class="line">        b *= b;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowimod</span><span class="params">(T b, T p, T mod)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s = s * b % mod;</span><br><span class="line">        b = b * b % mod;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s % mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         </div>
         
@@ -396,7 +396,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="color-Green-code"><...
+            <h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  T extgcd(T a, T b, T &amp;x, T &amp;y);</span></span><br><span class="line"><span class="comment">  求解 ax + by = gcd(a, b)</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">extgcd</span><span class="params">(T a, T b, T &amp;x, T &amp;y)</span> </span>&#123;</span><br><span class="line">    T d = a;</span><br><span class="line">    <span class="keyword">if</span> (b) &#123;</span><br><span class="line">        d = extgcd&lt;T&gt;(b, a % b, y, x);</span><br><span class="line">        y -= (a / b) * x;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> x = <span class="number">1</span>, y = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         </div>
         
@@ -453,7 +453,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="color-Green-code"><...
+            <h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">gcd</span><span class="params">(T a, T b)</span> </span>&#123;<span class="keyword">return</span> b ? gcd&lt;T&gt;(b, a % b) : a;&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">lcm</span><span class="params">(T a, T b)</span> </span>&#123;<span class="keyword">return</span> a / gcd&lt;T&gt;(a, b) * b;&#125;</span><br></pre></td></tr></table></figure>
           
         </div>
         
@@ -506,7 +506,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="color-Green-code"><...
+            <h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline bool fqreadi(T &amp;n, FILE *fp);</span></span><br><span class="line"><span class="comment">  从 fp 中读入一个类型为 T 的整数</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">  </span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline bool qreadi(T &amp;n);</span></span><br><span class="line"><span class="comment">  从标准输入中读入一个类型为 T 的整数</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">fqreadi</span><span class="params">(T &amp;n, FILE *fp)</span> </span>&#123;</span><br><span class="line">    n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = std::<span class="built_in">getc</span>(fp);</span><br><span class="line">    <span class="keyword">while</span> (!std::<span class="built_in">isdigit</span>(ch) &amp;&amp; (ch ^ <span class="number">45</span>) &amp;&amp; (ch ^ EOF)) ch = std::<span class="built_in">getc</span>(fp);</span><br><span class="line">    <span class="keyword">if</span> (!(ch ^ EOF)) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">if</span> (!(ch ^ <span class="number">45</span>)) flag = <span class="literal">true</span>, ch = std::<span class="built_in">getc</span>(fp);</span><br><span class="line">    <span class="keyword">while</span> (std::<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = std::<span class="built_in">getc</span>(fp);</span><br><span class="line">    <span class="keyword">if</span> (flag) n = (~ n + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">if</span> (!(ch ^ EOF)) std::<span class="built_in">ungetc</span>(ch, fp);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">qreadi</span><span class="params">(T &amp;n)</span> </span>&#123;<span class="keyword">return</span> <span class="built_in">fqreadi</span>(n, stdin);&#125;</span><br></pre></td></tr></table></figure>
           
         </div>
         
@@ -563,7 +563,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="上帝与集合的正确用法"><a href...
+            <p>扩展欧拉定理。</p>
           
         </div>
         
@@ -585,7 +585,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-12
+      更新于:&nbsp;2021-04-15
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -620,7 +620,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="【模板】-中国剩余定理，crt-曹冲养...
+            <p>中国剩余定理的板子。</p>
           
         </div>
         
@@ -642,7 +642,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-04-15
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -669,7 +669,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="本博客已上线"><a href="#本...
+            <h1 id="本博客已上线"><a href="#本博客已上线" class="headerlink" title="本博客已上线"></a>本博客已上线</h1>
           
         </div>
         

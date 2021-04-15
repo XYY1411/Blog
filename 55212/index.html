@@ -376,7 +376,10 @@
 
   
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <h1 id="上帝与集合的正确用法"><a href="#上帝与集合的正确用法" class="headerlink" title="上帝与集合的正确用法"></a>上帝与集合的正确用法</h1><p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4139">洛谷 Luogu4139</a>，大视野在线测评 BZOJ3884</p>
+    <p>扩展欧拉定理。</p>
+<span id="more"></span>
+
+<h1 id="上帝与集合的正确用法"><a href="#上帝与集合的正确用法" class="headerlink" title="上帝与集合的正确用法"></a>上帝与集合的正确用法</h1><p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4139">洛谷 Luogu4139</a>，大视野在线测评 BZOJ3884</p>
 <h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求 $2^{2^{2^\cdots}} \mod p$ 。</p>
 <h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>有扩展欧拉定理：</p>
 <p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;\gcd(a,\,p)=1\\ a^b,&amp;\gcd(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
