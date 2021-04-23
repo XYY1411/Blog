@@ -382,6 +382,9 @@
 <h2 id="BKDR-Hash"><a href="#BKDR-Hash" class="headerlink" title="BKDR Hash"></a>BKDR Hash</h2><p>这个算法将字符串当作一个 $P$ 进制数，每个字符再映射到一个数（通常是 $a<del>z$ 映射到 $1</del>26$ 然后计算出这个字符串在 $P$ 进制下模 $M$ 的值，即这个字符串的哈希值，通常选取 $131$ 或 $13331$ 作为模数，这样冲突概率比较小，这样一次哈希的叫做单（模数）哈希，通过使用两次模数不同的哈希可以更加精确降低错误率。</p>
 <p>为了简单，模数一般选 $2^{64}$ ，直接用 <code>unsigned long long</code> 储存，省去了极慢的取模运算。</p>
 <h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><h2 id="OI"><a href="#OI" class="headerlink" title="$OI$"></a>$OI$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="function">ull <span class="title">bkdr_hash</span><span class="params">(<span class="keyword">char</span>* s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    ull ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        ans = ans * base +(ull) s[i];</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p>【模板】字符串哈希 提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3370">洛谷 Luogu3370【模板】字符串哈希</a></p>
+
   </div>
   <!--文末结束语-->
   
@@ -392,6 +395,11 @@
   <div class="mdui-divider"></div>
   
   <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/53323/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>克努斯-莫里斯-普拉特算法，Knuth-Morris-Pratt Algorithm</span>
+      </a>
     
     
       <a rel="next" class="post-nav-item mdui-float-right" href="/17383/">
@@ -410,7 +418,7 @@
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
         <a href="/52567/" id="toc-header" class="mdui-ripple">文章目录</a>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#BKDR-Hash"><span class="toc-number">1.1.</span> <span class="toc-text">BKDR Hash</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#color-Green-code"><span class="toc-number">2.</span> <span class="toc-text">$\color{Green}code$</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OI"><span class="toc-number">2.1.</span> <span class="toc-text">$OI$</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">内容</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#BKDR-Hash"><span class="toc-number">1.1.</span> <span class="toc-text">BKDR Hash</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#color-Green-code"><span class="toc-number">2.</span> <span class="toc-text">$\color{Green}code$</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#OI"><span class="toc-number">2.1.</span> <span class="toc-text">$OI$</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">3.</span> <span class="toc-text">例题</span></a></li></ol>
       </li>
     </ul>
   </div>
