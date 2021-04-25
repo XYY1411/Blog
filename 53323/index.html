@@ -304,7 +304,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-23
+      更新于:&nbsp;2021-04-25
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -376,8 +376,20 @@
 
   
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <p>坑。</p>
+    <p>字符串模式匹配。</p>
 <span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a target="_blank" rel="noopener" href="https://oi-wiki.org/string/kmp/">OIWiki</a></p>
+<p>如何找到一个字符串（模式串）在另一个字符串（文本串）中出现了几次？或者说有几个子串和这个字符串一样？并且找到出现位置。</p>
+<p>我们可以枚举每一个子串的开头位置，一一去比较，复杂度为 $\Theta(mn)$ ，其中 $n$ 为文本串的长度， $m$ 为模式串的长度。</p>
+<p>这样很慢，有没有比较高效的方法？</p>
+<p>方法就是 $\re{KMP}$ 。</p>
+<p>$\re{KMP}$ 算法可以使用 $\Theta(m)$ 的时间对模式串预处理， $\Theta(n)$ 的时间对每个文本串进行匹配。</p>
+<p>怎么做到的？</p>
+<p>就是在每次失配的时候直接跳跃到下一个可以匹配未失配部分的位置，这样就做到了 $\Theta(n)$ 的时间匹配，而找到下一个位置就是预处理要做的。</p>
+<p>证明……不会，至今不懂，<del>直接背就好</del>。</p>
+<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>预处理 $\Theta(m)$ ，匹配 $\Theta(n)$ 。</p>
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm{\color{Green}code}$"></a>$\rm{\color{Green}code}$</h1><h2 id="rm-OI"><a href="#rm-OI" class="headerlink" title="$\rm{OI}$"></a>$\rm{OI}$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> next[maxn], len1, len2, ans[maxn], cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> s1[maxn], s2[maxn]; <span class="comment">// s2 为模式串， s1 为文本串</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">getfail</span><span class="params">()</span> </span>&#123;	 <span class="comment">// 预处理</span></span><br><span class="line">    len2 = <span class="built_in">strlen</span>(s2);</span><br><span class="line">    <span class="keyword">int</span> t1 = <span class="number">0</span>, t2;</span><br><span class="line">    next[<span class="number">0</span>] = t2 = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span> (t1 &lt; len2) </span><br><span class="line">        <span class="keyword">if</span> (t2 == <span class="number">-1</span> || s2[t1] == s2[t2])</span><br><span class="line">            next[++t1] = ++t2;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            t2 = next[t2];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">kmp</span><span class="params">()</span> </span>&#123; <span class="comment">// 匹配</span></span><br><span class="line">    len1 = <span class="built_in">strlen</span>(s1);</span><br><span class="line">    <span class="keyword">int</span> t1 = <span class="number">0</span>, t2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (t1 &lt; len1)&#123;</span><br><span class="line">        <span class="keyword">if</span> (t2 == <span class="number">-1</span> || s1[t1] == s2[t2]) </span><br><span class="line">            t1++, t2++;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            t2 = next[t2];</span><br><span class="line">        <span class="keyword">if</span> (t2 == len2) &#123;</span><br><span class="line">            ans[++cnt] = t1 - len2 + <span class="number">1</span>;</span><br><span class="line">            t2 = next[t2];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
   <!--文末结束语-->
   
@@ -406,7 +418,7 @@
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
         <a href="/53323/" id="toc-header" class="mdui-ripple">文章目录</a>
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">2.</span> <span class="toc-text">复杂度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rm-color-Green-code"><span class="toc-number">3.</span> <span class="toc-text">$\rm{\color{Green}code}$</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#rm-OI"><span class="toc-number">3.1.</span> <span class="toc-text">$\rm{OI}$</span></a></li></ol></li></ol>
       </li>
     </ul>
   </div>
