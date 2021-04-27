@@ -304,7 +304,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-23
+      更新于:&nbsp;2021-04-27
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -376,7 +376,7 @@
 <span id="more"></span>
 
 <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a target="_blank" rel="noopener" href="https://oi-wiki.org/string/hash/">OI Wiki</a></p>
-<p>在比较字符串时我们一般一个一个字符进行比较，对于长度为 $m$ 和 $n$ 的字符串，比较两者的时间复杂度为 $\Theta(max{m, n})$ ，但是每次比较都是这个时间复杂度，于是我们希望有 $\Theta(n)$ 预处理， $\Theta(1)$ 比较的方法，这个方法就是字符串哈希。</p>
+<p>在比较字符串时我们一般一个一个字符进行比较，对于长度为 $m$ 和 $n$ 的字符串，比较两者的时间复杂度为 $\Theta(max\{m, n\})$ ，但是每次比较都是这个时间复杂度，于是我们希望有 $\Theta(n)$ 预处理， $\Theta(1)$ 比较的方法，这个方法就是字符串哈希。</p>
 <p>字符串哈希，就是将一个字符串映射成一个整数，这样我们就可以直接用映射后的整数进行 $\Theta(1)$ 的比较。</p>
 <p>那么如何设计哈希函数呢？有很多方法，最常用的是“BKDR Hash”算法。</p>
 <h2 id="BKDR-Hash"><a href="#BKDR-Hash" class="headerlink" title="BKDR Hash"></a>BKDR Hash</h2><p>这个算法将字符串当作一个 $P$ 进制数，每个字符再映射到一个数（通常是 $a<del>z$ 映射到 $1</del>26$ 然后计算出这个字符串在 $P$ 进制下模 $M$ 的值，即这个字符串的哈希值，通常选取 $131$ 或 $13331$ 作为模数，这样冲突概率比较小，这样一次哈希的叫做单（模数）哈希，通过使用两次模数不同的哈希可以更加精确降低错误率。</p>
