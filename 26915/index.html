@@ -53,7 +53,7 @@
     
     <title>
         
-            判断单个素数 | 寂静的角落
+            素数 | 寂静的角落
         
     </title>
     
@@ -240,7 +240,7 @@
     
     
       <div class="post-header"> 
-  <a class="post-header-title" href="/26915/">判断单个素数</a>
+  <a class="post-header-title" href="/26915/">素数</a>
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
@@ -248,11 +248,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-04-28
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a>
     </span>
     
       <span>
@@ -274,10 +274,10 @@
       <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
       <ul class="mdui-menu" id="share_menu">
         <li class="mdui-menu-item">
-          <a href="http://service.weibo.com/share/share.php?appkey=&title=判断单个素数&url=https://xyy1411.github.io/26915/&pic=https://xyy1411.github.iohttps://xyy1411.github.io/icons/favicon.ico&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 新浪微博</a>
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=素数&url=https://xyy1411.github.io/26915/&pic=https://xyy1411.github.iohttps://xyy1411.github.io/icons/favicon.ico&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 新浪微博</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://twitter.com/intent/tweet?text=判断单个素数&url=https://xyy1411.github.io/26915/&via=XYY1411" target="_blank" class="mdui-ripple">分享到 推特</a>
+          <a href="https://twitter.com/intent/tweet?text=素数&url=https://xyy1411.github.io/26915/&via=XYY1411" target="_blank" class="mdui-ripple">分享到 推特</a>
         </li>
         <li class="mdui-menu-item">
           <a href="https://www.facebook.com/sharer/sharer.php?u=https://xyy1411.github.io/26915/" target="_blank" class="mdui-ripple">分享到 脸书</a>
@@ -286,13 +286,13 @@
           <a href="https://plus.google.com/share?url=https://xyy1411.github.io/26915/" target="_blank" class="mdui-ripple">分享到 谷歌+</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://xyy1411.github.io/26915/&title=判断单个素数" target="_blank" class="mdui-ripple">分享到 领英</a>
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://xyy1411.github.io/26915/&title=素数" target="_blank" class="mdui-ripple">分享到 领英</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="http://connect.qq.com/widget/shareqq/index.html?site=寂静的角落&title=判断单个素数&summary=SJZEZ OIer&pics=https://xyy1411.github.iohttps://xyy1411.github.io/icons/favicon.ico&url=https://xyy1411.github.io/26915/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=寂静的角落&title=素数&summary=SJZEZ OIer&pics=https://xyy1411.github.iohttps://xyy1411.github.io/icons/favicon.ico&url=https://xyy1411.github.io/26915/" target="_blank" class="mdui-ripple">分享到 QQ</a>
         </li>
         <li class="mdui-menu-item">
-          <a href="https://telegram.me/share/url?url=https://xyy1411.github.io/26915/&text=判断单个素数" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+          <a href="https://telegram.me/share/url?url=https://xyy1411.github.io/26915/&text=素数" target="_blank" class="mdui-ripple">分享到 Telegram</a>
         </li>
       </ul>
     
@@ -320,7 +320,15 @@
 
   
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline bool isprime(T n);</span></span><br><span class="line"><span class="comment">  判断 n 是否为质数</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>数论的基础（？）</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%B4%A8%E6%95%B0">维基百科</a>，<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E8%B4%A8%E6%95%B0/263515?fromtitle=%E7%B4%A0%E6%95%B0&fromid=115069">百度百科</a>，<a target="_blank" rel="noopener" href="https://oi-wiki.org/math/prime/">OI Wiki</a></p>
+<p>质数，又称素数，指在大于 $1$ 的自然数中，除了 $1$ 和该数自身外，无法被其他自然数整除的数。大于 $1$ 的自然数若不是素数，则称之为合数。</p>
+<h1 id="判断素数"><a href="#判断素数" class="headerlink" title="判断素数"></a>判断素数</h1><p>那么如何判断一个数是不是素数？<del>（傻子都会吧）</del></p>
+<p>就是一个一个试着去除。</p>
+<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>$\Theta(\sqrt n)$</p>
+<h2 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
   <!--文末结束语-->
   
@@ -334,7 +342,7 @@
     
       <a rel="prev" class="post-nav-item mdui-float-left" href="/48233/">
         <i class="iconfont icon-angle-left"></i>
-        <span>埃拉托斯特尼筛法 sieve of Eratosthenes</span>
+        <span>埃拉托斯特尼筛法 κόσκινον Ἐρατοσθένους</span>
       </a>
     
     
@@ -354,7 +362,7 @@
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
         <a href="/26915/" id="toc-header" class="mdui-ripple">文章目录</a>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#color-Green-code"><span class="toc-number">1.</span> <span class="toc-text">$\color{Green}code$</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%A4%E6%96%AD%E7%B4%A0%E6%95%B0"><span class="toc-number">2.</span> <span class="toc-text">判断素数</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%8D%E6%9D%82%E5%BA%A6"><span class="toc-number">2.1.</span> <span class="toc-text">复杂度</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rm-color-Green-code"><span class="toc-number">2.2.</span> <span class="toc-text">$\rm\color{Green}code$</span></a></li></ol></li></ol>
       </li>
     </ul>
   </div>
