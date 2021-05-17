@@ -240,6 +240,59 @@
       
       
         <div class="post-header"> 
+  <a class="post-header-title" href="/54665/">标记永久化线段树</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-07
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-04-07
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+      
+      
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/ >线段树</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC-RMQ/ >区间最值, RMQ</a>
+      </i>
+    
+  </div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">ls</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rs</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">mid</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>; &#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    ll v;</span><br><span class="line">    ll add;</span><br><span class="line">    <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">&#125; st[maxn &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; st[p].v = st[<span class="built_in">ls</span>(p)].v + st[<span class="built_in">rs</span>(p)].v; &#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r)</span><br><span class="line">        st[p].v = a[l];</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="built_in">mid</span>(l, r);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">ls</span>(p), l, m);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, r);</span><br><span class="line">        <span class="built_in">push_up</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, ll k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">        st[p].v = st[p].v + k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">        st[p].add = st[p].add + k;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    st[p].v += k * (<span class="built_in">min</span>(nr, cr) - <span class="built_in">max</span>(nl, cl) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">ls</span>(p), nl, m, cl, cr, k);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, ll tag)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> st[p].v + tag * (nr - nl + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">query</span>(<span class="built_in">ls</span>(p), nl, m, ql, qr, tag + st[p].add) +</span><br><span class="line">           <span class="built_in">query</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, ql, qr, tag + st[p].add);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/54665/">阅读更多</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
   <a class="post-header-title" href="/43706/">线段树 Segment Tree</a>
   <div class="post-header-meta">
     <span>
@@ -266,11 +319,11 @@
   <div class="post-tags">
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC-RMQ/ >区间最值, RMQ</a>
+        <a rel="tag" href = /tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/ >线段树</a>
       </i>
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/ >线段树</a>
+        <a rel="tag" href = /tags/%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC-RMQ/ >区间最值, RMQ</a>
       </i>
     
   </div>
@@ -744,59 +797,6 @@
         
         <div style="text-align:center;">
           <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/22936/">阅读更多</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
-  <a class="post-header-title" href="/41061/">2021-04-03 杂谈</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2021-04-03
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%97%A5%E5%BF%97/ >日志</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%9D%82%E8%B0%88/ >杂谈</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <p>马上信息技术学业水平考试，班里一群对 $Python$ 一无所知的人， $MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
-          
-        </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/41061/">阅读更多</a>
         </div>
       </div>
     </article>
