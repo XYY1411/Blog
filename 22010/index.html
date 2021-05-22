@@ -248,7 +248,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-05-17
+      更新于:&nbsp;2021-05-22
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -319,9 +319,10 @@
     <p>自己写的 Hexo 小工具。</p>
 <span id="more"></span>
 
-<h1 id="rm-code"><a href="#rm-code" class="headerlink" title="$\rm code$"></a>$\rm code$</h1><p>将第三行路径改了就好。</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cls</span></span><br><span class="line"><span class="variable">$choich</span>=<span class="number">6</span>;</span><br><span class="line"><span class="variable">$str</span>=<span class="string">&quot;&quot;</span>;</span><br><span class="line"><span class="variable">$blogpath</span>=<span class="string">&quot;cd D:\Blog\xyy1411.github.io;&quot;</span>;</span><br><span class="line"><span class="variable">$host</span>.ui.RawUI.WindowTitle=<span class="string">&quot;Hexo&quot;</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Made by XYY1411&quot;</span>;</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Powered by MSPS&quot;</span>;</span><br><span class="line">pause;</span><br><span class="line"><span class="keyword">while</span> (<span class="variable">$true</span>) &#123;</span><br><span class="line">    <span class="built_in">cls</span>;</span><br><span class="line">    <span class="variable">$str</span>=<span class="string">&quot;&quot;</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;1 新建博文&quot;</span>;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;2 打开博文&quot;</span>;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;3 打开博文附属文件夹&quot;</span>;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;4 打开博文文件夹&quot;</span>;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;5 提交更改&quot;</span>;</span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;6 退出&quot;</span>;</span><br><span class="line">    <span class="variable">$choich</span>=<span class="built_in">Read-Host</span> <span class="string">&quot;选择&quot;</span>;</span><br><span class="line">    <span class="keyword">switch</span> (<span class="variable">$choich</span>) &#123;</span><br><span class="line">        <span class="string">&quot;1&quot;</span> &#123; <span class="variable">$str</span>=<span class="built_in">Read-Host</span> <span class="string">&quot;博文名称&quot;</span>; <span class="variable">$str</span>=<span class="string">&quot;hexo new &quot;</span>+<span class="variable">$str</span>+<span class="string">&quot;;pause&quot;</span>; &#125;</span><br><span class="line">        <span class="string">&quot;2&quot;</span> &#123; <span class="variable">$str</span>=<span class="built_in">Read-Host</span> <span class="string">&quot;博文名称&quot;</span>; <span class="variable">$str</span>=<span class="string">&quot;cd .\source\_posts\;.\&quot;</span>+<span class="variable">$str</span>+<span class="string">&quot;.md;pause&quot;</span>; &#125;</span><br><span class="line">        <span class="string">&quot;3&quot;</span> &#123; <span class="variable">$str</span>=<span class="built_in">Read-Host</span> <span class="string">&quot;博文名称&quot;</span>; <span class="variable">$str</span>=<span class="string">&quot;cd .\source\_posts\&quot;</span>+<span class="variable">$str</span>+<span class="string">&quot;;start .;pause&quot;</span>; &#125;</span><br><span class="line">        <span class="string">&quot;4&quot;</span> &#123; <span class="variable">$str</span>=<span class="string">&quot;cd .\source\_posts\;start .;pause&quot;</span> &#125;</span><br><span class="line">        <span class="string">&quot;5&quot;</span> &#123; <span class="variable">$str</span>=<span class="string">&quot;hexo clean;hexo d -g;pause&quot;</span> &#125;</span><br><span class="line">        <span class="string">&quot;6&quot;</span> &#123; <span class="keyword">exit</span>; &#125;</span><br><span class="line">        default &#123; <span class="built_in">echo</span> <span class="string">&quot;错误输入&quot;</span>; pause; &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (!(<span class="variable">$str</span> <span class="operator">-eq</span>  <span class="string">&quot;&quot;</span>)) &#123; <span class="built_in">start</span> powershell <span class="variable">$blogpath</span><span class="variable">$str</span>; pause; &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<h1 id="更新日志"><a href="#更新日志" class="headerlink" title="更新日志"></a>更新日志</h1><p><time>2021.5.17</time> 建立。</p>
+<p><time>2021.5.17</time> 重构，更新了代码，增加了将输入文章名自动格式化的功能。</p>
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><p><a target="_blank" rel="noopener" href="https://github.com/XYY1411/hexo-tool">仓库</a></p>
+<h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>将 <code>hexo</code> 变量改为你的 Hexo 根目录即可。</p>
 
   </div>
   <!--文末结束语-->
@@ -333,6 +334,11 @@
   <div class="mdui-divider"></div>
   
   <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/23826/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>2021-05-22 杂谈</span>
+      </a>
     
     
       <a rel="next" class="post-nav-item mdui-float-right" href="/34166/">
@@ -351,7 +357,7 @@
     <ul class="mdui-menu" id="toc">
       <li class="mdui-menu-item">
         <a href="/22010/" id="toc-header" class="mdui-ripple">文章目录</a>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#rm-code"><span class="toc-number">1.</span> <span class="toc-text">$\rm code$</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97"><span class="toc-number">1.</span> <span class="toc-text">更新日志</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BB%A3%E7%A0%81"><span class="toc-number">2.</span> <span class="toc-text">代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8"><span class="toc-number">3.</span> <span class="toc-text">使用</span></a></li></ol>
       </li>
     </ul>
   </div>
