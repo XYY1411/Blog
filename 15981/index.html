@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!--修改 Referrer Policy-->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <!--浏览器升级提示-->
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <script>if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="https://support.dmeng.net/upgrade-your-browser.html?referrer="+encodeURIComponent(window.location.href); </script>
+    <!--字体预加载-->
+    <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font">
+    <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font">
+    
+    <link rel="shortcut icon" href="https://xyy1411.github.io/icons/favicon.ico">
+    <!--CSS-->
+    
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    <!--js-->
+    <!--Google Adsense Auto Ads-->
+    <!--Google Analytics-->
+    <!--Baidu Analytics-->
+    <!--CNZZ Analytics-->
+    <!--Tencent Analytics-->
+    <!--Math-->
+    <script>
+    window.MathJax = {
+        
+        loader: { load: ['[tex]/mhchem'] },
+        
+        tex: {
+            
+            packages: { '[+]': ['mhchem'] },
+            
+            inlineMath: { '[+]': [['$', '$']] }
+        }
+    };
+    </script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <!--标题-->
+    
+    <title>
+        
+            树堆，Treap | 寂静的角落
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+<body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-cyan mdui-theme-accent-blue">
+  
+  <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">寂静的角落</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">星空在前，路在脚下</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+  <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+            
+            <a href="/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-home"></i>
+                </div>
+                <div class="mdui-list-item-content">主页</div>
+            </a>
+            
+            
+            <a href="/tags/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-bookmark"></i>
+                </div>
+                <div class="mdui-list-item-content">标签</div>
+            </a>
+            
+            
+            <a href="/categories/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-folder"></i>
+                </div>
+                <div class="mdui-list-item-content">分类</div>
+            </a>
+            
+            
+            <a href="/archives/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-archive"></i>
+                </div>
+                <div class="mdui-list-item-content">归档</div>
+            </a>
+            
+            
+            <a href="/tools/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-tools"></i>
+                </div>
+                <div class="mdui-list-item-content">工具</div>
+            </a>
+            
+            
+            <a href="/links/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-link"></i>
+                </div>
+                <div class="mdui-list-item-content">友链</div>
+            </a>
+            
+            
+            <a href="/about/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-user"></i>
+                </div>
+                <div class="mdui-list-item-content">关于</div>
+            </a>
+            
+            
+            <a href="/gallery/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-gallery"></i>
+                </div>
+                <div class="mdui-list-item-content">图集</div>
+            </a>
+            
+            
+            <a href="/reference/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-article-line"></i>
+                </div>
+                <div class="mdui-list-item-content">参考文献</div>
+            </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                <img class="mdui-img-circle" src="https://xyy1411.github.io/icons/avatar.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">XYY1411</div>
+            <div class="sidebar-description">SJZEZ OIer</div>
+        </div>
+        <div style="text-align: center;">
+            <div style="margin: 0;color: #222;font-size: 16px;line-height: 32px;font-weight: 600;white-space: nowrap;">现在的时间是</div>
+            <canvas id="canvas" style="width:60%" height="100" width="700">时间</canvas>
+        </div>
+        <script>!function(){var t,o=[[[0,0,1,1,1,0,0],[0,1,1,0,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,0,1,1,0],[0,0,1,1,1,0,0]],[[0,0,0,1,1,0,0],[0,1,1,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[1,1,1,1,1,1,1]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,1,1],[1,1,1,1,1,1,1]],[[1,1,1,1,1,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,0,1,1,1,0],[0,0,1,1,1,1,0],[0,1,1,0,1,1,0],[1,1,0,0,1,1,0],[1,1,1,1,1,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,1,1]],[[1,1,1,1,1,1,1],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,1,1,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[1,1,1,1,1,1,1],[1,1,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,1,1,0,0,0,0]],[[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0]]],e=document.getElementById("canvas");if(e.getContext){var l=e.getContext("2d");e.height=100,e.width=700,l.fillStyle="#f00",l.fillRect(10,10,50,50);var r=[],f=[],i=e.height/20-1;function n(t,e){for(var n=0;n<o[e].length;n++)for(var a=0;a<o[e][n].length;a++)1==o[e][n][a]&&(l.beginPath(),l.arc(14*(i+2)*t+2*a*(i+1)+(i+1),2*n*(i+1)+(i+1),i,0,2*Math.PI),l.closePath(),l.fill())}function h(t,e){for(var n=[1,2,3],a=["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"],l=0;l<o[e].length;l++)for(var r=0;r<o[e][l].length;r++)if(1==o[e][l][r]){var h={x:14*(i+2)*t+2*r*(i+1)+(i+1),y:2*l*(i+1)+(i+1),stepX:Math.floor(4*Math.random()-2),stepY:-2*n[Math.floor(Math.random()*n.length)],color:a[Math.floor(Math.random()*a.length)],disY:1};f.push(h)}}t=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),r.push(t[1],t[2],10,t[3],t[4],10,t[5],t[6]),clearInterval(a);var a=setInterval(function(){!function(){var t=[],e=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),n=[];n.push(e[1],e[2],10,e[3],e[4],10,e[5],e[6]);for(var a=r.length-1;0<=a;a--)n[a]!==r[a]&&t.push(a+"_"+(Number(r[a])+1)%10);for(a=0;a<t.length;a++)h.apply(this,t[a].split("_"));r=n.concat()}(),function(){for(var t=0;t<f.length;t++)f[t].stepY+=f[t].disY,f[t].x+=f[t].stepX,f[t].y+=f[t].stepY,(f[t].x>700+i||f[t].y>100+i)&&(f.splice(t,1),t--)}(),function(){e.height=100;for(var t=0;t<r.length;t++)n(t,r[t]);for(t=0;t<f.length;t++)l.beginPath(),l.arc(f[t].x,f[t].y,i,0,2*Math.PI),l.fillStyle=f[t].color,l.closePath(),l.fill()}()},50)}}()</script>
+        <div class="sidebar-links">
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                <a href="mailto:xyy1411@gmail.com" class="mdui-chip-title">谷歌邮箱</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                <a href="mailto:xiaoyuyu1411@qq.com" class="mdui-chip-title">QQ邮箱</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                <a target="_blank" rel="noopener" href="https://github.com/XYY1411" class="mdui-chip-title">GitHub</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-twitter"></i></span>
+                <a target="_blank" rel="noopener" href="https://twitter.com/XYY1411" class="mdui-chip-title">推特</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-bilibili"></i></span>
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/470349774" class="mdui-chip-title">哔哩哔哩</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-blog"></i></span>
+                <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/129562" class="mdui-chip-title">洛谷</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+  
+  <main id="main-contain" class="mdui-container mdui-m-t-5">
+    <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/15981/">树堆，Treap</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-05-24
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-24
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=树堆，Treap&url=https://xyy1411.github.io/15981/&pic=https://xyy1411.github.iohttps://xyy1411.github.io/icons/favicon.ico&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 新浪微博</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=树堆，Treap&url=https://xyy1411.github.io/15981/&via=XYY1411" target="_blank" class="mdui-ripple">分享到 推特</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://xyy1411.github.io/15981/" target="_blank" class="mdui-ripple">分享到 脸书</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://xyy1411.github.io/15981/" target="_blank" class="mdui-ripple">分享到 谷歌+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://xyy1411.github.io/15981/&title=树堆，Treap" target="_blank" class="mdui-ripple">分享到 领英</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=寂静的角落&title=树堆，Treap&summary=SJZEZ OIer&pics=https://xyy1411.github.iohttps://xyy1411.github.io/icons/favicon.ico&url=https://xyy1411.github.io/15981/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://xyy1411.github.io/15981/&text=树堆，Treap" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%B9%B3%E8%A1%A1%E6%A0%91/ >平衡树</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E9%9A%8F%E6%9C%BA%E5%8C%96/ >随机化</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%A0%86/ >堆</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%A0%91%E5%A0%86%EF%BC%8CTreap/ >树堆，Treap</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <p>最简单的平衡树了。</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%91%E5%A0%86">维基百科</a>，<a target="_blank" rel="noopener" href="https://oi-wiki.org/ds/treap/">OI Wiki</a></p>
+<p>什么是 $\rm Treap$ ？</p>
+<p>$\rm Treap$ 这个词是由 $\rm Tree$ 和 $\rm Heap$ 组合而来的，表明它既有堆的性质，也有二叉搜索树的性质，它可以支持查询排名等操作。</p>
+<p>$\rm Treap$ 每个节点多维护一个优先级 $\rm priority$ ，父节点的优先级需要大于子节点，而优先级是随机生成的，所以 $\rm Treap$ 是期望平衡的。</p>
+<h1 id="结构"><a href="#结构" class="headerlink" title="结构"></a>结构</h1><p>一个结构体，我使用指针来存。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> key;</span><br><span class="line">    <span class="keyword">int</span> rank;</span><br><span class="line">    <span class="keyword">int</span> cnt;</span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    node* son[<span class="number">2</span>];</span><br><span class="line">    <span class="built_in">node</span>(<span class="keyword">int</span> value) : <span class="built_in">key</span>(value), <span class="built_in">rank</span>(<span class="built_in">rand</span>()), <span class="built_in">cnt</span>(<span class="number">1</span>), <span class="built_in">size</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        son[<span class="number">0</span>] = son[<span class="number">1</span>] = <span class="literal">nullptr</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        size = cnt + (son[<span class="number">0</span>] ? son[<span class="number">0</span>]-&gt;size : <span class="number">0</span>) + (son[<span class="number">1</span>] ? son[<span class="number">1</span>]-&gt;size : <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> node&amp; a, <span class="keyword">const</span> node&amp; b) &#123; <span class="keyword">return</span> a.rank &lt; b.rank; &#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="成员"><a href="#成员" class="headerlink" title="成员"></a>成员</h2><p><code>key</code> ：节点值；</p>
+<p><code>rank</code> ：优先级；</p>
+<p><code>cnt</code> ：该值有几个；</p>
+<p><code>size</code> ：子树大小（ <code>cnt</code> 加权）。</p>
+<h2 id="成员函数"><a href="#成员函数" class="headerlink" title="成员函数"></a>成员函数</h2><p><code>node(int valuse)</code> ：构造函数，并随机一个优先级。</p>
+<p><code>inline void update(void)</code> ：更新节点值。</p>
+<h2 id="非成员函数"><a href="#非成员函数" class="headerlink" title="非成员函数"></a>非成员函数</h2><p><code>inline bool operator&lt;(const node&amp; a, const node&amp; b)</code> ：用于比较优先级。</p>
+<h1 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h1><h2 id="建树"><a href="#建树" class="headerlink" title="建树"></a>建树</h2><p><del>$\rm Treap$ 不需要建树。</del></p>
+<h2 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h2><p>最简单的左右旋。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(node*&amp; p, <span class="keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">    node* t = p-&gt;son[d ^ <span class="number">1</span>];</span><br><span class="line">    p-&gt;son[d ^ <span class="number">1</span>] = t-&gt;son[d];</span><br><span class="line">    t-&gt;son[d] = p;</span><br><span class="line">    p-&gt;<span class="built_in">update</span>();</span><br><span class="line">    t-&gt;<span class="built_in">update</span>();</span><br><span class="line">    p = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>插入一个节点并通过旋转来调整树的结构使其满足堆和二叉搜索树的性质。</p>
+<p>由于值是可重复的，所以如果已经有了这个值，则 <code>cnt++</code> 。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(node*&amp; p, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        p = <span class="keyword">new</span> <span class="built_in">node</span>(k);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;key == k)</span><br><span class="line">        p-&gt;cnt++;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;key &gt; k)</span><br><span class="line">            <span class="built_in">insert</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">insert</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;son[<span class="number">0</span>] &amp;&amp; *p &lt; *p-&gt;son[<span class="number">0</span>])</span><br><span class="line">            <span class="built_in">rotate</span>(p, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;son[<span class="number">1</span>] &amp;&amp; *p &lt; *p-&gt;son[<span class="number">1</span>])</span><br><span class="line">            <span class="built_in">rotate</span>(p, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    p-&gt;<span class="built_in">update</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><p>删除一个值，但由于值是可重复的，先 <code>cnt--</code> 直到 $0$ ，然后再删节点。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(node*&amp; p, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p-&gt;key == k)</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;cnt &gt; <span class="number">1</span>)</span><br><span class="line">            p-&gt;cnt--;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (!(p-&gt;son[<span class="number">0</span>] || p-&gt;son[<span class="number">1</span>])) &#123;</span><br><span class="line">                <span class="keyword">delete</span> p;</span><br><span class="line">                p = <span class="literal">NULL</span>;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;son[<span class="number">0</span>] &amp;&amp; p-&gt;son[<span class="number">1</span>])</span><br><span class="line">                <span class="keyword">if</span> (*p-&gt;son[<span class="number">0</span>] &lt; *p-&gt;son[<span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="built_in">rotate</span>(p, <span class="number">0</span>);</span><br><span class="line">                    <span class="built_in">remove</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">rotate</span>(p, <span class="number">1</span>);</span><br><span class="line">                    <span class="built_in">remove</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;son[<span class="number">0</span>]) &#123;</span><br><span class="line">                <span class="built_in">rotate</span>(p, <span class="number">1</span>);</span><br><span class="line">                <span class="built_in">remove</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">rotate</span>(p, <span class="number">0</span>);</span><br><span class="line">                <span class="built_in">remove</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p-&gt;key)</span><br><span class="line">        <span class="built_in">remove</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">remove</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">    p-&gt;<span class="built_in">update</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找值为-k-的数的排名（排名定义为比当前数小的数的个数-1-）"><a href="#查找值为-k-的数的排名（排名定义为比当前数小的数的个数-1-）" class="headerlink" title="查找值为 $k$ 的数的排名（排名定义为比当前数小的数的个数 $ + 1$ ）"></a>查找值为 $k$ 的数的排名（排名定义为比当前数小的数的个数 $ + 1$ ）</h2><p>左右找就行，和普通的二叉搜索树一样。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_kth</span><span class="params">(node* p, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k == p-&gt;key)</span><br><span class="line">        <span class="keyword">return</span> (p-&gt;son[<span class="number">0</span>] ? p-&gt;son[<span class="number">0</span>]-&gt;size : <span class="number">0</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p-&gt;key)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">find_kth</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in"><span class="keyword">return</span></span> (p-&gt;son[<span class="number">0</span>] ? p-&gt;son[<span class="number">0</span>]-&gt;size : <span class="number">0</span>) + p-&gt;cnt +</span><br><span class="line">               <span class="built_in">find_kth</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="查找排名为-k-的数的值"><a href="#查找排名为-k-的数的值" class="headerlink" title="查找排名为 $k$ 的数的值"></a>查找排名为 $k$ 的数的值</h2><p>通过与子树大小比较来找。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_value</span><span class="params">(node* p, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s = p-&gt;son[<span class="number">0</span>] ? p-&gt;son[<span class="number">0</span>]-&gt;size : <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (s &lt; r &amp;&amp; r &lt;= s + p-&gt;cnt)</span><br><span class="line">        <span class="keyword">return</span> p-&gt;key;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (r &lt;= s)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">find_value</span>(p-&gt;son[<span class="number">0</span>], r);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">find_value</span>(p-&gt;son[<span class="number">1</span>], r - s - p-&gt;cnt);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="求-x-的前驱（前驱定义为小于-x-，且最大的数）"><a href="#求-x-的前驱（前驱定义为小于-x-，且最大的数）" class="headerlink" title="求 $x$ 的前驱（前驱定义为小于 $x$ ，且最大的数）"></a>求 $x$ 的前驱（前驱定义为小于 $x$ ，且最大的数）</h2><p>和普通的二叉搜索树一样。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_pre</span><span class="params">(node* p, <span class="keyword">int</span> k, <span class="keyword">int</span>&amp; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (p-&gt;key &lt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;key &gt; ans) ans = p-&gt;key;</span><br><span class="line">        <span class="built_in">get_pre</span>(p-&gt;son[<span class="number">1</span>], k, ans);</span><br><span class="line">    &#125; <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">get_pre</span>(p-&gt;son[<span class="number">0</span>], k, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="求-x-的后继（后继定义为小于-x-，且最小的数）"><a href="#求-x-的后继（后继定义为小于-x-，且最小的数）" class="headerlink" title="求 $x$ 的后继（后继定义为小于 $x$ ，且最小的数）"></a>求 $x$ 的后继（后继定义为小于 $x$ ，且最小的数）</h2><p>还是和普通的二叉搜索树一样。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_nxt</span><span class="params">(node* p, <span class="keyword">int</span> k, <span class="keyword">int</span>&amp; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (p-&gt;key &gt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;key &lt; ans) ans = p-&gt;key;</span><br><span class="line">        <span class="built_in">get_nxt</span>(p-&gt;son[<span class="number">0</span>], k, ans);</span><br><span class="line">    &#125; <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">get_nxt</span>(p-&gt;son[<span class="number">1</span>], k, ans);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm \color{Green} code$"></a>$\rm \color{Green} code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">qread</span><span class="params">(T&amp; n)</span> </span>&#123;</span><br><span class="line">    n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch) &amp;&amp; ch != <span class="string">&#x27;-&#x27;</span>) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>) flag = <span class="literal">true</span>, ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">if</span> (flag) n = (~n + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> key;</span><br><span class="line">    <span class="keyword">int</span> rank;</span><br><span class="line">    <span class="keyword">int</span> cnt;</span><br><span class="line">    <span class="keyword">int</span> size;</span><br><span class="line">    node* son[<span class="number">2</span>];</span><br><span class="line">    <span class="built_in">node</span>(<span class="keyword">int</span> value) : <span class="built_in">key</span>(value), <span class="built_in">rank</span>(<span class="built_in">rand</span>()), <span class="built_in">cnt</span>(<span class="number">1</span>), <span class="built_in">size</span>(<span class="number">1</span>) &#123;</span><br><span class="line">        son[<span class="number">0</span>] = son[<span class="number">1</span>] = <span class="literal">NULL</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">        size = cnt + (son[<span class="number">0</span>] ? son[<span class="number">0</span>]-&gt;size : <span class="number">0</span>) + (son[<span class="number">1</span>] ? son[<span class="number">1</span>]-&gt;size : <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125; * root;</span><br><span class="line"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> node&amp; a, <span class="keyword">const</span> node&amp; b) &#123; <span class="keyword">return</span> a.rank &lt; b.rank; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(node*&amp; p, <span class="keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">    node* t = p-&gt;son[d ^ <span class="number">1</span>];</span><br><span class="line">    p-&gt;son[d ^ <span class="number">1</span>] = t-&gt;son[d];</span><br><span class="line">    t-&gt;son[d] = p;</span><br><span class="line">    p-&gt;<span class="built_in">update</span>();</span><br><span class="line">    t-&gt;<span class="built_in">update</span>();</span><br><span class="line">    p = t;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(node*&amp; p, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        p = <span class="keyword">new</span> <span class="built_in">node</span>(k);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;key == k)</span><br><span class="line">        p-&gt;cnt++;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;key &gt; k)</span><br><span class="line">            <span class="built_in">insert</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">insert</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;son[<span class="number">0</span>] &amp;&amp; *p &lt; *p-&gt;son[<span class="number">0</span>])</span><br><span class="line">            <span class="built_in">rotate</span>(p, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;son[<span class="number">1</span>] &amp;&amp; *p &lt; *p-&gt;son[<span class="number">1</span>])</span><br><span class="line">            <span class="built_in">rotate</span>(p, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    p-&gt;<span class="built_in">update</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(node*&amp; p, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p-&gt;key == k)</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;cnt &gt; <span class="number">1</span>)</span><br><span class="line">            p-&gt;cnt--;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">if</span> (!(p-&gt;son[<span class="number">0</span>] || p-&gt;son[<span class="number">1</span>])) &#123;</span><br><span class="line">                <span class="keyword">delete</span> p;</span><br><span class="line">                p = <span class="literal">NULL</span>;</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;son[<span class="number">0</span>] &amp;&amp; p-&gt;son[<span class="number">1</span>])</span><br><span class="line">                <span class="keyword">if</span> (*p-&gt;son[<span class="number">0</span>] &lt; *p-&gt;son[<span class="number">1</span>]) &#123;</span><br><span class="line">                    <span class="built_in">rotate</span>(p, <span class="number">0</span>);</span><br><span class="line">                    <span class="built_in">remove</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="built_in">rotate</span>(p, <span class="number">1</span>);</span><br><span class="line">                    <span class="built_in">remove</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;son[<span class="number">0</span>]) &#123;</span><br><span class="line">                <span class="built_in">rotate</span>(p, <span class="number">1</span>);</span><br><span class="line">                <span class="built_in">remove</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="built_in">rotate</span>(p, <span class="number">0</span>);</span><br><span class="line">                <span class="built_in">remove</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p-&gt;key)</span><br><span class="line">        <span class="built_in">remove</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">remove</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">    p-&gt;<span class="built_in">update</span>();</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_kth</span><span class="params">(node* p, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (k == p-&gt;key)</span><br><span class="line">        <span class="keyword">return</span> (p-&gt;son[<span class="number">0</span>] ? p-&gt;son[<span class="number">0</span>]-&gt;size : <span class="number">0</span>) + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (k &lt; p-&gt;key)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">find_kth</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in"><span class="keyword">return</span></span> (p-&gt;son[<span class="number">0</span>] ? p-&gt;son[<span class="number">0</span>]-&gt;size : <span class="number">0</span>) + p-&gt;cnt +</span><br><span class="line">               <span class="built_in">find_kth</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">find_value</span><span class="params">(node* p, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> s = p-&gt;son[<span class="number">0</span>] ? p-&gt;son[<span class="number">0</span>]-&gt;size : <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (s &lt; r &amp;&amp; r &lt;= s + p-&gt;cnt)</span><br><span class="line">        <span class="keyword">return</span> p-&gt;key;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (r &lt;= s)</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">find_value</span>(p-&gt;son[<span class="number">0</span>], r);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">find_value</span>(p-&gt;son[<span class="number">1</span>], r - s - p-&gt;cnt);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_pre</span><span class="params">(node* p, <span class="keyword">int</span> k, <span class="keyword">int</span>&amp; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (p-&gt;key &lt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;key &gt; ans) ans = p-&gt;key;</span><br><span class="line">        <span class="built_in">get_pre</span>(p-&gt;son[<span class="number">1</span>], k, ans);</span><br><span class="line">    &#125; <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">get_pre</span>(p-&gt;son[<span class="number">0</span>], k, ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_nxt</span><span class="params">(node* p, <span class="keyword">int</span> k, <span class="keyword">int</span>&amp; ans)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (p == <span class="literal">NULL</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (p-&gt;key &gt; k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;key &lt; ans) ans = p-&gt;key;</span><br><span class="line">        <span class="built_in">get_nxt</span>(p-&gt;son[<span class="number">0</span>], k, ans);</span><br><span class="line">    &#125; <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">get_nxt</span>(p-&gt;son[<span class="number">1</span>], k, ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n, op, x;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">srand</span>(<span class="built_in">time</span>(<span class="number">0</span>));</span><br><span class="line">    <span class="built_in">qread</span>(n);</span><br><span class="line">    <span class="keyword">while</span> (n--) &#123;</span><br><span class="line">        <span class="built_in">qread</span>(op), <span class="built_in">qread</span>(x);</span><br><span class="line">        <span class="built_in"><span class="keyword">switch</span></span> (op) &#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">1</span>: &#123;</span><br><span class="line">                <span class="built_in">insert</span>(root, x);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">2</span>: &#123;</span><br><span class="line">                <span class="built_in">remove</span>(root, x);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">3</span>: &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">find_kth</span>(root, x));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">4</span>: &#123;</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">find_value</span>(root, x));</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">5</span>: &#123;</span><br><span class="line">                <span class="keyword">int</span> ans = <span class="number">-1e9</span>;</span><br><span class="line">                <span class="built_in">get_pre</span>(root, x, ans);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">case</span> <span class="number">6</span>: &#123;</span><br><span class="line">                <span class="keyword">int</span> ans = <span class="number">1e9</span>;</span><br><span class="line">                <span class="built_in">get_nxt</span>(root, x, ans);</span><br><span class="line">                <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans);</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p><a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P3369">洛谷 Luogu3369 【模板】普通平衡树</a></p>
+
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> 本文默认采用 <a style="text-decoration:none;color:#ccc;" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可证 </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/40982/">
+        <span>2021-05-23 模拟赛</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/15981/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%86%85%E5%AE%B9"><span class="toc-number">1.</span> <span class="toc-text">内容</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E6%9E%84"><span class="toc-number">2.</span> <span class="toc-text">结构</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%91%98"><span class="toc-number">2.1.</span> <span class="toc-text">成员</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">2.2.</span> <span class="toc-text">成员函数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9D%9E%E6%88%90%E5%91%98%E5%87%BD%E6%95%B0"><span class="toc-number">2.3.</span> <span class="toc-text">非成员函数</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C"><span class="toc-number">3.</span> <span class="toc-text">操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BB%BA%E6%A0%91"><span class="toc-number">3.1.</span> <span class="toc-text">建树</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%97%8B%E8%BD%AC"><span class="toc-number">3.2.</span> <span class="toc-text">旋转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8F%92%E5%85%A5"><span class="toc-number">3.3.</span> <span class="toc-text">插入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%A0%E9%99%A4"><span class="toc-number">3.4.</span> <span class="toc-text">删除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E5%80%BC%E4%B8%BA-k-%E7%9A%84%E6%95%B0%E7%9A%84%E6%8E%92%E5%90%8D%EF%BC%88%E6%8E%92%E5%90%8D%E5%AE%9A%E4%B9%89%E4%B8%BA%E6%AF%94%E5%BD%93%E5%89%8D%E6%95%B0%E5%B0%8F%E7%9A%84%E6%95%B0%E7%9A%84%E4%B8%AA%E6%95%B0-1-%EF%BC%89"><span class="toc-number">3.5.</span> <span class="toc-text">查找值为 $k$ 的数的排名（排名定义为比当前数小的数的个数 $ + 1$ ）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E6%8E%92%E5%90%8D%E4%B8%BA-k-%E7%9A%84%E6%95%B0%E7%9A%84%E5%80%BC"><span class="toc-number">3.6.</span> <span class="toc-text">查找排名为 $k$ 的数的值</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82-x-%E7%9A%84%E5%89%8D%E9%A9%B1%EF%BC%88%E5%89%8D%E9%A9%B1%E5%AE%9A%E4%B9%89%E4%B8%BA%E5%B0%8F%E4%BA%8E-x-%EF%BC%8C%E4%B8%94%E6%9C%80%E5%A4%A7%E7%9A%84%E6%95%B0%EF%BC%89"><span class="toc-number">3.7.</span> <span class="toc-text">求 $x$ 的前驱（前驱定义为小于 $x$ ，且最大的数）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B1%82-x-%E7%9A%84%E5%90%8E%E7%BB%A7%EF%BC%88%E5%90%8E%E7%BB%A7%E5%AE%9A%E4%B9%89%E4%B8%BA%E5%B0%8F%E4%BA%8E-x-%EF%BC%8C%E4%B8%94%E6%9C%80%E5%B0%8F%E7%9A%84%E6%95%B0%EF%BC%89"><span class="toc-number">3.8.</span> <span class="toc-text">求 $x$ 的后继（后继定义为小于 $x$ ，且最小的数）</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#rm-color-Green-code"><span class="toc-number">4.</span> <span class="toc-text">$\rm \color{Green} code$</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98"><span class="toc-number">5.</span> <span class="toc-text">例题</span></a></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">valine</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '7c29d7473f0f58379edd',
+    clientSecret: '0d7f77d446726630a3b5bb8dd15bd4f7a8df2037',
+    repo: 'gitalk_storage',
+    owner: 'XYY1411',
+    admin: ['XYY1411'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="vcomment"></div>
+<!--script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
+<!--script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: '#vcomment',
+    appId: 'zgj3OMN0s31zBieyUYDnUhmO-MdYXbMMI',
+    appKey: 'FxlRvrvQzz32kTFHuKnberaf',
+    placeholder: 'Just go go',
+    pageSize: 10,
+    avatar: 'mp',
+    lang: 'zh-CN',
+    meta: ['nick', 'mail', 'link'],
+    visitor: false,
+    enableQQ: true,
+    requiredFields: ['nick']
+  });
+</script>
+        </div>
+      
+    </div>
+
+  </main>
+  <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2017 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        XYY1411
+      </span>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>驱动 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>主题 <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a> 修改版</span>
+        </div>
+      
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+  
+  <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+  
+  
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+</body>
+</html >
