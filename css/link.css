@@ -1,0 +1,16 @@
+.link a {
+    color: #448aff;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    vertical-align: top;
+    outline: 0;
+    background-color: transparent;
+    text-decoration: none;
+    margin: 0px;
+    padding: 0px;
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
