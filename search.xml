@@ -282,6 +282,19 @@
       </tags>
   </entry>
   <entry>
+    <title>质因数分解 prime factorization</title>
+    <url>/42604/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T divide(T n, T *p, T *c);</span></span><br><span class="line"><span class="comment">  对 n 分解质因数</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">divide</span><span class="params">(T n, T *p, T *c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            p[++cnt] = i, c[cnt] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i, c[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) p[++cnt] = n, c[cnt] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>素数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>埃拉托斯特尼筛法 κόσκινον Ἐρατοσθένους</title>
     <url>/48233/</url>
     <content><![CDATA[<p>一个古老的算法。</p>
@@ -302,19 +315,6 @@
         <tag>素数</tag>
         <tag>筛法</tag>
         <tag>埃拉托斯特尼筛法, Eratosthenes</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>质因数分解 prime factorization</title>
-    <url>/42604/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T divide(T n, T *p, T *c);</span></span><br><span class="line"><span class="comment">  对 n 分解质因数</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">divide</span><span class="params">(T n, T *p, T *c)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            p[++cnt] = i, c[cnt] = <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i, c[i]++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) p[++cnt] = n, c[cnt] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> cnt;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>素数</tag>
       </tags>
   </entry>
   <entry>
@@ -369,6 +369,21 @@
       </tags>
   </entry>
   <entry>
+    <title>欧拉筛 sieve of Euler</title>
+    <url>/51755/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T get_prime_euler(T n, bool *isprime, T *prime_table);</span></span><br><span class="line"><span class="comment">  求 n 以下的质数表</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">get_prime_euler</span><span class="params">(T n, <span class="keyword">bool</span> *isprime, T *prime_table)</span> </span>&#123;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) prime_table[++p] = i;</span><br><span class="line">        <span class="keyword">for</span> (T j = <span class="number">1</span>, t; j &lt; p &amp;&amp; (t = i * prime_table[j]) &lt;= n; ++j) &#123;</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime_table[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>素数</tag>
+        <tag>筛法</tag>
+        <tag>线性筛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021-03-22 模拟赛</title>
     <url>/23060/</url>
     <content><![CDATA[<h1 id="emmmm"><a href="#emmmm" class="headerlink" title="emmmm~"></a>emmmm~</h1><p>T1 是区间DP，很容易就看出来了，然而题目出的却不知道如何合并……于是爆零。</p>
@@ -388,21 +403,6 @@
       <tags>
         <tag>模拟赛</tag>
         <tag>日志</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欧拉筛 sieve of Euler</title>
-    <url>/51755/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T get_prime_euler(T n, bool *isprime, T *prime_table);</span></span><br><span class="line"><span class="comment">  求 n 以下的质数表</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">get_prime_euler</span><span class="params">(T n, <span class="keyword">bool</span> *isprime, T *prime_table)</span> </span>&#123;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) prime_table[++p] = i;</span><br><span class="line">        <span class="keyword">for</span> (T j = <span class="number">1</span>, t; j &lt; p &amp;&amp; (t = i * prime_table[j]) &lt;= n; ++j) &#123;</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime_table[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>素数</tag>
-        <tag>筛法</tag>
-        <tag>线性筛</tag>
       </tags>
   </entry>
   <entry>
@@ -452,6 +452,34 @@
         <tag>并查集</tag>
         <tag>贪心</tag>
         <tag>克鲁斯卡尔算法，Kruskal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021-05-09 模拟赛</title>
+    <url>/49102/</url>
+    <content><![CDATA[<p>过于水的模拟赛。</p>
+<span id="more"></span>
+
+<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-Teams"><a href="#T1-Teams" class="headerlink" title="T1 Teams"></a>T1 Teams</h2><p><a href="teams.cpp" download="teams.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>字符串哈希预处理，枚举子集暴力处理，然而直接暴力都过了， $\rm{\color{Black}L\color{Red}awrenceSivan}$ 却没写出来。</p>
+<h2 id="T2-动物园"><a href="#T2-动物园" class="headerlink" title="T2 动物园"></a>T2 动物园</h2><p><a href="zoo.cpp" download="zoo.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P2375">洛谷 NOI2014 </a>，大视野在线评测 NOI2014 </p>
+<p>一道升级 $\rm KMP$ 。</p>
+<h2 id="T3-消灭恶魔"><a href="#T3-消灭恶魔" class="headerlink" title="T3 消灭恶魔"></a>T3 消灭恶魔</h2><p><a href="demon.cpp" download="demon.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>求二维凸包面积，直接叉乘即可。</p>
+<h1 id="合计-100-100-100-300"><a href="#合计-100-100-100-300" class="headerlink" title="合计 $100 + 100 + 100 = 300$"></a>合计 $100 + 100 + 100 = 300$</h1>]]></content>
+      <categories>
+        <category>模拟赛</category>
+      </categories>
+      <tags>
+        <tag>模拟赛</tag>
+        <tag>日志</tag>
+        <tag>字符串哈希</tag>
+        <tag>克努斯-莫里斯-普拉特算法，KMP</tag>
+        <tag>计算几何</tag>
+        <tag>二维凸包</tag>
       </tags>
   </entry>
   <entry>
@@ -513,40 +541,12 @@
         <tag>模拟赛</tag>
         <tag>日志</tag>
         <tag>并查集</tag>
-        <tag>搜索</tag>
         <tag>字符串哈希</tag>
+        <tag>搜索</tag>
         <tag>扫描线</tag>
         <tag>线段树</tag>
         <tag>离散化</tag>
         <tag>倍增</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2021-05-09 模拟赛</title>
-    <url>/49102/</url>
-    <content><![CDATA[<p>过于水的模拟赛。</p>
-<span id="more"></span>
-
-<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-Teams"><a href="#T1-Teams" class="headerlink" title="T1 Teams"></a>T1 Teams</h2><p><a href="teams.cpp" download="teams.cpp">考场代码</a></p>
-<p>提交地址：无</p>
-<p>字符串哈希预处理，枚举子集暴力处理，然而直接暴力都过了， $\rm{\color{Black}L\color{Red}awrenceSivan}$ 却没写出来。</p>
-<h2 id="T2-动物园"><a href="#T2-动物园" class="headerlink" title="T2 动物园"></a>T2 动物园</h2><p><a href="zoo.cpp" download="zoo.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P2375">洛谷 NOI2014 </a>，大视野在线评测 NOI2014 </p>
-<p>一道升级 $\rm KMP$ 。</p>
-<h2 id="T3-消灭恶魔"><a href="#T3-消灭恶魔" class="headerlink" title="T3 消灭恶魔"></a>T3 消灭恶魔</h2><p><a href="demon.cpp" download="demon.cpp">考场代码</a></p>
-<p>提交地址：无</p>
-<p>求二维凸包面积，直接叉乘即可。</p>
-<h1 id="合计-100-100-100-300"><a href="#合计-100-100-100-300" class="headerlink" title="合计 $100 + 100 + 100 = 300$"></a>合计 $100 + 100 + 100 = 300$</h1>]]></content>
-      <categories>
-        <category>模拟赛</category>
-      </categories>
-      <tags>
-        <tag>模拟赛</tag>
-        <tag>日志</tag>
-        <tag>字符串哈希</tag>
-        <tag>克努斯-莫里斯-普拉特算法，KMP</tag>
-        <tag>计算几何</tag>
-        <tag>二维凸包</tag>
       </tags>
   </entry>
   <entry>
@@ -636,24 +636,6 @@
       </tags>
   </entry>
   <entry>
-    <title>快速幂</title>
-    <url>/6782/</url>
-    <content><![CDATA[<p>经典二进制分治。</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>利用二进制分治思想，有 $a^{b+c} = a^b \cdot a^c,,,a^{2b} = a^b \cdot a^b = (a^b)^2$ 可以使我们减少大量的运算，而在 $\Theta(\log n)$ 的时间内求出幂。</p>
-<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowi</span><span class="params">(T b, T p)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s *= b;</span><br><span class="line">        b *= b;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowimod</span><span class="params">(T b, T p, T mod)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s = s * b % mod;</span><br><span class="line">        b = b * b % mod;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s % mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>快速幂</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>快速乘</title>
     <url>/21676/</url>
     <content><![CDATA[<p><del>快速</del>龟速乘。</p>
@@ -686,6 +668,24 @@
         <tag>数论</tag>
         <tag>数学</tag>
         <tag>费马小定理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快速幂</title>
+    <url>/6782/</url>
+    <content><![CDATA[<p>经典二进制分治。</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>利用二进制分治思想，有 $a^{b+c} = a^b \cdot a^c,,,a^{2b} = a^b \cdot a^b = (a^b)^2$ 可以使我们减少大量的运算，而在 $\Theta(\log n)$ 的时间内求出幂。</p>
+<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowi</span><span class="params">(T b, T p)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s *= b;</span><br><span class="line">        b *= b;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowimod</span><span class="params">(T b, T p, T mod)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s = s * b % mod;</span><br><span class="line">        b = b * b % mod;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s % mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>快速幂</tag>
       </tags>
   </entry>
   <entry>
@@ -750,6 +750,21 @@
       </tags>
   </entry>
   <entry>
+    <title>线性求欧拉函数</title>
+    <url>/58730/</url>
+    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline void get_phi(T n, T *phi_table);</span></span><br><span class="line"><span class="comment">  线性求 n 以下的欧拉函数，并存到 phi_table 中</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(T n, T *phi_table)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>算法</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>筛法</tag>
+        <tag>欧拉函数</tag>
+        <tag>线性筛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>线性求乘法逆元</title>
     <url>/28476/</url>
     <content><![CDATA[<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline void get_inverse1(T n, T p, T *inverse);</span></span><br><span class="line"><span class="comment">  线性求 n 以下关于模 p 的逆元</span></span><br><span class="line"><span class="comment">  T 必须为整型类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_inverse1</span><span class="params">(T n, T p, T *inverse)</span> </span>&#123;</span><br><span class="line">    inverse[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i)</span><br><span class="line">        inverse[i] = p - p / i * inverse[p % i] % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -767,21 +782,6 @@
         <tag>筛法</tag>
         <tag>线性筛</tag>
         <tag>乘法逆元</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性求欧拉函数</title>
-    <url>/58730/</url>
-    <content><![CDATA[<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline void get_phi(T n, T *phi_table);</span></span><br><span class="line"><span class="comment">  线性求 n 以下的欧拉函数，并存到 phi_table 中</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(T n, T *phi_table)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>算法</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>筛法</tag>
-        <tag>欧拉函数</tag>
-        <tag>线性筛</tag>
       </tags>
   </entry>
   <entry>
@@ -894,6 +894,17 @@
       </tags>
   </entry>
   <entry>
+    <title>计划</title>
+    <url>/22059/</url>
+    <content><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h2><h3 id="标记永久化"><a href="#标记永久化" class="headerlink" title="标记永久化"></a>标记永久化</h3><h3 id="权值线段树"><a href="#权值线段树" class="headerlink" title="权值线段树"></a>权值线段树</h3><h3 id="动态开点线段树"><a href="#动态开点线段树" class="headerlink" title="动态开点线段树"></a>动态开点线段树</h3><h3 id="线段树上二分"><a href="#线段树上二分" class="headerlink" title="线段树上二分"></a>线段树上二分</h3><h3 id="可持久化线段树（主席树）"><a href="#可持久化线段树（主席树）" class="headerlink" title="可持久化线段树（主席树）"></a>可持久化线段树（主席树）</h3><h2 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h2><h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><h2 id="可并堆"><a href="#可并堆" class="headerlink" title="可并堆"></a>可并堆</h2><h3 id="可删堆"><a href="#可删堆" class="headerlink" title="可删堆"></a>可删堆</h3><h3 id="左偏树"><a href="#左偏树" class="headerlink" title="左偏树"></a>左偏树</h3><h2 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h2><h3 id="Splay"><a href="#Splay" class="headerlink" title="Splay"></a>Splay</h3><h2 id="稀疏表"><a href="#稀疏表" class="headerlink" title="稀疏表"></a>稀疏表</h2><h2 id="树上倍增"><a href="#树上倍增" class="headerlink" title="树上倍增"></a>树上倍增</h2><h3 id="LCA"><a href="#LCA" class="headerlink" title="LCA"></a>LCA</h3><h1 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h1><h2 id="同余最短路"><a href="#同余最短路" class="headerlink" title="同余最短路"></a>同余最短路</h2><h2 id="分层图最短路"><a href="#分层图最短路" class="headerlink" title="分层图最短路"></a>分层图最短路</h2><h2 id="Tarjan"><a href="#Tarjan" class="headerlink" title="Tarjan"></a>Tarjan</h2><h2 id="静态仙人掌"><a href="#静态仙人掌" class="headerlink" title="静态仙人掌"></a>静态仙人掌</h2><h2 id="二分图最大独立集"><a href="#二分图最大独立集" class="headerlink" title="二分图最大独立集"></a>二分图最大独立集</h2><h2 id="二分图最小点覆盖"><a href="#二分图最小点覆盖" class="headerlink" title="二分图最小点覆盖"></a>二分图最小点覆盖</h2><h2 id="最大权闭合子图"><a href="#最大权闭合子图" class="headerlink" title="最大权闭合子图"></a>最大权闭合子图</h2><h2 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h2>]]></content>
+      <categories>
+        <category>计划</category>
+      </categories>
+      <tags>
+        <tag>计划</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>预处理二进制对数表</title>
     <url>/52240/</url>
     <content><![CDATA[<p>预处理 $lb$ 表。</p>
@@ -911,17 +922,6 @@
       </tags>
   </entry>
   <entry>
-    <title>计划</title>
-    <url>/22059/</url>
-    <content><![CDATA[<h1 id="数据结构"><a href="#数据结构" class="headerlink" title="数据结构"></a>数据结构</h1><h2 id="线段树"><a href="#线段树" class="headerlink" title="线段树"></a>线段树</h2><h3 id="标记永久化"><a href="#标记永久化" class="headerlink" title="标记永久化"></a>标记永久化</h3><h3 id="权值线段树"><a href="#权值线段树" class="headerlink" title="权值线段树"></a>权值线段树</h3><h3 id="动态开点线段树"><a href="#动态开点线段树" class="headerlink" title="动态开点线段树"></a>动态开点线段树</h3><h3 id="线段树上二分"><a href="#线段树上二分" class="headerlink" title="线段树上二分"></a>线段树上二分</h3><h3 id="可持久化线段树（主席树）"><a href="#可持久化线段树（主席树）" class="headerlink" title="可持久化线段树（主席树）"></a>可持久化线段树（主席树）</h3><h2 id="树状数组"><a href="#树状数组" class="headerlink" title="树状数组"></a>树状数组</h2><h2 id="哈希表"><a href="#哈希表" class="headerlink" title="哈希表"></a>哈希表</h2><h2 id="可并堆"><a href="#可并堆" class="headerlink" title="可并堆"></a>可并堆</h2><h3 id="可删堆"><a href="#可删堆" class="headerlink" title="可删堆"></a>可删堆</h3><h3 id="左偏树"><a href="#左偏树" class="headerlink" title="左偏树"></a>左偏树</h3><h2 id="二叉搜索树"><a href="#二叉搜索树" class="headerlink" title="二叉搜索树"></a>二叉搜索树</h2><h3 id="Splay"><a href="#Splay" class="headerlink" title="Splay"></a>Splay</h3><h2 id="稀疏表"><a href="#稀疏表" class="headerlink" title="稀疏表"></a>稀疏表</h2><h2 id="树上倍增"><a href="#树上倍增" class="headerlink" title="树上倍增"></a>树上倍增</h2><h3 id="LCA"><a href="#LCA" class="headerlink" title="LCA"></a>LCA</h3><h1 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h1><h2 id="同余最短路"><a href="#同余最短路" class="headerlink" title="同余最短路"></a>同余最短路</h2><h2 id="分层图最短路"><a href="#分层图最短路" class="headerlink" title="分层图最短路"></a>分层图最短路</h2><h2 id="Tarjan"><a href="#Tarjan" class="headerlink" title="Tarjan"></a>Tarjan</h2><h2 id="静态仙人掌"><a href="#静态仙人掌" class="headerlink" title="静态仙人掌"></a>静态仙人掌</h2><h2 id="二分图最大独立集"><a href="#二分图最大独立集" class="headerlink" title="二分图最大独立集"></a>二分图最大独立集</h2><h2 id="二分图最小点覆盖"><a href="#二分图最小点覆盖" class="headerlink" title="二分图最小点覆盖"></a>二分图最小点覆盖</h2><h2 id="最大权闭合子图"><a href="#最大权闭合子图" class="headerlink" title="最大权闭合子图"></a>最大权闭合子图</h2><h2 id="网络流"><a href="#网络流" class="headerlink" title="网络流"></a>网络流</h2>]]></content>
-      <categories>
-        <category>计划</category>
-      </categories>
-      <tags>
-        <tag>计划</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>线段树 Segment Tree</title>
     <url>/43706/</url>
     <content><![CDATA[<h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">ls</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123;<span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rs</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123;<span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">mid</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;<span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>;&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    ll v;</span><br><span class="line">    ll add;</span><br><span class="line">    <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>)&#123;&#125;</span><br><span class="line">&#125; st[maxn &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;st[p].v = st[<span class="built_in">ls</span>(p)].v + st[<span class="built_in">rs</span>(p)].v;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l == r)</span><br><span class="line">        st[p].v = a[l];</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="built_in">mid</span>(l, r);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">ls</span>(p), l, m);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, r);</span><br><span class="line">        <span class="built_in">push_up</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_down</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(l ,r);</span><br><span class="line">    st[<span class="built_in">ls</span>(p)].v += st[p].add * (m - l + <span class="number">1</span>);</span><br><span class="line">    st[<span class="built_in">rs</span>(p)].v += st[p].add * (r - m);</span><br><span class="line">    st[<span class="built_in">ls</span>(p)].add += st[p].add;</span><br><span class="line">    st[<span class="built_in">rs</span>(p)].add += st[p].add;</span><br><span class="line">    st[p].add = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, ll k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">        st[p].v += k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">        st[p].add += k;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">ls</span>(p), nl, m, cl, cr, k);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">    <span class="built_in">push_up</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> st[p].v;</span><br><span class="line">    <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">query</span>(<span class="built_in">ls</span>(p), nl, m, ql, qr) + <span class="built_in">query</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, ql, qr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -933,6 +933,51 @@
       <tags>
         <tag>线段树</tag>
         <tag>区间最值, RMQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>【模板】 中国剩余定理，crt / 曹冲养猪</title>
+    <url>/35448/</url>
+    <content><![CDATA[<p>中国剩余定理的板子。</p>
+<span id="more"></span>
+
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P1495">洛谷 Luogu1495</a>，<a href="https://vijos.org/p/1164">Vijos VJ1164</a></p>
+<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求解一元线性同余方程组。</p>
+<p>设母猪有 $x$ 头。</p>
+<p>求解</p>
+<p>$$\begin{cases} x &amp;\equiv b_1 \pmod {a_1} \\ x &amp;\equiv b_2 \pmod {a_2} \\ &amp;\vdots \\ x &amp;\equiv b_k \pmod {a_k} \\ \end{cases} $$</p>
+<p>假定 $a_i, a_j$ 互质。</p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>显然中国剩余定理求解即可。</p>
+<h2 id="中国剩余定理（CRT）"><a href="#中国剩余定理（CRT）" class="headerlink" title="中国剩余定理（CRT）"></a>中国剩余定理（CRT）</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>中国剩余定理 (Chinese Remainder Theorem, CRT) 可以用来求解一元线性同余方程组</p>
+<p>$$\begin{cases} x &amp;\equiv a_1 \pmod {m_1} \\ x &amp;\equiv a_2 \pmod {m_2} \\ &amp;\vdots \\ x &amp;\equiv a_k \pmod {m_k} \\ \end{cases} $$</p>
+<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p>设所有模数的积为</p>
+<p>$$M = \prod m_i$$</p>
+<p>除了第 $i$ 个方程外模数的积为</p>
+<p>$$M_i = \frac{M}{m_i}$$</p>
+<p>， $M_i$ 在 $\mod{m_i}$ 下的逆元为 $M_i^{-1}$ ，</p>
+<p>设</p>
+<p>$$c_i = M_iM_i^{-1}$$</p>
+<p>。</p>
+<p>则有一解</p>
+<p>$$x = \sum a_ic_i \pmod{M}$$</p>
+<p>。</p>
+<p>注意， $M_iM_i^{-1} \ne 1$ ，因为 $M_i^{-1}$ 是在 $\bmod {m_i}$ 的剩余系下的，所以在实数系下不一定成立。</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>有了做法我们还应保证其正确<del>交给数学家</del>。</p>
+<p>我们看到有 $ i = j$ 和 $i\ne j$ 两种情况，</p>
+<p>当 $i = j$ 时</p>
+<p>$$a_jM_iM_i^{-1} \equiv 0 \pmod m_i$$</p>
+<p>当 $i \ne j$ 时</p>
+<p>$$a_iM_iM_i^{-1} \equiv a_i \pmod{m_i}$$</p>
+<p>所以有</p>
+<p>$$\begin{aligned} a&amp;\equiv \sum_{j=1}^k a_jM_iM_i^{-1} &amp;\pmod {m_i} \\ &amp;\equiv a_iM_iM_i^{-1} &amp;\pmod {m_i} \\ &amp;\equiv a_iM_i(M^{-1}_i \bmod M_i) &amp;\pmod {m_i} \\ &amp;\equiv a_i &amp;\pmod {m_i} \end{aligned}$$</p>
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// by XYY1411</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="comment">// fastio</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = ll&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">iread</span>(<span class="keyword">void</span>) &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//extgcd for inverse </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = ll&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">extgcd</span>(T a, T b, T &amp;x, T &amp;y) &#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;x = <span class="number">1</span>, y = <span class="number">0</span>; <span class="keyword">return</span> a;&#125;</span><br><span class="line">    T d = extgcd&lt;T&gt;(b, a % b, y, x);</span><br><span class="line">    y -= (a / b) * x;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll n, a[<span class="number">20</span>], m[<span class="number">20</span>], Mi[<span class="number">20</span>], M = <span class="number">1</span>, x;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    n=<span class="built_in">iread</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        M *= (m[i] = <span class="built_in">iread</span>());</span><br><span class="line">        a[i] = <span class="built_in">iread</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        Mi[i] = M / m[i];</span><br><span class="line">        ll x = <span class="number">0</span>, y = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">extgcd</span>(Mi[i], m[i], x, y);</span><br><span class="line">        ::x += a[i] * Mi[i] * (x &lt; <span class="number">0</span> ? x + m[i] : x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>, x % M);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>中国剩余定理, crt</tag>
       </tags>
   </entry>
   <entry>
@@ -989,51 +1034,6 @@
       </tags>
   </entry>
   <entry>
-    <title>【模板】 中国剩余定理，crt / 曹冲养猪</title>
-    <url>/35448/</url>
-    <content><![CDATA[<p>中国剩余定理的板子。</p>
-<span id="more"></span>
-
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P1495">洛谷 Luogu1495</a>，<a href="https://vijos.org/p/1164">Vijos VJ1164</a></p>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求解一元线性同余方程组。</p>
-<p>设母猪有 $x$ 头。</p>
-<p>求解</p>
-<p>$$\begin{cases} x &amp;\equiv b_1 \pmod {a_1} \\ x &amp;\equiv b_2 \pmod {a_2} \\ &amp;\vdots \\ x &amp;\equiv b_k \pmod {a_k} \\ \end{cases} $$</p>
-<p>假定 $a_i, a_j$ 互质。</p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>显然中国剩余定理求解即可。</p>
-<h2 id="中国剩余定理（CRT）"><a href="#中国剩余定理（CRT）" class="headerlink" title="中国剩余定理（CRT）"></a>中国剩余定理（CRT）</h2><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>中国剩余定理 (Chinese Remainder Theorem, CRT) 可以用来求解一元线性同余方程组</p>
-<p>$$\begin{cases} x &amp;\equiv a_1 \pmod {m_1} \\ x &amp;\equiv a_2 \pmod {m_2} \\ &amp;\vdots \\ x &amp;\equiv a_k \pmod {m_k} \\ \end{cases} $$</p>
-<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p>设所有模数的积为</p>
-<p>$$M = \prod m_i$$</p>
-<p>除了第 $i$ 个方程外模数的积为</p>
-<p>$$M_i = \frac{M}{m_i}$$</p>
-<p>， $M_i$ 在 $\mod{m_i}$ 下的逆元为 $M_i^{-1}$ ，</p>
-<p>设</p>
-<p>$$c_i = M_iM_i^{-1}$$</p>
-<p>。</p>
-<p>则有一解</p>
-<p>$$x = \sum a_ic_i \pmod{M}$$</p>
-<p>。</p>
-<p>注意， $M_iM_i^{-1} \ne 1$ ，因为 $M_i^{-1}$ 是在 $\bmod {m_i}$ 的剩余系下的，所以在实数系下不一定成立。</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>有了做法我们还应保证其正确<del>交给数学家</del>。</p>
-<p>我们看到有 $ i = j$ 和 $i\ne j$ 两种情况，</p>
-<p>当 $i = j$ 时</p>
-<p>$$a_jM_iM_i^{-1} \equiv 0 \pmod m_i$$</p>
-<p>当 $i \ne j$ 时</p>
-<p>$$a_iM_iM_i^{-1} \equiv a_i \pmod{m_i}$$</p>
-<p>所以有</p>
-<p>$$\begin{aligned} a&amp;\equiv \sum_{j=1}^k a_jM_iM_i^{-1} &amp;\pmod {m_i} \\ &amp;\equiv a_iM_iM_i^{-1} &amp;\pmod {m_i} \\ &amp;\equiv a_iM_i(M^{-1}_i \bmod M_i) &amp;\pmod {m_i} \\ &amp;\equiv a_i &amp;\pmod {m_i} \end{aligned}$$</p>
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">// by XYY1411</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"></span><br><span class="line"><span class="comment">// fastio</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = ll&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">iread</span>(<span class="keyword">void</span>) &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(!<span class="built_in">isdigit</span>(ch)) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//extgcd for inverse </span></span><br><span class="line"></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = ll&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">extgcd</span>(T a, T b, T &amp;x, T &amp;y) &#123;</span><br><span class="line">    <span class="keyword">if</span> (b == <span class="number">0</span>) &#123;x = <span class="number">1</span>, y = <span class="number">0</span>; <span class="keyword">return</span> a;&#125;</span><br><span class="line">    T d = extgcd&lt;T&gt;(b, a % b, y, x);</span><br><span class="line">    y -= (a / b) * x;</span><br><span class="line">    <span class="keyword">return</span> d;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ll n, a[<span class="number">20</span>], m[<span class="number">20</span>], Mi[<span class="number">20</span>], M = <span class="number">1</span>, x;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    n=<span class="built_in">iread</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        M *= (m[i] = <span class="built_in">iread</span>());</span><br><span class="line">        a[i] = <span class="built_in">iread</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        Mi[i] = M / m[i];</span><br><span class="line">        ll x = <span class="number">0</span>, y = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">extgcd</span>(Mi[i], m[i], x, y);</span><br><span class="line">        ::x += a[i] * Mi[i] * (x &lt; <span class="number">0</span> ? x + m[i] : x);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%lld&quot;</span>, x % M);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>中国剩余定理, crt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>字符串哈希</title>
     <url>/52567/</url>
     <content><![CDATA[<p>玄学哈希。</p>
@@ -1058,9 +1058,15 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-04-03 杂谈</title>
-    <url>/41061/</url>
-    <content><![CDATA[<p>马上信息技术学业水平考试，班里一群对 $Python$ 一无所知的人， $MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
+    <title></title>
+    <url>/0/</url>
+    <content><![CDATA[<p>- - - <br> <br> t i t l e :   8OU\h�S p l a y <br> <br> c a t e g o r i e s : <br> <br>     -   [ O I ,   penc�<del>�g] <br> <br> t a g s : <br> <br>     -   8OU\h�S p l a y <br> <br> d a t e :   2 0 2 1 - 0 5 - 2 8   2 1 : 3 0 : 2 8 <br> <br> - - - <br> <br> <br> <br>   �Qc�N&amp; &amp;<br> <br> <br> <br> &lt; ! - - m o r e - - &gt; <br> <br> <br> <br> #   �Q�[<br> <br> <br> <br> </del>v�y�[ �<del>�W</del>v�y] ( h t t p s : / / z h . w i k i p e d i a . o r g / w i k i / % E 4 % B C % B 8 % E 5 % B 1 % 9 5 % E 6 % A 0 % 9 1 ) �[ O I   W i k i ] ( h t t p s : / / o i - w i k i . o r g / d s / s p l a y / ) <br> <br> <br> <br> 8OU\hv^<br>N/f%N&lt;haIN<br>N�vs^a�h��[�ǏvQ8h�_�d\O  $ \ r m   S p l a y $   eg�O��h’Y�s^a�0<br> <br> <br> <br> $ \ r m   S p l a y $   �d\OsS\�g*N���p�c0Rh9h�(WǏz-N<br>N�e�el�O�_h�S�Ns^a��8OU\h�k!k�d\O�����b�[a��c0R9h�0<br> <br> <br> <br> <del> </del> �NN�Nxeg�  $ \ r m   \ c o l o r { R e d } L \ c o l o r { b l a c k } a w r e n c e S i v a n $   0<del> </del> <br> <br> <br> <br> #   �<del>�g<br> <br> <br> <br> X[penc0<br> <br> <br> <br> <code> </code> <code> c p p     s t r u c t   n o d e   &#123;             i n t   c h [ 2 ] ;             i n t   f a ;             i n t   c n t ;             i n t   v a l ;             i n t   s o n ;     &#125;   t [ m a x n ] ;     </code> <code> </code> <br> <br> <br> <br> #   �d\O<br> <br> <br> <br> # #   �^h<br> <br> <br> <br> �ceQ  $ \ r m   I N F $   �T  $ \ r m   - I N F $   0<br> <br> <br> <br> # #   �f�e<br> <br> <br> <br> $ \ r m   p u s h \ _ u p $   0<br> <br> <br> <br> <code> </code> <code> c p p     i n l i n e   v o i d   p u s h _ u p ( i n t   x )   &#123;             t [ x ] . s o n   =   t [ l s ( x ) ] . s o n   +   t [ r s ( x ) ] . s o n   +   t [ x ] . c n t ;     &#125;     </code> <code> </code> <br> <br> <br> <br> # #   �el�<br> <br> <br> <br> </del> <del>  g�{US�v�]�S�e0</del> <del> <br> <br> <br> <br> <code> </code> <code> c p p     i n l i n e   v o i d   r o t a t e ( i n t   x )   &#123;             i n t   f   =   t [ x ] . f a ;             i n t   g   =   t [ f ] . f a ;             i n t   s   =   r s ( f )   = =   x ;                 t [ g ] . c h [ r s ( g )   = =   f ]   =   x ;             t [ x ] . f a   =   g ;                 t [ f ] . c h [ s ]   =   t [ x ] . c h [ s   ^   1 ] ;             t [ t [ x ] . c h [ s   ^   1 ] ] . f a   =   f ;                 t [ x ] . c h [ s   ^   1 ]   =   f ;             t [ f ] . f a   =   x ;                 p u s h _ u p ( f ) ,   p u s h _ u p ( x ) ;     &#125;     </code> <code> </code> <br> <br> <br> <br> # #   8OU<br> <br> <br> <br> sS  $ \ r m   S p l a y $   �d\O0<br> <br> <br> <br> <code> </code> <code> c p p     i n l i n e   v o i d   S p l a y ( i n t   x ,   i n t   g o a l )   &#123;             w h i l e   ( t [ x ] . f a   ! =   g o a l )   &#123;                     i n t   f   =   t [ x ] . f a ;                     i n t   g   =   t [ f ] . f a ;                     i f   ( g   ! =   g o a l )   &#123;                             ( l s ( f )   = =   x )   ^   ( l s ( g )   = =   f )   ?   r o t a t e ( x )   :   r o t a t e ( f ) ;                     &#125;                     r o t a t e ( x ) ;             &#125;                 i f   ( g o a l   = =   0 )   &#123;                     r o o t   =   x ;             &#125;     &#125;     </code> <code> </code> <br> <br> <br> <br> # #   �ceQ<br> <br> <br> <br> NvQ�N�N�Sd”}h N7h�FO/f�</del>_gT  $ \ r m   S p l a y $   0R9h���p0<br> <br> <br> <br> <code> </code> <code> c p p     i n l i n e   v o i d   i n s e r t ( i n t   x )   &#123;             i n t   u   =   r o o t ,   f   =   0 ;             w h i l e   ( u   &amp; &amp;   t [ u ] . v a l   ! =   x )   &#123;                     f   =   u ;                     u   =   t [ u ] . c h [ x   &gt;   t [ u ] . v a l ] ;             &#125;                 i f   ( u )                     t [ u ] . c n t + + ;                 e l s e   &#123;                     u   =   + + t o t ;                     i f   ( f )   t [ f ] . c h [ x   &gt;   t [ f ] . v a l ]   =   u ;                         l s ( t o t )   =   0 ;                     r s ( t o t )   =   0 ;                     t [ t o t ] . f a   =   f ;                     t [ t o t ] . v a l   =   x ;                     t [ t o t ] . c n t   =   1 ;                     t [ t o t ] . s o n   =   1 ;             &#125;             S p l a y ( u ,   0 ) ;     &#125;     </code> <code> </code> <br> <br> <br> <br> # #   �g<del>b<br> <br> <br> <br> �g</del>b N*N�p�v^�el��9h0<br> <br> <br> <br> <code> </code> <code> c p p     i n l i n e   v o i d   f i n d ( i n t   x )   &#123;             i n t   u   =   r o o t ;             i f   ( ! u )   r e t u r n ;             w h i l e   ( t [ u ] . c h [ x   &gt;   t [ u ] . v a l ]   &amp; &amp;   x   ! =   t [ u ] . v a l )   &#123;                     u   =   t [ u ] . c h [ x   &gt;   t [ u ] . v a l ] ;             &#125;             S p l a y ( u ,   0 ) ;     &#125;     </code> <code> </code> <br> <br> <br> <br> # #   �g�<br> <br> <br> <br> MRTq��&lt;P��c<br>T����  $ \ r m   T r e a p $   0<br> <br> <br> <br> <code> </code> <code> c p p     i n l i n e   i n t   N x t ( i n t   x ,   i n t   f )   &#123;             f i n d ( x ) ;                 i n t   u   =   r o o t ;             i f   ( ( t [ u ] . v a l   &gt;   x   &amp; &amp;   f )   | |   ( t [ u ] . v a l   &lt;   x   &amp; &amp;   ! f ) )   r e t u r n   u ;             u   =   t [ u ] . c h [ f ] ;                 w h i l e   ( t [ u ] . c h [ f   ^   1 ] )   u   =   t [ u ] . c h [ f   ^   1 ] ;                 r e t u r n   u ;     &#125;         i n l i n e   v o i d   D e l e t e ( i n t   x )   &#123;             i n t   p r e   =   N x t ( x ,   0 ) ;             i n t   n x t   =   N x t ( x ,   1 ) ;                 S p l a y ( p r e ,   0 ) ;             S p l a y ( n x t ,   p r e ) ;                 i n t   d e l   =   l s ( n x t ) ;             i f   ( t [ d e l ] . c n t   &gt;   1 )   &#123;                     t [ d e l ] . c n t - - ;                     S p l a y ( d e l ,   0 ) ;             &#125;   e l s e                     l s ( n x t )   =   0 ;     &#125;         i n l i n e   i n t   k t h ( i n t   x )   &#123;             i n t   u   =   r o o t ;             i f   ( t [ u ] . s o n   &lt;   x )   r e t u r n   0 ;                 w h i l e   ( 1 )   &#123;                     i n t   s   =   l s ( u ) ;                     i f   ( x   &gt;   t [ s ] . s o n   +   t [ u ] . c n t )   &#123;                             x   - =   t [ s ] . s o n   +   t [ u ] . c n t ;                             u   =   r s ( u ) ;                     &#125;   e l s e   i f   ( t [ s ] . s o n   &gt; =   x )                             u   =   s ;                         e l s e                             r e t u r n   t [ u ] . v a l ;             &#125;     &#125;     </code> <code> </code> <br> <br> <br> <br> #   <br>YBg�^<br> <br> <br> <br> 1u  $ \ r m   S p l a y $   �d\O�O��GWJd  $ \ T h e t a ( \ l o g   n ) $   0<br> <br> <br> <br> #   $ \ r m   \ c o l o r { G r e e n } c o d e $ <br> <br> <br> <br> <code> </code> <code> c p p     # i n c l u d e   &lt; c c t y p e &gt;     # i n c l u d e   &lt; c s t d i o &gt;     u s i n g   n a m e s p a c e   s t d ;         t y p e d e f   l o n g   l o n g   l l ;     # d e f i n e   r e   r e g i s t e r     c o n s t   i n t   m a x n   =   1 e 5   +   5 ;     # d e f i n e   I N F   0 x 7 f f f f f f f         # d e f i n e   l s ( x )   t [ ( x ) ] . c h [ 0 ]     # d e f i n e   r s ( x )   t [ ( x ) ] . c h [ 1 ]         i n t   n ,   r o o t ,   t o t ;         s t r u c t   n o d e   &#123;             i n t   c h [ 2 ] ;             i n t   f a ;             i n t   c n t ;             i n t   v a l ;             i n t   s o n ;     &#125;   t [ m a x n ] ;         i n l i n e   v o i d   p u s h _ u p ( i n t   x )   &#123;             t [ x ] . s o n   =   t [ l s ( x ) ] . s o n   +   t [ r s ( x ) ] . s o n   +   t [ x ] . c n t ;     &#125;         i n l i n e   v o i d   r o t a t e ( i n t   x )   &#123;             i n t   f   =   t [ x ] . f a ;             i n t   g   =   t [ f ] . f a ;             i n t   s   =   r s ( f )   = =   x ;                 t [ g ] . c h [ r s ( g )   = =   f ]   =   x ;             t [ x ] . f a   =   g ;                 t [ f ] . c h [ s ]   =   t [ x ] . c h [ s   ^   1 ] ;             t [ t [ x ] . c h [ s   ^   1 ] ] . f a   =   f ;                 t [ x ] . c h [ s   ^   1 ]   =   f ;             t [ f ] . f a   =   x ;                 p u s h _ u p ( f ) ,   p u s h _ u p ( x ) ;     &#125;         i n l i n e   v o i d   S p l a y ( i n t   x ,   i n t   g o a l )   &#123;             w h i l e   ( t [ x ] . f a   ! =   g o a l )   &#123;                     i n t   f   =   t [ x ] . f a ;                     i n t   g   =   t [ f ] . f a ;                     i f   ( g   ! =   g o a l )   &#123;                             ( l s ( f )   = =   x )   ^   ( l s ( g )   = =   f )   ?   r o t a t e ( x )   :   r o t a t e ( f ) ;                     &#125;                     r o t a t e ( x ) ;             &#125;                 i f   ( g o a l   = =   0 )   &#123;                     r o o t   =   x ;             &#125;     &#125;         i n l i n e   v o i d   i n s e r t ( i n t   x )   &#123;             i n t   u   =   r o o t ,   f   =   0 ;             w h i l e   ( u   &amp; &amp;   t [ u ] . v a l   ! =   x )   &#123;                     f   =   u ;                     u   =   t [ u ] . c h [ x   &gt;   t [ u ] . v a l ] ;             &#125;                 i f   ( u )                     t [ u ] . c n t + + ;                 e l s e   &#123;                     u   =   + + t o t ;                     i f   ( f )   t [ f ] . c h [ x   &gt;   t [ f ] . v a l ]   =   u ;                         l s ( t o t )   =   0 ;                     r s ( t o t )   =   0 ;                     t [ t o t ] . f a   =   f ;                     t [ t o t ] . v a l   =   x ;                     t [ t o t ] . c n t   =   1 ;                     t [ t o t ] . s o n   =   1 ;             &#125;             S p l a y ( u ,   0 ) ;     &#125;         i n l i n e   v o i d   f i n d ( i n t   x )   &#123;             i n t   u   =   r o o t ;             i f   ( ! u )   r e t u r n ;             w h i l e   ( t [ u ] . c h [ x   &gt;   t [ u ] . v a l ]   &amp; &amp;   x   ! =   t [ u ] . v a l )   &#123;                     u   =   t [ u ] . c h [ x   &gt;   t [ u ] . v a l ] ;             &#125;             S p l a y ( u ,   0 ) ;     &#125;         i n l i n e   i n t   N x t ( i n t   x ,   i n t   f )   &#123;             f i n d ( x ) ;                 i n t   u   =   r o o t ;             i f   ( ( t [ u ] . v a l   &gt;   x   &amp; &amp;   f )   | |   ( t [ u ] . v a l   &lt;   x   &amp; &amp;   ! f ) )   r e t u r n   u ;             u   =   t [ u ] . c h [ f ] ;                 w h i l e   ( t [ u ] . c h [ f   ^   1 ] )   u   =   t [ u ] . c h [ f   ^   1 ] ;                 r e t u r n   u ;     &#125;         i n l i n e   v o i d   D e l e t e ( i n t   x )   &#123;             i n t   p r e   =   N x t ( x ,   0 ) ;             i n t   n x t   =   N x t ( x ,   1 ) ;                 S p l a y ( p r e ,   0 ) ;             S p l a y ( n x t ,   p r e ) ;                 i n t   d e l   =   l s ( n x t ) ;             i f   ( t [ d e l ] . c n t   &gt;   1 )   &#123;                     t [ d e l ] . c n t - - ;                     S p l a y ( d e l ,   0 ) ;             &#125;   e l s e                     l s ( n x t )   =   0 ;     &#125;         i n l i n e   i n t   k t h ( i n t   x )   &#123;             i n t   u   =   r o o t ;             i f   ( t [ u ] . s o n   &lt;   x )   r e t u r n   0 ;                 w h i l e   ( 1 )   &#123;                     i n t   s   =   l s ( u ) ;                     i f   ( x   &gt;   t [ s ] . s o n   +   t [ u ] . c n t )   &#123;                             x   - =   t [ s ] . s o n   +   t [ u ] . c n t ;                             u   =   r s ( u ) ;                     &#125;   e l s e   i f   ( t [ s ] . s o n   &gt; =   x )                             u   =   s ;                         e l s e                             r e t u r n   t [ u ] . v a l ;             &#125;     &#125;         i n l i n e   i n t   r e a d ( )   &#123;             i n t   x   =   0 ,   f   =   1 ;             c h a r   c h   =   g e t c h a r ( ) ;             w h i l e   ( ! i s d i g i t ( c h ) )   &#123;                     i f   ( c h   = =   &#39; - &#39; )   f   =   - 1 ;                     c h   =   g e t c h a r ( ) ;             &#125;             w h i l e   ( i s d i g i t ( c h ) )   &#123;                     x   =   x   *   1 0   +   ( c h   ^   4 8 ) ;                     c h   =   g e t c h a r ( ) ;             &#125;             r e t u r n   x   *   f ;     &#125;         i n t   m a i n ( )   &#123;             n   =   r e a d ( ) ;             i n s e r t ( - I N F ) ;             i n s e r t ( I N F ) ;                 w h i l e   ( n - - )   &#123;                     i n t   o p   =   r e a d ( ) ;                     i f   ( o p   = =   1 )   &#123;                             i n t   x   =   r e a d ( ) ;                             i n s e r t ( x ) ;                     &#125;   e l s e   i f   ( o p   = =   2 )   &#123;                             i n t   x   =   r e a d ( ) ;                             D e l e t e ( x ) ;                     &#125;   e l s e   i f   ( o p   = =   3 )   &#123;                             i n t   x   =   r e a d ( ) ;                             f i n d ( x ) ;                             p r i n t f ( &quot; % d \ n &quot; ,   t [ l s ( r o o t ) ] . s o n ) ;                     &#125;   e l s e   i f   ( o p   = =   4 )   &#123;                             i n t   x   =   r e a d ( ) ;                             p r i n t f ( &quot; % d \ n &quot; ,   k t h ( x   +   1 ) ) ;                     &#125;   e l s e   i f   ( o p   = =   5 )   &#123;                             i n t   x   =   r e a d ( ) ;                             p r i n t f ( &quot; % d \ n &quot; ,   t [ N x t ( x ,   0 ) ] . v a l ) ;                     &#125;   e l s e   i f   ( o p   = =   6 )   &#123;                             i n t   x   =   r e a d ( ) ;                             p r i n t f ( &quot; % d \ n &quot; ,   t [ N x t ( x ,   1 ) ] . v a l ) ;                     &#125;             &#125;             r e t u r n   0 ;     &#125;     </code> <code> </code> <br> <br> <br> <br> #   �O��<br> <br> <br> <br> [ m7�  L u o g u 3 3 6 9   0!jg0nf�s^a�h] ( h t t p s : / / w w w . l u o g u . c o m . c n / p r o b l e m / P 3 3 6 9 ) </p>
+]]></content>
+  </entry>
+  <entry>
+    <title>2021-04-15 杂谈</title>
+    <url>/6888/</url>
+    <content><![CDATA[<p>今天风沙真大。</p>
 ]]></content>
       <categories>
         <category>杂谈</category>
@@ -1071,9 +1077,9 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-04-15 杂谈</title>
-    <url>/6888/</url>
-    <content><![CDATA[<p>今天风沙真大。</p>
+    <title>2021-04-03 杂谈</title>
+    <url>/41061/</url>
+    <content><![CDATA[<p>马上信息技术学业水平考试，班里一群对 $Python$ 一无所知的人， $MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
 ]]></content>
       <categories>
         <category>杂谈</category>
@@ -1123,6 +1129,28 @@
     <url>/37773/</url>
     <content><![CDATA[<p>本博客已上线</p>
 <span id="more"></span>]]></content>
+      <categories>
+        <category>维护</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021-03-22 更新</title>
+    <url>/33114/</url>
+    <content><![CDATA[<h1 id="Gitalk-评论功能已开启"><a href="#Gitalk-评论功能已开启" class="headerlink" title="Gitalk 评论功能已开启"></a>Gitalk 评论功能已开启</h1>]]></content>
+      <categories>
+        <category>维护</category>
+      </categories>
+      <tags>
+        <tag>日志</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021-04-03 更新</title>
+    <url>/22936/</url>
+    <content><![CDATA[<h1 id="Valine-评论功能已开启"><a href="#Valine-评论功能已开启" class="headerlink" title="Valine 评论功能已开启"></a>Valine 评论功能已开启</h1>]]></content>
       <categories>
         <category>维护</category>
       </categories>
@@ -1187,34 +1215,13 @@
 ]]></content>
       <categories>
         <category>OI</category>
+        <category>数据结构</category>
       </categories>
       <tags>
         <tag>平衡树</tag>
         <tag>随机化</tag>
         <tag>堆</tag>
         <tag>树堆，Treap</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2021-03-22 更新</title>
-    <url>/33114/</url>
-    <content><![CDATA[<h1 id="Gitalk-评论功能已开启"><a href="#Gitalk-评论功能已开启" class="headerlink" title="Gitalk 评论功能已开启"></a>Gitalk 评论功能已开启</h1>]]></content>
-      <categories>
-        <category>维护</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2021-04-03 更新</title>
-    <url>/22936/</url>
-    <content><![CDATA[<h1 id="Valine-评论功能已开启"><a href="#Valine-评论功能已开启" class="headerlink" title="Valine 评论功能已开启"></a>Valine 评论功能已开启</h1>]]></content>
-      <categories>
-        <category>维护</category>
-      </categories>
-      <tags>
-        <tag>日志</tag>
       </tags>
   </entry>
   <entry>
