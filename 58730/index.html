@@ -254,11 +254,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E5%AD%A6/">数学</a>
     </span>
     
       <span>
@@ -311,15 +311,15 @@
   <div class="post-tags">
     
       <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E7%AD%9B%E6%B3%95/ >筛法</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
       </i>
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E7%AD%9B%E6%B3%95/ >筛法</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -334,7 +334,10 @@
 
   
   <div class="mdui-card-content mdui-typo mdui-p-x-4">
-    <h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline void get_phi(T n, T *phi_table);</span></span><br><span class="line"><span class="comment">  线性求 n 以下的欧拉函数，并存到 phi_table 中</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(T n, T *phi_table)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    <p>又一个线性筛。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(T n, T *phi_table)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
   </div>
   <!--文末结束语-->
   
@@ -348,12 +351,12 @@
     
       <a rel="prev" class="post-nav-item mdui-float-left" href="/19332/">
         <i class="iconfont icon-angle-left"></i>
-        <span>费马小定理 Fermat's little theorem</span>
+        <span>费马小定理, Fermat's little theorem</span>
       </a>
     
     
       <a rel="next" class="post-nav-item mdui-float-right" href="/55226/">
-        <span>欧拉函数 Euler function</span>
+        <span>欧拉函数, Euler function</span>
         <i class="iconfont icon-angle-right"></i>
       </a>
     

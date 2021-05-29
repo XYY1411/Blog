@@ -246,59 +246,6 @@
       
       
         <div class="post-header"> 
-  <a class="post-header-title" href="/59112/">稀疏表 Sparse Table, ST</a>
-  <div class="post-header-meta">
-    <span>
-      <span class="iconfont icon-calendar"></span>
-      发布于:&nbsp;2021-04-04
-    </span>
-    <span>
-      <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-07
-    </span>
-    <span>
-      <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
-    </span>
-    
-  </div>
-</div>   
-    
-
-
-
-      
-      
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC-RMQ/ >区间最值, RMQ</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E7%A8%80%E7%96%8F%E8%A1%A8-ST/ >稀疏表, ST</a>
-      </i>
-    
-  </div>
-
-      
-      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
-        <div class="post-abstract mdui-typo ">
-          
-            <h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> logn = <span class="number">21</span>, maxn = <span class="number">2e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> f[maxn][logn + <span class="number">1</span>], lg[maxn + <span class="number">1</span>];</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">iread</span>(<span class="keyword">void</span>) &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">makelog</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    lg[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    lg[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">3</span>; i &lt; maxn; ++i) lg[i] = lg[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n, m, l, r, s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = <span class="built_in">iread</span>(), m = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="built_in">makelog</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ; ++i) f[i][<span class="number">0</span>] = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= logn; j++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">            f[i][j] = <span class="built_in">max</span>(f[i][j - <span class="number">1</span>], f[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        l = <span class="built_in">iread</span>(), r = <span class="built_in">iread</span>();</span><br><span class="line">        s = lg[r - l + <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">max</span>(f[l][s], f[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-          
-        </div>
-        
-        <div style="text-align:center;">
-          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/59112/">阅读更多</a>
-        </div>
-      </div>
-    </article>
-
-    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
-      
-      
-        <div class="post-header"> 
   <a class="post-header-title" href="/52240/">预处理二进制对数表</a>
   <div class="post-header-meta">
     <span>
@@ -307,11 +254,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-06
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E6%8A%80%E5%B7%A7/">技巧</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%8A%80%E5%B7%A7/">技巧</a>
     </span>
     
   </div>
@@ -325,11 +272,11 @@
   <div class="post-tags">
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
+        <a rel="tag" href = /tags/%E5%8D%A1%E5%B8%B8/ >卡常</a>
       </i>
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E5%8D%A1%E5%B8%B8/ >卡常</a>
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
       </i>
     
       <i class="iconfont icon-tag">
@@ -355,7 +302,6 @@
         <div class="post-abstract mdui-typo ">
           
             <p>预处理 $lb$ 表。</p>
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">mklb</span><span class="params">(T n, T *lb_table)</span> </span>&#123;</span><br><span class="line">    lb_table[<span class="number">1</span>] = <span class="number">0</span>, lb_table[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">3</span>; i &lt;= n; ++i) lb_table[i] = lb_table[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
           
         </div>
         
@@ -369,7 +315,7 @@
       
       
         <div class="post-header"> 
-  <a class="post-header-title" href="/30428/">卢卡斯定理 Lucas&#39; theorem</a>
+  <a class="post-header-title" href="/30428/">卢卡斯定理, Lucas&#39; theorem , lucas</a>
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
@@ -377,11 +323,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E5%AD%A6/">数学</a>
     </span>
     
   </div>
@@ -393,14 +339,6 @@
       
       
   <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/ >组合数学</a>
-      </i>
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E5%8D%A2%E5%8D%A1%E6%96%AF%E5%AE%9A%E7%90%86-lucas/ >卢卡斯定理, lucas</a>
@@ -416,12 +354,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>对于质数 $p$ ，有：</p>
-<p>$$\binom{n}{m}\bmod p = \binom{\left\lfloor n/p \right\rfloor}{\left\lfloor m/p\right\rfloor}\cdot\binom{n\bmod p}{m\bmod p}\bmod p$$</p>
-<p>（占位行，不然 Hexo 渲染下面会 Bug）</p>
-<p>（占位行）</p>
-<p>（占位行）</p>
-<p>（占位行）</p>...
+            <p><del>简介，不知道写啥了。</del></p>
           
         </div>
         
@@ -435,7 +368,7 @@
       
       
         <div class="post-header"> 
-  <a class="post-header-title" href="/26296/">扩展欧拉定理（数论） Extend Euler&#39;s theorem(Number Theory)</a>
+  <a class="post-header-title" href="/26296/">扩展欧拉定理（数论）, Extend Euler&#39;s theorem(Number Theory)</a>
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
@@ -443,11 +376,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E5%AD%A6/">数学</a>
     </span>
     
   </div>
@@ -459,14 +392,6 @@
       
       
   <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
-      </i>
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/ >欧拉函数</a>
@@ -482,7 +407,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;(a,\,p)=1\\ a^b,&amp;(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
+            <p>数竞生：信竞咋啥都扩展？</p>
           
         </div>
         
@@ -496,7 +421,7 @@
       
       
         <div class="post-header"> 
-  <a class="post-header-title" href="/9023/">欧拉定理（数论） Euler&#39;s theorem(Number Theory)</a>
+  <a class="post-header-title" href="/9023/">欧拉定理（数论）, Euler&#39;s theorem(Number Theory)</a>
   <div class="post-header-meta">
     <span>
       <span class="iconfont icon-calendar"></span>
@@ -504,11 +429,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E7%AE%97%E6%B3%95/">算法</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E5%AD%A6/">数学</a>
     </span>
     
   </div>
@@ -520,14 +445,6 @@
       
       
   <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%95%B0%E8%AE%BA/ >数论</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
-      </i>
     
       <i class="iconfont icon-tag">
         <a rel="tag" href = /tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/ >欧拉函数</a>
@@ -543,8 +460,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>若 $(a, m) = 1$ ， 则有：</p>
-<p>$$a^{\varphi(m)} \equiv 1 \pmod m$$</p>
+            <p><del>不是几何！</del></p>
           
         </div>
         
@@ -566,11 +482,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E7%BB%B4%E6%8A%A4/">维护</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a> > <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/%E7%BB%B4%E6%8A%A4/">维护</a>
     </span>
     
   </div>
@@ -581,19 +497,13 @@
 
       
       
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%97%A5%E5%BF%97/ >日志</a>
-      </i>
-    
-  </div>
+  <div class="tag-line-space"></div>
 
       
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="Valine-评论功能已开启"><a href="#Valine-评论功能已开启" class="headerlink" title="Valine 评论功能已开启"></a>Valine 评论功能已开启</h1>
+            <p>Valine 评论功能已开启。</p>
           
         </div>
         
@@ -615,11 +525,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E6%9D%82%E8%B0%88/">杂谈</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a> > <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/%E6%9D%82%E8%B0%88/">杂谈</a>
     </span>
     
   </div>
@@ -630,23 +540,13 @@
 
       
       
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%97%A5%E5%BF%97/ >日志</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%9D%82%E8%B0%88/ >杂谈</a>
-      </i>
-    
-  </div>
+  <div class="tag-line-space"></div>
 
       
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <p>马上信息技术学业水平考试，班里一群对 $Python$ 一无所知的人， $MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
+            <p>呵呵。</p>
           
         </div>
         
@@ -668,11 +568,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-11
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E6%A8%A1%E6%8B%9F%E8%B5%9B/">模拟赛</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a> > <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/%E6%A8%A1%E6%8B%9F%E8%B5%9B/">模拟赛</a>
     </span>
     
   </div>
@@ -686,11 +586,19 @@
   <div class="post-tags">
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/ >模拟赛</a>
+        <a rel="tag" href = /tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP/ >动态规划, DP</a>
       </i>
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%97%A5%E5%BF%97/ >日志</a>
+        <a rel="tag" href = /tags/%E5%89%8D%E7%BC%80%E5%92%8C/ >前缀和</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%80%8D%E5%A2%9E/ >倍增</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%80%8D%E5%A2%9E%E4%BC%98%E5%8C%96%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E5%80%8D%E5%A2%9E%E4%BC%98%E5%8C%96DP/ >倍增优化动态规划, 倍增优化DP</a>
       </i>
     
   </div>
@@ -699,8 +607,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="莫名其妙-color-Yellow-CE-了"><a href="#莫名其妙-color-Yellow-CE-了" class="headerlink" title="莫名其妙 $\color{Yellow}CE$ 了"></a>莫名其妙 $\color{Yellow}CE$ 了</h1><p>$\color{Yellow}CE$ 太难受了。</p>
-<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><p>（占...
+            <p>莫名其妙 $\rm\color{Yellow}CE$ 了， $\rm\color{Yellow}CE$ 太难受了。</p>
           
         </div>
         
@@ -722,11 +629,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E6%B8%B8%E8%AE%B0/">游记</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%B8%B8%E8%AE%B0/">游记</a> > <a class="category-link" href="/categories/%E6%B8%B8%E8%AE%B0/NOIO/">NOIO</a>
     </span>
     
   </div>
@@ -737,29 +644,13 @@
 
       
       
-  <div class="post-tags">
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%B8%B8%E8%AE%B0/ >游记</a>
-      </i>
-    
-      <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/NOIO/ >NOIO</a>
-      </i>
-    
-  </div>
+  <div class="tag-line-space"></div>
 
       
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="感受"><a href="#感受" class="headerlink" title="感受"></a>感受</h1><p>裂开，太难了，这次比赛深刻的让我认识到了我菜的本质。</p>
-<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><p>（占位行，不然 Hexo 渲染下面会 Bug）</p>
-<p>（占位行）</p>
-<p>（占位行）</p>
-<p>（占位行）</p>
-<p>（占位行）</p>
-<p>（占位...
+            <p>裂开，太难了，这次比赛深刻的让我认识到了我菜的本质。</p>
           
         </div>
         
@@ -781,11 +672,11 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-04-05
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
-      分类于:&nbsp;<a class="category-link" href="/categories/%E6%A8%A1%E6%8B%9F%E8%B5%9B/">模拟赛</a>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a> > <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/%E6%A8%A1%E6%8B%9F%E8%B5%9B/">模拟赛</a>
     </span>
     
   </div>
@@ -799,11 +690,19 @@
   <div class="post-tags">
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%A8%A1%E6%8B%9F%E8%B5%9B/ >模拟赛</a>
+        <a rel="tag" href = /tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-DP/ >动态规划, DP</a>
       </i>
     
       <i class="iconfont icon-tag">
-        <a rel="tag" href = /tags/%E6%97%A5%E5%BF%97/ >日志</a>
+        <a rel="tag" href = /tags/%E5%8C%BA%E9%97%B4%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E5%8C%BA%E9%97%B4DP/ >区间动态规划, 区间DP</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%A0%91%E4%B8%8A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E6%A0%91%E5%BD%A2DP/ >树上动态规划, 树形DP</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E4%BA%8C%E6%AC%A1%E6%89%AB%E6%8F%8F%E6%8D%A2%E6%A0%B9/ >二次扫描换根</a>
       </i>
     
   </div>
@@ -812,10 +711,7 @@
       <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
         <div class="post-abstract mdui-typo ">
           
-            <h1 id="emmmm"><a href="#emmmm" class="headerlink" title="emmmm~"></a>emmmm~</h1><p>T1 是区间DP，很容易就看出来了，然而题目出的却不知道如何合并……于是爆零。</p>
-<p>T2是原题 <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1941">[NOIP2014 提高组] 飞扬的小鸟</a>，但是貌似特判写挂了卡掉了25pts。</p>
-<p>T3是树形DP + 二次扫描换根，然而没复习到想写暴力发现图论忘光 dfs 都写挂了。</p>
-<p>（占位行，不然 H...
+            <p>emmmm~ </p>
           
         </div>
         
@@ -825,11 +721,54 @@
       </div>
     </article>
 
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">    
+      
+      
+        <div class="post-header"> 
+  <a class="post-header-title" href="/33114/">2021-03-22 更新</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-03-22
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a> > <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/%E7%BB%B4%E6%8A%A4/">维护</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+      
+      
+  <div class="tag-line-space"></div>
+
+      
+      <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+        <div class="post-abstract mdui-typo ">
+          
+            <p>Gitalk 评论功能已开启。</p>
+          
+        </div>
+        
+        <div style="text-align:center;">
+          <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/33114/">阅读更多</a>
+        </div>
+      </div>
+    </article>
+
 
 
   <nav style="text-align: center;">
     <div class="pagination">
-      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-angle-right"></i></a>
+      <a class="extend prev" rel="prev" href="/page/2/"><i class="iconfont icon-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="iconfont icon-angle-right"></i></a>
     </div>
   </nav>
 
