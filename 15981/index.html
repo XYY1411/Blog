@@ -254,7 +254,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-05-28
+      更新于:&nbsp;2021-05-29
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -358,7 +358,7 @@
 <p><img src="zag.png" alt="zag"></p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">rotate</span><span class="params">(node*&amp; p, <span class="keyword">int</span> d)</span> </span>&#123;</span><br><span class="line">    node* t = p-&gt;son[d ^ <span class="number">1</span>];</span><br><span class="line">    p-&gt;son[d ^ <span class="number">1</span>] = t-&gt;son[d];</span><br><span class="line">    t-&gt;son[d] = p;</span><br><span class="line">    p-&gt;<span class="built_in">update</span>();</span><br><span class="line">    t-&gt;<span class="built_in">update</span>();</span><br><span class="line">    p = t;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>插入一个节点并通过旋转来调整树的结构使其满足堆和二叉搜索树的性质。</p>
+<h2 id="插入"><a href="#插入" class="headerlink" title="插入"></a>插入</h2><p>插入一个节点并通过旋转来调整树的结构使其满足堆的性质。</p>
 <p>由于值是可重复的，所以如果已经有了这个值，则 <code>cnt++</code> ，否则根据当前点的键值大小决定向左或右插入。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">insert</span><span class="params">(node*&amp; p, <span class="keyword">int</span> k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (!p)</span><br><span class="line">        p = <span class="keyword">new</span> <span class="built_in">node</span>(k);</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;key == k)</span><br><span class="line">        p-&gt;cnt++;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;key &gt; k)</span><br><span class="line">            <span class="built_in">insert</span>(p-&gt;son[<span class="number">0</span>], k);</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">insert</span>(p-&gt;son[<span class="number">1</span>], k);</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;son[<span class="number">0</span>] &amp;&amp; *p &lt; *p-&gt;son[<span class="number">0</span>])</span><br><span class="line">            <span class="built_in">rotate</span>(p, <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (p-&gt;son[<span class="number">1</span>] &amp;&amp; *p &lt; *p-&gt;son[<span class="number">1</span>])</span><br><span class="line">            <span class="built_in">rotate</span>(p, <span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    p-&gt;<span class="built_in">update</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -393,9 +393,9 @@
   
   <nav>
     
-      <a rel="prev" class="post-nav-item mdui-float-left" href="/0/">
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/57120/">
         <i class="iconfont icon-angle-left"></i>
-        <span></span>
+        <span>伸展树，Splay</span>
       </a>
     
     
