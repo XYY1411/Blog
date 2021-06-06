@@ -32,6 +32,43 @@
       </tags>
   </entry>
   <entry>
+    <title>裴蜀定理, Bézout&#39;s lemma</title>
+    <url>/46515/</url>
+    <content><![CDATA[<p>又叫贝祖定理。</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B2%9D%E7%A5%96%E7%AD%89%E5%BC%8F">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86">百度百科</a>，<a href="https://oi-wiki.org/math/bezouts/">OI Wiki</a></p>
+<p>$\forall x, y \neq 0， \exists x, y \in \mathbb{Z},$ 使得 $ax +by = (a, b)$.</p>
+]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>裴蜀定理</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>素数</title>
+    <url>/26915/</url>
+    <content><![CDATA[<p>数论的基础（？）</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B4%A8%E6%95%B0">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%B4%A8%E6%95%B0/263515?fromtitle=%E7%B4%A0%E6%95%B0&fromid=115069">百度百科</a>，<a href="https://oi-wiki.org/math/prime/">OI Wiki</a></p>
+<p>质数，又称素数，指在大于 $1$ 的自然数中，除了 $1$ 和该数自身外，无法被其他自然数整除的数。大于 $1$ 的自然数若不是素数，则称之为合数。</p>
+<h1 id="判断素数"><a href="#判断素数" class="headerlink" title="判断素数"></a>判断素数</h1><p>那么如何判断一个数是不是素数？<del>（傻子都会吧）</del></p>
+<p>就是一个一个试着去除。</p>
+<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>$\Theta(\sqrt n)$</p>
+<h2 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>素数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Linux Bash 常用命令</title>
     <url>/17383/</url>
     <content><![CDATA[<p> 用于 OI 。</p>
@@ -216,43 +253,6 @@
       </tags>
   </entry>
   <entry>
-    <title>素数</title>
-    <url>/26915/</url>
-    <content><![CDATA[<p>数论的基础（？）</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B4%A8%E6%95%B0">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%B4%A8%E6%95%B0/263515?fromtitle=%E7%B4%A0%E6%95%B0&fromid=115069">百度百科</a>，<a href="https://oi-wiki.org/math/prime/">OI Wiki</a></p>
-<p>质数，又称素数，指在大于 $1$ 的自然数中，除了 $1$ 和该数自身外，无法被其他自然数整除的数。大于 $1$ 的自然数若不是素数，则称之为合数。</p>
-<h1 id="判断素数"><a href="#判断素数" class="headerlink" title="判断素数"></a>判断素数</h1><p>那么如何判断一个数是不是素数？<del>（傻子都会吧）</del></p>
-<p>就是一个一个试着去除。</p>
-<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>$\Theta(\sqrt n)$</p>
-<h2 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>素数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>裴蜀定理, Bézout&#39;s lemma</title>
-    <url>/46515/</url>
-    <content><![CDATA[<p>又叫贝祖定理。</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B2%9D%E7%A5%96%E7%AD%89%E5%BC%8F">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86">百度百科</a>，<a href="https://oi-wiki.org/math/bezouts/">OI Wiki</a></p>
-<p>$\forall x, y \neq 0， \exists x, y \in \mathbb{Z},$ 使得 $ax +by = (a, b)$.</p>
-]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>裴蜀定理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>中国剩余定理, Chinese remainder theorem, crt</title>
     <url>/8769/</url>
     <content><![CDATA[<p>emmm…</p>
@@ -329,6 +329,21 @@
       </tags>
   </entry>
   <entry>
+    <title>欧拉函数, Euler function</title>
+    <url>/55226/</url>
+    <content><![CDATA[<p>第一次看的时候我直接晕。</p>
+<span id="more"></span>
+
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><h2 id="rm-P"><a href="#rm-P" class="headerlink" title="#\rm P$"></a>#\rm P$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">phi</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    T ans = n;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>欧拉函数</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>欧几里得算法, 辗转相除法 Euclidean algorithm, gcd</title>
     <url>/56234/</url>
     <content><![CDATA[<p>GCD… 应该没人不会吧……</p>
@@ -347,18 +362,20 @@
       </tags>
   </entry>
   <entry>
-    <title>欧拉函数, Euler function</title>
-    <url>/55226/</url>
-    <content><![CDATA[<p>第一次看的时候我直接晕。</p>
+    <title>欧拉筛, sieve of Euler</title>
+    <url>/51755/</url>
+    <content><![CDATA[<p>线性质数筛。</p>
 <span id="more"></span>
 
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><h2 id="rm-P"><a href="#rm-P" class="headerlink" title="#\rm P$"></a>#\rm P$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">phi</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    T ans = n;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T get_prime_euler(T n, bool *isprime, T *prime_table);</span></span><br><span class="line"><span class="comment">  求 n 以下的质数表</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">get_prime_euler</span><span class="params">(T n, <span class="keyword">bool</span> *isprime, T *prime_table)</span> </span>&#123;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) prime_table[++p] = i;</span><br><span class="line">        <span class="keyword">for</span> (T j = <span class="number">1</span>, t; j &lt; p &amp;&amp; (t = i * prime_table[j]) &lt;= n; ++j) &#123;</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime_table[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>OI</category>
         <category>数学</category>
       </categories>
       <tags>
-        <tag>欧拉函数</tag>
+        <tag>素数</tag>
+        <tag>筛法</tag>
+        <tag>线性筛</tag>
       </tags>
   </entry>
   <entry>
@@ -377,23 +394,6 @@
       <tags>
         <tag>欧拉函数</tag>
         <tag>欧拉定理（数论）</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欧拉筛, sieve of Euler</title>
-    <url>/51755/</url>
-    <content><![CDATA[<p>线性质数筛。</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T get_prime_euler(T n, bool *isprime, T *prime_table);</span></span><br><span class="line"><span class="comment">  求 n 以下的质数表</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">get_prime_euler</span><span class="params">(T n, <span class="keyword">bool</span> *isprime, T *prime_table)</span> </span>&#123;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) prime_table[++p] = i;</span><br><span class="line">        <span class="keyword">for</span> (T j = <span class="number">1</span>, t; j &lt; p &amp;&amp; (t = i * prime_table[j]) &lt;= n; ++j) &#123;</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime_table[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>素数</tag>
-        <tag>筛法</tag>
-        <tag>线性筛</tag>
       </tags>
   </entry>
   <entry>
@@ -471,32 +471,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-05-09 模拟赛</title>
-    <url>/49102/</url>
-    <content><![CDATA[<p>过于水的模拟赛。</p>
-<span id="more"></span>
-
-<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-Teams"><a href="#T1-Teams" class="headerlink" title="T1 Teams"></a>T1 Teams</h2><p><a href="teams.cpp" download="teams.cpp">考场代码</a></p>
-<p>提交地址：无</p>
-<p>字符串哈希预处理，枚举子集暴力处理，然而直接暴力都过了， $\rm{\color{Black}L\color{Red}awrenceSivan}$ 却没写出来。</p>
-<h2 id="T2-NOI2014-动物园考场代码"><a href="#T2-NOI2014-动物园考场代码" class="headerlink" title="T2  [NOI2014] 动物园考场代码"></a>T2  [NOI2014] 动物园<a href="zoo.cpp" download="zoo.cpp">考场代码</a></h2><p>提交地址：<a href="https://www.luogu.com.cn/problem/P2375">洛谷 Luogu2375</a>，大视野在线评测 BZOJ3670 </p>
-<p>一道升级 $\rm KMP$ 。</p>
-<h2 id="T3-消灭恶魔"><a href="#T3-消灭恶魔" class="headerlink" title="T3 消灭恶魔"></a>T3 消灭恶魔</h2><p><a href="demon.cpp" download="demon.cpp">考场代码</a></p>
-<p>提交地址：无</p>
-<p>求二维凸包面积，直接叉乘即可。</p>
-<h1 id="合计-100-100-100-300"><a href="#合计-100-100-100-300" class="headerlink" title="合计 $100 + 100 + 100 = 300$"></a>合计 $100 + 100 + 100 = 300$</h1>]]></content>
-      <categories>
-        <category>日志</category>
-        <category>模拟赛</category>
-      </categories>
-      <tags>
-        <tag>字符串哈希</tag>
-        <tag>克努斯-莫里斯-普拉特算法, KMP</tag>
-        <tag>计算几何</tag>
-        <tag>二维凸包</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>2021-04-19 模拟赛</title>
     <url>/48435/</url>
     <content><![CDATA[<p>这次虽然没有 $\rm\color{Yellow}CE$ ，但是 IDA* 写挂了……</p>
@@ -524,28 +498,51 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-05-16 模拟赛</title>
-    <url>/26627/</url>
-    <content><![CDATA[<p>我讨厌线段树。</p>
+    <title>2021-05-09 模拟赛</title>
+    <url>/49102/</url>
+    <content><![CDATA[<p>过于水的模拟赛。</p>
 <span id="more"></span>
 
-<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-文件改名"><a href="#T1-文件改名" class="headerlink" title="T1 文件改名"></a>T1 文件改名</h2><p><a href="files.cpp" download="files.cpp">考场代码</a></p>
+<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-Teams"><a href="#T1-Teams" class="headerlink" title="T1 Teams"></a>T1 Teams</h2><p><a href="teams.cpp" download="teams.cpp">考场代码</a></p>
 <p>提交地址：无</p>
-<p>字符串哈希预处理，用一个 <code>std::map</code> 来存每个文件的原名字（其实离散化更快<del>（虽然就快了每点 15 ms ……</del>），然后找点、链、环，每个点贡献为零，每条链贡献为这条链的点数，每个环的贡献为这个环的点数加一，然后结束。</p>
-<h2 id="T2-HAOI2012-高速公路"><a href="#T2-HAOI2012-高速公路" class="headerlink" title="T2 [HAOI2012]高速公路"></a>T2 [HAOI2012]高速公路</h2><p><a href="road.cpp" download="road.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P2221">洛谷 Luogu2221</a>，大视野在线评测 BZOJ2752</p>
-<p>一道恶心线段树，写了 20 分暴力，太恶心了。</p>
-<p>思路是先推出每个区间的期望值公式，然后想如何用线段树维护。</p>
-<p>（口胡：）</p>
-<p>期望值公式很简单，分母可以直接用区间长度算出来，分子每个点权值由两边向中间递增，线段树想两个字区间合并时如何改就行了<del>（就是不会）</del>。</p>
-<h2 id="T3-矩形"><a href="#T3-矩形" class="headerlink" title="T3 矩形"></a>T3 矩形</h2><p><a href="horizon.cpp" download="horizon.cpp">考场代码</a></p>
+<p>字符串哈希预处理，枚举子集暴力处理，然而直接暴力都过了， $\rm{\color{Black}L\color{Red}awrenceSivan}$ 却没写出来。</p>
+<h2 id="T2-NOI2014-动物园考场代码"><a href="#T2-NOI2014-动物园考场代码" class="headerlink" title="T2  [NOI2014] 动物园考场代码"></a>T2  [NOI2014] 动物园<a href="zoo.cpp" download="zoo.cpp">考场代码</a></h2><p>提交地址：<a href="https://www.luogu.com.cn/problem/P2375">洛谷 Luogu2375</a>，大视野在线评测 BZOJ3670 </p>
+<p>一道升级 $\rm KMP$ 。</p>
+<h2 id="T3-消灭恶魔"><a href="#T3-消灭恶魔" class="headerlink" title="T3 消灭恶魔"></a>T3 消灭恶魔</h2><p><a href="demon.cpp" download="demon.cpp">考场代码</a></p>
 <p>提交地址：无</p>
-<p>弱化版扫描线，写了个空间复杂度假的算法，时间复杂度是均摊 $\Theta(MAX\_LONG \log n)$。</p>
-<h2 id="T4-SCOI2016-萌萌哒"><a href="#T4-SCOI2016-萌萌哒" class="headerlink" title="T4 [SCOI2016]萌萌哒"></a>T4 [SCOI2016]萌萌哒</h2><p><a href="number.cpp" download="number.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P3295">洛谷 Luogu3295</a>，大视野在线评测 BZOJ4569</p>
-<p>原题，忘了倍增挂了。</p>
-<p>思路是每个区间每个点用并查集合并到一个区间，统计最后剩几个区间就好，要倍增优化，剩 $n$ 个区间时，答案为 $9 \times 10^{n - 1} \bmod 1^9 + 7$ 。</p>
-<h1 id="合计-100-20-50-30-200"><a href="#合计-100-20-50-30-200" class="headerlink" title="合计 $100 + 20 + 50 + 30 = 200$"></a>合计 $100 + 20 + 50 + 30 = 200$</h1><p>由于博客挂了会所以等了很久更新（虽说就一天）。</p>
+<p>求二维凸包面积，直接叉乘即可。</p>
+<h1 id="合计-100-100-100-300"><a href="#合计-100-100-100-300" class="headerlink" title="合计 $100 + 100 + 100 = 300$"></a>合计 $100 + 100 + 100 = 300$</h1>]]></content>
+      <categories>
+        <category>日志</category>
+        <category>模拟赛</category>
+      </categories>
+      <tags>
+        <tag>字符串哈希</tag>
+        <tag>克努斯-莫里斯-普拉特算法, KMP</tag>
+        <tag>计算几何</tag>
+        <tag>二维凸包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021-05-23 模拟赛</title>
+    <url>/40982/</url>
+    <content><![CDATA[<p>我讨厌线段树 * 2 。</p>
+<span id="more"></span>
+
+<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-RP堆"><a href="#T1-RP堆" class="headerlink" title="T1 RP堆"></a>T1 RP堆</h2><p><a href="rp.cpp" download="rp.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>将两个数转换为二进制，其父节点即二进制下最长公共前缀，每个点的深度为二进制位数，答案为深度相减。</p>
+<h2 id="T2-线段树"><a href="#T2-线段树" class="headerlink" title="T2 线段树"></a>T2 线段树</h2><p><a href="seg.cpp" download="seg.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>正解是 $\Theta(\log n)$ 计算区间，然后直接算出答案，写了个 $\rm \color{black}MLE$ 算法。</p>
+<h2 id="T3-宇宙图书馆"><a href="#T3-宇宙图书馆" class="headerlink" title="T3 宇宙图书馆"></a>T3 宇宙图书馆</h2><p><a href="lib.cpp" download="lib.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>裸的值域线段树，没写出来…………………………………………</p>
+<h2 id="T4-最优背包"><a href="#T4-最优背包" class="headerlink" title="T4 最优背包"></a>T4 最优背包</h2><p><a href="bag.cpp" download="bag.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>我……</p>
+<p>奇怪的<a href="bag88.cpp" download="bag88.cpp">代码</a>有 88 分，而<a href="bag100.cpp" download="bag100.cpp">这个</a>有 100 分……</p>
+<h1 id="合计-100-60-25-0-185"><a href="#合计-100-60-25-0-185" class="headerlink" title="合计 $100 + 60 + 25 + 0 = 185$"></a>合计 $100 + 60 + 25 + 0 = 185$</h1><p>死了……</p>
 ]]></content>
       <categories>
         <category>日志</category>
@@ -553,12 +550,11 @@
       </categories>
       <tags>
         <tag>倍增</tag>
-        <tag>并查集</tag>
-        <tag>字符串哈希</tag>
-        <tag>搜索</tag>
-        <tag>扫描线</tag>
+        <tag>贪心</tag>
+        <tag>二进制</tag>
+        <tag>最近公共祖先, LCA</tag>
         <tag>线段树</tag>
-        <tag>离散化</tag>
+        <tag>权值线段树</tag>
       </tags>
   </entry>
   <entry>
@@ -597,25 +593,28 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-05-23 模拟赛</title>
-    <url>/40982/</url>
-    <content><![CDATA[<p>我讨厌线段树 * 2 。</p>
+    <title>2021-05-16 模拟赛</title>
+    <url>/26627/</url>
+    <content><![CDATA[<p>我讨厌线段树。</p>
 <span id="more"></span>
 
-<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-RP堆"><a href="#T1-RP堆" class="headerlink" title="T1 RP堆"></a>T1 RP堆</h2><p><a href="rp.cpp" download="rp.cpp">考场代码</a></p>
+<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-文件改名"><a href="#T1-文件改名" class="headerlink" title="T1 文件改名"></a>T1 文件改名</h2><p><a href="files.cpp" download="files.cpp">考场代码</a></p>
 <p>提交地址：无</p>
-<p>将两个数转换为二进制，其父节点即二进制下最长公共前缀，每个点的深度为二进制位数，答案为深度相减。</p>
-<h2 id="T2-线段树"><a href="#T2-线段树" class="headerlink" title="T2 线段树"></a>T2 线段树</h2><p><a href="seg.cpp" download="seg.cpp">考场代码</a></p>
+<p>字符串哈希预处理，用一个 <code>std::map</code> 来存每个文件的原名字（其实离散化更快<del>（虽然就快了每点 15 ms ……</del>），然后找点、链、环，每个点贡献为零，每条链贡献为这条链的点数，每个环的贡献为这个环的点数加一，然后结束。</p>
+<h2 id="T2-HAOI2012-高速公路"><a href="#T2-HAOI2012-高速公路" class="headerlink" title="T2 [HAOI2012]高速公路"></a>T2 [HAOI2012]高速公路</h2><p><a href="road.cpp" download="road.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P2221">洛谷 Luogu2221</a>，大视野在线评测 BZOJ2752</p>
+<p>一道恶心线段树，写了 20 分暴力，太恶心了。</p>
+<p>思路是先推出每个区间的期望值公式，然后想如何用线段树维护。</p>
+<p>（口胡：）</p>
+<p>期望值公式很简单，分母可以直接用区间长度算出来，分子每个点权值由两边向中间递增，线段树想两个字区间合并时如何改就行了<del>（就是不会）</del>。</p>
+<h2 id="T3-矩形"><a href="#T3-矩形" class="headerlink" title="T3 矩形"></a>T3 矩形</h2><p><a href="horizon.cpp" download="horizon.cpp">考场代码</a></p>
 <p>提交地址：无</p>
-<p>正解是 $\Theta(\log n)$ 计算区间，然后直接算出答案，写了个 $\rm \color{black}MLE$ 算法。</p>
-<h2 id="T3-宇宙图书馆"><a href="#T3-宇宙图书馆" class="headerlink" title="T3 宇宙图书馆"></a>T3 宇宙图书馆</h2><p><a href="lib.cpp" download="lib.cpp">考场代码</a></p>
-<p>提交地址：无</p>
-<p>裸的值域线段树，没写出来…………………………………………</p>
-<h2 id="T4-最优背包"><a href="#T4-最优背包" class="headerlink" title="T4 最优背包"></a>T4 最优背包</h2><p><a href="bag.cpp" download="bag.cpp">考场代码</a></p>
-<p>提交地址：无</p>
-<p>我……</p>
-<p>奇怪的<a href="bag88.cpp" download="bag88.cpp">代码</a>有 88 分，而<a href="bag100.cpp" download="bag100.cpp">这个</a>有 100 分……</p>
-<h1 id="合计-100-60-25-0-185"><a href="#合计-100-60-25-0-185" class="headerlink" title="合计 $100 + 60 + 25 + 0 = 185$"></a>合计 $100 + 60 + 25 + 0 = 185$</h1><p>死了……</p>
+<p>弱化版扫描线，写了个空间复杂度假的算法，时间复杂度是均摊 $\Theta(MAX\_LONG \log n)$。</p>
+<h2 id="T4-SCOI2016-萌萌哒"><a href="#T4-SCOI2016-萌萌哒" class="headerlink" title="T4 [SCOI2016]萌萌哒"></a>T4 [SCOI2016]萌萌哒</h2><p><a href="number.cpp" download="number.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P3295">洛谷 Luogu3295</a>，大视野在线评测 BZOJ4569</p>
+<p>原题，忘了倍增挂了。</p>
+<p>思路是每个区间每个点用并查集合并到一个区间，统计最后剩几个区间就好，要倍增优化，剩 $n$ 个区间时，答案为 $9 \times 10^{n - 1} \bmod 1^9 + 7$ 。</p>
+<h1 id="合计-100-20-50-30-200"><a href="#合计-100-20-50-30-200" class="headerlink" title="合计 $100 + 20 + 50 + 30 = 200$"></a>合计 $100 + 20 + 50 + 30 = 200$</h1><p>由于博客挂了会所以等了很久更新（虽说就一天）。</p>
 ]]></content>
       <categories>
         <category>日志</category>
@@ -623,11 +622,29 @@
       </categories>
       <tags>
         <tag>倍增</tag>
-        <tag>贪心</tag>
+        <tag>并查集</tag>
+        <tag>搜索</tag>
+        <tag>字符串哈希</tag>
         <tag>线段树</tag>
-        <tag>二进制</tag>
-        <tag>最近公共祖先, LCA</tag>
-        <tag>权值线段树</tag>
+        <tag>扫描线</tag>
+        <tag>离散化</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>扩展中国剩余定理, Extended Chinese remainder theorem, extcrt</title>
+    <url>/39570/</url>
+    <content><![CDATA[<p>快去试试扩展扩展中国剩余定理。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">extcrt</span><span class="params">(T n, T *b, T *a)</span> </span>&#123;</span><br><span class="line">    T ans = a[<span class="number">1</span>], M = b[<span class="number">1</span>], x, y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        T B = ((a[i] - ans) % b[i] + b[i]) % b[i];</span><br><span class="line">        T GCD = extgcd&lt;T&gt;(M, b[i], x, y);</span><br><span class="line">        x = qmul&lt;T&gt;(x, B / GCD, b[i]);</span><br><span class="line">        ans += M * x;</span><br><span class="line">        M *= b[i] / GCD;</span><br><span class="line">        ans = (ans + M) % M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>同余</tag>
+        <tag>扩展欧几里得算法, extgcd</tag>
+        <tag>扩展中国剩余定理, extcrt</tag>
       </tags>
   </entry>
   <entry>
@@ -663,23 +680,6 @@
       </tags>
   </entry>
   <entry>
-    <title>扩展中国剩余定理, Extended Chinese remainder theorem, extcrt</title>
-    <url>/39570/</url>
-    <content><![CDATA[<p>快去试试扩展扩展中国剩余定理。</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">extcrt</span><span class="params">(T n, T *b, T *a)</span> </span>&#123;</span><br><span class="line">    T ans = a[<span class="number">1</span>], M = b[<span class="number">1</span>], x, y;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        T B = ((a[i] - ans) % b[i] + b[i]) % b[i];</span><br><span class="line">        T GCD = extgcd&lt;T&gt;(M, b[i], x, y);</span><br><span class="line">        x = qmul&lt;T&gt;(x, B / GCD, b[i]);</span><br><span class="line">        ans += M * x;</span><br><span class="line">        M *= b[i] / GCD;</span><br><span class="line">        ans = (ans + M) % M;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>同余</tag>
-        <tag>扩展欧几里得算法, extgcd</tag>
-        <tag>扩展中国剩余定理, extcrt</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>扩展欧几里得算法, Extended Euclidean algorithm, extgcd</title>
     <url>/13399/</url>
     <content><![CDATA[<p>扩展欧几里得，用于解同余方程。</p>
@@ -700,23 +700,6 @@
       </tags>
   </entry>
   <entry>
-    <title>快速乘</title>
-    <url>/21676/</url>
-    <content><![CDATA[<p><del>快速</del>龟速乘。</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>由于在乘模时可能在模之前就溢出了，所以我们可以使用类似于快速幂的思想，将乘法分解来算。</p>
-<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qmul</span><span class="params">(T x, T y, T mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">0</span> || y == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    T ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>) ret = ((ret % mod) + (x % mod)) % mod;</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        x = ((x % mod) + (x % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>快速乘</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>扩展欧拉定理（数论）, Extend Euler&#39;s theorem(Number Theory)</title>
     <url>/26296/</url>
     <content><![CDATA[<p>数竞生：信竞咋啥都扩展？</p>
@@ -731,6 +714,23 @@
       <tags>
         <tag>欧拉函数</tag>
         <tag>扩展欧拉定理（数论）</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>快速乘</title>
+    <url>/21676/</url>
+    <content><![CDATA[<p><del>快速</del>龟速乘。</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>由于在乘模时可能在模之前就溢出了，所以我们可以使用类似于快速幂的思想，将乘法分解来算。</p>
+<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qmul</span><span class="params">(T x, T y, T mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">0</span> || y == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    T ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>) ret = ((ret % mod) + (x % mod)) % mod;</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        x = ((x % mod) + (x % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>快速乘</tag>
       </tags>
   </entry>
   <entry>
@@ -770,6 +770,32 @@
       </categories>
       <tags>
         <tag>快速幂</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>克努斯-莫里斯-普拉特算法, Knuth-Morris-Pratt Algorithm, KMP</title>
+    <url>/53323/</url>
+    <content><![CDATA[<p>字符串模式匹配。</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://oi-wiki.org/string/kmp/">OIWiki</a></p>
+<p>如何找到一个字符串（模式串）在另一个字符串（文本串）中出现了几次？或者说有几个子串和这个字符串一样？并且找到出现位置。</p>
+<p>我们可以枚举每一个子串的开头位置，一一去比较，复杂度为 $\Theta(mn)$ ，其中 $n$ 为文本串的长度， $m$ 为模式串的长度。</p>
+<p>这样很慢，有没有比较高效的方法？</p>
+<p>方法就是 $\rm{KMP}$ 。</p>
+<p>$\rm{KMP}$ 算法可以使用 $\Theta(m)$ 的时间对模式串预处理， $\Theta(n)$ 的时间对每个文本串进行匹配。</p>
+<p>怎么做到的？</p>
+<p>就是在每次失配的时候直接跳跃到下一个可以匹配未失配部分的位置，这样就做到了 $\Theta(n)$ 的时间匹配，而找到下一个位置就是预处理要做的。</p>
+<p>证明……不会，至今不懂，<del>直接背就好</del>。</p>
+<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>预处理 $\Theta(m)$ ，匹配 $\Theta(n)$ 。</p>
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm{\color{Green}code}$"></a>$\rm{\color{Green}code}$</h1><h2 id="rm-OI"><a href="#rm-OI" class="headerlink" title="$\rm{OI}$"></a>$\rm{OI}$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> next[maxn], len1, len2, ans[maxn], cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> s1[maxn], s2[maxn]; <span class="comment">// s2 为模式串， s1 为文本串</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">getfail</span><span class="params">()</span> </span>&#123;	 <span class="comment">// 预处理</span></span><br><span class="line">    len2 = <span class="built_in">strlen</span>(s2);</span><br><span class="line">    <span class="keyword">int</span> t1 = <span class="number">0</span>, t2;</span><br><span class="line">    next[<span class="number">0</span>] = t2 = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span> (t1 &lt; len2) </span><br><span class="line">        <span class="keyword">if</span> (t2 == <span class="number">-1</span> || s2[t1] == s2[t2])</span><br><span class="line">            next[++t1] = ++t2;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            t2 = next[t2];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">kmp</span><span class="params">()</span> </span>&#123; <span class="comment">// 匹配</span></span><br><span class="line">    len1 = <span class="built_in">strlen</span>(s1);</span><br><span class="line">    <span class="keyword">int</span> t1 = <span class="number">0</span>, t2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (t1 &lt; len1)&#123;</span><br><span class="line">        <span class="keyword">if</span> (t2 == <span class="number">-1</span> || s1[t1] == s2[t2]) </span><br><span class="line">            t1++, t2++;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            t2 = next[t2];</span><br><span class="line">        <span class="keyword">if</span> (t2 == len2) &#123;</span><br><span class="line">            ans[++cnt] = t1 - len2 + <span class="number">1</span>;</span><br><span class="line">            t2 = next[t2];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>字符串</category>
+      </categories>
+      <tags>
+        <tag>克努斯-莫里斯-普拉特算法, KMP</tag>
+        <tag>字符串匹配</tag>
       </tags>
   </entry>
   <entry>
@@ -827,29 +853,21 @@
       </tags>
   </entry>
   <entry>
-    <title>克努斯-莫里斯-普拉特算法, Knuth-Morris-Pratt Algorithm, KMP</title>
-    <url>/53323/</url>
-    <content><![CDATA[<p>字符串模式匹配。</p>
+    <title>卢卡斯定理, Lucas&#39; theorem , lucas</title>
+    <url>/30428/</url>
+    <content><![CDATA[<p><del>简介，不知道写啥了。</del></p>
 <span id="more"></span>
 
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://oi-wiki.org/string/kmp/">OIWiki</a></p>
-<p>如何找到一个字符串（模式串）在另一个字符串（文本串）中出现了几次？或者说有几个子串和这个字符串一样？并且找到出现位置。</p>
-<p>我们可以枚举每一个子串的开头位置，一一去比较，复杂度为 $\Theta(mn)$ ，其中 $n$ 为文本串的长度， $m$ 为模式串的长度。</p>
-<p>这样很慢，有没有比较高效的方法？</p>
-<p>方法就是 $\rm{KMP}$ 。</p>
-<p>$\rm{KMP}$ 算法可以使用 $\Theta(m)$ 的时间对模式串预处理， $\Theta(n)$ 的时间对每个文本串进行匹配。</p>
-<p>怎么做到的？</p>
-<p>就是在每次失配的时候直接跳跃到下一个可以匹配未失配部分的位置，这样就做到了 $\Theta(n)$ 的时间匹配，而找到下一个位置就是预处理要做的。</p>
-<p>证明……不会，至今不懂，<del>直接背就好</del>。</p>
-<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>预处理 $\Theta(m)$ ，匹配 $\Theta(n)$ 。</p>
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm{\color{Green}code}$"></a>$\rm{\color{Green}code}$</h1><h2 id="rm-OI"><a href="#rm-OI" class="headerlink" title="$\rm{OI}$"></a>$\rm{OI}$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e6</span> + <span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> next[maxn], len1, len2, ans[maxn], cnt = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">char</span> s1[maxn], s2[maxn]; <span class="comment">// s2 为模式串， s1 为文本串</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">getfail</span><span class="params">()</span> </span>&#123;	 <span class="comment">// 预处理</span></span><br><span class="line">    len2 = <span class="built_in">strlen</span>(s2);</span><br><span class="line">    <span class="keyword">int</span> t1 = <span class="number">0</span>, t2;</span><br><span class="line">    next[<span class="number">0</span>] = t2 = <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span> (t1 &lt; len2) </span><br><span class="line">        <span class="keyword">if</span> (t2 == <span class="number">-1</span> || s2[t1] == s2[t2])</span><br><span class="line">            next[++t1] = ++t2;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            t2 = next[t2];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">kmp</span><span class="params">()</span> </span>&#123; <span class="comment">// 匹配</span></span><br><span class="line">    len1 = <span class="built_in">strlen</span>(s1);</span><br><span class="line">    <span class="keyword">int</span> t1 = <span class="number">0</span>, t2 = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (t1 &lt; len1)&#123;</span><br><span class="line">        <span class="keyword">if</span> (t2 == <span class="number">-1</span> || s1[t1] == s2[t2]) </span><br><span class="line">            t1++, t2++;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            t2 = next[t2];</span><br><span class="line">        <span class="keyword">if</span> (t2 == len2) &#123;</span><br><span class="line">            ans[++cnt] = t1 - len2 + <span class="number">1</span>;</span><br><span class="line">            t2 = next[t2];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>对于质数 $p$ ，有：</p>
+<p>$$\binom{n}{m}\bmod p = \binom{\left\lfloor n/p \right\rfloor}{\left\lfloor m/p\right\rfloor}\cdot\binom{n\bmod p}{m\bmod p}\bmod p$$</p>
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">lucas</span><span class="params">(T n, T m, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">C</span>(n % p, m % p, p) * <span class="built_in">lucas</span>(n / p, m / p, p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>OI</category>
-        <category>字符串</category>
+        <category>数学</category>
       </categories>
       <tags>
-        <tag>克努斯-莫里斯-普拉特算法, KMP</tag>
-        <tag>字符串匹配</tag>
+        <tag>卢卡斯定理, lucas</tag>
+        <tag>组合数</tag>
       </tags>
   </entry>
   <entry>
@@ -897,24 +915,6 @@
       <tags>
         <tag>线段树</tag>
         <tag>区间最值, RMQ</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>卢卡斯定理, Lucas&#39; theorem , lucas</title>
-    <url>/30428/</url>
-    <content><![CDATA[<p><del>简介，不知道写啥了。</del></p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>对于质数 $p$ ，有：</p>
-<p>$$\binom{n}{m}\bmod p = \binom{\left\lfloor n/p \right\rfloor}{\left\lfloor m/p\right\rfloor}\cdot\binom{n\bmod p}{m\bmod p}\bmod p$$</p>
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">lucas</span><span class="params">(T n, T m, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">C</span>(n % p, m % p, p) * <span class="built_in">lucas</span>(n / p, m / p, p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>卢卡斯定理, lucas</tag>
-        <tag>组合数</tag>
       </tags>
   </entry>
   <entry>
@@ -1164,7 +1164,73 @@
 <p>开了 $int$ 然后 $WA$ 了，百思不得其解，然后发现要 $long \ long$</p>
 <p>好了其实别的几乎没有了，都是我比较傻逼</p>
 <p>代码放这了</p>
-<h4 id="CODE-3"><a href="#CODE-3" class="headerlink" title="CODE:"></a>CODE:</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//#define LawrenceSivan</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, block, tot;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn], num[maxn], ans[maxn], belong[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Discretization</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(num + <span class="number">1</span>, num + <span class="number">1</span> + n);</span><br><span class="line">    <span class="keyword">int</span> tmp = <span class="built_in">unique</span>(num + <span class="number">1</span>, num + <span class="number">1</span> + n) - num - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        a[i] = <span class="built_in">lower_bound</span>(num + <span class="number">1</span>, num + <span class="number">1</span> + tmp, a[i]) - num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MOCAP</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> MOCAP &amp;a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> belong[l] == belong[a.l] ? r &lt; a.r : belong[l] &lt; belong[a.l];</span><br><span class="line">    &#125;</span><br><span class="line">&#125; mocap[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> cntt[maxn];</span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = l; i &lt;= r; i++) &#123;</span><br><span class="line">        cntt[a[i]] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = l; i &lt;= r; i++) &#123;</span><br><span class="line">        cntt[a[i]]++;</span><br><span class="line">        res = <span class="built_in">max</span>(res, cntt[a[i]] * num[a[i]]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> LawrenceSivan</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;aa.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;aa.out&quot;</span>, <span class="string">&quot;w&quot;</span>, stdout);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    m = <span class="built_in">read</span>();</span><br><span class="line">    block = <span class="built_in">sqrt</span>(n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        a[i] = num[i] = <span class="built_in">read</span>();</span><br><span class="line">        belong[i] = (i - <span class="number">1</span>) / block + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    tot = belong[n];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Discretization</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        mocap[i].l = <span class="built_in">read</span>();</span><br><span class="line">        mocap[i].r = <span class="built_in">read</span>();</span><br><span class="line">        mocap[i].id = i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span>(mocap + <span class="number">1</span>, mocap + <span class="number">1</span> + m);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> j = <span class="number">1</span>, i = <span class="number">1</span>; j &lt;= tot; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> nowr = <span class="built_in">min</span>(n, j * block), l = nowr + <span class="number">1</span>, r = l - <span class="number">1</span>, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(c));</span><br><span class="line">        <span class="keyword">for</span> (; belong[mocap[i].l] == j; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (belong[mocap[i].r] == j) &#123;</span><br><span class="line">                ans[mocap[i].id] = <span class="built_in">calc</span>(mocap[i].l, mocap[i].r);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (r &lt; mocap[i].r) &#123;</span><br><span class="line">                r++;</span><br><span class="line">                c[a[r]]++;</span><br><span class="line">                sum = <span class="built_in">max</span>(sum, c[a[r]] * num[a[r]]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> tmp = sum;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (l &gt; mocap[i].l) &#123;</span><br><span class="line">                l--;</span><br><span class="line">                c[a[l]]++;</span><br><span class="line">                sum = <span class="built_in">max</span>(sum, c[a[l]] * num[a[l]]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ans[mocap[i].id] = sum;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (l &lt;= nowr) &#123;</span><br><span class="line">                c[a[l]]--;</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            sum = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h4 id="CODE-3"><a href="#CODE-3" class="headerlink" title="CODE:"></a>CODE:</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//#define LawrenceSivan</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> int long long</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, block, tot;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn], num[maxn], ans[maxn], belong[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> c[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">Discretization</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">sort</span>(num + <span class="number">1</span>, num + <span class="number">1</span> + n);</span><br><span class="line">    <span class="keyword">int</span> tmp = <span class="built_in">unique</span>(num + <span class="number">1</span>, num + <span class="number">1</span> + n) - num - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">        a[i] = <span class="built_in">lower_bound</span>(num + <span class="number">1</span>, num + <span class="number">1</span> + tmp, a[i]) - num;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MOCAP</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> MOCAP &amp;a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> belong[l] == belong[a.l] ? r &lt; a.r : belong[l] &lt; belong[a.l];</span><br><span class="line">    &#125;</span><br><span class="line">&#125; mocap[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> cntt[maxn];</span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = l; i &lt;= r; i++) &#123;</span><br><span class="line">        cntt[a[i]] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = l; i &lt;= r; i++) &#123;</span><br><span class="line">        cntt[a[i]]++;</span><br><span class="line">        res = <span class="built_in">max</span>(res, cntt[a[i]] * num[a[i]]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">signed</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> LawrenceSivan</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;aa.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;aa.out&quot;</span>, <span class="string">&quot;w&quot;</span>, stdout);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    m = <span class="built_in">read</span>();</span><br><span class="line">    block = <span class="built_in">sqrt</span>(n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        a[i] = num[i] = <span class="built_in">read</span>();</span><br><span class="line">        belong[i] = (i - <span class="number">1</span>) / block + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    tot = belong[n];</span><br><span class="line"></span><br><span class="line">    <span class="built_in">Discretization</span>();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        mocap[i].l = <span class="built_in">read</span>();</span><br><span class="line">        mocap[i].r = <span class="built_in">read</span>();</span><br><span class="line">        mocap[i].id = i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span>(mocap + <span class="number">1</span>, mocap + <span class="number">1</span> + m);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> j = <span class="number">1</span>, i = <span class="number">1</span>; j &lt;= tot; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> nowr = <span class="built_in">min</span>(n, j * block), l = nowr + <span class="number">1</span>, r = l - <span class="number">1</span>, sum = <span class="number">0</span>;</span><br><span class="line">        <span class="built_in">memset</span>(c, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(c));</span><br><span class="line">        <span class="keyword">for</span> (; belong[mocap[i].l] == j; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (belong[mocap[i].r] == j) &#123;</span><br><span class="line">                ans[mocap[i].id] = <span class="built_in">calc</span>(mocap[i].l, mocap[i].r);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (r &lt; mocap[i].r) &#123;</span><br><span class="line">                r++;</span><br><span class="line">                c[a[r]]++;</span><br><span class="line">                sum = <span class="built_in">max</span>(sum, c[a[r]] * num[a[r]]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> tmp = sum;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (l &gt; mocap[i].l) &#123;</span><br><span class="line">                l--;</span><br><span class="line">                c[a[l]]++;</span><br><span class="line">                sum = <span class="built_in">max</span>(sum, c[a[l]] * num[a[l]]);</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ans[mocap[i].id] = sum;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (l &lt;= nowr) &#123;</span><br><span class="line">                c[a[l]]--;</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            sum = tmp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%lld\n&quot;</span>, ans[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="变式-Rmq-Problem-mex"><a href="#变式-Rmq-Problem-mex" class="headerlink" title="变式 Rmq Problem / mex"></a>变式 Rmq Problem / mex</h3><p><a href="https://www.luogu.com.cn/problem/P4137">P4137 Rmq Problem / mex</a></p>
+<p>后来我在智能推荐里找到了这道题。</p>
+<p>一眼看上去这个题面，貌似之前讲过的。</p>
+<p>之前讲的是可持久化线段树的做法。</p>
+<p>但是现在发现这玩意还可以用回滚莫队来搞。</p>
+<p>不过做了这道题确实颠覆和加深了我对回滚莫队的认识。</p>
+<p>题目很简洁：求给定区间内没有出现的最小的自然数是多少。</p>
+<p>稍加思考可以发现，这个东西的加入操作是没有办法做到 $O(1)$ 的。</p>
+<p>比如目前有一个序列：$0,6,3,5,4,2$ ，现在没有出现的最小自然数是 $1$。</p>
+<p>如果随着查询端点的移动，下一个位置要加入的数字恰好是 $1$，那么现在这个区间就出现 $1$ 了，于是我们要统计最小没有出现过的自然数的话就要从新统计。</p>
+<p>这是不好的。</p>
+<p>反观删除操作，如果还是上面的例子，现在右端点收缩，$2$ 就会被删除，于是我们只需要比较一下 $2,1$ 的大小关系，就可以在 $O(1)$ 的时间内确定新的 $mex$ 。</p>
+<p>这启示我们需要使用一个只资瓷删除而不资瓷增加的莫队。</p>
+<p>而根据我们刚刚学回滚莫队所联想的只资瓷增加不资瓷删除的回滚莫队相类比，我们可以将每个块按照<strong>左端点递增排序，右端点递减排序</strong>。</p>
+<p>首先求出整个序列的 $mex$ 。</p>
+<p>然后我们让右端点从整个序列的右侧不断地向左删除，同时左端点向右删除，处理完了以后我们让左端点回滚到块的左端点。这样就可以实现了。</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MOCAP</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, id;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> MOCAP &amp;a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> belong[l] == belong[a.l] ? r &gt; a.r : belong[l] &lt; belong[a.l];</span><br><span class="line">    &#125;</span><br><span class="line">&#125; mocap[maxn];</span><br></pre></td></tr></table></figure>
+
+<p>可以画个图理解一下：</p>
+<p><img src="rahnqr3l.png"></p>
+<p>这个是普通的回滚莫队</p>
+<p><img src="7ov6gaxr.png"></p>
+<p>这个是只减不增的回滚莫队</p>
+<p>处理完一个块的询问之后，左指针必然会回滚到块的左端点</p>
+<p>这时，类似只加不减的回滚莫队，先暴力地把右指针遍历到整个序列的最右端，然后左指针向右删除到下一个块的左端点。</p>
+<h4 id="细节相关："><a href="#细节相关：" class="headerlink" title="细节相关："></a>细节相关：</h4><h5 id="贡献与端点移动的先后关系："><a href="#贡献与端点移动的先后关系：" class="headerlink" title="贡献与端点移动的先后关系："></a>贡献与端点移动的先后关系：</h5><p>之前我们写的回滚莫队是只增不减的，现在的是只减不增的。</p>
+<ul>
+<li>在只增不减的回滚莫队中：</li>
+</ul>
+<p>我们已经处理过当前询问内的贡献，现在需要扩大范围，但是当前的贡献也要保留，所以应该先跳动端点指针，然后再增加贡献：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (r &lt; mocap[i].r) &#123;</span><br><span class="line">    r++;</span><br><span class="line">    c[a[r]]++;</span><br><span class="line">    sum = <span class="built_in">max</span>(sum, c[a[r]] * num[a[r]]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">while</span> (l &gt; mocap[i].l) &#123;</span><br><span class="line">    l--;</span><br><span class="line">    c[a[l]]++;</span><br><span class="line">    sum = <span class="built_in">max</span>(sum, c[a[l]] * num[a[l]]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>（这两个片段是歴史の研究里面的）</p>
+<ul>
+<li>在只减不增的回滚莫队中：</li>
+</ul>
+<p>再来看这道题，只删除不增加：</p>
+<p>我们需要缩小范围，也就是要逐个删除贡献，于是当前位置的贡献已经没有用了，所以要先删掉，才能移动指针去修改下一个位置：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (r &gt; mocap[i].r) &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[r] &lt;= n + <span class="number">1</span> &amp;&amp; !--cnt[a[r]]) p = <span class="built_in">min</span>(p, a[r]);</span><br><span class="line">    r--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (l &lt; mocap[i].l) &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[l] &lt;= n + <span class="number">1</span> &amp;&amp; !--cnt[a[l]]) tmp = <span class="built_in">min</span>(tmp, a[l]);</span><br><span class="line">    l++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="关于左右端点的位置记录与移动"><a href="#关于左右端点的位置记录与移动" class="headerlink" title="关于左右端点的位置记录与移动"></a>关于左右端点的位置记录与移动</h5><p>因为以往的回滚都是要回到当前块的右端点，所以我们每次只记录右端点就可以了，但是这道题是要回到左端点，所以需要记录左端点。</p>
+<p>处理完一个块以后，我们要控制左端点移动到下一个快的左端点，所以这些问题都要注意：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> nowr = <span class="built_in">min</span>(n, j*block), l = nowr + <span class="number">1</span>, r = l - <span class="number">1</span>, sum = <span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+
+<p>（依然是歴史の研究里面的）</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">int</span> nowl = <span class="built_in">min</span>(n, (j - <span class="number">1</span>) * block) + <span class="number">1</span>, l = nowl, r = n, p = mex,</span><br><span class="line">    nxtl = <span class="built_in">min</span>(n, j*block) + <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>（本题目）</p>
+<p>而且要注意，我们的右端点是要从整个序列的右端开始走的，所以要 $r=n$ .</p>
+<p>然后就是把右端点拉回最右侧，左端点拉到下一个块，这个东西也是平常的回滚莫队没有的：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">while</span> (r &lt; n) &#123;</span><br><span class="line">    r++;</span><br><span class="line">    <span class="keyword">if</span> (a[r] &lt;= n + <span class="number">1</span>) cnt[a[r]]++;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (l &lt; nxtl) &#123;</span><br><span class="line">    <span class="keyword">if</span> (a[l] &lt;= n + <span class="number">1</span> &amp;&amp; !--cnt[a[l]]) mex = <span class="built_in">min</span>(mex, a[l]);</span><br><span class="line">    l++;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="关于在同一个块内的暴力计算"><a href="#关于在同一个块内的暴力计算" class="headerlink" title="关于在同一个块内的暴力计算"></a>关于在同一个块内的暴力计算</h5><p>首先这个东西有两种实现方法;</p>
+<p>$1$：开一个全局数组，每次暴力算就先用一用，然后统计完再把贡献删掉：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">if</span> (belong[mocap[i].r] == j) &#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> k = mocap[i].l; k &lt;= mocap[i].r; k++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[k] &lt;= n + <span class="number">1</span>) cntt[a[k]]++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (cntt[res]) res++;</span><br><span class="line">    ans[mocap[i].id] = res;</span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> k = mocap[i].l; k &lt;= mocap[i].r; k++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[k] &lt;= n + <span class="number">1</span>) cntt[a[k]]--;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">continue</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>但是我不喜欢。</p>
+<p>如果你和我一样，都喜欢单独搞一个函数，然后在函数里直接统计，这样就可以不删除贡献了，用完就可以扔了。<del>可以不负责的感觉好爽</del></p>
+<p>但是一定要记得初始化！！</p>
+<p>不然你会 $WA$ 的很惨~</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>, cntt[maxn];</span><br><span class="line">    <span class="built_in">memset</span>(cntt, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(cntt));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = l; i &lt;= r; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] &lt;= n + <span class="number">1</span>) cntt[a[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (cntt[res]) res++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>其他问题就没啥可说的了。</p>
+<p>放下代码</p>
+<h4 id="CODE：-2"><a href="#CODE：-2" class="headerlink" title="CODE："></a>CODE：</h4><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">//#define LawrenceSivan</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> INF 0x3f3f3f3f</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> re register</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">2e5</span> + <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> n, m, belong[maxn], block, tot;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> cnt[maxn], mex, ans[maxn];</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">MOCAP</span> &#123;</span></span><br><span class="line">    <span class="keyword">int</span> l, r, id;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(<span class="keyword">const</span> MOCAP &amp;a) <span class="keyword">const</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> belong[l] == belong[a.l] ? r &gt; a.r : belong[l] &lt; belong[a.l];</span><br><span class="line">    &#125;</span><br><span class="line">&#125; mocap[maxn];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">calc</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> res = <span class="number">0</span>, cntt[maxn];</span><br><span class="line">    <span class="built_in">memset</span>(cntt, <span class="number">0</span>, <span class="built_in"><span class="keyword">sizeof</span></span>(cntt));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = l; i &lt;= r; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span> (a[i] &lt;= n + <span class="number">1</span>) cntt[a[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (cntt[res]) res++;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">read</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> x = <span class="number">0</span>, f = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">        <span class="keyword">if</span> (ch == <span class="string">&#x27;-&#x27;</span>) f = <span class="number">-1</span>;</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) &#123;</span><br><span class="line">        x = x * <span class="number">10</span> + (ch ^ <span class="number">48</span>);</span><br><span class="line">        ch = <span class="built_in">getchar</span>();</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> x * f;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">ifdef</span> LawrenceSivan</span></span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;aa.in&quot;</span>, <span class="string">&quot;r&quot;</span>, stdin);</span><br><span class="line">    <span class="built_in">freopen</span>(<span class="string">&quot;aa.out&quot;</span>, <span class="string">&quot;w&quot;</span>, stdout);</span><br><span class="line"><span class="meta">#<span class="meta-keyword">endif</span></span></span><br><span class="line">    n = <span class="built_in">read</span>();</span><br><span class="line">    m = <span class="built_in">read</span>();</span><br><span class="line">    block = <span class="built_in">sqrt</span>(n);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++) &#123;</span><br><span class="line">        a[i] = <span class="built_in">read</span>();</span><br><span class="line">        belong[i] = (i - <span class="number">1</span>) / block + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span> (a[i] &lt;= n + <span class="number">1</span>) cnt[a[i]]++;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (cnt[mex]) mex++;</span><br><span class="line"></span><br><span class="line">    tot = belong[n];</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        mocap[i].l = <span class="built_in">read</span>();</span><br><span class="line">        mocap[i].r = <span class="built_in">read</span>();</span><br><span class="line">        mocap[i].id = i;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">sort</span>(mocap + <span class="number">1</span>, mocap + <span class="number">1</span> + m);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>, j = <span class="number">1</span>; j &lt;= tot; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> nowl = <span class="built_in">min</span>(n, (j - <span class="number">1</span>) * block) + <span class="number">1</span>, l = nowl, r = n, p = mex,</span><br><span class="line">            nxtl = <span class="built_in">min</span>(n, j * block) + <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (; belong[mocap[i].l] == j; i++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (belong[mocap[i].r] == j) &#123;</span><br><span class="line">                ans[mocap[i].id] = <span class="built_in">calc</span>(mocap[i].l, mocap[i].r);</span><br><span class="line">                <span class="keyword">continue</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (r &gt; mocap[i].r) &#123;</span><br><span class="line">                <span class="keyword">if</span> (a[r] &lt;= n + <span class="number">1</span> &amp;&amp; !--cnt[a[r]]) p = <span class="built_in">min</span>(p, a[r]);</span><br><span class="line">                r--;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">int</span> tmp = p;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (l &lt; mocap[i].l) &#123;</span><br><span class="line">                <span class="keyword">if</span> (a[l] &lt;= n + <span class="number">1</span> &amp;&amp; !--cnt[a[l]]) tmp = <span class="built_in">min</span>(tmp, a[l]);</span><br><span class="line">                l++;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            ans[mocap[i].id] = tmp;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">while</span> (l &gt; nowl) &#123;</span><br><span class="line">                l--;</span><br><span class="line">                <span class="keyword">if</span> (a[l] &lt;= n + <span class="number">1</span>) cnt[a[l]]++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (r &lt; n) &#123;</span><br><span class="line">            r++;</span><br><span class="line">            <span class="keyword">if</span> (a[r] &lt;= n + <span class="number">1</span>) cnt[a[r]]++;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span> (l &lt; nxtl) &#123;</span><br><span class="line">            <span class="keyword">if</span> (a[l] &lt;= n + <span class="number">1</span> &amp;&amp; !--cnt[a[l]]) mex = <span class="built_in">min</span>(mex, a[l]);</span><br><span class="line">            l++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (re <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; i++) &#123;</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, ans[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>OI</category>
         <category>数据结构</category>
@@ -1175,6 +1241,42 @@
         <tag>暴力</tag>
         <tag>离线</tag>
         <tag>转载</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>乘法逆元, Multiplicative Inverse</title>
+    <url>/24044/</url>
+    <content><![CDATA[<p><a href="https://blog.i207m.top/">$\rm \color{red}i\color{black}207M$</a> ：</p>
+<blockquote>
+<p>你知道吗？求逆元有五种方法。</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>使用费马小定理，这种方法要求 $p$ 是质数。</p>
+<p>由</p>
+<p>$$a \times a^{p - 2} \equiv 1 \pmod{p}$$</p>
+<p>可得</p>
+<p>$$a^{-1} = a^{p - 2}$$</p>
+<p>然后就可以使用快速幂求逆元。</p>
+<p>（占位行，不然 Hexo 渲染下面会 Bug）</p>
+<p>（占位行）</p>
+<p>（占位行）</p>
+<p>（占位行）</p>
+<p>如下：</p>
+<h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_fermat</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">qipow</span>(n, p - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h1><p>扩展欧几里得算法。</p>
+<p>$$ax \equiv 1 \pmod{b}$$</p>
+<p>$x$ 即为 $a$ 在模 $b$ 意义下的逆元。</p>
+<p>如下：</p>
+<h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_extgcd</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    T x, y;</span><br><span class="line">    <span class="built_in">extgcd</span>(n, p, x, y);</span><br><span class="line">    <span class="keyword">return</span> (x % p + p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>逆元</tag>
+        <tag>乘法逆元</tag>
       </tags>
   </entry>
   <entry>
@@ -1212,42 +1314,6 @@
         <category>游记</category>
         <category>NOIO</category>
       </categories>
-  </entry>
-  <entry>
-    <title>乘法逆元, Multiplicative Inverse</title>
-    <url>/24044/</url>
-    <content><![CDATA[<p><a href="https://blog.i207m.top/">$\rm \color{red}i\color{black}207M$</a> ：</p>
-<blockquote>
-<p>你知道吗？求逆元有五种方法。</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>使用费马小定理，这种方法要求 $p$ 是质数。</p>
-<p>由</p>
-<p>$$a \times a^{p - 2} \equiv 1 \pmod{p}$$</p>
-<p>可得</p>
-<p>$$a^{-1} = a^{p - 2}$$</p>
-<p>然后就可以使用快速幂求逆元。</p>
-<p>（占位行，不然 Hexo 渲染下面会 Bug）</p>
-<p>（占位行）</p>
-<p>（占位行）</p>
-<p>（占位行）</p>
-<p>如下：</p>
-<h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_fermat</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">qipow</span>(n, p - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h1><p>扩展欧几里得算法。</p>
-<p>$$ax \equiv 1 \pmod{b}$$</p>
-<p>$x$ 即为 $a$ 在模 $b$ 意义下的逆元。</p>
-<p>如下：</p>
-<h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_extgcd</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    T x, y;</span><br><span class="line">    <span class="built_in">extgcd</span>(n, p, x, y);</span><br><span class="line">    <span class="keyword">return</span> (x % p + p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>逆元</tag>
-        <tag>乘法逆元</tag>
-      </tags>
   </entry>
   <entry>
     <title>预处理二进制对数表</title>
@@ -1480,19 +1546,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-04-10 杂谈</title>
-    <url>/9512/</url>
-    <content><![CDATA[<p>今天 $UNOI$ 开始了。</p>
-<span id="more"></span>
-
-<p>今天突然知道<a href="https://zh.wikipedia.org/wiki/%E7%88%B1%E4%B8%81%E5%A0%A1%E5%85%AC%E7%88%B5%E8%8F%B2%E5%88%A9%E6%99%AE%E4%BA%B2%E7%8E%8B">菲利普亲王</a>去世了，经历过二战的人还活着的不多了</p>
-]]></content>
-      <categories>
-        <category>日志</category>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>2021-04-03 杂谈</title>
     <url>/41061/</url>
     <content><![CDATA[<p>呵呵。</p>
@@ -1507,10 +1560,13 @@
       </categories>
   </entry>
   <entry>
-    <title>2021-04-15 杂谈</title>
-    <url>/6888/</url>
-    <content><![CDATA[<p>今天风沙真大。</p>
-<span id="more"></span>]]></content>
+    <title>2021-04-10 杂谈</title>
+    <url>/9512/</url>
+    <content><![CDATA[<p>今天 $UNOI$ 开始了。</p>
+<span id="more"></span>
+
+<p>今天突然知道<a href="https://zh.wikipedia.org/wiki/%E7%88%B1%E4%B8%81%E5%A0%A1%E5%85%AC%E7%88%B5%E8%8F%B2%E5%88%A9%E6%99%AE%E4%BA%B2%E7%8E%8B">菲利普亲王</a>去世了，经历过二战的人还活着的不多了</p>
+]]></content>
       <categories>
         <category>日志</category>
         <category>杂谈</category>
@@ -1533,17 +1589,14 @@
       </tags>
   </entry>
   <entry>
-    <title>测试</title>
-    <url>/37773/</url>
-    <content><![CDATA[<p>本博客已上线。</p>
+    <title>2021-04-15 杂谈</title>
+    <url>/6888/</url>
+    <content><![CDATA[<p>今天风沙真大。</p>
 <span id="more"></span>]]></content>
       <categories>
         <category>日志</category>
-        <category>维护</category>
+        <category>杂谈</category>
       </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
   </entry>
   <entry>
     <title>2021-06-02 杂谈</title>
@@ -1559,6 +1612,29 @@
       <categories>
         <category>日志</category>
         <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>测试</title>
+    <url>/37773/</url>
+    <content><![CDATA[<p>本博客已上线。</p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>日志</category>
+        <category>维护</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021-03-22 更新</title>
+    <url>/33114/</url>
+    <content><![CDATA[<p>Gitalk 评论功能已开启。</p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>日志</category>
+        <category>维护</category>
       </categories>
   </entry>
   <entry>
@@ -1626,16 +1702,6 @@
         <tag>堆</tag>
         <tag>树堆, Treap</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>2021-03-22 更新</title>
-    <url>/33114/</url>
-    <content><![CDATA[<p>Gitalk 评论功能已开启。</p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>日志</category>
-        <category>维护</category>
-      </categories>
   </entry>
   <entry>
     <title>2021-04-03 更新</title>
