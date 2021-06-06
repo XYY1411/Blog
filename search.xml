@@ -32,43 +32,6 @@
       </tags>
   </entry>
   <entry>
-    <title>裴蜀定理, Bézout&#39;s lemma</title>
-    <url>/46515/</url>
-    <content><![CDATA[<p>又叫贝祖定理。</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B2%9D%E7%A5%96%E7%AD%89%E5%BC%8F">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86">百度百科</a>，<a href="https://oi-wiki.org/math/bezouts/">OI Wiki</a></p>
-<p>$\forall x, y \neq 0， \exists x, y \in \mathbb{Z},$ 使得 $ax +by = (a, b)$.</p>
-]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>裴蜀定理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>素数</title>
-    <url>/26915/</url>
-    <content><![CDATA[<p>数论的基础（？）</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B4%A8%E6%95%B0">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%B4%A8%E6%95%B0/263515?fromtitle=%E7%B4%A0%E6%95%B0&fromid=115069">百度百科</a>，<a href="https://oi-wiki.org/math/prime/">OI Wiki</a></p>
-<p>质数，又称素数，指在大于 $1$ 的自然数中，除了 $1$ 和该数自身外，无法被其他自然数整除的数。大于 $1$ 的自然数若不是素数，则称之为合数。</p>
-<h1 id="判断素数"><a href="#判断素数" class="headerlink" title="判断素数"></a>判断素数</h1><p>那么如何判断一个数是不是素数？<del>（傻子都会吧）</del></p>
-<p>就是一个一个试着去除。</p>
-<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>$\Theta(\sqrt n)$</p>
-<h2 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>素数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Linux Bash 常用命令</title>
     <url>/17383/</url>
     <content><![CDATA[<p> 用于 OI 。</p>
@@ -253,6 +216,43 @@
       </tags>
   </entry>
   <entry>
+    <title>素数</title>
+    <url>/26915/</url>
+    <content><![CDATA[<p>数论的基础（？）</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B4%A8%E6%95%B0">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%B4%A8%E6%95%B0/263515?fromtitle=%E7%B4%A0%E6%95%B0&fromid=115069">百度百科</a>，<a href="https://oi-wiki.org/math/prime/">OI Wiki</a></p>
+<p>质数，又称素数，指在大于 $1$ 的自然数中，除了 $1$ 和该数自身外，无法被其他自然数整除的数。大于 $1$ 的自然数若不是素数，则称之为合数。</p>
+<h1 id="判断素数"><a href="#判断素数" class="headerlink" title="判断素数"></a>判断素数</h1><p>那么如何判断一个数是不是素数？<del>（傻子都会吧）</del></p>
+<p>就是一个一个试着去除。</p>
+<h2 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h2><p>$\Theta(\sqrt n)$</p>
+<h2 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">bool</span> <span class="title">isprime</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (n &lt; <span class="number">2</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>素数</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>裴蜀定理, Bézout&#39;s lemma</title>
+    <url>/46515/</url>
+    <content><![CDATA[<p>又叫贝祖定理。</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B2%9D%E7%A5%96%E7%AD%89%E5%BC%8F">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86">百度百科</a>，<a href="https://oi-wiki.org/math/bezouts/">OI Wiki</a></p>
+<p>$\forall x, y \neq 0， \exists x, y \in \mathbb{Z},$ 使得 $ax +by = (a, b)$.</p>
+]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>裴蜀定理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>中国剩余定理, Chinese remainder theorem, crt</title>
     <url>/8769/</url>
     <content><![CDATA[<p>emmm…</p>
@@ -329,21 +329,6 @@
       </tags>
   </entry>
   <entry>
-    <title>欧拉函数, Euler function</title>
-    <url>/55226/</url>
-    <content><![CDATA[<p>第一次看的时候我直接晕。</p>
-<span id="more"></span>
-
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><h2 id="rm-P"><a href="#rm-P" class="headerlink" title="#\rm P$"></a>#\rm P$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">phi</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    T ans = n;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>欧拉函数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>欧几里得算法, 辗转相除法 Euclidean algorithm, gcd</title>
     <url>/56234/</url>
     <content><![CDATA[<p>GCD… 应该没人不会吧……</p>
@@ -359,6 +344,21 @@
       </categories>
       <tags>
         <tag>欧几里得算法, 辗转相除法, gcd</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欧拉函数, Euler function</title>
+    <url>/55226/</url>
+    <content><![CDATA[<p>第一次看的时候我直接晕。</p>
+<span id="more"></span>
+
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><h2 id="rm-P"><a href="#rm-P" class="headerlink" title="#\rm P$"></a>#\rm P$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">phi</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    T ans = n;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i * i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">            ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">            <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>欧拉函数</tag>
       </tags>
   </entry>
   <entry>
@@ -454,7 +454,7 @@
 <p>提交地址：<a href="http://192.168.0.111:1926/problem/61/">SIGSEGV OJ SSOJ61</a></p>
 <p>并查集，然而忘了 <code>i * j</code> 会过程中爆 <code>long long</code> 。</p>
 <h2 id="T2-序列"><a href="#T2-序列" class="headerlink" title="T2 序列"></a>T2 序列</h2><p><a href="sequence.cpp" download="sequence.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P1645">洛谷 Luogu1645</a>，<a href="http://192.168.0.111:1926/problem/62/">SSOJ62（内网）</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P1645">洛谷 Luogu1645</a>，<a href="http://192.168.0.111:1926/problem/62/">SSOJ62</a></p>
 <p>贪心，然而 $\color{Yellow}CE$ 了。</p>
 <h2 id="T3-min"><a href="#T3-min" class="headerlink" title="T3 min"></a>T3 min</h2><p><a href="min.cpp" download="min.cpp">考场代码</a></p>
 <p>提交地址：<a href="http://192.168.0.111:1926/problem/63/">SIGSEGV OJ SSOJ63</a></p>
@@ -468,6 +468,32 @@
         <tag>并查集</tag>
         <tag>贪心</tag>
         <tag>克鲁斯卡尔算法, Kruskal</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021-05-09 模拟赛</title>
+    <url>/49102/</url>
+    <content><![CDATA[<p>过于水的模拟赛。</p>
+<span id="more"></span>
+
+<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-Teams"><a href="#T1-Teams" class="headerlink" title="T1 Teams"></a>T1 Teams</h2><p><a href="teams.cpp" download="teams.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>字符串哈希预处理，枚举子集暴力处理，然而直接暴力都过了， $\rm{\color{Black}L\color{Red}awrenceSivan}$ 却没写出来。</p>
+<h2 id="T2-NOI2014-动物园考场代码"><a href="#T2-NOI2014-动物园考场代码" class="headerlink" title="T2  [NOI2014] 动物园考场代码"></a>T2  [NOI2014] 动物园<a href="zoo.cpp" download="zoo.cpp">考场代码</a></h2><p>提交地址：<a href="https://www.luogu.com.cn/problem/P2375">洛谷 Luogu2375</a>，大视野在线评测 BZOJ3670 </p>
+<p>一道升级 $\rm KMP$ 。</p>
+<h2 id="T3-消灭恶魔"><a href="#T3-消灭恶魔" class="headerlink" title="T3 消灭恶魔"></a>T3 消灭恶魔</h2><p><a href="demon.cpp" download="demon.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>求二维凸包面积，直接叉乘即可。</p>
+<h1 id="合计-100-100-100-300"><a href="#合计-100-100-100-300" class="headerlink" title="合计 $100 + 100 + 100 = 300$"></a>合计 $100 + 100 + 100 = 300$</h1>]]></content>
+      <categories>
+        <category>日志</category>
+        <category>模拟赛</category>
+      </categories>
+      <tags>
+        <tag>字符串哈希</tag>
+        <tag>克努斯-莫里斯-普拉特算法, KMP</tag>
+        <tag>计算几何</tag>
+        <tag>二维凸包</tag>
       </tags>
   </entry>
   <entry>
@@ -495,32 +521,6 @@
         <tag>贪心</tag>
         <tag>搜索</tag>
         <tag>迭代加深的启发式搜索, IDA*</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2021-05-09 模拟赛</title>
-    <url>/49102/</url>
-    <content><![CDATA[<p>过于水的模拟赛。</p>
-<span id="more"></span>
-
-<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-Teams"><a href="#T1-Teams" class="headerlink" title="T1 Teams"></a>T1 Teams</h2><p><a href="teams.cpp" download="teams.cpp">考场代码</a></p>
-<p>提交地址：无</p>
-<p>字符串哈希预处理，枚举子集暴力处理，然而直接暴力都过了， $\rm{\color{Black}L\color{Red}awrenceSivan}$ 却没写出来。</p>
-<h2 id="T2-NOI2014-动物园考场代码"><a href="#T2-NOI2014-动物园考场代码" class="headerlink" title="T2  [NOI2014] 动物园考场代码"></a>T2  [NOI2014] 动物园<a href="zoo.cpp" download="zoo.cpp">考场代码</a></h2><p>提交地址：<a href="https://www.luogu.com.cn/problem/P2375">洛谷 Luogu2375</a>，大视野在线评测 BZOJ3670 </p>
-<p>一道升级 $\rm KMP$ 。</p>
-<h2 id="T3-消灭恶魔"><a href="#T3-消灭恶魔" class="headerlink" title="T3 消灭恶魔"></a>T3 消灭恶魔</h2><p><a href="demon.cpp" download="demon.cpp">考场代码</a></p>
-<p>提交地址：无</p>
-<p>求二维凸包面积，直接叉乘即可。</p>
-<h1 id="合计-100-100-100-300"><a href="#合计-100-100-100-300" class="headerlink" title="合计 $100 + 100 + 100 = 300$"></a>合计 $100 + 100 + 100 = 300$</h1>]]></content>
-      <categories>
-        <category>日志</category>
-        <category>模拟赛</category>
-      </categories>
-      <tags>
-        <tag>字符串哈希</tag>
-        <tag>克努斯-莫里斯-普拉特算法, KMP</tag>
-        <tag>计算几何</tag>
-        <tag>二维凸包</tag>
       </tags>
   </entry>
   <entry>
@@ -554,8 +554,8 @@
       <tags>
         <tag>倍增</tag>
         <tag>并查集</tag>
-        <tag>搜索</tag>
         <tag>字符串哈希</tag>
+        <tag>搜索</tag>
         <tag>扫描线</tag>
         <tag>线段树</tag>
         <tag>离散化</tag>
@@ -564,8 +564,24 @@
   <entry>
     <title>2021-05-30 模拟赛</title>
     <url>/10212/</url>
-    <content><![CDATA[<p>坑，待填。</p>
-<span id="more"></span>]]></content>
+    <content><![CDATA[<p>……</p>
+<span id="more"></span>
+
+<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-JSOI2010-连通数"><a href="#T1-JSOI2010-连通数" class="headerlink" title="T1 [JSOI2010]连通数"></a>T1 [JSOI2010]连通数</h2><p><a href="connect.cpp" download="connect.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P4306">洛谷 Luogu4306</a>，大视野在线评测 BZOJ2208</p>
+<p>做法一：先缩点，再反向拓扑排序；</p>
+<p>做法二： <code>std::bitset</code> 直接合并。</p>
+<p>考试的时候只想到了反向拓扑，没想到缩点，<del>可能是因为不会吧（</del></p>
+<h2 id="T2-K优先队列"><a href="#T2-K优先队列" class="headerlink" title="T2 K优先队列"></a>T2 K优先队列</h2><p><a href="queue.cpp" download="queue.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>对顶堆……，用 <code>std::vector</code> 写了个 70 分的。</p>
+<h2 id="T3-阅读理解"><a href="#T3-阅读理解" class="headerlink" title="T3 阅读理解"></a>T3 阅读理解</h2><p><a href="reading.cpp" download="reading.cpp">考场代码</a></p>
+<p>提交地址：<a href="http://192.168.0.111:1926/problem/84">SIGSEGV OJ SSOJ84</a></p>
+<p>超级恶心，动态开点线段树存质因数查询。</p>
+<h2 id="T4-简单计数问题"><a href="#T4-简单计数问题" class="headerlink" title="T4 简单计数问题"></a>T4 简单计数问题</h2><p><a href="reading.cpp" download="reading.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>分块。</p>
+<h1 id="合计-40-10-70-50-170"><a href="#合计-40-10-70-50-170" class="headerlink" title="合计 $40 + 10 + 70 + 50 = 170$"></a>合计 $40 + 10 + 70 + 50 = 170$</h1>]]></content>
       <categories>
         <category>日志</category>
         <category>模拟赛</category>
@@ -599,7 +615,7 @@
 <p>提交地址：无</p>
 <p>我……</p>
 <p>奇怪的<a href="bag88.cpp" download="bag88.cpp">代码</a>有 88 分，而<a href="bag100.cpp" download="bag100.cpp">这个</a>有 100 分……</p>
-<h1 id="100-60-25-0-185"><a href="#100-60-25-0-185" class="headerlink" title="$100 + 60 + 25 + 0 = 185$"></a>$100 + 60 + 25 + 0 = 185$</h1><p>死了……</p>
+<h1 id="合计-100-60-25-0-185"><a href="#合计-100-60-25-0-185" class="headerlink" title="合计 $100 + 60 + 25 + 0 = 185$"></a>合计 $100 + 60 + 25 + 0 = 185$</h1><p>死了……</p>
 ]]></content>
       <categories>
         <category>日志</category>
@@ -612,6 +628,38 @@
         <tag>二进制</tag>
         <tag>最近公共祖先, LCA</tag>
         <tag>权值线段树</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>2021-06-06 模拟赛</title>
+    <url>/43261/</url>
+    <content><![CDATA[<p>数组开小了，白送 $40$ 分。</p>
+<span id="more"></span>
+
+<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-天猫的小鱼"><a href="#T1-天猫的小鱼" class="headerlink" title="T1 天猫的小鱼"></a>T1 天猫的小鱼</h2><p><a href="catfish.cpp" download="catfish.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>二进制扫一遍，当作三进制做。</p>
+<h2 id="T2-【模板】高斯消元法"><a href="#T2-【模板】高斯消元法" class="headerlink" title="T2 【模板】高斯消元法"></a>T2 【模板】高斯消元法</h2><p><a href="shopping.cpp" download="shopping.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>高斯消元模版。</p>
+<h2 id="T3-Central-Heating"><a href="#T3-Central-Heating" class="headerlink" title="T3 Central Heating"></a>T3 Central Heating</h2><p><a href="heat.cpp" download="heat.cpp">考场代码</a></p>
+<p>提交地址：<a href="http://poj.org/problem?id=2345">POJ POJ2345</a>，<a href="https://acm.timus.ru/problem.aspx?space=1&num=1042">TIMUS Ural1042</a></p>
+<p>高斯消元模版，把减号改成异或即可。</p>
+<h2 id="T4-SDOI2009-HH去散步"><a href="#T4-SDOI2009-HH去散步" class="headerlink" title="T4 [SDOI2009]HH去散步"></a>T4 [SDOI2009]HH去散步</h2><p><a href="running.cpp" download="runnnig.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P2151">洛谷 Luogu2151</a>，大视野在线评测 BZOJ1875</p>
+<p>原题，点边互换。</p>
+<p>数组开小了，白送 $40$ 分。</p>
+<h1 id="合计-100-100-100-60-360"><a href="#合计-100-100-100-60-360" class="headerlink" title="合计 $100 + 100 + 100 + 60 = 360$"></a>合计 $100 + 100 + 100 + 60 = 360$</h1>]]></content>
+      <categories>
+        <category>日志</category>
+        <category>模拟赛</category>
+      </categories>
+      <tags>
+        <tag>二进制</tag>
+        <tag>高斯消元</tag>
+        <tag>矩阵</tag>
+        <tag>快速幂</tag>
+        <tag>递推</tag>
       </tags>
   </entry>
   <entry>
@@ -652,6 +700,23 @@
       </tags>
   </entry>
   <entry>
+    <title>快速乘</title>
+    <url>/21676/</url>
+    <content><![CDATA[<p><del>快速</del>龟速乘。</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>由于在乘模时可能在模之前就溢出了，所以我们可以使用类似于快速幂的思想，将乘法分解来算。</p>
+<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qmul</span><span class="params">(T x, T y, T mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">0</span> || y == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    T ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>) ret = ((ret % mod) + (x % mod)) % mod;</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        x = ((x % mod) + (x % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>快速乘</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>扩展欧拉定理（数论）, Extend Euler&#39;s theorem(Number Theory)</title>
     <url>/26296/</url>
     <content><![CDATA[<p>数竞生：信竞咋啥都扩展？</p>
@@ -669,6 +734,28 @@
       </tags>
   </entry>
   <entry>
+    <title>费马小定理, Fermat&#39;s little theorem</title>
+    <url>/19332/</url>
+    <content><![CDATA[<p><a href="https://www.luogu.com.cn/blog/AG-Liangsheng/">$\rm \color{red}¶\color{black}凉笙$</a> ：</p>
+<blockquote>
+<p>费小马定理是啥？</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="形式一"><a href="#形式一" class="headerlink" title="形式一"></a>形式一</h2><p>若 $p$ 为质数，且  $a$ 与 $p$ 互质（即 $(a, p) = 1$ ），则有</p>
+<p>$$a^{p - 1} \equiv 1 \pmod{p}$$</p>
+<h2 id="形式二"><a href="#形式二" class="headerlink" title="形式二"></a>形式二</h2><p>若 $p$ 为质数，对于任意 $a$ 有</p>
+<p>$$a^p \equiv a \pmod{p}$$</p>
+]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>费马小定理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>快速幂</title>
     <url>/6782/</url>
     <content><![CDATA[<p>经典二进制分治。</p>
@@ -683,23 +770,6 @@
       </categories>
       <tags>
         <tag>快速幂</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快速乘</title>
-    <url>/21676/</url>
-    <content><![CDATA[<p><del>快速</del>龟速乘。</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>由于在乘模时可能在模之前就溢出了，所以我们可以使用类似于快速幂的思想，将乘法分解来算。</p>
-<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qmul</span><span class="params">(T x, T y, T mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (x == <span class="number">0</span> || y == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    T ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (y) &#123;</span><br><span class="line">        <span class="keyword">if</span> (y &amp; <span class="number">1</span>) ret = ((ret % mod) + (x % mod)) % mod;</span><br><span class="line">        y &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        x = ((x % mod) + (x % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>快速乘</tag>
       </tags>
   </entry>
   <entry>
@@ -738,6 +808,25 @@
       </tags>
   </entry>
   <entry>
+    <title>线性求欧拉函数</title>
+    <url>/58730/</url>
+    <content><![CDATA[<p>又一个线性筛。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(T n, T *phi_table)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数论</tag>
+        <tag>数学</tag>
+        <tag>筛法</tag>
+        <tag>欧拉函数</tag>
+        <tag>线性筛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>克努斯-莫里斯-普拉特算法, Knuth-Morris-Pratt Algorithm, KMP</title>
     <url>/53323/</url>
     <content><![CDATA[<p>字符串模式匹配。</p>
@@ -761,47 +850,6 @@
       <tags>
         <tag>克努斯-莫里斯-普拉特算法, KMP</tag>
         <tag>字符串匹配</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>费马小定理, Fermat&#39;s little theorem</title>
-    <url>/19332/</url>
-    <content><![CDATA[<p><a href="https://www.luogu.com.cn/blog/AG-Liangsheng/">$\rm \color{red}¶\color{black}凉笙$</a> ：</p>
-<blockquote>
-<p>费小马定理是啥？</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><h2 id="形式一"><a href="#形式一" class="headerlink" title="形式一"></a>形式一</h2><p>若 $p$ 为质数，且  $a$ 与 $p$ 互质（即 $(a, p) = 1$ ），则有</p>
-<p>$$a^{p - 1} \equiv 1 \pmod{p}$$</p>
-<h2 id="形式二"><a href="#形式二" class="headerlink" title="形式二"></a>形式二</h2><p>若 $p$ 为质数，对于任意 $a$ 有</p>
-<p>$$a^p \equiv a \pmod{p}$$</p>
-]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>费马小定理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性求欧拉函数</title>
-    <url>/58730/</url>
-    <content><![CDATA[<p>又一个线性筛。</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(T n, T *phi_table)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>数论</tag>
-        <tag>数学</tag>
-        <tag>筛法</tag>
-        <tag>欧拉函数</tag>
-        <tag>线性筛</tag>
       </tags>
   </entry>
   <entry>
@@ -830,24 +878,6 @@
       </tags>
   </entry>
   <entry>
-    <title>卢卡斯定理, Lucas&#39; theorem , lucas</title>
-    <url>/30428/</url>
-    <content><![CDATA[<p><del>简介，不知道写啥了。</del></p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>对于质数 $p$ ，有：</p>
-<p>$$\binom{n}{m}\bmod p = \binom{\left\lfloor n/p \right\rfloor}{\left\lfloor m/p\right\rfloor}\cdot\binom{n\bmod p}{m\bmod p}\bmod p$$</p>
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">lucas</span><span class="params">(T n, T m, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">C</span>(n % p, m % p, p) * <span class="built_in">lucas</span>(n / p, m / p, p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>卢卡斯定理, lucas</tag>
-        <tag>组合数</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>标记永久化线段树</title>
     <url>/54665/</url>
     <content><![CDATA[<p><a href="https://kamome.moe/">$\rm\color{red}S\color{black}iunaus$ ($\rm Zhang\_RQ$)</a> ：</p>
@@ -870,39 +900,21 @@
       </tags>
   </entry>
   <entry>
-    <title>乘法逆元, Multiplicative Inverse</title>
-    <url>/24044/</url>
-    <content><![CDATA[<p><a href="https://blog.i207m.top/">$\rm \color{red}i\color{black}207M$</a> ：</p>
-<blockquote>
-<p>你知道吗？求逆元有五种方法。</p>
-</blockquote>
+    <title>卢卡斯定理, Lucas&#39; theorem , lucas</title>
+    <url>/30428/</url>
+    <content><![CDATA[<p><del>简介，不知道写啥了。</del></p>
 <span id="more"></span>
 
-<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>使用费马小定理，这种方法要求 $p$ 是质数。</p>
-<p>由</p>
-<p>$$a \times a^{p - 2} \equiv 1 \pmod{p}$$</p>
-<p>可得</p>
-<p>$$a^{-1} = a^{p - 2}$$</p>
-<p>然后就可以使用快速幂求逆元。</p>
-<p>（占位行，不然 Hexo 渲染下面会 Bug）</p>
-<p>（占位行）</p>
-<p>（占位行）</p>
-<p>（占位行）</p>
-<p>如下：</p>
-<h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_fermat</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">qipow</span>(n, p - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h1><p>扩展欧几里得算法。</p>
-<p>$$ax \equiv 1 \pmod{b}$$</p>
-<p>$x$ 即为 $a$ 在模 $b$ 意义下的逆元。</p>
-<p>如下：</p>
-<h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_extgcd</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    T x, y;</span><br><span class="line">    <span class="built_in">extgcd</span>(n, p, x, y);</span><br><span class="line">    <span class="keyword">return</span> (x % p + p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>对于质数 $p$ ，有：</p>
+<p>$$\binom{n}{m}\bmod p = \binom{\left\lfloor n/p \right\rfloor}{\left\lfloor m/p\right\rfloor}\cdot\binom{n\bmod p}{m\bmod p}\bmod p$$</p>
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">lucas</span><span class="params">(T n, T m, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (m == <span class="number">0</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">C</span>(n % p, m % p, p) * <span class="built_in">lucas</span>(n / p, m / p, p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>OI</category>
         <category>数学</category>
       </categories>
       <tags>
-        <tag>逆元</tag>
-        <tag>乘法逆元</tag>
+        <tag>卢卡斯定理, lucas</tag>
+        <tag>组合数</tag>
       </tags>
   </entry>
   <entry>
@@ -1166,26 +1178,6 @@
       </tags>
   </entry>
   <entry>
-    <title>预处理二进制对数表</title>
-    <url>/52240/</url>
-    <content><![CDATA[<p>预处理 $lb$ 表。</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">mklb</span><span class="params">(T n, T *lb_table)</span> </span>&#123;</span><br><span class="line">    lb_table[<span class="number">1</span>] = <span class="number">0</span>, lb_table[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">3</span>; i &lt;= n; ++i) lb_table[i] = lb_table[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>技巧</category>
-      </categories>
-      <tags>
-        <tag>卡常</tag>
-        <tag>数学</tag>
-        <tag>预处理</tag>
-        <tag>对数</tag>
-        <tag>二进制对数</tag>
-        <tag>对数表</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>NOIO2021 #1</title>
     <url>/60602/</url>
     <content><![CDATA[<p>裂开，太难了，这次比赛深刻的让我认识到了我菜的本质。</p>
@@ -1220,6 +1212,62 @@
         <category>游记</category>
         <category>NOIO</category>
       </categories>
+  </entry>
+  <entry>
+    <title>乘法逆元, Multiplicative Inverse</title>
+    <url>/24044/</url>
+    <content><![CDATA[<p><a href="https://blog.i207m.top/">$\rm \color{red}i\color{black}207M$</a> ：</p>
+<blockquote>
+<p>你知道吗？求逆元有五种方法。</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>使用费马小定理，这种方法要求 $p$ 是质数。</p>
+<p>由</p>
+<p>$$a \times a^{p - 2} \equiv 1 \pmod{p}$$</p>
+<p>可得</p>
+<p>$$a^{-1} = a^{p - 2}$$</p>
+<p>然后就可以使用快速幂求逆元。</p>
+<p>（占位行，不然 Hexo 渲染下面会 Bug）</p>
+<p>（占位行）</p>
+<p>（占位行）</p>
+<p>（占位行）</p>
+<p>如下：</p>
+<h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_fermat</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">qipow</span>(n, p - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h1><p>扩展欧几里得算法。</p>
+<p>$$ax \equiv 1 \pmod{b}$$</p>
+<p>$x$ 即为 $a$ 在模 $b$ 意义下的逆元。</p>
+<p>如下：</p>
+<h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_extgcd</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    T x, y;</span><br><span class="line">    <span class="built_in">extgcd</span>(n, p, x, y);</span><br><span class="line">    <span class="keyword">return</span> (x % p + p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>逆元</tag>
+        <tag>乘法逆元</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>预处理二进制对数表</title>
+    <url>/52240/</url>
+    <content><![CDATA[<p>预处理 $lb$ 表。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">mklb</span><span class="params">(T n, T *lb_table)</span> </span>&#123;</span><br><span class="line">    lb_table[<span class="number">1</span>] = <span class="number">0</span>, lb_table[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">3</span>; i &lt;= n; ++i) lb_table[i] = lb_table[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>技巧</category>
+      </categories>
+      <tags>
+        <tag>卡常</tag>
+        <tag>数学</tag>
+        <tag>预处理</tag>
+        <tag>对数</tag>
+        <tag>二进制对数</tag>
+        <tag>对数表</tag>
+      </tags>
   </entry>
   <entry>
     <title>替罪羊树, Scapegoat Tree</title>
@@ -1257,6 +1305,43 @@
       <tags>
         <tag>线段树</tag>
         <tag>区间最值, RMQ</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>上帝与集合的正确用法</title>
+    <url>/55212/</url>
+    <content><![CDATA[<p>扩展欧拉定理。</p>
+<span id="more"></span>
+
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P4139">洛谷 Luogu4139</a>，大视野在线测评 BZOJ3884</p>
+<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求 $2^{2^{2^\cdots}} \mod p$ 。</p>
+<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>有扩展欧拉定理：</p>
+<p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;\gcd(a,\,p)=1\\ a^b,&amp;\gcd(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
+<p>。</p>
+<p>我们发现可以求 $2^{2^{2^\cdots}} \mod p$ 了。</p>
+<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>欧拉函数（Euler’s totient function），即 $\varphi(n)$ ，表示的是小于等于 $n$ 的数中和 $n$ 互质的数的个数。</p>
+<p>易得 $\varphi(1) = 1$ ，当 $n$ 为质数时，只有 $n$ 不与 $n$ 互质，所以此时 $\varphi(n) = n - 1$ 。</p>
+<p>欧拉函数是积性函数，当 $a, b$ 互质时， $\varphi(a) \times \varphi(b) = \varphi(a \times b)$ ，因为与 $a$ 不互质的有 $a$ ，与 $b$ 不互质的有 $b$ ，与 $a \times b$ 不互质的有 $a, 2a, 3a, \cdots,ab, \cdots, 3b, 2b, b$ ，所以等式成立。</p>
+<p>当 $n$ 是奇数时 $\varphi(2n) = \varphi(n)$ ，可由上式推出。</p>
+<p>$n = \sum_{d \mid n} \varphi(d)$ ，用莫比乌斯反演证。</p>
+<p>若 $p$ 为质数， 则 $\varphi(p^k) = p^k - p^{k - 1} = p^{k - 1}\times(p - 1)$ ，因为与 $p^k$ 不互质的数只有 $p$ 的倍数，一共 $p^{k - 1}$<br> 个，所以上式成立。</p>
+<h3 id="求单独的欧拉函数"><a href="#求单独的欧拉函数" class="headerlink" title="求单独的欧拉函数"></a>求单独的欧拉函数</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> ans = n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">      ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="筛欧拉函数"><a href="#筛欧拉函数" class="headerlink" title="筛欧拉函数"></a>筛欧拉函数</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">phi_table</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>* phi)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) phi[i] = <span class="number">0</span>;</span><br><span class="line">  phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (!phi[i])</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!phi[j]) phi[j] = j;</span><br><span class="line">        phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p>若 $a, m$ 互质，则有 $a^{\varphi(m)} \equiv \pmod m$ 。</p>
+<h3 id="剩余类"><a href="#剩余类" class="headerlink" title="剩余类"></a>剩余类</h3><p>剩余类也叫同余类，指全体整数按照对一个正整数的同余关系而分成的类。</p>
+<h3 id="完全剩余系"><a href="#完全剩余系" class="headerlink" title="完全剩余系"></a>完全剩余系</h3><p>从模 $n$ 的每个剩余类中各取一个数，得到一个由 $n$ 个数组成的集合，叫做模 $n$ 的一个完全剩余系。</p>
+<h3 id="简化剩余系"><a href="#简化剩余系" class="headerlink" title="简化剩余系"></a>简化剩余系</h3><p>简化剩余系(reduced residue system)也称既约剩余系或缩系，是 $m$ 的完全剩余系中与 $m$ 互素的数构成的子集，如果模 $m$ 的一个剩余类里所有数都与 $m$ 互素，就把它叫做与模 $m$ 互素的剩余类。在与模 $m$ 互素的全体剩余类中，从每一个类中各任取一个数作为代表组成的集合，叫做模 $m$ 的一个简化剩余系。</p>
+<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>通过简化剩余系构造一个与 $m$ 互质的数列。</p>
+<p>设 $r_1, r_2, \cdots, r_{\varphi(m)}$ 为模 $m$ 意义下的一个简化剩余系，则 $ar_1, ar_2, \cdots, ar_{\varphi(m)}$ 也为模 $m$ 意义下的一个简化剩余系。所以 $r_1r_2 \cdots r_{\varphi(m)} \equiv ar_1 \cdot ar_2 \cdots ar_{\varphi(m)} \equiv a^{\varphi(m)}r_1r_2 \cdots r_{\varphi(m)} \pmod{m}$ ，可约去 $r_1r_2 \cdots r_{\varphi(m)}$ ，得证。</p>
+<h2 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a><a href="https://oi-wiki.org/math/fermat/#_5">扩展欧拉定理</a></h2><p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;\gcd(a,\,p)=1\\ a^b,&amp;\gcd(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>有了扩展欧拉定理我们就可以递推求解了。</p>
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxp = <span class="number">1e7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, p, phi[maxp + <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= maxp; i++)</span><br><span class="line">        <span class="keyword">if</span> (!phi[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = i; j &lt;= maxp; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi[j]) phi[j] = j; </span><br><span class="line">                phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qmul</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = ((ret % mod) + (a % mod)) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        a = ((a % mod) + (a % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = <span class="built_in">qmul</span>(ret, a, mod) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        a = <span class="built_in">qmul</span>(a, a, mod) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span> <span class="params">(<span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mod == <span class="number">1</span> ? <span class="number">0</span> :<span class="built_in">qpow</span>(<span class="number">2</span>, <span class="built_in">work</span>(phi[mod]) + phi[mod], mod);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">get_phi</span>();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;p);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">work</span>(p));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>题解</category>
+      </categories>
+      <tags>
+        <tag>扩展欧拉定理（数论）</tag>
       </tags>
   </entry>
   <entry>
@@ -1300,43 +1385,6 @@
       </categories>
       <tags>
         <tag>中国剩余定理, crt</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>上帝与集合的正确用法</title>
-    <url>/55212/</url>
-    <content><![CDATA[<p>扩展欧拉定理。</p>
-<span id="more"></span>
-
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P4139">洛谷 Luogu4139</a>，大视野在线测评 BZOJ3884</p>
-<h1 id="题意"><a href="#题意" class="headerlink" title="题意"></a>题意</h1><p>求 $2^{2^{2^\cdots}} \mod p$ 。</p>
-<h1 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h1><p>有扩展欧拉定理：</p>
-<p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;\gcd(a,\,p)=1\\ a^b,&amp;\gcd(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
-<p>。</p>
-<p>我们发现可以求 $2^{2^{2^\cdots}} \mod p$ 了。</p>
-<h2 id="欧拉函数"><a href="#欧拉函数" class="headerlink" title="欧拉函数"></a>欧拉函数</h2><p>欧拉函数（Euler’s totient function），即 $\varphi(n)$ ，表示的是小于等于 $n$ 的数中和 $n$ 互质的数的个数。</p>
-<p>易得 $\varphi(1) = 1$ ，当 $n$ 为质数时，只有 $n$ 不与 $n$ 互质，所以此时 $\varphi(n) = n - 1$ 。</p>
-<p>欧拉函数是积性函数，当 $a, b$ 互质时， $\varphi(a) \times \varphi(b) = \varphi(a \times b)$ ，因为与 $a$ 不互质的有 $a$ ，与 $b$ 不互质的有 $b$ ，与 $a \times b$ 不互质的有 $a, 2a, 3a, \cdots,ab, \cdots, 3b, 2b, b$ ，所以等式成立。</p>
-<p>当 $n$ 是奇数时 $\varphi(2n) = \varphi(n)$ ，可由上式推出。</p>
-<p>$n = \sum_{d \mid n} \varphi(d)$ ，用莫比乌斯反演证。</p>
-<p>若 $p$ 为质数， 则 $\varphi(p^k) = p^k - p^{k - 1} = p^{k - 1}\times(p - 1)$ ，因为与 $p^k$ 不互质的数只有 $p$ 的倍数，一共 $p^{k - 1}$<br> 个，所以上式成立。</p>
-<h3 id="求单独的欧拉函数"><a href="#求单独的欧拉函数" class="headerlink" title="求单独的欧拉函数"></a>求单独的欧拉函数</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">phi</span><span class="params">(<span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">int</span> ans = n;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i * i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (n % i == <span class="number">0</span>) &#123;</span><br><span class="line">      ans = ans / i * (i - <span class="number">1</span>);</span><br><span class="line">      <span class="keyword">while</span> (n % i == <span class="number">0</span>) n /= i;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="keyword">if</span> (n &gt; <span class="number">1</span>) ans = ans / n * (n - <span class="number">1</span>);</span><br><span class="line">  <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="筛欧拉函数"><a href="#筛欧拉函数" class="headerlink" title="筛欧拉函数"></a>筛欧拉函数</h3><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">phi_table</span><span class="params">(<span class="keyword">int</span> n, <span class="keyword">int</span>* phi)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++) phi[i] = <span class="number">0</span>;</span><br><span class="line">  phi[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= n; i++)</span><br><span class="line">    <span class="keyword">if</span> (!phi[i])</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">int</span> j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!phi[j]) phi[j] = j;</span><br><span class="line">        phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">      &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="欧拉定理"><a href="#欧拉定理" class="headerlink" title="欧拉定理"></a>欧拉定理</h2><p>若 $a, m$ 互质，则有 $a^{\varphi(m)} \equiv \pmod m$ 。</p>
-<h3 id="剩余类"><a href="#剩余类" class="headerlink" title="剩余类"></a>剩余类</h3><p>剩余类也叫同余类，指全体整数按照对一个正整数的同余关系而分成的类。</p>
-<h3 id="完全剩余系"><a href="#完全剩余系" class="headerlink" title="完全剩余系"></a>完全剩余系</h3><p>从模 $n$ 的每个剩余类中各取一个数，得到一个由 $n$ 个数组成的集合，叫做模 $n$ 的一个完全剩余系。</p>
-<h3 id="简化剩余系"><a href="#简化剩余系" class="headerlink" title="简化剩余系"></a>简化剩余系</h3><p>简化剩余系(reduced residue system)也称既约剩余系或缩系，是 $m$ 的完全剩余系中与 $m$ 互素的数构成的子集，如果模 $m$ 的一个剩余类里所有数都与 $m$ 互素，就把它叫做与模 $m$ 互素的剩余类。在与模 $m$ 互素的全体剩余类中，从每一个类中各任取一个数作为代表组成的集合，叫做模 $m$ 的一个简化剩余系。</p>
-<h3 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h3><p>通过简化剩余系构造一个与 $m$ 互质的数列。</p>
-<p>设 $r_1, r_2, \cdots, r_{\varphi(m)}$ 为模 $m$ 意义下的一个简化剩余系，则 $ar_1, ar_2, \cdots, ar_{\varphi(m)}$ 也为模 $m$ 意义下的一个简化剩余系。所以 $r_1r_2 \cdots r_{\varphi(m)} \equiv ar_1 \cdot ar_2 \cdots ar_{\varphi(m)} \equiv a^{\varphi(m)}r_1r_2 \cdots r_{\varphi(m)} \pmod{m}$ ，可约去 $r_1r_2 \cdots r_{\varphi(m)}$ ，得证。</p>
-<h2 id="扩展欧拉定理"><a href="#扩展欧拉定理" class="headerlink" title="扩展欧拉定理"></a><a href="https://oi-wiki.org/math/fermat/#_5">扩展欧拉定理</a></h2><p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;\gcd(a,\,p)=1\\ a^b,&amp;\gcd(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;\gcd(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
-<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><p>有了扩展欧拉定理我们就可以递推求解了。</p>
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxp = <span class="number">1e7</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> T, p, phi[maxp + <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">get_phi</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    phi[<span class="number">1</span>] = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">2</span>; i &lt;= maxp; i++)</span><br><span class="line">        <span class="keyword">if</span> (!phi[i])</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = i; j &lt;= maxp; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi[j]) phi[j] = j; </span><br><span class="line">                phi[j] = phi[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qmul</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = ((ret % mod) + (a % mod)) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        a = ((a % mod) + (a % mod)) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">qpow</span><span class="params">(<span class="keyword">int</span> a, <span class="keyword">int</span> x, <span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> ret = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (x) &#123;</span><br><span class="line">        <span class="keyword">if</span> (x &amp; <span class="number">1</span>) ret = <span class="built_in">qmul</span>(ret, a, mod) % mod;</span><br><span class="line">        x &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">        a = <span class="built_in">qmul</span>(a, a, mod) % mod;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">work</span> <span class="params">(<span class="keyword">int</span> mod)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> mod == <span class="number">1</span> ? <span class="number">0</span> :<span class="built_in">qpow</span>(<span class="number">2</span>, <span class="built_in">work</span>(phi[mod]) + phi[mod], mod);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">get_phi</span>();</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;T);</span><br><span class="line">    <span class="keyword">while</span>(T--) &#123;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;p);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">work</span>(p));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>题解</category>
-      </categories>
-      <tags>
-        <tag>扩展欧拉定理（数论）</tag>
       </tags>
   </entry>
   <entry>
@@ -1432,13 +1480,12 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-04-03 杂谈</title>
-    <url>/41061/</url>
-    <content><![CDATA[<p>呵呵。</p>
+    <title>2021-04-10 杂谈</title>
+    <url>/9512/</url>
+    <content><![CDATA[<p>今天 $UNOI$ 开始了。</p>
 <span id="more"></span>
 
-<p>马上信息技术学业水平考试，班里一群对 $\rm Python$ 一无所知的人， $\rm MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
-<p>结果 <a href="https://nonfriedchips.github.io/">$\rm \color{red}w\color{black}iki$($\rm non\_fried\_chips$)</a> 挂了 B 。</p>
+<p>今天突然知道<a href="https://zh.wikipedia.org/wiki/%E7%88%B1%E4%B8%81%E5%A0%A1%E5%85%AC%E7%88%B5%E8%8F%B2%E5%88%A9%E6%99%AE%E4%BA%B2%E7%8E%8B">菲利普亲王</a>去世了，经历过二战的人还活着的不多了</p>
 ]]></content>
       <categories>
         <category>日志</category>
@@ -1446,12 +1493,13 @@
       </categories>
   </entry>
   <entry>
-    <title>2021-04-10 杂谈</title>
-    <url>/9512/</url>
-    <content><![CDATA[<p>今天 $UNOI$ 开始了。</p>
+    <title>2021-04-03 杂谈</title>
+    <url>/41061/</url>
+    <content><![CDATA[<p>呵呵。</p>
 <span id="more"></span>
 
-<p>今天突然知道<a href="https://zh.wikipedia.org/wiki/%E7%88%B1%E4%B8%81%E5%A0%A1%E5%85%AC%E7%88%B5%E8%8F%B2%E5%88%A9%E6%99%AE%E4%BA%B2%E7%8E%8B">菲利普亲王</a>去世了，经历过二战的人还活着的不多了</p>
+<p>马上信息技术学业水平考试，班里一群对 $\rm Python$ 一无所知的人， $\rm MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
+<p>结果 <a href="https://nonfriedchips.github.io/">$\rm \color{red}w\color{black}iki$($\rm non\_fried\_chips$)</a> 挂了 B 。</p>
 ]]></content>
       <categories>
         <category>日志</category>
@@ -1485,6 +1533,19 @@
       </tags>
   </entry>
   <entry>
+    <title>测试</title>
+    <url>/37773/</url>
+    <content><![CDATA[<p>本博客已上线。</p>
+<span id="more"></span>]]></content>
+      <categories>
+        <category>日志</category>
+        <category>维护</category>
+      </categories>
+      <tags>
+        <tag>测试</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021-06-02 杂谈</title>
     <url>/54447/</url>
     <content><![CDATA[<p>$\rm Karry5307$ 被踢出 HN 省队了。</p>
@@ -1499,19 +1560,6 @@
         <category>日志</category>
         <category>杂谈</category>
       </categories>
-  </entry>
-  <entry>
-    <title>测试</title>
-    <url>/37773/</url>
-    <content><![CDATA[<p>本博客已上线。</p>
-<span id="more"></span>]]></content>
-      <categories>
-        <category>日志</category>
-        <category>维护</category>
-      </categories>
-      <tags>
-        <tag>测试</tag>
-      </tags>
   </entry>
   <entry>
     <title>树堆, Treap</title>
@@ -1580,26 +1628,14 @@
       </tags>
   </entry>
   <entry>
-    <title>vim 配置</title>
-    <url>/34166/</url>
-    <content><![CDATA[<p>本人的 vim 配置，比较好背，用起来还不错，适合考场。</p>
-<span id="more"></span>
-
-<h1 id="rm-vim-配置"><a href="#rm-vim-配置" class="headerlink" title="$\rm vim$ 配置"></a>$\rm vim$ 配置</h1><p>在终端中使用 $\rm vim$ 打开配置文件。</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim ~/.vimrc</span><br></pre></td></tr></table></figure>
-
-<p>按 <code>i</code> 进入插入模式，输入以下代码。</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set nu</span><br><span class="line">set mouse&#x3D;a</span><br><span class="line">set tabstop&#x3D;2</span><br><span class="line">set softtabstop&#x3D;2</span><br><span class="line">set shiftwidth&#x3D;2</span><br><span class="line">set backspace&#x3D;2</span><br><span class="line">set expandtab</span><br><span class="line">set showmatch</span><br><span class="line">set matchtime&#x3D;5</span><br><span class="line">set cindent</span><br><span class="line">set autoindent</span><br><span class="line">set smartindent</span><br><span class="line">set nocompatible</span><br><span class="line">set showmode</span><br><span class="line">set showcmd</span><br><span class="line">colorscheme blue</span><br><span class="line">inoremap &#39; &#39;&#39;&lt;ESC&gt;i</span><br><span class="line">inoremap &quot; &quot;&quot;&lt;ESC&gt;i</span><br><span class="line">inoremap ( ()&lt;ESC&gt;i</span><br><span class="line">inoremap [ []&lt;ESC&gt;i</span><br><span class="line">inoremap &#123; &#123;&lt;CR&gt;&#125;&lt;ESC&gt;kA</span><br><span class="line">syntax on</span><br><span class="line">map &lt;F5&gt; :call CompileRunCpp()&lt;CR&gt;</span><br><span class="line">func! CompileRunCpp()</span><br><span class="line">exec &quot;w&quot;</span><br><span class="line">exec &quot;!g++ % -lm -Wall -Wextra -o %&lt;&quot;</span><br><span class="line">exec &quot;!.&#x2F;%&lt;&quot;</span><br><span class="line">endfunc</span><br><span class="line">map &lt;F6&gt; :call CompileRunCppLOCAL()&lt;CR&gt;</span><br><span class="line">func! CompileRunCppLOCAL()</span><br><span class="line">exec &quot;w&quot;</span><br><span class="line">exec &quot;!g++ % -lm -Wall -Wextra -DLOCAL -o %&lt;&quot;</span><br><span class="line">exec &quot;!.&#x2F;%&lt;&quot;</span><br><span class="line">endfunc</span><br><span class="line">map &lt;F7&gt; :call CompileRunSH()&lt;CR&gt;</span><br><span class="line">func! CompileRunSH()</span><br><span class="line">exec &quot;w&quot;</span><br><span class="line">exec &quot;!chmod a+x %&lt;&quot;</span><br><span class="line">exec &quot;!.&#x2F;%&lt;&quot;</span><br><span class="line">endfunc</span><br></pre></td></tr></table></figure>
-
-<p><code>&lt;ESC&gt;:wq</code> 以保存。</p>
-]]></content>
+    <title>2021-03-22 更新</title>
+    <url>/33114/</url>
+    <content><![CDATA[<p>Gitalk 评论功能已开启。</p>
+<span id="more"></span>]]></content>
       <categories>
-        <category>软件</category>
+        <category>日志</category>
+        <category>维护</category>
       </categories>
-      <tags>
-        <tag>Linux</tag>
-        <tag>vim</tag>
-      </tags>
   </entry>
   <entry>
     <title>2021-04-03 更新</title>
@@ -1612,13 +1648,25 @@
       </categories>
   </entry>
   <entry>
-    <title>2021-03-22 更新</title>
-    <url>/33114/</url>
-    <content><![CDATA[<p>Gitalk 评论功能已开启。</p>
-<span id="more"></span>]]></content>
+    <title>vim 配置</title>
+    <url>/34166/</url>
+    <content><![CDATA[<p>本人的 vim 配置，比较好背，用起来还不错，适合考场。</p>
+<span id="more"></span>
+
+<h1 id="rm-vim-配置"><a href="#rm-vim-配置" class="headerlink" title="$\rm vim$ 配置"></a>$\rm vim$ 配置</h1><p>在终端中使用 $\rm vim$ 打开配置文件。</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ vim ~/.vimrc</span><br></pre></td></tr></table></figure>
+
+<p>按 <code>i</code> 进入插入模式，输入以下代码。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">set nu</span><br><span class="line">set mouse&#x3D;a</span><br><span class="line">set tabstop&#x3D;2</span><br><span class="line">set softtabstop&#x3D;2</span><br><span class="line">set shiftwidth&#x3D;2</span><br><span class="line">set backspace&#x3D;2</span><br><span class="line">set expandtab</span><br><span class="line">set showmatch</span><br><span class="line">set matchtime&#x3D;5</span><br><span class="line">set cindent</span><br><span class="line">set autoindent</span><br><span class="line">set smartindent</span><br><span class="line">set nocompatible</span><br><span class="line">set showmode</span><br><span class="line">set showcmd</span><br><span class="line">colorscheme blue</span><br><span class="line">inoremap &#39; &#39;&#39;&lt;ESC&gt;i</span><br><span class="line">inoremap &quot; &quot;&quot;&lt;ESC&gt;i</span><br><span class="line">inoremap ( ()&lt;ESC&gt;i</span><br><span class="line">inoremap [ []&lt;ESC&gt;i</span><br><span class="line">inoremap &#123; &#123;&lt;CR&gt;&#125;&lt;ESC&gt;kA</span><br><span class="line">syntax on</span><br><span class="line">map &lt;F5&gt; :call CompileRun()&lt;CR&gt;</span><br><span class="line">func! CompileRun()</span><br><span class="line">    exec &quot;w&quot;</span><br><span class="line">    if &amp;filetype &#x3D;&#x3D; &#39;c&#39;</span><br><span class="line">        exec &quot;!gcc \&quot;%\&quot; -lm -Wall -Wextra -o \&quot;%&lt;\&quot; &amp;&amp; .&#x2F;\&quot;%&lt;\&quot;&quot;</span><br><span class="line">    elseif &amp;filetype &#x3D;&#x3D; &#39;cpp&#39;</span><br><span class="line">        exec &quot;!g++ \&quot;%\&quot; -lm -Wall -Wextra -o \&quot;%&lt;\&quot; &amp;&amp; .&#x2F;\&quot;%&lt;\&quot;&quot;</span><br><span class="line">    elseif &amp;filetype &#x3D;&#x3D; &#39;sh&#39;</span><br><span class="line">        exec &quot;!chmod u+x \&quot;%\&quot;&quot;</span><br><span class="line">        exec &quot;! .&#x2F;\&quot;%\&quot;&quot;</span><br><span class="line">    endif</span><br><span class="line">endfunc</span><br><span class="line">map &lt;F6&gt; :call CompileRunLOCAL()&lt;CR&gt;</span><br><span class="line">func! CompileRunLOCAL()</span><br><span class="line">    exec &quot;w&quot;</span><br><span class="line">    if &amp;filetype &#x3D;&#x3D; &#39;c&#39;</span><br><span class="line">        exec &quot;!gcc \&quot;%\&quot; -lm -Wall -Wextra -DLOCAL -o \&quot;%&lt;\&quot; &amp;&amp; .&#x2F;\&quot;%&lt;\&quot;&quot;</span><br><span class="line">    elseif &amp;filetype &#x3D;&#x3D; &#39;cpp&#39;</span><br><span class="line">        exec &quot;!g++ \&quot;%\&quot; -lm -Wall -Wextra -DLOCAL -o \&quot;%&lt;\&quot; &amp;&amp; .&#x2F;\&quot;%&lt;\&quot;&quot;</span><br><span class="line">    elseif &amp;filetype &#x3D;&#x3D; &#39;sh&#39;</span><br><span class="line">        exec &quot;!chmod u+x \&quot;%\&quot;&quot;</span><br><span class="line">        exec &quot;! .&#x2F;\&quot;%\&quot;&quot;</span><br><span class="line">    endif</span><br><span class="line">endfunc</span><br></pre></td></tr></table></figure>
+
+<p><code>&lt;ESC&gt;:wq</code> 以保存。</p>
+]]></content>
       <categories>
-        <category>日志</category>
-        <category>维护</category>
+        <category>软件</category>
       </categories>
+      <tags>
+        <tag>Linux</tag>
+        <tag>vim</tag>
+      </tags>
   </entry>
 </search>
