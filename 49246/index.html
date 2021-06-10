@@ -267,7 +267,7 @@
     </span>
     <span>
       <span class="iconfont icon-calendar-check"></span>
-      更新于:&nbsp;2021-06-09
+      更新于:&nbsp;2021-06-10
     </span>
     <span>
       <span class="iconfont icon-folder"></span>
@@ -363,7 +363,7 @@
 <p>原题，类似于[NOIP2012 提高组]国王游戏，微扰证明，按力量加重量小到大排最优。</p>
 <h2 id="C-盖房子"><a href="#C-盖房子" class="headerlink" title="C 盖房子"></a>C 盖房子</h2><p><a href="c.cpp" download="c.cpp">考场代码</a></p>
 <p>提交地址：<a target="_blank" rel="noopener" href="https://sjzezoj.com/problem/400">S2 Online Judge S2OJ400</a></p>
-<p>正解是 $\Theta(n^4)$ 预处理， $\Theta(1)$ 查询，但是此题过于水，比暴力还慢的 $\Theta(n^4 + qn^4)$ 都过了。</p>
+<p>二分答案， $\ge mid$ 的当作 $1$ ，否则当作 $0$ 然后 check 即可， check 时先存当前行的有哪些位置是 $1$ 只有判定正确直接退出，不会重复扫。</p>
 <h2 id="D-矿脉"><a href="#D-矿脉" class="headerlink" title="D 矿脉"></a>D 矿脉</h2><p><a href="d.cpp" download="d.cpp">考场代码</a></p>
 <p>提交地址：<a target="_blank" rel="noopener" href="https://sjzezoj.com/problem/401">S2 Online Judge S2OJ401</a></p>
 <p>正解是 $\Theta(n^4)$ 预处理维护前缀和处理以某点为左上角的子和，然后转移处理答案， $\Theta(1)$ 查询，但是此题过于水，比暴力还慢的 $\Theta(n^4 + qn^4)$ 都过了。</p>
