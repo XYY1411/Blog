@@ -4,20 +4,10 @@
     display: inline-block;
     overflow: hidden;
     text-decoration: none;
-    vertical-align: top;
-    outline: 0;
     background-color: transparent;
-    margin: 0px;
-    padding: 0px;
     -webkit-tap-highlight-color: transparent;
 }
 
-.link ::before {
-    background-color: #448aff;
-    position: absolute;
-    top: auto;
-    bottom: 1px;
-    left: 0;
-    width: 100%;
-    height: 1px;
+p {
+    font-size: 16px !important;
 }
