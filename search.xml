@@ -16,6 +16,22 @@
       </tags>
   </entry>
   <entry>
+    <title>加法逆元, Additive Inverse</title>
+    <url>/53088/</url>
+    <content><![CDATA[<p>其实就是相反数。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">additive_inverse</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> -n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>逆元</tag>
+        <tag>加法逆元</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>裴蜀定理, Bézout&#39;s lemma</title>
     <url>/46515/</url>
     <content><![CDATA[<p>又叫贝祖定理。</p>
@@ -30,22 +46,6 @@
       </categories>
       <tags>
         <tag>裴蜀定理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>加法逆元, Additive Inverse</title>
-    <url>/53088/</url>
-    <content><![CDATA[<p>其实就是相反数。</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">additive_inverse</span><span class="params">(T n)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> -n;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>逆元</tag>
-        <tag>加法逆元</tag>
       </tags>
   </entry>
   <entry>
@@ -307,24 +307,6 @@
       </tags>
   </entry>
   <entry>
-    <title>欧几里得算法, 辗转相除法 Euclidean algorithm, gcd</title>
-    <url>/56234/</url>
-    <content><![CDATA[<p>GCD… 应该没人不会吧……</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">维基百科</a>，<a href="https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95">百度百科</a>，<a href="https://oi-wiki.org/math/gcd/#_2">OI Wiki</a></p>
-<p>$$(a, b) = \begin{cases} a ,&amp; b = 0 \\ (b,\, a \mod b) , &amp; b \neq 0 \end{cases}$$</p>
-<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">gcd</span><span class="params">(T a, T b)</span> </span>&#123;<span class="keyword">return</span> b ? gcd&lt;T&gt;(b, a % b) : a;&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">lcm</span><span class="params">(T a, T b)</span> </span>&#123;<span class="keyword">return</span> a / gcd&lt;T&gt;(a, b) * b;&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>欧几里得算法, 辗转相除法, gcd</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>埃拉托斯特尼筛法, κόσκινον Ἐρατοσθένους</title>
     <url>/48233/</url>
     <content><![CDATA[<p>一个古老的算法。</p>
@@ -344,6 +326,24 @@
         <tag>素数</tag>
         <tag>筛法</tag>
         <tag>埃拉托斯特尼筛法, Eratosthenes</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欧几里得算法, 辗转相除法 Euclidean algorithm, gcd</title>
+    <url>/56234/</url>
+    <content><![CDATA[<p>GCD… 应该没人不会吧……</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%BC%BE%E8%BD%89%E7%9B%B8%E9%99%A4%E6%B3%95">维基百科</a>，<a href="https://baike.baidu.com/item/%E6%AC%A7%E5%87%A0%E9%87%8C%E5%BE%97%E7%AE%97%E6%B3%95">百度百科</a>，<a href="https://oi-wiki.org/math/gcd/#_2">OI Wiki</a></p>
+<p>$$(a, b) = \begin{cases} a ,&amp; b = 0 \\ (b,\, a \mod b) , &amp; b \neq 0 \end{cases}$$</p>
+<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function">T <span class="title">gcd</span><span class="params">(T a, T b)</span> </span>&#123;<span class="keyword">return</span> b ? gcd&lt;T&gt;(b, a % b) : a;&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">lcm</span><span class="params">(T a, T b)</span> </span>&#123;<span class="keyword">return</span> a / gcd&lt;T&gt;(a, b) * b;&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>欧几里得算法, 辗转相除法, gcd</tag>
       </tags>
   </entry>
   <entry>
@@ -632,6 +632,38 @@
       </tags>
   </entry>
   <entry>
+    <title>2021-06-06 模拟赛</title>
+    <url>/43261/</url>
+    <content><![CDATA[<p>数组开小了，白送 $40$ 分。</p>
+<span id="more"></span>
+
+<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-天猫的小鱼"><a href="#T1-天猫的小鱼" class="headerlink" title="T1 天猫的小鱼"></a>T1 天猫的小鱼</h2><p><a href="catfish.cpp" download="catfish.cpp">考场代码</a></p>
+<p>提交地址：无</p>
+<p>二进制扫一遍，当作三进制做。</p>
+<h2 id="T2-【模板】高斯消元法"><a href="#T2-【模板】高斯消元法" class="headerlink" title="T2 【模板】高斯消元法"></a>T2 【模板】高斯消元法</h2><p><a href="shopping.cpp" download="shopping.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P3389">洛谷 Luogu3389</a></p>
+<p>高斯消元模版。</p>
+<h2 id="T3-Ural1042-Central-Heating"><a href="#T3-Ural1042-Central-Heating" class="headerlink" title="T3 [Ural1042] Central Heating"></a>T3 [Ural1042] Central Heating</h2><p><a href="heat.cpp" download="heat.cpp">考场代码</a></p>
+<p>提交地址：<a href="http://poj.org/problem?id=2345">POJ POJ2345</a>，<a href="https://acm.timus.ru/problem.aspx?space=1&num=1042">TIMUS Ural1042</a></p>
+<p>高斯消元模版，把减号改成异或即可。</p>
+<h2 id="T4-SDOI2009-HH去散步"><a href="#T4-SDOI2009-HH去散步" class="headerlink" title="T4 [SDOI2009] HH去散步"></a>T4 [SDOI2009] HH去散步</h2><p><a href="running.cpp" download="runnnig.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P2151">洛谷 Luogu2151</a>，大视野在线评测 BZOJ1875</p>
+<p>原题，点边互换。</p>
+<p>数组开小了，白送 $40$ 分。</p>
+<h1 id="合计-100-100-100-60-360"><a href="#合计-100-100-100-60-360" class="headerlink" title="合计 $100 + 100 + 100 + 60 = 360$"></a>合计 $100 + 100 + 100 + 60 = 360$</h1>]]></content>
+      <categories>
+        <category>日志</category>
+        <category>模拟赛</category>
+      </categories>
+      <tags>
+        <tag>二进制</tag>
+        <tag>高斯消元</tag>
+        <tag>矩阵</tag>
+        <tag>快速幂</tag>
+        <tag>递推</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021-06-09 模拟赛</title>
     <url>/49246/</url>
     <content><![CDATA[<p>头疼……</p>
@@ -658,42 +690,10 @@
       <tags>
         <tag>前缀和</tag>
         <tag>贪心</tag>
-        <tag>二分答案</tag>
         <tag>矩阵</tag>
+        <tag>二分答案</tag>
         <tag>深度优先搜索, dfs</tag>
         <tag>剪枝</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>2021-06-06 模拟赛</title>
-    <url>/43261/</url>
-    <content><![CDATA[<p>数组开小了，白送 $40$ 分。</p>
-<span id="more"></span>
-
-<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-天猫的小鱼"><a href="#T1-天猫的小鱼" class="headerlink" title="T1 天猫的小鱼"></a>T1 天猫的小鱼</h2><p><a href="catfish.cpp" download="catfish.cpp">考场代码</a></p>
-<p>提交地址：无</p>
-<p>二进制扫一遍，当作三进制做。</p>
-<h2 id="T2-【模板】高斯消元法"><a href="#T2-【模板】高斯消元法" class="headerlink" title="T2 【模板】高斯消元法"></a>T2 【模板】高斯消元法</h2><p><a href="shopping.cpp" download="shopping.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P3389">洛谷 Luogu3389</a></p>
-<p>高斯消元模版。</p>
-<h2 id="T3-Ural1042-Central-Heating"><a href="#T3-Ural1042-Central-Heating" class="headerlink" title="T3 [Ural1042] Central Heating"></a>T3 [Ural1042] Central Heating</h2><p><a href="heat.cpp" download="heat.cpp">考场代码</a></p>
-<p>提交地址：<a href="http://poj.org/problem?id=2345">POJ POJ2345</a>，<a href="https://acm.timus.ru/problem.aspx?space=1&num=1042">TIMUS Ural1042</a></p>
-<p>高斯消元模版，把减号改成异或即可。</p>
-<h2 id="T4-SDOI2009-HH去散步"><a href="#T4-SDOI2009-HH去散步" class="headerlink" title="T4 [SDOI2009] HH去散步"></a>T4 [SDOI2009] HH去散步</h2><p><a href="running.cpp" download="runnnig.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P2151">洛谷 Luogu2151</a>，大视野在线评测 BZOJ1875</p>
-<p>原题，点边互换。</p>
-<p>数组开小了，白送 $40$ 分。</p>
-<h1 id="合计-100-100-100-60-360"><a href="#合计-100-100-100-60-360" class="headerlink" title="合计 $100 + 100 + 100 + 60 = 360$"></a>合计 $100 + 100 + 100 + 60 = 360$</h1>]]></content>
-      <categories>
-        <category>日志</category>
-        <category>模拟赛</category>
-      </categories>
-      <tags>
-        <tag>二进制</tag>
-        <tag>矩阵</tag>
-        <tag>高斯消元</tag>
-        <tag>快速幂</tag>
-        <tag>递推</tag>
       </tags>
   </entry>
   <entry>
@@ -930,6 +930,28 @@
       </tags>
   </entry>
   <entry>
+    <title>标记永久化线段树</title>
+    <url>/54665/</url>
+    <content><![CDATA[<p><a href="https://kamome.moe/">$\rm\color{red}S\color{black}iunaus$ ($\rm Zhang\_RQ$)</a> ：</p>
+<blockquote>
+<p>标记永久化线段树不需要 $\rm pushdown$ 。</p>
+</blockquote>
+<p>……</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">ls</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rs</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">mid</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>; &#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    ll v;</span><br><span class="line">    ll add;</span><br><span class="line">    <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">&#125; st[maxn &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; st[p].v = st[<span class="built_in">ls</span>(p)].v + st[<span class="built_in">rs</span>(p)].v; &#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r)</span><br><span class="line">        st[p].v = a[l];</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="built_in">mid</span>(l, r);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">ls</span>(p), l, m);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, r);</span><br><span class="line">        <span class="built_in">push_up</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, ll k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">        st[p].v = st[p].v + k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">        st[p].add = st[p].add + k;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    st[p].v += k * (<span class="built_in">min</span>(nr, cr) - <span class="built_in">max</span>(nl, cl) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">ls</span>(p), nl, m, cl, cr, k);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, ll tag)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> st[p].v + tag * (nr - nl + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">query</span>(<span class="built_in">ls</span>(p), nl, m, ql, qr, tag + st[p].add) +</span><br><span class="line">           <span class="built_in">query</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, ql, qr, tag + st[p].add);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="color-Green-code-poject"><a href="#color-Green-code-poject" class="headerlink" title="$\color{Green}code - poject$"></a>$\color{Green}code - poject$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">segment_tree</span> &#123;</span></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _ls(<span class="keyword">int</span> f) &#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _rs(<span class="keyword">int</span> f) &#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _mid(<span class="keyword">int</span> l, <span class="keyword">int</span> r) &#123; <span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _max(<span class="keyword">const</span> <span class="keyword">int</span> &amp;a, <span class="keyword">const</span> <span class="keyword">int</span> &amp;b) &#123; <span class="keyword">return</span> (a &gt; b) ? a : b; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _min(<span class="keyword">const</span> <span class="keyword">int</span> &amp;a, <span class="keyword">const</span> <span class="keyword">int</span> &amp;b) &#123; <span class="keyword">return</span> (a &lt; b) ? a : b; &#125;</span><br><span class="line">    T *_a;</span><br><span class="line">    T _n;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">        T v;</span><br><span class="line">        T add;</span><br><span class="line">        <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">    &#125; * _st;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; _st[p].v = _st[_ls(p)].v + _st[_rs(p)].v; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l == r)</span><br><span class="line">            _st[p].v = _a[l];</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> m = _mid(l, r);</span><br><span class="line">            <span class="built_in">build</span>(_ls(p), l, m);</span><br><span class="line">            <span class="built_in">build</span>(_rs(p), m + <span class="number">1</span>, r);</span><br><span class="line">            <span class="built_in">push_up</span>(p);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> _plus(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, T k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">            _st[p].v += k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">            _st[p].add += k;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        _st[p].v += k * (_min(nr, cr) - _max(nl, cl) + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> m = _mid(nl, nr);</span><br><span class="line">        _plus(_ls(p), nl, m, cl, cr, k);</span><br><span class="line">        _plus(_rs(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">    &#125;</span><br><span class="line">    T _query(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, T tag) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> _st[p].v + tag * (nr - nl + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> m = _mid(nl, nr);</span><br><span class="line">        <span class="keyword">return</span> _query(_ls(p), nl, m, ql, qr, tag + _st[p].add) +</span><br><span class="line">               _query(_rs(p), m + <span class="number">1</span>, nr, ql, qr, tag + _st[p].add);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">segment_tree</span>(T n, T *a) : _n(n), _a(a) &#123;</span><br><span class="line">        _st = <span class="keyword">new</span> node[n &lt;&lt; <span class="number">2</span>];</span><br><span class="line">        <span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, _n);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">segment_tree</span>() &#123; <span class="keyword">delete</span>[] _st; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, T k)</span> </span>&#123; _plus(<span class="number">1</span>, <span class="number">1</span>, _n, l, r, k); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> T <span class="title">query</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="keyword">return</span> _query(<span class="number">1</span>, <span class="number">1</span>, _n, l, r, <span class="number">0</span>); &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>线段树</tag>
+        <tag>区间最值, RMQ</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>映射与函数</title>
     <url>/13431/</url>
     <content><![CDATA[<p>上次碰微积分是在初三寒假？</p>
@@ -979,28 +1001,6 @@
       <tags>
         <tag>映射</tag>
         <tag>函数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>标记永久化线段树</title>
-    <url>/54665/</url>
-    <content><![CDATA[<p><a href="https://kamome.moe/">$\rm\color{red}S\color{black}iunaus$ ($\rm Zhang\_RQ$)</a> ：</p>
-<blockquote>
-<p>标记永久化线段树不需要 $\rm pushdown$ 。</p>
-</blockquote>
-<p>……</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">ls</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rs</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">mid</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>; &#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    ll v;</span><br><span class="line">    ll add;</span><br><span class="line">    <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">&#125; st[maxn &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; st[p].v = st[<span class="built_in">ls</span>(p)].v + st[<span class="built_in">rs</span>(p)].v; &#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r)</span><br><span class="line">        st[p].v = a[l];</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="built_in">mid</span>(l, r);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">ls</span>(p), l, m);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, r);</span><br><span class="line">        <span class="built_in">push_up</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, ll k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">        st[p].v = st[p].v + k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">        st[p].add = st[p].add + k;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    st[p].v += k * (<span class="built_in">min</span>(nr, cr) - <span class="built_in">max</span>(nl, cl) + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">ls</span>(p), nl, m, cl, cr, k);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, ll tag)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> st[p].v + tag * (nr - nl + <span class="number">1</span>);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">query</span>(<span class="built_in">ls</span>(p), nl, m, ql, qr, tag + st[p].add) +</span><br><span class="line">           <span class="built_in">query</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, ql, qr, tag + st[p].add);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="color-Green-code-poject"><a href="#color-Green-code-poject" class="headerlink" title="$\color{Green}code - poject$"></a>$\color{Green}code - poject$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">segment_tree</span> &#123;</span></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _ls(<span class="keyword">int</span> f) &#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _rs(<span class="keyword">int</span> f) &#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _mid(<span class="keyword">int</span> l, <span class="keyword">int</span> r) &#123; <span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _max(<span class="keyword">const</span> <span class="keyword">int</span> &amp;a, <span class="keyword">const</span> <span class="keyword">int</span> &amp;b) &#123; <span class="keyword">return</span> (a &gt; b) ? a : b; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _min(<span class="keyword">const</span> <span class="keyword">int</span> &amp;a, <span class="keyword">const</span> <span class="keyword">int</span> &amp;b) &#123; <span class="keyword">return</span> (a &lt; b) ? a : b; &#125;</span><br><span class="line">    T *_a;</span><br><span class="line">    T _n;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">        T v;</span><br><span class="line">        T add;</span><br><span class="line">        <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">    &#125; * _st;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; _st[p].v = _st[_ls(p)].v + _st[_rs(p)].v; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l == r)</span><br><span class="line">            _st[p].v = _a[l];</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> m = _mid(l, r);</span><br><span class="line">            <span class="built_in">build</span>(_ls(p), l, m);</span><br><span class="line">            <span class="built_in">build</span>(_rs(p), m + <span class="number">1</span>, r);</span><br><span class="line">            <span class="built_in">push_up</span>(p);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> _plus(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, T k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">            _st[p].v += k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">            _st[p].add += k;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        _st[p].v += k * (_min(nr, cr) - _max(nl, cl) + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> m = _mid(nl, nr);</span><br><span class="line">        _plus(_ls(p), nl, m, cl, cr, k);</span><br><span class="line">        _plus(_rs(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">    &#125;</span><br><span class="line">    T _query(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr, T tag) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> _st[p].v + tag * (nr - nl + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">int</span> m = _mid(nl, nr);</span><br><span class="line">        <span class="keyword">return</span> _query(_ls(p), nl, m, ql, qr, tag + _st[p].add) +</span><br><span class="line">               _query(_rs(p), m + <span class="number">1</span>, nr, ql, qr, tag + _st[p].add);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">segment_tree</span>(T n, T *a) : _n(n), _a(a) &#123;</span><br><span class="line">        _st = <span class="keyword">new</span> node[n &lt;&lt; <span class="number">2</span>];</span><br><span class="line">        <span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, _n);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">segment_tree</span>() &#123; <span class="keyword">delete</span>[] _st; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, T k)</span> </span>&#123; _plus(<span class="number">1</span>, <span class="number">1</span>, _n, l, r, k); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> T <span class="title">query</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="keyword">return</span> _query(<span class="number">1</span>, <span class="number">1</span>, _n, l, r, <span class="number">0</span>); &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数据结构</category>
-      </categories>
-      <tags>
-        <tag>线段树</tag>
-        <tag>区间最值, RMQ</tag>
       </tags>
   </entry>
   <entry>
@@ -1330,6 +1330,38 @@
       </tags>
   </entry>
   <entry>
+    <title>乘法逆元, Multiplicative Inverse</title>
+    <url>/24044/</url>
+    <content><![CDATA[<p><a href="https://blog.i207m.top/">$\rm \color{black}i\color{red}207M$</a> ：</p>
+<blockquote>
+<p>你知道吗？求逆元有五种方法。</p>
+</blockquote>
+<span id="more"></span>
+
+<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>使用费马小定理，这种方法要求 $p$ 是质数。</p>
+<p>由</p>
+<p>$$a \times a^{p - 2} \equiv 1 \pmod{p}$$</p>
+<p>可得</p>
+<p>$$a^{-1} = a^{p - 2}$$</p>
+<p>然后就可以使用快速幂求逆元。</p>
+<p>如下：</p>
+<h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_fermat</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">qipow</span>(n, p - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h1><p>扩展欧几里得算法。</p>
+<p>$$ax \equiv 1 \pmod{b}$$</p>
+<p>$x$ 即为 $a$ 在模 $b$ 意义下的逆元。</p>
+<p>如下：</p>
+<h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_extgcd</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    T x, y;</span><br><span class="line">    <span class="built_in">extgcd</span>(n, p, x, y);</span><br><span class="line">    <span class="keyword">return</span> (x % p + p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>逆元</tag>
+        <tag>乘法逆元</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>NOIO2021 #1</title>
     <url>/60602/</url>
     <content><![CDATA[<p>裂开，太难了，这次比赛深刻的让我认识到了我菜的本质。</p>
@@ -1364,38 +1396,6 @@
         <category>游记</category>
         <category>NOIO</category>
       </categories>
-  </entry>
-  <entry>
-    <title>乘法逆元, Multiplicative Inverse</title>
-    <url>/24044/</url>
-    <content><![CDATA[<p><a href="https://blog.i207m.top/">$\rm \color{black}i\color{red}207M$</a> ：</p>
-<blockquote>
-<p>你知道吗？求逆元有五种方法。</p>
-</blockquote>
-<span id="more"></span>
-
-<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>使用费马小定理，这种方法要求 $p$ 是质数。</p>
-<p>由</p>
-<p>$$a \times a^{p - 2} \equiv 1 \pmod{p}$$</p>
-<p>可得</p>
-<p>$$a^{-1} = a^{p - 2}$$</p>
-<p>然后就可以使用快速幂求逆元。</p>
-<p>如下：</p>
-<h2 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_fermat</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">qipow</span>(n, p - <span class="number">2</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="方式二"><a href="#方式二" class="headerlink" title="方式二"></a>方式二</h1><p>扩展欧几里得算法。</p>
-<p>$$ax \equiv 1 \pmod{b}$$</p>
-<p>$x$ 即为 $a$ 在模 $b$ 意义下的逆元。</p>
-<p>如下：</p>
-<h2 id="color-Green-code-1"><a href="#color-Green-code-1" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inverse_extgcd</span><span class="params">(T n, T p)</span> </span>&#123;</span><br><span class="line">    T x, y;</span><br><span class="line">    <span class="built_in">extgcd</span>(n, p, x, y);</span><br><span class="line">    <span class="keyword">return</span> (x % p + p) % p;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>逆元</tag>
-        <tag>乘法逆元</tag>
-      </tags>
   </entry>
   <entry>
     <title>预处理二进制对数表</title>
@@ -1601,24 +1601,6 @@
       </tags>
   </entry>
   <entry>
-    <title>稀疏表, Sparse Table, ST表</title>
-    <url>/59112/</url>
-    <content><![CDATA[<p>奇奇怪怪，写不出来。</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> logn = <span class="number">21</span>, maxn = <span class="number">2e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> f[maxn][logn + <span class="number">1</span>], lg[maxn + <span class="number">1</span>];</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">iread</span>(<span class="keyword">void</span>) &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">makelog</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    lg[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    lg[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">3</span>; i &lt; maxn; ++i) lg[i] = lg[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n, m, l, r, s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = <span class="built_in">iread</span>(), m = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="built_in">makelog</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ; ++i) f[i][<span class="number">0</span>] = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= logn; j++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">            f[i][j] = <span class="built_in">max</span>(f[i][j - <span class="number">1</span>], f[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        l = <span class="built_in">iread</span>(), r = <span class="built_in">iread</span>();</span><br><span class="line">        s = lg[r - l + <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">max</span>(f[l][s], f[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="color-Green-code-poject"><a href="#color-Green-code-poject" class="headerlink" title="$\color{Green}code - poject$"></a>$\color{Green}code - poject$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  lb() 为二进制对数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sparse_table</span> &#123;</span></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">    T **_table;</span><br><span class="line">    T _n;</span><br><span class="line">    T _logn;</span><br><span class="line">    <span class="keyword">inline</span> T _max(<span class="keyword">const</span> T &amp;a, <span class="keyword">const</span> T &amp;b) &#123; <span class="keyword">return</span> (a &gt; b) ? a : b; &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">sparse_table</span>(T n, T *a) : _n(n), _logn(<span class="built_in">lb</span>(n) + <span class="number">1</span>) &#123;</span><br><span class="line">        _table = <span class="keyword">new</span> T *[_n + <span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _n + <span class="number">5</span>; ++i) _table[i] = <span class="keyword">new</span> T[_logn + <span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= _n; ++i) _table[i][<span class="number">0</span>] = a[i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= _logn; j++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">                _table[i][j] =</span><br><span class="line">                    _max(_table[i][j - <span class="number">1</span>], _table[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">sparse_table</span>() &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _n + <span class="number">5</span>; ++i) <span class="keyword">delete</span>[] _table[i];</span><br><span class="line">        <span class="keyword">delete</span>[] _table;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> T <span class="title">query</span><span class="params">(T l, T r)</span> </span>&#123;</span><br><span class="line">        T s = <span class="built_in">lb</span>(r - l + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> _max(_table[l][s], _table[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>基本算法</category>
-      </categories>
-      <tags>
-        <tag>区间最值, RMQ</tag>
-        <tag>稀疏表, ST表</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>伸展树, Splay</title>
     <url>/57120/</url>
     <content><![CDATA[<p>写完保存怎么突然全乱码了啊……</p>
@@ -1666,6 +1648,24 @@
       </categories>
       <tags>
         <tag>伸展树, Splay</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>稀疏表, Sparse Table, ST表</title>
+    <url>/59112/</url>
+    <content><![CDATA[<p>奇奇怪怪，写不出来。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> logn = <span class="number">21</span>, maxn = <span class="number">2e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> f[maxn][logn + <span class="number">1</span>], lg[maxn + <span class="number">1</span>];</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">iread</span>(<span class="keyword">void</span>) &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">makelog</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    lg[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    lg[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">3</span>; i &lt; maxn; ++i) lg[i] = lg[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n, m, l, r, s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = <span class="built_in">iread</span>(), m = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="built_in">makelog</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ; ++i) f[i][<span class="number">0</span>] = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= logn; j++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">            f[i][j] = <span class="built_in">max</span>(f[i][j - <span class="number">1</span>], f[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        l = <span class="built_in">iread</span>(), r = <span class="built_in">iread</span>();</span><br><span class="line">        s = lg[r - l + <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">max</span>(f[l][s], f[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="color-Green-code-poject"><a href="#color-Green-code-poject" class="headerlink" title="$\color{Green}code - poject$"></a>$\color{Green}code - poject$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  lb() 为二进制对数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sparse_table</span> &#123;</span></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">    T **_table;</span><br><span class="line">    T _n;</span><br><span class="line">    T _logn;</span><br><span class="line">    <span class="keyword">inline</span> T _max(<span class="keyword">const</span> T &amp;a, <span class="keyword">const</span> T &amp;b) &#123; <span class="keyword">return</span> (a &gt; b) ? a : b; &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">sparse_table</span>(T n, T *a) : _n(n), _logn(<span class="built_in">lb</span>(n) + <span class="number">1</span>) &#123;</span><br><span class="line">        _table = <span class="keyword">new</span> T *[_n + <span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _n + <span class="number">5</span>; ++i) _table[i] = <span class="keyword">new</span> T[_logn + <span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= _n; ++i) _table[i][<span class="number">0</span>] = a[i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= _logn; j++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">                _table[i][j] =</span><br><span class="line">                    _max(_table[i][j - <span class="number">1</span>], _table[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">sparse_table</span>() &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _n + <span class="number">5</span>; ++i) <span class="keyword">delete</span>[] _table[i];</span><br><span class="line">        <span class="keyword">delete</span>[] _table;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> T <span class="title">query</span><span class="params">(T l, T r)</span> </span>&#123;</span><br><span class="line">        T s = <span class="built_in">lb</span>(r - l + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> _max(_table[l][s], _table[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>基本算法</category>
+      </categories>
+      <tags>
+        <tag>区间最值, RMQ</tag>
+        <tag>稀疏表, ST表</tag>
       </tags>
   </entry>
   <entry>
@@ -1746,17 +1746,6 @@
       </tags>
   </entry>
   <entry>
-    <title>2021-06-08 杂谈</title>
-    <url>/43823/</url>
-    <content><![CDATA[<p>听了一晚上（？）计数，头疼。<span id="more"></span>刚刚洛谷日爆……，头疼死了，明天和二北考试。</p>
-<p>明天高考要结束了……</p>
-]]></content>
-      <categories>
-        <category>日志</category>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>2021-06-02 杂谈</title>
     <url>/54447/</url>
     <content><![CDATA[<p>$\rm Karry5307$ 被踢出 HN 省队了。</p>
@@ -1766,6 +1755,17 @@
 <p><a href="https://www.zhihu.com/question/360640895/answer/1876835710">知乎 如何评价湖南 OIer Karry5307？</a></p>
 <p><a href="https://www.luogu.com.cn/blog/my-vegetable-died/ssH-iN-OI">洛谷日报 #340 [OwO]SSH的在算法竞赛中的妙用 (已撤回）</a></p>
 <p><a href="https://www.luogu.com.cn/blog/my-vegetable-died/how-to-shengxuan-over-300">此篇日报已被删除</a></p>
+]]></content>
+      <categories>
+        <category>日志</category>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>2021-06-08 杂谈</title>
+    <url>/43823/</url>
+    <content><![CDATA[<p>听了一晚上（？）计数，头疼。<span id="more"></span>刚刚洛谷日爆……，头疼死了，明天和二北考试。</p>
+<p>明天高考要结束了……</p>
 ]]></content>
       <categories>
         <category>日志</category>
