@@ -46,6 +46,18 @@
 
     
     
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: { '[+]': [['$', '$']] }
+            }
+        };
+    </script>
+
+    
     
 
     
@@ -58,7 +70,7 @@
     
     <title>
         
-            归档: 2021/5 | 寂静的角落
+            Plus and Multiply | 寂静的角落
           
             
         
@@ -242,131 +254,182 @@
 </aside>
         
         <main id="main-contain" class="mdui-container mdui-m-t-5">
-            
-<div class="mdui-card mdui-p-a-4 mdui-m-b-5">
-    <div class="page-describe">
-        目前共计 63 篇日志。
+            <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/25709/">Plus and Multiply</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-07-05
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-07-05
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E9%A2%98%E8%A7%A3/">题解</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=Plus and Multiply&url=https://xyy1411.github.io/25709/&pic=https://xyy1411.github.io/icons/favicon-me.ico&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 新浪微博</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=Plus and Multiply&url=https://xyy1411.github.io/25709/&via=XYY1411" target="_blank" class="mdui-ripple">分享到 推特</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://xyy1411.github.io/25709/" target="_blank" class="mdui-ripple">分享到 脸书</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://xyy1411.github.io/25709/" target="_blank" class="mdui-ripple">分享到 谷歌+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://xyy1411.github.io/25709/&title=Plus and Multiply" target="_blank" class="mdui-ripple">分享到 领英</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=寂静的角落&title=Plus and Multiply&summary=SJZEZ OIer&pics=https://xyy1411.github.io/icons/favicon-me.ico&url=https://xyy1411.github.io/25709/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://xyy1411.github.io/25709/&text=Plus and Multiply" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <p>做了半天才发现其实很简单……</p>
+<span id="more"></span>
+
+<h1 id="Plus-and-Multiply"><a href="#Plus-and-Multiply" class="headerlink" title="Plus and Multiply"></a>Plus and Multiply</h1><p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/CF1542B">洛谷 CF1542B</a>，<a target="_blank" rel="noopener" href="http://codeforces.com/problemset/problem/1542/B">CodeForces CF1542B</a></p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>有一个集合：</p>
+<ul>
+<li>$1$ 在集合中。</li>
+<li>如果 $x$ 在集合中，那么 $x \cdot a$ 和  $x + b$ 在集合中。</li>
+</ul>
+<p>给定 $a, b, n$ 判断 $n$ 是否在集合中。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>我们发现，有 $(a^{x_1} + y_1 \cdot b) \cdot a^{x_2} + y_2 \cdot b = a^{x_1 + x_2} + b \cdot (y_1 \cdot a^{x_2} + y_2)$，由于 $x$ 和 $y$ 是我们任意取的，那么 $y_1 \cdot a^{x_2} + y_2$ 可以用一个 $y$ 来表示，则上式化简为 $a^x + b \cdot y = n$。</p>
+<p>将上式转化为 $n - a^x \equiv 0 \pmod b$， 这样我们直接枚举指数 $x$ 即可，复杂度为 $\Omicron(\log_an)$。</p>
+<h2 id="rm-color-green-code"><a href="#rm-color-green-code" class="headerlink" title="$\rm\color{green}code$"></a>$\rm\color{green}code$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">qread</span>() &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">bool</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">char</span> c = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(c) &amp;&amp; c != <span class="string">&#x27;-&#x27;</span>) c = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">if</span> (c == <span class="string">&#x27;-&#x27;</span>) flag = <span class="literal">true</span>, c = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(c)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (c ^ <span class="number">48</span>), c = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> flag ? -n : n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> t;</span><br><span class="line">ll a, b, n;</span><br><span class="line"><span class="keyword">bool</span> flag;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    t = <span class="built_in">qread</span>();</span><br><span class="line">    <span class="keyword">while</span> (t--) &#123;</span><br><span class="line">        n = qread&lt;ll&gt;(), a = qread&lt;ll&gt;(), b = qread&lt;ll&gt;();</span><br><span class="line">        <span class="keyword">if</span> (a == <span class="number">1</span>) &#123; <span class="comment">// 注意这里要特判，如果 a 为一不特判会死循环</span></span><br><span class="line">            <span class="built_in">puts</span>((n - <span class="number">1</span>) % b == <span class="number">0</span> ? <span class="string">&quot;Yes&quot;</span> : <span class="string">&quot;No&quot;</span>);</span><br><span class="line">            <span class="keyword">continue</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        flag = <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span> (ll i = <span class="number">1</span>; i &lt;= n; i *= a)</span><br><span class="line">            <span class="keyword">if</span> ((n - i) % b == <span class="number">0</span>) &#123;</span><br><span class="line">                flag = <span class="literal">true</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        <span class="built_in">puts</span>(flag ? <span class="string">&quot;Yes&quot;</span> : <span class="string">&quot;No&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> 本文默认采用 <a style="text-decoration:none;color:#ccc;" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可证 </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/36375/">
+        <span>Odd Set</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/25709/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Plus-and-Multiply"><span class="toc-number">1.</span> <span class="toc-text">Plus and Multiply</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="toc-number">1.1.</span> <span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-number">1.2.</span> <span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rm-color-green-code"><span class="toc-number">1.3.</span> <span class="toc-text">$\rm\color{green}code$</span></a></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">valine</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '7c29d7473f0f58379edd',
+    clientSecret: '0d7f77d446726630a3b5bb8dd15bd4f7a8df2037',
+    repo: 'gitalk_storage',
+    owner: 'XYY1411',
+    admin: ['XYY1411'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="vcomment"></div>
+<!--script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
+<!--script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: '#vcomment',
+    appId: 'zgj3OMN0s31zBieyUYDnUhmO-MdYXbMMI',
+    appKey: 'FxlRvrvQzz32kTFHuKnberaf',
+    placeholder: 'Just go go',
+    pageSize: 10,
+    avatar: 'mp',
+    lang: 'zh-CN',
+    meta: ['nick', 'mail', 'link'],
+    visitor: false,
+    enableQQ: true,
+    requiredFields: ['nick']
+  });
+</script>
+        </div>
+      
     </div>
-    <div class="posts-collapse">
-        
-            
-            
-                <div class="collection-title">
-                    <a href="/archives/2021">
-                        <h2>
-                            2021
-                            <small>
-                                归档
-                            </small>
-                        </h2>
-                    </a>
-                </div>
-                
-            
-            <div class="collection-item">
-                <h3>
-                    <a href="/31534/">
-                        替罪羊树, Scapegoat Tree
-                    </a>
-                </h3>
-                <time itemprop="dateCreated" datetime=2021-05-30 >
-                    2021.05.30
-                </time>
-            </div>
-        
-            
-            
-            <div class="collection-item">
-                <h3>
-                    <a href="/57120/">
-                        伸展树, Splay
-                    </a>
-                </h3>
-                <time itemprop="dateCreated" datetime=2021-05-28 >
-                    2021.05.28
-                </time>
-            </div>
-        
-            
-            
-            <div class="collection-item">
-                <h3>
-                    <a href="/15981/">
-                        树堆, Treap
-                    </a>
-                </h3>
-                <time itemprop="dateCreated" datetime=2021-05-24 >
-                    2021.05.24
-                </time>
-            </div>
-        
-            
-            
-            <div class="collection-item">
-                <h3>
-                    <a href="/40982/">
-                        2021-05-23 模拟赛
-                    </a>
-                </h3>
-                <time itemprop="dateCreated" datetime=2021-05-23 >
-                    2021.05.23
-                </time>
-            </div>
-        
-            
-            
-            <div class="collection-item">
-                <h3>
-                    <a href="/23826/">
-                        2021-05-22 杂谈
-                    </a>
-                </h3>
-                <time itemprop="dateCreated" datetime=2021-05-22 >
-                    2021.05.22
-                </time>
-            </div>
-        
-            
-            
-            <div class="collection-item">
-                <h3>
-                    <a href="/34166/">
-                        vim 配置
-                    </a>
-                </h3>
-                <time itemprop="dateCreated" datetime=2021-05-17 >
-                    2021.05.17
-                </time>
-            </div>
-        
-            
-            
-            <div class="collection-item">
-                <h3>
-                    <a href="/26627/">
-                        2021-05-16 模拟赛
-                    </a>
-                </h3>
-                <time itemprop="dateCreated" datetime=2021-05-17 >
-                    2021.05.17
-                </time>
-            </div>
-        
-            
-            
-            <div class="collection-item">
-                <h3>
-                    <a href="/49102/">
-                        2021-05-09 模拟赛
-                    </a>
-                </h3>
-                <time itemprop="dateCreated" datetime=2021-05-09 >
-                    2021.05.09
-                </time>
-            </div>
-        
-    </div>
-</div>
 
         </main>
         <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
@@ -412,6 +475,12 @@
 
 
 
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
 
 
 
