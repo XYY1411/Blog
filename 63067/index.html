@@ -353,7 +353,7 @@
 <p>则有变进制数 $(A)_S = \overline{x_n x_{n - 1} \cdots x_1 x_0}, 0 \le x_i &lt; a_{i + 1}$。</p>
 <p>类似于其他不变进制数，如十进制为每位满 $10$ 进 $1$，而变进制数则为第 $i$ 位满 $a_{i + 1}$ 进 $1$。</p>
 <h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><p>将变进制数转化为十进制数也与不变进制数类似，如二进制转十进制为第 $i$ 位乘上 $2^i$，而变进制数则为乘上 $\prod_{j = 0}^i a_j$，即：</p>
-<p>$\begin{eqnarray} (A)<em>{10} &amp;=&amp; \sum</em>{i = 0}^n (x_i \prod_{j = 0}^i a_j) \\ &amp;=&amp; x_n \prod_{i = 0}^n a_i + x_{n - 1} \prod_{i = 0}^{n - 1} + \cdots + x_1 a_1 a_0 + x_0 a_0 \end{eqnarray}$</p>
+<p>$$\begin{aligned} A_{10} &amp;= \sum_{i = 0}^n (x_i \prod_{j = 0}^i a_j) \\ &amp;= x_n \prod_{i = 0}^n a_i + x_{n - 1} \prod_{i = 0}^{n - 1} + \cdots + x_1 a_1 a_0 + x_0 a_0 \end{aligned}$$</p>
 <p>将不变进制数转变进制数，同理，用短除法除每一位 $a_i$ 然后取余数为答案。</p>
 <h3 id="rm-color-green-code"><a href="#rm-color-green-code" class="headerlink" title="$\rm \color{green}code$"></a>$\rm \color{green}code$</h3><details>
     <summary>点击查看代码</summary>
@@ -373,9 +373,9 @@
 
 <h2 id="阶乘进制数"><a href="#阶乘进制数" class="headerlink" title="阶乘进制数"></a>阶乘进制数</h2><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p>$a_i = i(i \neq 0)$ 的变进制数 $(A)_! = \overline{x_n x_{n - 1} \cdots x_1 x_0}$ 称为阶乘进制数。</p>
 <p>则阶乘进制转十进制有</p>
-<div class=".math-fluid">
+<div class="math-fluid">
 
-<p>$(A)<em>{10}=\sum</em>{i=0}^n(x_i\prod_{j=0}^i a_j)=\sum_{i=0}^n(x_i\prod_{j=0}^i(j,j\neq 0:1,j=0))=\sum_{i=0}^n(x_i i!)=x_n n!+x_{n-1}(n-1)!+\cdot+x_2 2!+x_1 1!+x_0 1$</p>
+<p>$$\begin{aligned} A_{10} &amp;= \sum_{i = 0}^n (x_i \prod_{j = 0}^i a_j) = \sum_{i = 0}^n (x_i \prod_{j = 0}^i (j, j \neq 0 : 1, j = 0)) \\ &amp;= \sum_{i = 0}^n (x_i i!) = x_n n! + x_{n - 1} (n - 1)! + \cdot + x_2 2! + x_1 1! + x_0 1 \end{aligned}$$</p>
 </div>
 
 <h2 id="康托展开-1"><a href="#康托展开-1" class="headerlink" title="康托展开"></a>康托展开</h2><h3 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h3><p>将任意十进制数转为阶乘进制数。</p>
