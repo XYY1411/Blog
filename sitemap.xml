@@ -564,14 +564,14 @@
   </url>
   
   <url>
-    <loc>https://xyy1411.github.io/tags/Linux/</loc>
+    <loc>https://xyy1411.github.io/tags/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86/</loc>
     <lastmod>2021-07-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>https://xyy1411.github.io/tags/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86/</loc>
+    <loc>https://xyy1411.github.io/tags/Linux/</loc>
     <lastmod>2021-07-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -795,6 +795,27 @@
   </url>
   
   <url>
+    <loc>https://xyy1411.github.io/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/</loc>
+    <lastmod>2021-07-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyy1411.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
+    <lastmod>2021-07-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://xyy1411.github.io/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/</loc>
+    <lastmod>2021-07-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xyy1411.github.io/tags/%E4%BA%8C%E8%BF%9B%E5%88%B6/</loc>
     <lastmod>2021-07-09</lastmod>
     <changefreq>daily</changefreq>
@@ -809,28 +830,7 @@
   </url>
   
   <url>
-    <loc>https://xyy1411.github.io/tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
-    <lastmod>2021-07-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://xyy1411.github.io/tags/%E6%9D%83%E5%80%BC%E7%BA%BF%E6%AE%B5%E6%A0%91/</loc>
-    <lastmod>2021-07-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyy1411.github.io/tags/%E6%89%AB%E6%8F%8F%E7%BA%BF/</loc>
-    <lastmod>2021-07-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyy1411.github.io/tags/%E7%A6%BB%E6%95%A3%E5%8C%96/</loc>
     <lastmod>2021-07-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -1308,6 +1308,13 @@
   </url>
   
   <url>
+    <loc>https://xyy1411.github.io/categories/%E8%BD%AF%E4%BB%B6/</loc>
+    <lastmod>2021-07-09</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://xyy1411.github.io/categories/%E6%95%B0%E5%AD%A6/%E6%95%B0%E5%AD%A6%E5%88%86%E6%9E%90/</loc>
     <lastmod>2021-07-09</lastmod>
     <changefreq>daily</changefreq>
@@ -1316,13 +1323,6 @@
   
   <url>
     <loc>https://xyy1411.github.io/categories/%E6%B8%B8%E8%AE%B0/NOIO/</loc>
-    <lastmod>2021-07-09</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://xyy1411.github.io/categories/%E8%BD%AF%E4%BB%B6/</loc>
     <lastmod>2021-07-09</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
