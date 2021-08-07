@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!--修改 Referrer Policy-->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--浏览器升级提示-->
+    <script>if (false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="/upgrade-your-browser/"; </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font" />
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font" />
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon-me.ico" />
+    
+    <link rel="canonical" href="/"/>
+    
+    
+    
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    <!--Google Adsense Auto Ads-->
+
+<!--Google Analytics-->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G78L86Z6J1"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != "localhost" ||  == false) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G78L86Z6J1');
+  }
+</script>
+
+<!--Baidu Analytics-->
+
+<!--CNZZ Analytics-->
+
+<!--Tencent Analytics-->
+
+<!--Math-->
+
+    
+    
+    
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.css" integrity="sha384-Um5gpz1odJg5Z4HAmzPtgZKdTBHZdw8S29IecapCSB31ligYPhHQZMIlWLYQGVoc"
+    crossorigin="anonymous">
+<!-- The loading of KaTeX is deferred to speed up page rendering -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/katex.min.js" integrity="sha384-YNHdsYkH6gMx9y3mRkmcJ2mFUjTd0qNQQvY9VYZgQd7DcN7env35GzlmFaZ23JGp"
+    crossorigin="anonymous"></script>
+<script>
+    function katex_star() {
+        renderMathInElement(document.body,
+            {
+                delimiters: [
+                    { left: "$$", right: "$$", display: true },
+                    { left: "$", right: "$", display: false }
+                ]
+            }
+        );
+    };
+</script>
+<!-- To automatically render math in text elements, include the auto-render extension: -->
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.13.11/dist/contrib/auto-render.min.js" integrity="sha384-vZTG03m+2yp6N6BNi5iM4rW4oIwk5DfcNdFfxkk9ZWpDriOkXX8voJBFrAO7MpVl"
+    crossorigin="anonymous" onload="katex_star();"></script>
+    
+
+    
+    <script>
+        import { createClient } from 'pexels';
+        const client = createClient('563492ad6f917000010000017b9408644d2d488f8adb75ba91db222e');
+        // All requests made with the client will be authenticated
+    </script>
+    
+    
+    <title>
+        
+            康托展开 | 寂静的角落
+          
+            
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+    <body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-cyan mdui-theme-accent-blue">
+        
+        <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">寂静的角落</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">星空在前，路在脚下</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+        <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+            
+            <a href="/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-home"></i>
+                </div>
+                <div class="mdui-list-item-content">主页</div>
+            </a>
+            
+            
+            <a href="/tags/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-bookmark"></i>
+                </div>
+                <div class="mdui-list-item-content">标签</div>
+            </a>
+            
+            
+            <a href="/categories/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-folder"></i>
+                </div>
+                <div class="mdui-list-item-content">分类</div>
+            </a>
+            
+            
+            <a href="/archives/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-archive"></i>
+                </div>
+                <div class="mdui-list-item-content">归档</div>
+            </a>
+            
+            
+            <a href="/tools/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-tools"></i>
+                </div>
+                <div class="mdui-list-item-content">工具</div>
+            </a>
+            
+            
+            <a href="/links/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-link"></i>
+                </div>
+                <div class="mdui-list-item-content">友链</div>
+            </a>
+            
+            
+            <a href="/about/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-user"></i>
+                </div>
+                <div class="mdui-list-item-content">关于</div>
+            </a>
+            
+            
+            <a href="/gallery/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-gallery"></i>
+                </div>
+                <div class="mdui-list-item-content">图集</div>
+            </a>
+            
+            
+            <a href="/reference/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-article-line"></i>
+                </div>
+                <div class="mdui-list-item-content">参考文献</div>
+            </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                <img class="mdui-img-circle" src="/icons/avatar-me.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">XYY1411</div>
+            <div class="sidebar-description">SJZEZ OIer</div>
+        </div>
+        <div style="text-align: center;">
+            <div style="margin: 0;color: #222;font-size: 16px;line-height: 32px;font-weight: 600;white-space: nowrap;">现在的时间是</div>
+            <canvas id="canvas" style="width:60%" height="100" width="700">时间</canvas>
+        </div>
+        <script>!function(){var t,o=[[[0,0,1,1,1,0,0],[0,1,1,0,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,0,1,1,0],[0,0,1,1,1,0,0]],[[0,0,0,1,1,0,0],[0,1,1,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[1,1,1,1,1,1,1]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,1,1],[1,1,1,1,1,1,1]],[[1,1,1,1,1,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,0,1,1,1,0],[0,0,1,1,1,1,0],[0,1,1,0,1,1,0],[1,1,0,0,1,1,0],[1,1,1,1,1,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,1,1]],[[1,1,1,1,1,1,1],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,1,1,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[1,1,1,1,1,1,1],[1,1,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,1,1,0,0,0,0]],[[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0]]],e=document.getElementById("canvas");if(e.getContext){var l=e.getContext("2d");e.height=100,e.width=700,l.fillStyle="#f00",l.fillRect(10,10,50,50);var r=[],f=[],i=e.height/20-1;function n(t,e){for(var n=0;n<o[e].length;n++)for(var a=0;a<o[e][n].length;a++)1==o[e][n][a]&&(l.beginPath(),l.arc(14*(i+2)*t+2*a*(i+1)+(i+1),2*n*(i+1)+(i+1),i,0,2*Math.PI),l.closePath(),l.fill())}function h(t,e){for(var n=[1,2,3],a=["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"],l=0;l<o[e].length;l++)for(var r=0;r<o[e][l].length;r++)if(1==o[e][l][r]){var h={x:14*(i+2)*t+2*r*(i+1)+(i+1),y:2*l*(i+1)+(i+1),stepX:Math.floor(4*Math.random()-2),stepY:-2*n[Math.floor(Math.random()*n.length)],color:a[Math.floor(Math.random()*a.length)],disY:1};f.push(h)}}t=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),r.push(t[1],t[2],10,t[3],t[4],10,t[5],t[6]),clearInterval(a);var a=setInterval(function(){!function(){var t=[],e=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),n=[];n.push(e[1],e[2],10,e[3],e[4],10,e[5],e[6]);for(var a=r.length-1;0<=a;a--)n[a]!==r[a]&&t.push(a+"_"+(Number(r[a])+1)%10);for(a=0;a<t.length;a++)h.apply(this,t[a].split("_"));r=n.concat()}(),function(){for(var t=0;t<f.length;t++)f[t].stepY+=f[t].disY,f[t].x+=f[t].stepX,f[t].y+=f[t].stepY,(f[t].x>700+i||f[t].y>100+i)&&(f.splice(t,1),t--)}(),function(){e.height=100;for(var t=0;t<r.length;t++)n(t,r[t]);for(t=0;t<f.length;t++)l.beginPath(),l.arc(f[t].x,f[t].y,i,0,2*Math.PI),l.fillStyle=f[t].color,l.closePath(),l.fill()}()},50)}}()</script>
+        <div class="sidebar-links">
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                <a href="mailto:xyy1411@gmail.com" class="mdui-chip-title">谷歌邮箱</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                <a href="mailto:xiaoyuyu1411@qq.com" class="mdui-chip-title">QQ邮箱</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                <a target="_blank" rel="noopener" href="https://github.com/XYY1411" class="mdui-chip-title">GitHub</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-twitter"></i></span>
+                <a target="_blank" rel="noopener" href="https://twitter.com/XYY1411" class="mdui-chip-title">推特</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-bilibili"></i></span>
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/470349774" class="mdui-chip-title">哔哩哔哩</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-blog"></i></span>
+                <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/129562" class="mdui-chip-title">洛谷</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+        
+        <main id="main-contain" class="mdui-container mdui-m-t-5">
+            <article id="article" class="mdui-card mdui-p-b-2 mdui-m-b-5">
+  <header class="mdui-card-media">
+    
+    
+      <div class="post-header"> 
+  <a class="post-header-title" href="/63067/">康托展开</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-07-07
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-07-09
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E5%AD%A6/">数学</a>
+    </span>
+    
+      <span>
+        <span class="iconfont icon-eye"></span>
+        阅读次数:&nbsp;
+        <span id="busuanzi_container_page_pv"><span id="busuanzi_value_page_pv"></span></span>
+      </span>
+    
+  </div>
+</div>   
+    
+
+
+
+    
+    
+    <div class="mdui-card-menu">
+    
+      <button class="mdui-btn mdui-btn-icon mdui-text-color-teal" mdui-menu="{target: '#share_menu', align: 'right'}"><i class="iconfont icon-share"></i></button>
+      <ul class="mdui-menu" id="share_menu">
+        <li class="mdui-menu-item">
+          <a href="http://service.weibo.com/share/share.php?appkey=&title=康托展开&url=https://xyy1411.github.io/63067/&pic=https://xyy1411.github.io/icons/favicon-me.ico&searchPic=false&style=simple" target="_blank" class="mdui-ripple">分享到 新浪微博</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://twitter.com/intent/tweet?text=康托展开&url=https://xyy1411.github.io/63067/&via=XYY1411" target="_blank" class="mdui-ripple">分享到 推特</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.facebook.com/sharer/sharer.php?u=https://xyy1411.github.io/63067/" target="_blank" class="mdui-ripple">分享到 脸书</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://plus.google.com/share?url=https://xyy1411.github.io/63067/" target="_blank" class="mdui-ripple">分享到 谷歌+</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://www.linkedin.com/shareArticle?mini=true&url=https://xyy1411.github.io/63067/&title=康托展开" target="_blank" class="mdui-ripple">分享到 领英</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="http://connect.qq.com/widget/shareqq/index.html?site=寂静的角落&title=康托展开&summary=SJZEZ OIer&pics=https://xyy1411.github.io/icons/favicon-me.ico&url=https://xyy1411.github.io/63067/" target="_blank" class="mdui-ripple">分享到 QQ</a>
+        </li>
+        <li class="mdui-menu-item">
+          <a href="https://telegram.me/share/url?url=https://xyy1411.github.io/63067/&text=康托展开" target="_blank" class="mdui-ripple">分享到 Telegram</a>
+        </li>
+      </ul>
+    
+  </div>
+  </header>
+  
+  
+  
+  
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E7%BB%84%E5%90%88%E6%95%B0%E5%AD%A6/ >组合数学</a>
+      </i>
+    
+  </div>
+
+  
+  <div class="mdui-card-content mdui-typo mdui-p-x-4">
+    <p><del>反正乱推就完事了。</del></p>
+<span id="more"></span>
+
+<h1 id="康托展开"><a href="#康托展开" class="headerlink" title="康托展开"></a>康托展开</h1><p>康托展开可以求一个 $1 \sim n$ 的任意排列的排名。</p>
+<h2 id="变进制数"><a href="#变进制数" class="headerlink" title="变进制数"></a>变进制数</h2><p>字面意思。</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><p>给定无穷数集 $S = {a_0, a_1, a_2, \cdots, a_n, \cdots}, a_0 = 1$，定义变进制数为第 $i$ 位的单位是上一位单位的 $a_i$ 倍。</p>
+<p>则有变进制数 $(A)_S = \overline{x_n x_{n - 1} \cdots x_1 x_0}, 0 \le x_i &lt; a_{i + 1}$。</p>
+<p>类似于其他不变进制数，如十进制为每位满 $10$ 进 $1$，而变进制数则为第 $i$ 位满 $a_{i + 1}$ 进 $1$。</p>
+<h3 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h3><p>将变进制数转化为十进制数也与不变进制数类似，如二进制转十进制为第 $i$ 位乘上 $2^i$，而变进制数则为乘上 $\prod_{j = 0}^i a_j$，即：</p>
+<p>$$\begin{aligned} A_{10} &amp;= \sum_{i = 0}^n (x_i \prod_{j = 0}^i a_j) \\ &amp;= x_n \prod_{i = 0}^n a_i + x_{n - 1} \prod_{i = 0}^{n - 1} + \cdots + x_1 a_1 a_0 + x_0 a_0 \end{aligned}$$</p>
+<p>将不变进制数转变进制数，同理，用短除法除每一位 $a_i$ 然后取余数为答案。</p>
+<h3 id="rm-color-green-code"><a href="#rm-color-green-code" class="headerlink" title="$\rm \color{green}code$"></a>$\rm \color{green}code$</h3><details>
+    <summary>点击查看代码</summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 变进制数转十进制数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">Stod</span><span class="params">(T *a, T *x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    T A = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n; ~i; --i) A = (A + x[i]) * a[i];</span><br><span class="line">    <span class="keyword">return</span> A;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 十进制数转变进制数</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">dtoS</span><span class="params">(T A, T *a, T *x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; A; ++i) x[i] = A % a[i + <span class="number">1</span>], A /= a[i + <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h2 id="广义康托展开"><a href="#广义康托展开" class="headerlink" title="广义康托展开"></a>广义康托展开</h2><h3 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h3><p>广义康托展开即给定两个变进制 $S_1, S_2$ 和 $(A)_{S_1}$，求 $(A)_{S_2}$。</p>
+<h3 id="做法"><a href="#做法" class="headerlink" title="做法"></a>做法</h3><p>我们现在不知道怎么将一个变进制数转换为另一个变进制数，但我们知道如何将一个变进制数转为十进制数和如何将十进制数转为变进制数，于是我们就可以将十进制数作为中转来将一个变进制数转换为另一个变进制数。</p>
+<h3 id="rm-color-green-code-1"><a href="#rm-color-green-code-1" class="headerlink" title="$\rm \color{green}code$"></a>$\rm \color{green}code$</h3><details>
+    <summary>点击查看代码</summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">StoS</span><span class="params">(T *a1, T *x1, T *a2, T *x2, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    T A = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n; ~i; --i) A = (A + x1[i]) * a1[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; A; ++i) x2[i] = A % a2[i + <span class="number">1</span>], A /= a2[i + <span class="number">1</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h2 id="阶乘进制数"><a href="#阶乘进制数" class="headerlink" title="阶乘进制数"></a>阶乘进制数</h2><h2 id="定义-1"><a href="#定义-1" class="headerlink" title="定义"></a>定义</h2><p>$a_i = i(i \neq 0)$ 的变进制数 $(A)_! = \overline{x_n x_{n - 1} \cdots x_1 x_0}$ 称为阶乘进制数。</p>
+<p>则阶乘进制转十进制有</p>
+<div class="math-fluid">
+
+<p>$$\begin{aligned} A_{10} &amp;= \sum_{i = 0}^n (x_i \prod_{j = 0}^i a_j) = \sum_{i = 0}^n (x_i \prod_{j = 0}^i (j, j \neq 0 : 1, j = 0)) \\ &amp;= \sum_{i = 0}^n (x_i i!) = x_n n! + x_{n - 1} (n - 1)! + \cdot + x_2 2! + x_1 1! + x_0 1 \end{aligned}$$</p>
+</div>
+
+<h2 id="康托展开-1"><a href="#康托展开-1" class="headerlink" title="康托展开"></a>康托展开</h2><h3 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h3><p>将任意十进制数转为阶乘进制数。</p>
+<h3 id="做法-1"><a href="#做法-1" class="headerlink" title="做法"></a>做法</h3><p>直接套公式即可。</p>
+<h3 id="rm-color-green-code-2"><a href="#rm-color-green-code-2" class="headerlink" title="$\rm \color{green}code$"></a>$\rm \color{green}code$</h3><details>
+    <summary>点击查看代码</summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">cantor_exp</span><span class="params">(T A, T *x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; A; ++i) x[i] = A % (i + <span class="number">1</span>), A /= (i + <span class="number">1</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h2 id="逆康托展开"><a href="#逆康托展开" class="headerlink" title="逆康托展开"></a>逆康托展开</h2><h3 id="内容-2"><a href="#内容-2" class="headerlink" title="内容"></a>内容</h3><p>字面意思，将阶乘进制数转十进制。</p>
+<h3 id="做法-2"><a href="#做法-2" class="headerlink" title="做法"></a>做法</h3><p>直接套公式即可。</p>
+<h3 id="rm-color-green-code-3"><a href="#rm-color-green-code-3" class="headerlink" title="$\rm \color{green}code$"></a>$\rm \color{green}code$</h3><details>
+    <summary>点击查看代码</summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">inv_cantor_exp</span><span class="params">(T *x, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">    T A = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n; ~i; --i) A = (A + x[i]) * (i == <span class="number">0</span> ? <span class="number">1</span> : i);</span><br><span class="line">    <span class="keyword">return</span> A;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h2 id="排列与阶乘进制数"><a href="#排列与阶乘进制数" class="headerlink" title="排列与阶乘进制数"></a>排列与阶乘进制数</h2><h3 id="内容-3"><a href="#内容-3" class="headerlink" title="内容"></a>内容</h3><p>任何一个 $1, \cdots, n$ 的排列都对应一个唯一的阶乘进制数。</p>
+<p>那么我们可以使 $x_i$ 为 $p_i$ 在后缀 ${p_i, p_{i + 1},  \cdots, p_n}$ 中的排名，排名从 $0$ 开始。</p>
+<p>这样我们就可以将排列转变为阶乘进制数。</p>
+<p>但是直接这样算的复杂度是 $\Omicron(n^2)$ 的，太高，我们需要更低的复杂度。</p>
+<p>观察计算过程，发现最消耗时间的是查询后缀排名这一步。</p>
+<p>动态查询排名可以用平衡树，复杂度为 $\Omicron(\log n)$，但是编程复杂程度太高。</p>
+<p>树状数组是 $\Omicron(\log^2 n)$ 的。</p>
+<p>考虑线段树，我们可以在线段树上二分查询排名，复杂度也是 $\Omicron(\log n)$，但是易实现。</p>
+<p>还有树状数组上二分，不会。</p>
+<p>这样总复杂度为 $\Omicron(n \log n)$。</p>
+<p>代码见下面例题</p>
+<h2 id="例题：-NOIP2004-普及组-火星人"><a href="#例题：-NOIP2004-普及组-火星人" class="headerlink" title="例题：[NOIP2004 普及组] 火星人"></a>例题：[NOIP2004 普及组] 火星人</h2><p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P1088">洛谷 Luogu1088</a></p>
+<h3 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h3><p>给定 $1, \cdots, n (n \le 10^3)$ 的排列 $p_1, p_2, \cdots, p_n$ 和正整数 $m (m \le 100)$。</p>
+<p>设当前排列的排名为 $rank$，求排名为 $rank + m$ 的排列。</p>
+<h3 id="做法-3"><a href="#做法-3" class="headerlink" title="做法"></a>做法</h3><p>原题数据范围很小，我们只要暴力枚举排列即可。</p>
+<h3 id="rm-color-green-code-4"><a href="#rm-color-green-code-4" class="headerlink" title="$\rm \color{green}code$"></a>$\rm \color{green}code$</h3><details>
+    <summary>点击查看代码</summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;n);</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;m);</span><br><span class="line">    <span class="keyword">int</span> s[n];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">scanf</span>(<span class="string">&quot;%d&quot;</span>, &amp;s[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; m; i++) <span class="built_in">next_permutation</span>(s, s + n);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++) <span class="built_in">printf</span>(<span class="string">&quot;%d &quot;</span>, s[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<h3 id="Bonus"><a href="#Bonus" class="headerlink" title="Bonus"></a>Bonus</h3><p>更改数据范围为 $n \le 10^5, k \le 10^{18}$。</p>
+<h3 id="做法-4"><a href="#做法-4" class="headerlink" title="做法"></a>做法</h3><p>现在暴力过不去了，考虑康托展开，我们直接展开为一个阶乘进制数，然后加上 $m$ 再转回去就好了，复杂度是 $\Omicron(n \log n)$ 的。</p>
+<h3 id="rm-color-green-code-5"><a href="#rm-color-green-code-5" class="headerlink" title="$\rm \color{green}code$"></a>$\rm \color{green}code$</h3><details>
+    <summary>点击查看代码</summary>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line"><span class="comment">// 线段树</span></span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">ls</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; <span class="keyword">return</span> p &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rs</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; <span class="keyword">return</span> p &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">mid</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>; &#125;</span><br><span class="line">ll c[maxn &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">pushup</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; c[p] = c[<span class="built_in">ls</span>(p)] + c[<span class="built_in">rs</span>(p)]; &#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> t, ll x)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r) &#123;</span><br><span class="line">        c[p] += x;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(l, r);</span><br><span class="line">    <span class="keyword">if</span> (t &lt;= m)</span><br><span class="line">        <span class="built_in">plus</span>(<span class="built_in">ls</span>(p), l, m, t, x);</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">plus</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, r, t, x);</span><br><span class="line">    <span class="built_in">pushup</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 查询和</span></span><br><span class="line"><span class="function">ll <span class="title">query_sum</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (qr &lt; l || r &lt; ql)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span> (ql &lt;= l &amp;&amp; r &lt;= qr)</span><br><span class="line">        <span class="keyword">return</span> c[p];</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="built_in">mid</span>(l, r);</span><br><span class="line">        ll res = <span class="number">0</span>;</span><br><span class="line">        res += <span class="built_in">query_sum</span>(<span class="built_in">ls</span>(p), l, m, ql, qr);</span><br><span class="line">        res += <span class="built_in">query_sum</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, r, ql, qr);</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 查询排名</span></span><br><span class="line"><span class="function">ll <span class="title">query_rank</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r, ll cnt)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (l == r) <span class="keyword">return</span> l;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(l, r);</span><br><span class="line">    <span class="keyword">return</span> cnt &lt;= c[<span class="built_in">ls</span>(p)] ? <span class="built_in">query_rank</span>(<span class="built_in">ls</span>(p), l, m, cnt)</span><br><span class="line">                           : <span class="built_in">query_rank</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, r, cnt - c[<span class="built_in">ls</span>(p)]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n, dlt;</span><br><span class="line">ll x[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="built_in">scanf</span>(<span class="string">&quot;%d%d&quot;</span>, &amp;n, &amp;dlt);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) <span class="built_in">scanf</span>(<span class="string">&quot;%lld&quot;</span>, &amp;x[i]);</span><br><span class="line">    <span class="comment">// 转换为阶乘进制数，注意是倒着的</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n; i; --i) &#123;</span><br><span class="line">        <span class="built_in">plus</span>(<span class="number">1</span>, <span class="number">1</span>, n, x[i], <span class="number">1</span>);</span><br><span class="line">        x[i] = <span class="built_in">query_sum</span>(<span class="number">1</span>, <span class="number">1</span>, n, <span class="number">1</span>, x[i]) - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 加上 m，处理进位</span></span><br><span class="line">    x[n] += dlt;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = n, j = <span class="number">1</span>; i &amp;&amp; x[i] &gt;= j; --i, ++j) &#123;</span><br><span class="line">        x[i - <span class="number">1</span>] += x[i] / j;</span><br><span class="line">        x[i] %= j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 转回去</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        x[i] = <span class="built_in">query_rank</span>(<span class="number">1</span>, <span class="number">1</span>, n, x[i] + <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">plus</span>(<span class="number">1</span>, <span class="number">1</span>, n, x[i], <span class="number">-1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; ++i) <span class="built_in">printf</span>(<span class="string">&quot;%lld &quot;</span>, x[i]);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</details>
+
+<p>后面没写完。</p>
+<!--
+
+板板
+
+给定 $1, \cdots, n (n \le 10^5)$ 的排列 $p_1, p_2, \cdots, p_n$ 和一个正整数 $\alpha$：
+
+操作一：将当前排列排名增加 $k (k \le 10^18)$
+
+操作二：输出当前排列对应的 $\sum_{i = 1}^n p_i \times \alpha^i \bmod 998244353$
+
+Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
+
+逆序对
+
+查逆序对
+
+多重集排列
+
+--> 
+  </div>
+  <!--文末结束语-->
+  
+    <div style="text-align:center;color: #ccc;font-size:24px;"> 本文默认采用 <a style="text-decoration:none;color:#ccc;" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">署名-非商业性使用-相同方式共享 4.0 国际</a> 许可证 </div>
+  
+  <!--页脚广告-->
+  
+  <div class="mdui-divider"></div>
+  
+  <nav>
+    
+      <a rel="prev" class="post-nav-item mdui-float-left" href="/63849/">
+        <i class="iconfont icon-angle-left"></i>
+        <span>多项式</span>
+      </a>
+    
+    
+      <a rel="next" class="post-nav-item mdui-float-right" href="/25709/">
+        <span>Plus and Multiply</span>
+        <i class="iconfont icon-angle-right"></i>
+      </a>
+    
+  </nav>
+</article>
+
+
+
+
+  <div class="toc-button"  style="z-index: 100;">
+    <button class="mdui-fab mdui-ripple mdui-color-teal" mdui-menu="{target: '#toc'}"><i class="iconfont icon-list"></i></button>
+    <ul class="mdui-menu" id="toc">
+      <li class="mdui-menu-item">
+        <a href="/63067/" id="toc-header" class="mdui-ripple">文章目录</a>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80"><span class="toc-number">1.</span> <span class="toc-text">康托展开</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%98%E8%BF%9B%E5%88%B6%E6%95%B0"><span class="toc-number">1.1.</span> <span class="toc-text">变进制数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.1.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%9B%E5%88%B6%E8%BD%AC%E6%8D%A2"><span class="toc-number">1.1.2.</span> <span class="toc-text">进制转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-color-green-code"><span class="toc-number">1.1.3.</span> <span class="toc-text">$\rm \color{green}code$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80"><span class="toc-number">1.2.</span> <span class="toc-text">广义康托展开</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9"><span class="toc-number">1.2.1.</span> <span class="toc-text">内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E6%B3%95"><span class="toc-number">1.2.2.</span> <span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-color-green-code-1"><span class="toc-number">1.2.3.</span> <span class="toc-text">$\rm \color{green}code$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B6%E4%B9%98%E8%BF%9B%E5%88%B6%E6%95%B0"><span class="toc-number">1.3.</span> <span class="toc-text">阶乘进制数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89-1"><span class="toc-number">1.4.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80-1"><span class="toc-number">1.5.</span> <span class="toc-text">康托展开</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9-1"><span class="toc-number">1.5.1.</span> <span class="toc-text">内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E6%B3%95-1"><span class="toc-number">1.5.2.</span> <span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-color-green-code-2"><span class="toc-number">1.5.3.</span> <span class="toc-text">$\rm \color{green}code$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%80%86%E5%BA%B7%E6%89%98%E5%B1%95%E5%BC%80"><span class="toc-number">1.6.</span> <span class="toc-text">逆康托展开</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9-2"><span class="toc-number">1.6.1.</span> <span class="toc-text">内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E6%B3%95-2"><span class="toc-number">1.6.2.</span> <span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-color-green-code-3"><span class="toc-number">1.6.3.</span> <span class="toc-text">$\rm \color{green}code$</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%92%E5%88%97%E4%B8%8E%E9%98%B6%E4%B9%98%E8%BF%9B%E5%88%B6%E6%95%B0"><span class="toc-number">1.7.</span> <span class="toc-text">排列与阶乘进制数</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9-3"><span class="toc-number">1.7.1.</span> <span class="toc-text">内容</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BE%8B%E9%A2%98%EF%BC%9A-NOIP2004-%E6%99%AE%E5%8F%8A%E7%BB%84-%E7%81%AB%E6%98%9F%E4%BA%BA"><span class="toc-number">1.8.</span> <span class="toc-text">例题：[NOIP2004 普及组] 火星人</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="toc-number">1.8.1.</span> <span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E6%B3%95-3"><span class="toc-number">1.8.2.</span> <span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-color-green-code-4"><span class="toc-number">1.8.3.</span> <span class="toc-text">$\rm \color{green}code$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Bonus"><span class="toc-number">1.8.4.</span> <span class="toc-text">Bonus</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%81%9A%E6%B3%95-4"><span class="toc-number">1.8.5.</span> <span class="toc-text">做法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm-color-green-code-5"><span class="toc-number">1.8.6.</span> <span class="toc-text">$\rm \color{green}code$</span></a></li></ol></li></ol></li></ol>
+      </li>
+    </ul>
+  </div>
+
+
+
+    <div id="comment" class="mdui-card mdui-p-a-2 mdui-m-b-5">
+      <div class="mdui-tab" mdui-tab>
+        
+          <a href="#comment-tab0" class="mdui-ripple">gitalk</a>
+        
+          <a href="#comment-tab1" class="mdui-ripple">valine</a>
+        
+      </div>
+      
+        <div id="comment-tab0" class="mdui-p-a-2">
+          <div id="gitalk-container"></div>
+<link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/js-md5@0.7.3/src/md5.min.js"></script>
+<script>
+  var gitalk = new Gitalk({
+    clientID: '7c29d7473f0f58379edd',
+    clientSecret: '0d7f77d446726630a3b5bb8dd15bd4f7a8df2037',
+    repo: 'gitalk_storage',
+    owner: 'XYY1411',
+    admin: ['XYY1411'],
+    id:  md5(location.pathname) ,
+    distractionFreeMode: 'true',
+  });
+  gitalk.render('gitalk-container');
+</script>
+        </div>
+      
+        <div id="comment-tab1" class="mdui-p-a-2">
+          <div id="vcomment"></div>
+<!--script src="//cdnjs.loli.net/ajax/libs/jquery/3.2.1/jquery.min.js"></script-->
+<!--script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script-->
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+<script>
+  new Valine({
+    el: '#vcomment',
+    appId: 'zgj3OMN0s31zBieyUYDnUhmO-MdYXbMMI',
+    appKey: 'FxlRvrvQzz32kTFHuKnberaf',
+    placeholder: 'Just go go',
+    pageSize: 10,
+    avatar: 'mp',
+    lang: 'zh-CN',
+    meta: ['nick', 'mail', 'link'],
+    visitor: false,
+    enableQQ: true,
+    requiredFields: ['nick']
+  });
+</script>
+        </div>
+      
+    </div>
+
+        </main>
+        <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2017 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        XYY1411
+      </span>
+    </div>
+    <div class="mdui-row">
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>驱动 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>主题 <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a> 修改版</span>
+        </div>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+        
+        <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+        
+        
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@8.4.8/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({
+        startOnLoad: true,
+        theme: "default"
+    });</script>
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+    </body>
+</html >

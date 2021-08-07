@@ -17,6 +17,23 @@
       </tags>
   </entry>
   <entry>
+    <title>裴蜀定理, Bézout&#39;s lemma</title>
+    <url>/46515/</url>
+    <content><![CDATA[<p>又叫贝祖定理。</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B2%9D%E7%A5%96%E7%AD%89%E5%BC%8F">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86">百度百科</a>，<a href="https://oi-wiki.org/math/bezouts/">OI Wiki</a></p>
+<p>$\forall x, y \neq 0， \exists x, y \in \mathbb{Z},$ 使得 $ax +by = (a, b)$.</p>
+]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>裴蜀定理</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>NOI大纲</title>
     <url>/44518/</url>
     <content><![CDATA[<p>终于有个规范了。</p>
@@ -216,23 +233,6 @@
       </tags>
   </entry>
   <entry>
-    <title>裴蜀定理, Bézout&#39;s lemma</title>
-    <url>/46515/</url>
-    <content><![CDATA[<p>又叫贝祖定理。</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://zh.wikipedia.org/wiki/%E8%B2%9D%E7%A5%96%E7%AD%89%E5%BC%8F">维基百科</a>，<a href="https://baike.baidu.com/item/%E8%A3%B4%E8%9C%80%E5%AE%9A%E7%90%86">百度百科</a>，<a href="https://oi-wiki.org/math/bezouts/">OI Wiki</a></p>
-<p>$\forall x, y \neq 0， \exists x, y \in \mathbb{Z},$ 使得 $ax +by = (a, b)$.</p>
-]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>裴蜀定理</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>康托展开</title>
     <url>/63067/</url>
     <content><![CDATA[<p><del>反正乱推就完事了。</del></p>
@@ -368,24 +368,6 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
-    <title>中国剩余定理, Chinese remainder theorem, crt</title>
-    <url>/8769/</url>
-    <content><![CDATA[<p>emmm…</p>
-<p>孙子定理感觉不好听……</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">crt</span><span class="params">(T n, T *ai, T *mi)</span> </span>&#123;</span><br><span class="line">    T m = <span class="number">1</span>, ans = <span class="number">0</span>;</span><br><span class="line">    T *M = <span class="keyword">new</span> T[n + <span class="number">5</span>];</span><br><span class="line">    T *invM = <span class="keyword">new</span> T[n + <span class="number">5</span>];</span><br><span class="line">    T *c = <span class="keyword">new</span> T[n + <span class="number">5</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) m *= mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) M[i] = m / mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) invM[i] = <span class="built_in">inverse_extgcd</span>(M[i], mi[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) c[i] = M[i] * invM[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) ans = (ans + ai[i] * c[i] % m) % m;</span><br><span class="line">    <span class="keyword">delete</span>[] M;</span><br><span class="line">    <span class="keyword">delete</span>[] invM;</span><br><span class="line">    <span class="keyword">delete</span>[] c;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>中国剩余定理, crt</tag>
-        <tag>同余</tag>
-        <tag>扩展欧几里得算法, extgcd</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>普通快读</title>
     <url>/40753/</url>
     <content><![CDATA[<p>最普通的快读。</p>
@@ -402,6 +384,24 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       <tags>
         <tag>快读</tag>
         <tag>卡常</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>中国剩余定理, Chinese remainder theorem, crt</title>
+    <url>/8769/</url>
+    <content><![CDATA[<p>emmm…</p>
+<p>孙子定理感觉不好听……</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">crt</span><span class="params">(T n, T *ai, T *mi)</span> </span>&#123;</span><br><span class="line">    T m = <span class="number">1</span>, ans = <span class="number">0</span>;</span><br><span class="line">    T *M = <span class="keyword">new</span> T[n + <span class="number">5</span>];</span><br><span class="line">    T *invM = <span class="keyword">new</span> T[n + <span class="number">5</span>];</span><br><span class="line">    T *c = <span class="keyword">new</span> T[n + <span class="number">5</span>];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) m *= mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) M[i] = m / mi[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) invM[i] = <span class="built_in">inverse_extgcd</span>(M[i], mi[i]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) c[i] = M[i] * invM[i];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> T i = <span class="number">1</span>; i &lt;= n; ++i) ans = (ans + ai[i] * c[i] % m) % m;</span><br><span class="line">    <span class="keyword">delete</span>[] M;</span><br><span class="line">    <span class="keyword">delete</span>[] invM;</span><br><span class="line">    <span class="keyword">delete</span>[] c;</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>中国剩余定理, crt</tag>
+        <tag>同余</tag>
+        <tag>扩展欧几里得算法, extgcd</tag>
       </tags>
   </entry>
   <entry>
@@ -495,6 +495,23 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
+    <title>欧拉筛, sieve of Euler</title>
+    <url>/51755/</url>
+    <content><![CDATA[<p>线性质数筛。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T get_prime_euler(T n, bool *isprime, T *prime_table);</span></span><br><span class="line"><span class="comment">  求 n 以下的质数表</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">get_prime_euler</span><span class="params">(T n, <span class="keyword">bool</span> *isprime, T *prime_table)</span> </span>&#123;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) prime_table[++p] = i;</span><br><span class="line">        <span class="keyword">for</span> (T j = <span class="number">1</span>, t; j &lt; p &amp;&amp; (t = i * prime_table[j]) &lt;= n; ++j) &#123;</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime_table[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>素数</tag>
+        <tag>筛法</tag>
+        <tag>线性筛</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021-03-22 模拟赛</title>
     <url>/23060/</url>
     <content><![CDATA[<p>emmmm~ </p>
@@ -540,23 +557,6 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
         <tag>前缀和</tag>
         <tag>倍增</tag>
         <tag>倍增优化动态规划, 倍增优化DP</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欧拉筛, sieve of Euler</title>
-    <url>/51755/</url>
-    <content><![CDATA[<p>线性质数筛。</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  template &lt;typename T&gt;</span></span><br><span class="line"><span class="comment">  inline T get_prime_euler(T n, bool *isprime, T *prime_table);</span></span><br><span class="line"><span class="comment">  求 n 以下的质数表</span></span><br><span class="line"><span class="comment">  T 必须为整形类</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">get_prime_euler</span><span class="params">(T n, <span class="keyword">bool</span> *isprime, T *prime_table)</span> </span>&#123;</span><br><span class="line">    T p = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) isprime[i] = <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) &#123;</span><br><span class="line">        <span class="keyword">if</span> (isprime[i]) prime_table[++p] = i;</span><br><span class="line">        <span class="keyword">for</span> (T j = <span class="number">1</span>, t; j &lt; p &amp;&amp; (t = i * prime_table[j]) &lt;= n; ++j) &#123;</span><br><span class="line">            isprime[j] = <span class="literal">false</span>;</span><br><span class="line">            <span class="keyword">if</span> (i % prime_table[j] == <span class="number">0</span>) <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>素数</tag>
-        <tag>筛法</tag>
-        <tag>线性筛</tag>
       </tags>
   </entry>
   <entry>
@@ -884,6 +884,23 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
+    <title>扩展欧拉定理（数论）, Extend Euler&#39;s theorem(Number Theory)</title>
+    <url>/26296/</url>
+    <content><![CDATA[<p>数竞生：信竞咋啥都扩展？</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;(a,\,p)=1\\ a^b,&amp;(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
+]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>欧拉函数</tag>
+        <tag>扩展欧拉定理（数论）</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>快速乘</title>
     <url>/21676/</url>
     <content><![CDATA[<p><del>快速</del>龟速乘。</p>
@@ -901,20 +918,20 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
-    <title>扩展欧拉定理（数论）, Extend Euler&#39;s theorem(Number Theory)</title>
-    <url>/26296/</url>
-    <content><![CDATA[<p>数竞生：信竞咋啥都扩展？</p>
+    <title>快速幂</title>
+    <url>/6782/</url>
+    <content><![CDATA[<p>经典二进制分治。</p>
 <span id="more"></span>
 
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>$$a^b\equiv \begin{cases} a^{b\bmod\varphi(p)},\,&amp;(a,\,p)=1\\ a^b,&amp;(a,\,p)\ne1,\,b&lt;\varphi(p)\\ a^{b\bmod\varphi(p)+\varphi(p)},&amp;(a,\,p)\ne1,\,b\ge\varphi(p) \end{cases} \pmod p$$</p>
-]]></content>
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>利用二进制分治思想，有 $a^{b+c} = a^b \cdot a^c,,,a^{2b} = a^b \cdot a^b = (a^b)^2$ 可以使我们减少大量的运算，而在 $\Theta(\log n)$ 的时间内求出幂。</p>
+<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
+<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowi</span><span class="params">(T b, T p)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s *= b;</span><br><span class="line">        b *= b;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowimod</span><span class="params">(T b, T p, T mod)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s = s * b % mod;</span><br><span class="line">        b = b * b % mod;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s % mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
       <categories>
         <category>OI</category>
         <category>数学</category>
       </categories>
       <tags>
-        <tag>欧拉函数</tag>
-        <tag>扩展欧拉定理（数论）</tag>
+        <tag>快速幂</tag>
       </tags>
   </entry>
   <entry>
@@ -937,23 +954,6 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </categories>
       <tags>
         <tag>费马小定理</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>快速幂</title>
-    <url>/6782/</url>
-    <content><![CDATA[<p>经典二进制分治。</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>利用二进制分治思想，有 $a^{b+c} = a^b \cdot a^c,,,a^{2b} = a^b \cdot a^b = (a^b)^2$ 可以使我们减少大量的运算，而在 $\Theta(\log n)$ 的时间内求出幂。</p>
-<h1 id="复杂度"><a href="#复杂度" class="headerlink" title="复杂度"></a>复杂度</h1><p>$\Theta(\log n)$</p>
-<h1 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowi</span><span class="params">(T b, T p)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s *= b;</span><br><span class="line">        b *= b;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> T <span class="title">qpowimod</span><span class="params">(T b, T p, T mod)</span> </span>&#123;</span><br><span class="line">    T s = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (p &gt; <span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> (p &amp; <span class="number">1</span>) s = s * b % mod;</span><br><span class="line">        b = b * b % mod;</span><br><span class="line">        p &gt;&gt;= <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> s % mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>快速幂</tag>
       </tags>
   </entry>
   <entry>
@@ -980,6 +980,25 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       <tags>
         <tag>克努斯-莫里斯-普拉特算法, KMP</tag>
         <tag>字符串匹配</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线性求欧拉函数</title>
+    <url>/58730/</url>
+    <content><![CDATA[<p>又一个线性筛。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(T n, T *phi_table)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数学</category>
+      </categories>
+      <tags>
+        <tag>数学</tag>
+        <tag>数论</tag>
+        <tag>筛法</tag>
+        <tag>欧拉函数</tag>
+        <tag>线性筛</tag>
       </tags>
   </entry>
   <entry>
@@ -1023,25 +1042,6 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       <tags>
         <tag>卢卡斯定理, lucas</tag>
         <tag>组合数</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>线性求欧拉函数</title>
-    <url>/58730/</url>
-    <content><![CDATA[<p>又一个线性筛。</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">get_phi</span><span class="params">(T n, T *phi_table)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i) phi_table[i] = <span class="number">0</span>;</span><br><span class="line">    phi_table[<span class="number">1</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (T i = <span class="number">2</span>; i &lt;= n; ++i)</span><br><span class="line">        <span class="keyword">if</span> (!phi_table[i])</span><br><span class="line">            <span class="keyword">for</span> (T j = i; j &lt;= n; j += i) &#123;</span><br><span class="line">                <span class="keyword">if</span> (!phi_table[j]) phi_table[j] = j;</span><br><span class="line">                phi_table[j] = phi_table[j] / i * (i - <span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>数学</category>
-      </categories>
-      <tags>
-        <tag>数学</tag>
-        <tag>数论</tag>
-        <tag>筛法</tag>
-        <tag>欧拉函数</tag>
-        <tag>线性筛</tag>
       </tags>
   </entry>
   <entry>
@@ -1149,42 +1149,6 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
         <tag>逆元</tag>
         <tag>乘法逆元</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>NOIO2021 #1</title>
-    <url>/60602/</url>
-    <content><![CDATA[<p>裂开，太难了，这次比赛深刻的让我认识到了我菜的本质。</p>
-<span id="more"></span>
-
-<h1 id="游记"><a href="#游记" class="headerlink" title="游记"></a>游记</h1><p>没有，因为是线上。</p>
-<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-NOIO2021-1-提高组-愤怒的小N"><a href="#T1-NOIO2021-1-提高组-愤怒的小N" class="headerlink" title="T1 [NOIO2021 #1 提高组] 愤怒的小N"></a>T1 [NOIO2021 #1 提高组] 愤怒的小N</h2><p><a href="angry.cpp" download="angry.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7468">洛谷 Luogu7468</a></p>
-<p>数学， 不会，打了个暴力，估计也没多少分，有 10 pts，看了看题解，还是直接放弃为好。</p>
-<h2 id="T2-NOIO2021-1-提高组-积木小赛"><a href="#T2-NOIO2021-1-提高组-积木小赛" class="headerlink" title="T2 [NOIO2021 #1 提高组] 积木小赛"></a>T2 [NOIO2021 #1 提高组] 积木小赛</h2><p><a href="block.cpp" download="block.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7469">洛谷 Luogu7469</a></p>
-<p>字符串匹配， 匹配两个字符串的子串和子序列，写了个哈希，有 60 pts，正解是贪心。</p>
-<h2 id="T3-NOIO2021-1-提高组-岛屿探险"><a href="#T3-NOIO2021-1-提高组-岛屿探险" class="headerlink" title="T3 [NOIO2021 #1 提高组] 岛屿探险"></a>T3 [NOIO2021 #1 提高组] 岛屿探险</h2><p><a href="island.cpp" download="island.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7470">洛谷 Luogu7470</a></p>
-<p>区间异或和奇怪的东西，不会，打暴力， 20 pts，正解 CDQ 分治。</p>
-<h2 id="提高合计"><a href="#提高合计" class="headerlink" title="提高合计"></a>提高合计</h2><p>合计 $10 + 60 + 20 = 80$ ，压线前 $25%$ 。</p>
-<h2 id="T1-NOIO2021-1-入门组-切蛋糕"><a href="#T1-NOIO2021-1-入门组-切蛋糕" class="headerlink" title="T1 [NOIO2021 #1 入门组] 切蛋糕"></a>T1 [NOIO2021 #1 入门组] 切蛋糕</h2><p><a href="cake.cpp" download="cake.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7471">洛谷 Luogu7471</a></p>
-<p>特判的水题， AC。</p>
-<h2 id="T2-NOIO2021-1-入门组-吃豆人"><a href="#T2-NOIO2021-1-入门组-吃豆人" class="headerlink" title="T2 [NOIO2021 #1 入门组] 吃豆人"></a>T2 [NOIO2021 #1 入门组] 吃豆人</h2><p><a href="pacman.cpp" download="pacman.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7472">洛谷 Luogu7472</a></p>
-<p>写了特判 30 pts，正解暴力……不过没时间写了，毕竟只写了一个小时。</p>
-<h2 id="T3-NOIO2021-1-入门组-重力球"><a href="#T3-NOIO2021-1-入门组-重力球" class="headerlink" title="T3 [NOIO2021 #1 入门组] 重力球"></a>T3 [NOIO2021 #1 入门组] 重力球</h2><p><a href="ball.cpp" download="ball.cpp">考场代码</a></p>
-<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7473">洛谷 Luogu7473</a></p>
-<p>写的暴力，没分，正解 BFS + 最短路？</p>
-<h2 id="普及合计"><a href="#普及合计" class="headerlink" title="普及合计"></a>普及合计</h2><p>合计 $100 + 30 + 0 = 130$ ，前 $25%$ 。</p>
-<h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>€€￡ 一直崩服务器，圈的钱都去哪里了？</p>
-<h1 id="关于2031年这件事"><a href="#关于2031年这件事" class="headerlink" title="关于2031年这件事"></a>关于2031年这件事</h1><p><img src="2031.png" alt="2031"></p>
-<p>就离谱。</p>
-]]></content>
-      <categories>
-        <category>游记</category>
-        <category>NOIO</category>
-      </categories>
   </entry>
   <entry>
     <title>【转载】莫队集合</title>
@@ -1564,22 +1528,40 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
-    <title>线段树, Segment Tree</title>
-    <url>/43706/</url>
-    <content><![CDATA[<p>这东西当初恶心了我很久了。</p>
+    <title>NOIO2021 #1</title>
+    <url>/60602/</url>
+    <content><![CDATA[<p>裂开，太难了，这次比赛深刻的让我认识到了我菜的本质。</p>
 <span id="more"></span>
 
-<h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">ls</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123;<span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rs</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123;<span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">mid</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;<span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>;&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    ll v;</span><br><span class="line">    ll add;</span><br><span class="line">    <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>)&#123;&#125;</span><br><span class="line">&#125; st[maxn &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;st[p].v = st[<span class="built_in">ls</span>(p)].v + st[<span class="built_in">rs</span>(p)].v;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l == r)</span><br><span class="line">        st[p].v = a[l];</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="built_in">mid</span>(l, r);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">ls</span>(p), l, m);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, r);</span><br><span class="line">        <span class="built_in">push_up</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_down</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(l ,r);</span><br><span class="line">    st[<span class="built_in">ls</span>(p)].v += st[p].add * (m - l + <span class="number">1</span>);</span><br><span class="line">    st[<span class="built_in">rs</span>(p)].v += st[p].add * (r - m);</span><br><span class="line">    st[<span class="built_in">ls</span>(p)].add += st[p].add;</span><br><span class="line">    st[<span class="built_in">rs</span>(p)].add += st[p].add;</span><br><span class="line">    st[p].add = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, ll k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">        st[p].v += k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">        st[p].add += k;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">ls</span>(p), nl, m, cl, cr, k);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">    <span class="built_in">push_up</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> st[p].v;</span><br><span class="line">    <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">query</span>(<span class="built_in">ls</span>(p), nl, m, ql, qr) + <span class="built_in">query</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, ql, qr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="color-Green-code-poject"><a href="#color-Green-code-poject" class="headerlink" title="$\color{Green}code - poject$"></a>$\color{Green}code - poject$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">segment_tree</span> &#123;</span></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _ls(<span class="keyword">int</span> f) &#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _rs(<span class="keyword">int</span> f) &#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _mid(<span class="keyword">int</span> l, <span class="keyword">int</span> r) &#123; <span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>; &#125;</span><br><span class="line">    T *_a;</span><br><span class="line">    T _n;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">        T v;</span><br><span class="line">        T add;</span><br><span class="line">        <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">    &#125; * _st;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; _st[p].v = _st[_ls(p)].v + _st[_rs(p)].v; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l == r)</span><br><span class="line">            _st[p].v = _a[l];</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> m = _mid(l, r);</span><br><span class="line">            <span class="built_in">build</span>(_ls(p), l, m);</span><br><span class="line">            <span class="built_in">build</span>(_rs(p), m + <span class="number">1</span>, r);</span><br><span class="line">            <span class="built_in">push_up</span>(p);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_down</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = _mid(l, r);</span><br><span class="line">        _st[_ls(p)].v += _st[p].add * (m - l + <span class="number">1</span>);</span><br><span class="line">        _st[_rs(p)].v += _st[p].add * (r - m);</span><br><span class="line">        _st[_ls(p)].add += _st[p].add;</span><br><span class="line">        _st[_rs(p)].add += _st[p].add;</span><br><span class="line">        _st[p].add = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> _plus(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, T k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">            _st[p].v += k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">            _st[p].add += k;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">        <span class="keyword">int</span> m = _mid(nl, nr);</span><br><span class="line">        _plus(_ls(p), nl, m, cl, cr, k);</span><br><span class="line">        _plus(_rs(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">        <span class="built_in">push_up</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">    T _query(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> _st[p].v;</span><br><span class="line">        <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">        <span class="keyword">int</span> m = _mid(nl, nr);</span><br><span class="line">        <span class="keyword">return</span> _query(_ls(p), nl, m, ql, qr) +</span><br><span class="line">               _query(_rs(p), m + <span class="number">1</span>, nr, ql, qr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">segment_tree</span>(T n, T *a) : _n(n), _a(a) &#123;</span><br><span class="line">        _st = <span class="keyword">new</span> node[n &lt;&lt; <span class="number">2</span>];</span><br><span class="line">        <span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, _n);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">segment_tree</span>() &#123; <span class="keyword">delete</span>[] _st; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, T k)</span> </span>&#123; _plus(<span class="number">1</span>, <span class="number">1</span>, _n, l, r, k); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> T <span class="title">query</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="keyword">return</span> _query(<span class="number">1</span>, <span class="number">1</span>, _n, l, r); &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+<h1 id="游记"><a href="#游记" class="headerlink" title="游记"></a>游记</h1><p>没有，因为是线上。</p>
+<h1 id="题目-amp-简易介绍"><a href="#题目-amp-简易介绍" class="headerlink" title="题目 &amp; 简易介绍"></a>题目 &amp; 简易介绍</h1><h2 id="T1-NOIO2021-1-提高组-愤怒的小N"><a href="#T1-NOIO2021-1-提高组-愤怒的小N" class="headerlink" title="T1 [NOIO2021 #1 提高组] 愤怒的小N"></a>T1 [NOIO2021 #1 提高组] 愤怒的小N</h2><p><a href="angry.cpp" download="angry.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7468">洛谷 Luogu7468</a></p>
+<p>数学， 不会，打了个暴力，估计也没多少分，有 10 pts，看了看题解，还是直接放弃为好。</p>
+<h2 id="T2-NOIO2021-1-提高组-积木小赛"><a href="#T2-NOIO2021-1-提高组-积木小赛" class="headerlink" title="T2 [NOIO2021 #1 提高组] 积木小赛"></a>T2 [NOIO2021 #1 提高组] 积木小赛</h2><p><a href="block.cpp" download="block.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7469">洛谷 Luogu7469</a></p>
+<p>字符串匹配， 匹配两个字符串的子串和子序列，写了个哈希，有 60 pts，正解是贪心。</p>
+<h2 id="T3-NOIO2021-1-提高组-岛屿探险"><a href="#T3-NOIO2021-1-提高组-岛屿探险" class="headerlink" title="T3 [NOIO2021 #1 提高组] 岛屿探险"></a>T3 [NOIO2021 #1 提高组] 岛屿探险</h2><p><a href="island.cpp" download="island.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7470">洛谷 Luogu7470</a></p>
+<p>区间异或和奇怪的东西，不会，打暴力， 20 pts，正解 CDQ 分治。</p>
+<h2 id="提高合计"><a href="#提高合计" class="headerlink" title="提高合计"></a>提高合计</h2><p>合计 $10 + 60 + 20 = 80$ ，压线前 $25%$ 。</p>
+<h2 id="T1-NOIO2021-1-入门组-切蛋糕"><a href="#T1-NOIO2021-1-入门组-切蛋糕" class="headerlink" title="T1 [NOIO2021 #1 入门组] 切蛋糕"></a>T1 [NOIO2021 #1 入门组] 切蛋糕</h2><p><a href="cake.cpp" download="cake.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7471">洛谷 Luogu7471</a></p>
+<p>特判的水题， AC。</p>
+<h2 id="T2-NOIO2021-1-入门组-吃豆人"><a href="#T2-NOIO2021-1-入门组-吃豆人" class="headerlink" title="T2 [NOIO2021 #1 入门组] 吃豆人"></a>T2 [NOIO2021 #1 入门组] 吃豆人</h2><p><a href="pacman.cpp" download="pacman.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7472">洛谷 Luogu7472</a></p>
+<p>写了特判 30 pts，正解暴力……不过没时间写了，毕竟只写了一个小时。</p>
+<h2 id="T3-NOIO2021-1-入门组-重力球"><a href="#T3-NOIO2021-1-入门组-重力球" class="headerlink" title="T3 [NOIO2021 #1 入门组] 重力球"></a>T3 [NOIO2021 #1 入门组] 重力球</h2><p><a href="ball.cpp" download="ball.cpp">考场代码</a></p>
+<p>提交地址：<a href="https://www.luogu.com.cn/problem/P7473">洛谷 Luogu7473</a></p>
+<p>写的暴力，没分，正解 BFS + 最短路？</p>
+<h2 id="普及合计"><a href="#普及合计" class="headerlink" title="普及合计"></a>普及合计</h2><p>合计 $100 + 30 + 0 = 130$ ，前 $25%$ 。</p>
+<h1 id="吐槽"><a href="#吐槽" class="headerlink" title="吐槽"></a>吐槽</h1><p>€€￡ 一直崩服务器，圈的钱都去哪里了？</p>
+<h1 id="关于2031年这件事"><a href="#关于2031年这件事" class="headerlink" title="关于2031年这件事"></a>关于2031年这件事</h1><p><img src="2031.png" alt="2031"></p>
+<p>就离谱。</p>
+]]></content>
       <categories>
-        <category>OI</category>
-        <category>数据结构</category>
+        <category>游记</category>
+        <category>NOIO</category>
       </categories>
-      <tags>
-        <tag>线段树</tag>
-        <tag>区间最值, RMQ</tag>
-      </tags>
   </entry>
   <entry>
     <title>替罪羊树, Scapegoat Tree</title>
@@ -1619,6 +1601,24 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
         <tag>对数</tag>
         <tag>二进制对数</tag>
         <tag>对数表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>线段树, Segment Tree</title>
+    <url>/43706/</url>
+    <content><![CDATA[<p>这东西当初恶心了我很久了。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">typedef</span> <span class="keyword">long</span> <span class="keyword">long</span> ll;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">ls</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123;<span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">rs</span><span class="params">(<span class="keyword">int</span> f)</span> </span>&#123;<span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>;&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">mid</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;<span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>;&#125;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">5</span>;</span><br><span class="line">ll a[maxn];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">    ll v;</span><br><span class="line">    ll add;</span><br><span class="line">    <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>)&#123;&#125;</span><br><span class="line">&#125; st[maxn &lt;&lt; <span class="number">2</span>];</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123;st[p].v = st[<span class="built_in">ls</span>(p)].v + st[<span class="built_in">rs</span>(p)].v;&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(l == r)</span><br><span class="line">        st[p].v = a[l];</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="built_in">mid</span>(l, r);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">ls</span>(p), l, m);</span><br><span class="line">        <span class="built_in">build</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, r);</span><br><span class="line">        <span class="built_in">push_up</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_down</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(l ,r);</span><br><span class="line">    st[<span class="built_in">ls</span>(p)].v += st[p].add * (m - l + <span class="number">1</span>);</span><br><span class="line">    st[<span class="built_in">rs</span>(p)].v += st[p].add * (r - m);</span><br><span class="line">    st[<span class="built_in">ls</span>(p)].add += st[p].add;</span><br><span class="line">    st[<span class="built_in">rs</span>(p)].add += st[p].add;</span><br><span class="line">    st[p].add = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, ll k)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">        st[p].v += k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">        st[p].add += k;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">ls</span>(p), nl, m, cl, cr, k);</span><br><span class="line">    <span class="built_in">plus</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">    <span class="built_in">push_up</span>(p);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> st[p].v;</span><br><span class="line">    <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">    <span class="keyword">int</span> m = <span class="built_in">mid</span>(nl, nr);</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">query</span>(<span class="built_in">ls</span>(p), nl, m, ql, qr) + <span class="built_in">query</span>(<span class="built_in">rs</span>(p), m + <span class="number">1</span>, nr, ql, qr);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="color-Green-code-poject"><a href="#color-Green-code-poject" class="headerlink" title="$\color{Green}code - poject$"></a>$\color{Green}code - poject$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">segment_tree</span> &#123;</span></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _ls(<span class="keyword">int</span> f) &#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _rs(<span class="keyword">int</span> f) &#123; <span class="keyword">return</span> f &lt;&lt; <span class="number">1</span> | <span class="number">1</span>; &#125;</span><br><span class="line">    <span class="keyword">inline</span> <span class="keyword">int</span> _mid(<span class="keyword">int</span> l, <span class="keyword">int</span> r) &#123; <span class="keyword">return</span> (l + r) &gt;&gt; <span class="number">1</span>; &#125;</span><br><span class="line">    T *_a;</span><br><span class="line">    T _n;</span><br><span class="line">    <span class="class"><span class="keyword">struct</span> <span class="title">node</span> &#123;</span></span><br><span class="line">        T v;</span><br><span class="line">        T add;</span><br><span class="line">        <span class="built_in">node</span>() : <span class="built_in">add</span>(<span class="number">0</span>) &#123;&#125;</span><br><span class="line">    &#125; * _st;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_up</span><span class="params">(<span class="keyword">int</span> p)</span> </span>&#123; _st[p].v = _st[_ls(p)].v + _st[_rs(p)].v; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">build</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (l == r)</span><br><span class="line">            _st[p].v = _a[l];</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">int</span> m = _mid(l, r);</span><br><span class="line">            <span class="built_in">build</span>(_ls(p), l, m);</span><br><span class="line">            <span class="built_in">build</span>(_rs(p), m + <span class="number">1</span>, r);</span><br><span class="line">            <span class="built_in">push_up</span>(p);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">push_down</span><span class="params">(<span class="keyword">int</span> p, <span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> m = _mid(l, r);</span><br><span class="line">        _st[_ls(p)].v += _st[p].add * (m - l + <span class="number">1</span>);</span><br><span class="line">        _st[_rs(p)].v += _st[p].add * (r - m);</span><br><span class="line">        _st[_ls(p)].add += _st[p].add;</span><br><span class="line">        _st[_rs(p)].add += _st[p].add;</span><br><span class="line">        _st[p].add = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">void</span> _plus(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> cl, <span class="keyword">int</span> cr, T k) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nr &lt; cl || cr &lt; nl) <span class="keyword">return</span>;</span><br><span class="line">        <span class="keyword">if</span> (cl &lt;= nl &amp;&amp; nr &lt;= cr) &#123;</span><br><span class="line">            _st[p].v += k * (nr - nl + <span class="number">1</span>);</span><br><span class="line">            _st[p].add += k;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">        <span class="keyword">int</span> m = _mid(nl, nr);</span><br><span class="line">        _plus(_ls(p), nl, m, cl, cr, k);</span><br><span class="line">        _plus(_rs(p), m + <span class="number">1</span>, nr, cl, cr, k);</span><br><span class="line">        <span class="built_in">push_up</span>(p);</span><br><span class="line">    &#125;</span><br><span class="line">    T _query(<span class="keyword">int</span> p, <span class="keyword">int</span> nl, <span class="keyword">int</span> nr, <span class="keyword">int</span> ql, <span class="keyword">int</span> qr) &#123;</span><br><span class="line">        <span class="keyword">if</span> (nr &lt; ql || qr &lt; nl) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">if</span> (ql &lt;= nl &amp;&amp; nr &lt;= qr) <span class="keyword">return</span> _st[p].v;</span><br><span class="line">        <span class="built_in">push_down</span>(p, nl, nr);</span><br><span class="line">        <span class="keyword">int</span> m = _mid(nl, nr);</span><br><span class="line">        <span class="keyword">return</span> _query(_ls(p), nl, m, ql, qr) +</span><br><span class="line">               _query(_rs(p), m + <span class="number">1</span>, nr, ql, qr);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">segment_tree</span>(T n, T *a) : _n(n), _a(a) &#123;</span><br><span class="line">        _st = <span class="keyword">new</span> node[n &lt;&lt; <span class="number">2</span>];</span><br><span class="line">        <span class="built_in">build</span>(<span class="number">1</span>, <span class="number">1</span>, _n);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">segment_tree</span>() &#123; <span class="keyword">delete</span>[] _st; &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">plus</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r, T k)</span> </span>&#123; _plus(<span class="number">1</span>, <span class="number">1</span>, _n, l, r, k); &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> T <span class="title">query</span><span class="params">(<span class="keyword">int</span> l, <span class="keyword">int</span> r)</span> </span>&#123; <span class="keyword">return</span> _query(<span class="number">1</span>, <span class="number">1</span>, _n, l, r); &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>数据结构</category>
+      </categories>
+      <tags>
+        <tag>线段树</tag>
+        <tag>区间最值, RMQ</tag>
       </tags>
   </entry>
   <entry>
@@ -1767,48 +1767,6 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
-    <title>稀疏表, Sparse Table, ST表</title>
-    <url>/59112/</url>
-    <content><![CDATA[<p>奇奇怪怪，写不出来。</p>
-<span id="more"></span>
-
-<h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> logn = <span class="number">21</span>, maxn = <span class="number">2e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> f[maxn][logn + <span class="number">1</span>], lg[maxn + <span class="number">1</span>];</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">iread</span>(<span class="keyword">void</span>) &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">makelog</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    lg[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    lg[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">3</span>; i &lt; maxn; ++i) lg[i] = lg[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n, m, l, r, s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = <span class="built_in">iread</span>(), m = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="built_in">makelog</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ; ++i) f[i][<span class="number">0</span>] = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= logn; j++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">            f[i][j] = <span class="built_in">max</span>(f[i][j - <span class="number">1</span>], f[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        l = <span class="built_in">iread</span>(), r = <span class="built_in">iread</span>();</span><br><span class="line">        s = lg[r - l + <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">max</span>(f[l][s], f[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="color-Green-code-poject"><a href="#color-Green-code-poject" class="headerlink" title="$\color{Green}code - poject$"></a>$\color{Green}code - poject$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  lb() 为二进制对数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sparse_table</span> &#123;</span></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">    T **_table;</span><br><span class="line">    T _n;</span><br><span class="line">    T _logn;</span><br><span class="line">    <span class="keyword">inline</span> T _max(<span class="keyword">const</span> T &amp;a, <span class="keyword">const</span> T &amp;b) &#123; <span class="keyword">return</span> (a &gt; b) ? a : b; &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">sparse_table</span>(T n, T *a) : _n(n), _logn(<span class="built_in">lb</span>(n) + <span class="number">1</span>) &#123;</span><br><span class="line">        _table = <span class="keyword">new</span> T *[_n + <span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _n + <span class="number">5</span>; ++i) _table[i] = <span class="keyword">new</span> T[_logn + <span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= _n; ++i) _table[i][<span class="number">0</span>] = a[i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= _logn; j++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">                _table[i][j] =</span><br><span class="line">                    _max(_table[i][j - <span class="number">1</span>], _table[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">sparse_table</span>() &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _n + <span class="number">5</span>; ++i) <span class="keyword">delete</span>[] _table[i];</span><br><span class="line">        <span class="keyword">delete</span>[] _table;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> T <span class="title">query</span><span class="params">(T l, T r)</span> </span>&#123;</span><br><span class="line">        T s = <span class="built_in">lb</span>(r - l + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> _max(_table[l][s], _table[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-      <categories>
-        <category>OI</category>
-        <category>基本算法</category>
-      </categories>
-      <tags>
-        <tag>区间最值, RMQ</tag>
-        <tag>稀疏表, ST表</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>字符串哈希</title>
-    <url>/52567/</url>
-    <content><![CDATA[<p>玄学哈希。</p>
-<span id="more"></span>
-
-<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://oi-wiki.org/string/hash/">OI Wiki</a></p>
-<p>在比较字符串时我们一般一个一个字符进行比较，对于长度为 $m$ 和 $n$ 的字符串，比较两者的时间复杂度为 $\Theta(max\{m, n\})$ ，但是每次比较都是这个时间复杂度，于是我们希望有 $\Theta(n)$ 预处理， $\Theta(1)$ 比较的方法，这个方法就是字符串哈希。</p>
-<p>字符串哈希，就是将一个字符串映射成一个整数，这样我们就可以直接用映射后的整数进行 $\Theta(1)$ 的比较。</p>
-<p>那么如何设计哈希函数呢？有很多方法，最常用的是“BKDR Hash”算法。</p>
-<h2 id="BKDR-Hash"><a href="#BKDR-Hash" class="headerlink" title="BKDR Hash"></a>BKDR Hash</h2><p>这个算法将字符串当作一个 $P$ 进制数，每个字符再映射到一个数（通常是 $a<del>z$ 映射到 $1</del>26$ 然后计算出这个字符串在 $P$ 进制下模 $M$ 的值，即这个字符串的哈希值，通常选取 $131$ 或 $13331$ 作为模数，这样冲突概率比较小，这样一次哈希的叫做单（模数）哈希，通过使用两次模数不同的哈希可以更加精确降低错误率。</p>
-<p>为了简单，模数一般选 $2^{64}$ ，直接用 <code>unsigned long long</code> 储存，省去了极慢的取模运算。</p>
-<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><h2 id="OI"><a href="#OI" class="headerlink" title="$OI$"></a>$OI$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="function">ull <span class="title">bkdr_hash</span><span class="params">(<span class="keyword">char</span>* s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    ull ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        ans = ans * base +(ull) s[i];</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p>【模板】字符串哈希 提交地址：<a href="https://www.luogu.com.cn/problem/P3370">洛谷 Luogu3370【模板】字符串哈希</a></p>
-]]></content>
-      <categories>
-        <category>OI</category>
-        <category>字符串</category>
-      </categories>
-      <tags>
-        <tag>哈希, HASH</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>伸展树, Splay</title>
     <url>/57120/</url>
     <content><![CDATA[<p>写完保存怎么突然全乱码了啊……</p>
@@ -1859,10 +1817,79 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
+    <title>稀疏表, Sparse Table, ST表</title>
+    <url>/59112/</url>
+    <content><![CDATA[<p>奇奇怪怪，写不出来。</p>
+<span id="more"></span>
+
+<h1 id="color-Green-code-oi"><a href="#color-Green-code-oi" class="headerlink" title="$\color{Green}code - oi$"></a>$\color{Green}code - oi$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cctype&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span> </span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> logn = <span class="number">21</span>, maxn = <span class="number">2e6</span>+<span class="number">5</span>;</span><br><span class="line"><span class="keyword">int</span> f[maxn][logn + <span class="number">1</span>], lg[maxn + <span class="number">1</span>];</span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T = <span class="keyword">int</span>&gt;</span><br><span class="line"><span class="keyword">inline</span> T <span class="built_in">iread</span>(<span class="keyword">void</span>) &#123;</span><br><span class="line">    T n = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">register</span> <span class="keyword">char</span> ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (!<span class="built_in">isdigit</span>(ch)) ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">while</span> (<span class="built_in">isdigit</span>(ch)) n = (n &lt;&lt; <span class="number">3</span>) + (n &lt;&lt; <span class="number">1</span>) + (ch ^ <span class="number">48</span>), ch = <span class="built_in">getchar</span>();</span><br><span class="line">    <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">void</span> <span class="title">makelog</span><span class="params">(<span class="keyword">void</span>)</span> </span>&#123;</span><br><span class="line">    lg[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    lg[<span class="number">2</span>] = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">3</span>; i &lt; maxn; ++i) lg[i] = lg[i &gt;&gt; <span class="number">1</span>] + <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> n, m, l, r, s;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    n = <span class="built_in">iread</span>(), m = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="built_in">makelog</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n ; ++i) f[i][<span class="number">0</span>] = <span class="built_in">iread</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= logn; j++)</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">            f[i][j] = <span class="built_in">max</span>(f[i][j - <span class="number">1</span>], f[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">register</span> <span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= m; ++i) &#123;</span><br><span class="line">        l = <span class="built_in">iread</span>(), r = <span class="built_in">iread</span>();</span><br><span class="line">        s = lg[r - l + <span class="number">1</span>];</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%d\n&quot;</span>, <span class="built_in">max</span>(f[l][s], f[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="color-Green-code-poject"><a href="#color-Green-code-poject" class="headerlink" title="$\color{Green}code - poject$"></a>$\color{Green}code - poject$</h1><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">  lb() 为二进制对数</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">sparse_table</span> &#123;</span></span><br><span class="line">   <span class="keyword">private</span>:</span><br><span class="line">    T **_table;</span><br><span class="line">    T _n;</span><br><span class="line">    T _logn;</span><br><span class="line">    <span class="keyword">inline</span> T _max(<span class="keyword">const</span> T &amp;a, <span class="keyword">const</span> T &amp;b) &#123; <span class="keyword">return</span> (a &gt; b) ? a : b; &#125;</span><br><span class="line"></span><br><span class="line">   <span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">sparse_table</span>(T n, T *a) : _n(n), _logn(<span class="built_in">lb</span>(n) + <span class="number">1</span>) &#123;</span><br><span class="line">        _table = <span class="keyword">new</span> T *[_n + <span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _n + <span class="number">5</span>; ++i) _table[i] = <span class="keyword">new</span> T[_logn + <span class="number">5</span>];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= _n; ++i) _table[i][<span class="number">0</span>] = a[i];</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">1</span>; j &lt;= _logn; j++)</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i + (<span class="number">1</span> &lt;&lt; j) - <span class="number">1</span> &lt;= n; i++)</span><br><span class="line">                _table[i][j] =</span><br><span class="line">                    _max(_table[i][j - <span class="number">1</span>], _table[i + (<span class="number">1</span> &lt;&lt; (j - <span class="number">1</span>))][j - <span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    ~<span class="built_in">sparse_table</span>() &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; _n + <span class="number">5</span>; ++i) <span class="keyword">delete</span>[] _table[i];</span><br><span class="line">        <span class="keyword">delete</span>[] _table;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">inline</span> T <span class="title">query</span><span class="params">(T l, T r)</span> </span>&#123;</span><br><span class="line">        T s = <span class="built_in">lb</span>(r - l + <span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> _max(_table[l][s], _table[r - (<span class="number">1</span> &lt;&lt; s) + <span class="number">1</span>][s]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+      <categories>
+        <category>OI</category>
+        <category>基本算法</category>
+      </categories>
+      <tags>
+        <tag>区间最值, RMQ</tag>
+        <tag>稀疏表, ST表</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>字符串哈希</title>
+    <url>/52567/</url>
+    <content><![CDATA[<p>玄学哈希。</p>
+<span id="more"></span>
+
+<h1 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h1><p>百科：<a href="https://oi-wiki.org/string/hash/">OI Wiki</a></p>
+<p>在比较字符串时我们一般一个一个字符进行比较，对于长度为 $m$ 和 $n$ 的字符串，比较两者的时间复杂度为 $\Theta(max\{m, n\})$ ，但是每次比较都是这个时间复杂度，于是我们希望有 $\Theta(n)$ 预处理， $\Theta(1)$ 比较的方法，这个方法就是字符串哈希。</p>
+<p>字符串哈希，就是将一个字符串映射成一个整数，这样我们就可以直接用映射后的整数进行 $\Theta(1)$ 的比较。</p>
+<p>那么如何设计哈希函数呢？有很多方法，最常用的是“BKDR Hash”算法。</p>
+<h2 id="BKDR-Hash"><a href="#BKDR-Hash" class="headerlink" title="BKDR Hash"></a>BKDR Hash</h2><p>这个算法将字符串当作一个 $P$ 进制数，每个字符再映射到一个数（通常是 $a<del>z$ 映射到 $1</del>26$ 然后计算出这个字符串在 $P$ 进制下模 $M$ 的值，即这个字符串的哈希值，通常选取 $131$ 或 $13331$ 作为模数，这样冲突概率比较小，这样一次哈希的叫做单（模数）哈希，通过使用两次模数不同的哈希可以更加精确降低错误率。</p>
+<p>为了简单，模数一般选 $2^{64}$ ，直接用 <code>unsigned long long</code> 储存，省去了极慢的取模运算。</p>
+<h1 id="color-Green-code"><a href="#color-Green-code" class="headerlink" title="$\color{Green}code$"></a>$\color{Green}code$</h1><h2 id="OI"><a href="#OI" class="headerlink" title="$OI$"></a>$OI$</h2><figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"><span class="keyword">typedef</span> <span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ull;</span><br><span class="line"><span class="function">ull <span class="title">bkdr_hash</span><span class="params">(<span class="keyword">char</span>* s)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> len = <span class="built_in">strlen</span>(s);</span><br><span class="line">    ull ans = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; len; i++)</span><br><span class="line">        ans = ans * base +(ull) s[i];</span><br><span class="line">    <span class="keyword">return</span> ans;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h1><p>【模板】字符串哈希 提交地址：<a href="https://www.luogu.com.cn/problem/P3370">洛谷 Luogu3370【模板】字符串哈希</a></p>
+]]></content>
+      <categories>
+        <category>OI</category>
+        <category>字符串</category>
+      </categories>
+      <tags>
+        <tag>哈希, HASH</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2021-04-15 杂谈</title>
     <url>/6888/</url>
     <content><![CDATA[<p>今天风沙真大。</p>
 <span id="more"></span>]]></content>
+      <categories>
+        <category>日志</category>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>2021-04-03 杂谈</title>
+    <url>/41061/</url>
+    <content><![CDATA[<p>呵呵。</p>
+<span id="more"></span>
+
+<p>马上信息技术学业水平考试，班里一群对 $\rm Python$ 一无所知的人， $\rm MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
+<p>结果 <a href="https://nonfriedchips.github.io/">$\rm \color{red}w\color{black}iki$($\rm non\_fried\_chips$)</a> 挂了 B 。</p>
+]]></content>
+      <categories>
+        <category>日志</category>
+        <category>杂谈</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>2021-04-10 杂谈</title>
+    <url>/9512/</url>
+    <content><![CDATA[<p>今天 $UNOI$ 开始了。</p>
+<span id="more"></span>
+
+<p>今天突然知道<a href="https://zh.wikipedia.org/wiki/%E7%88%B1%E4%B8%81%E5%A0%A1%E5%85%AC%E7%88%B5%E8%8F%B2%E5%88%A9%E6%99%AE%E4%BA%B2%E7%8E%8B">菲利普亲王</a>去世了，经历过二战的人还活着的不多了</p>
+]]></content>
       <categories>
         <category>日志</category>
         <category>杂谈</category>
@@ -1885,19 +1912,6 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
-    <title>2021-04-10 杂谈</title>
-    <url>/9512/</url>
-    <content><![CDATA[<p>今天 $UNOI$ 开始了。</p>
-<span id="more"></span>
-
-<p>今天突然知道<a href="https://zh.wikipedia.org/wiki/%E7%88%B1%E4%B8%81%E5%A0%A1%E5%85%AC%E7%88%B5%E8%8F%B2%E5%88%A9%E6%99%AE%E4%BA%B2%E7%8E%8B">菲利普亲王</a>去世了，经历过二战的人还活着的不多了</p>
-]]></content>
-      <categories>
-        <category>日志</category>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
     <title>2021-06-02 杂谈</title>
     <url>/54447/</url>
     <content><![CDATA[<p>$\rm Karry5307$ 被踢出 HN 省队了。</p>
@@ -1918,20 +1932,6 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
     <url>/43823/</url>
     <content><![CDATA[<p>听了一晚上（？）计数，头疼。<span id="more"></span>刚刚洛谷日爆……，头疼死了，明天和二北考试。</p>
 <p>明天高考要结束了……</p>
-]]></content>
-      <categories>
-        <category>日志</category>
-        <category>杂谈</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>2021-04-03 杂谈</title>
-    <url>/41061/</url>
-    <content><![CDATA[<p>呵呵。</p>
-<span id="more"></span>
-
-<p>马上信息技术学业水平考试，班里一群对 $\rm Python$ 一无所知的人， $\rm MS\ Office$ 也不会用，还在玩扫雷，挂科警告！！！</p>
-<p>结果 <a href="https://nonfriedchips.github.io/">$\rm \color{red}w\color{black}iki$($\rm non\_fried\_chips$)</a> 挂了 B 。</p>
 ]]></content>
       <categories>
         <category>日志</category>
@@ -2083,9 +2083,9 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
-    <title>2021-04-03 更新</title>
-    <url>/22936/</url>
-    <content><![CDATA[<p>Valine 评论功能已开启。</p>
+    <title>2021-03-22 更新</title>
+    <url>/33114/</url>
+    <content><![CDATA[<p>Gitalk 评论功能已开启。</p>
 <span id="more"></span>]]></content>
       <categories>
         <category>日志</category>
@@ -2115,9 +2115,9 @@ Bonus：操作一改为继承历史版本， $\alpha$ 随询问给出。
       </tags>
   </entry>
   <entry>
-    <title>2021-03-22 更新</title>
-    <url>/33114/</url>
-    <content><![CDATA[<p>Gitalk 评论功能已开启。</p>
+    <title>2021-04-03 更新</title>
+    <url>/22936/</url>
+    <content><![CDATA[<p>Valine 评论功能已开启。</p>
 <span id="more"></span>]]></content>
       <categories>
         <category>日志</category>

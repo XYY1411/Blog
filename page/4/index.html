@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <!--修改 Referrer Policy-->
+    <meta name="referrer" content="no-referrer-when-downgrade">
+    <meta name="renderer" content="webkit"/>
+    <meta name="force-rendering" content="webkit"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <!--浏览器升级提示-->
+    <script>if (false || (!!window.MSInputMethodContext && !!document.documentMode)) window.location.href="/upgrade-your-browser/"; </script>
+    
+    
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Regular.woff2" as="font" />
+        <link rel="preload" crossorigin="crossorigin" href="/fonts/roboto/Roboto-Bold.woff2" as="font" />
+    
+    
+        <link rel="shortcut icon" href="/icons/favicon-me.ico" />
+    
+    <link rel="canonical" href="/"/>
+    
+    
+    
+<link rel="stylesheet" href="/css/mdui.min.v1.0.0.css">
+
+    
+    
+<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/css/iconfont.css">
+
+
+    
+    <!--Google Adsense Auto Ads-->
+
+<!--Google Analytics-->
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G78L86Z6J1"></script>
+<script>
+  var host = window.location.hostname;
+  if (host != "localhost" ||  == false) {
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-G78L86Z6J1');
+  }
+</script>
+
+<!--Baidu Analytics-->
+
+<!--CNZZ Analytics-->
+
+<!--Tencent Analytics-->
+
+<!--Math-->
+
+    
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: { '[+]': [['$', '$']] }
+            }
+        };
+    </script>
+
+    
+    
+    
+
+    
+    <script>
+        import { createClient } from 'pexels';
+        const client = createClient('563492ad6f917000010000017b9408644d2d488f8adb75ba91db222e');
+        // All requests made with the client will be authenticated
+    </script>
+    
+    
+    <title>
+        
+            寂静的角落
+          
+            
+        
+    </title>
+    
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+    <body class="mdui-drawer-body-left mdui-appbar-with-toolbar mdui-theme-primary-cyan mdui-theme-accent-blue">
+        
+        <header class="mdui-appbar mdui-appbar-fixed">
+  <div id="toolbar" class="mdui-toolbar mdui-color-theme">
+    <button class="mdui-btn mdui-btn-icon" mdui-drawer="{target: '#sidebar', swipe: true}"><i class="iconfont icon-menu"></i></button>
+    <a href="/" class="mdui-typo-headline">寂静的角落</a>
+    <a href="/" class="header-subtitle mdui-typo-headline">星空在前，路在脚下</a>
+    <div class="mdui-toolbar-spacer"></div>
+    <button class="mdui-btn mdui-btn-icon" mdui-dialog="{target: '#search'}" mdui-tooltip="{content: 'search'}"><i class="iconfont icon-search"></i></button>
+  </div>
+</header>
+
+<div class="mdui-dialog" id="search">
+  
+    <div class="search-form">
+      <input type="search" class="search-form-input" placeholder="请输入关键字" onfocus="listenSearchFunc()">
+    </div>
+    <div class="search-result" data-resource="/search.xml"></div>
+  
+</div>
+
+        <aside id="sidebar" class="mdui-drawer">
+    <div class="mdui-tab" mdui-tab>
+        <a href="#sidebar-tab1" id="sidebartab" class="mdui-ripple mdui-tab-active">站点概览</a>
+        <a href="#sidebar-tab2" id="sidebartab" class="mdui-ripple">关于</a>
+    </div>
+    
+    <div id="sidebar-tab1" class="mdui-p-a-1">
+        <div class="mdui-list">
+            
+            
+            <a href="/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-home"></i>
+                </div>
+                <div class="mdui-list-item-content">主页</div>
+            </a>
+            
+            
+            <a href="/tags/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-bookmark"></i>
+                </div>
+                <div class="mdui-list-item-content">标签</div>
+            </a>
+            
+            
+            <a href="/categories/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-folder"></i>
+                </div>
+                <div class="mdui-list-item-content">分类</div>
+            </a>
+            
+            
+            <a href="/archives/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-archive"></i>
+                </div>
+                <div class="mdui-list-item-content">归档</div>
+            </a>
+            
+            
+            <a href="/tools/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-tools"></i>
+                </div>
+                <div class="mdui-list-item-content">工具</div>
+            </a>
+            
+            
+            <a href="/links/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-link"></i>
+                </div>
+                <div class="mdui-list-item-content">友链</div>
+            </a>
+            
+            
+            <a href="/about/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-user"></i>
+                </div>
+                <div class="mdui-list-item-content">关于</div>
+            </a>
+            
+            
+            <a href="/gallery/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-gallery"></i>
+                </div>
+                <div class="mdui-list-item-content">图集</div>
+            </a>
+            
+            
+            <a href="/reference/" class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-article-line"></i>
+                </div>
+                <div class="mdui-list-item-content">参考文献</div>
+            </a>
+            
+            <div class="mdui-list-item mdui-ripple">
+                <div class="mdui-list-item-icon">
+                    <i class="iconfont icon-moon"></i>
+                </div>
+                <div class="mdui-list-item-content">夜间模式</div>
+                <label class="mdui-switch" id="darkmode">
+                  <input type="checkbox" id="nightmode_switch"/>
+                  <i class="mdui-switch-icon"></i>
+                </label>
+            </div>           
+        </div>
+    </div>
+    
+    <div id="sidebar-tab2" class="mdui-p-a-1">
+        <div class="sidebar-overview">
+            <div class="sidebar-avatar">
+                
+                <img class="mdui-img-circle" src="/icons/avatar-me.gif"/>
+                
+            </div>
+            <div class="sidebar-author-name">XYY1411</div>
+            <div class="sidebar-description">SJZEZ OIer</div>
+        </div>
+        <div style="text-align: center;">
+            <div style="margin: 0;color: #222;font-size: 16px;line-height: 32px;font-weight: 600;white-space: nowrap;">现在的时间是</div>
+            <canvas id="canvas" style="width:60%" height="100" width="700">时间</canvas>
+        </div>
+        <script>!function(){var t,o=[[[0,0,1,1,1,0,0],[0,1,1,0,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,0,1,1,0],[0,0,1,1,1,0,0]],[[0,0,0,1,1,0,0],[0,1,1,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[1,1,1,1,1,1,1]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,0,0,1,1],[1,1,1,1,1,1,1]],[[1,1,1,1,1,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,0,1,1,1,0],[0,0,1,1,1,1,0],[0,1,1,0,1,1,0],[1,1,0,0,1,1,0],[1,1,1,1,1,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,1,1]],[[1,1,1,1,1,1,1],[1,1,0,0,0,0,0],[1,1,0,0,0,0,0],[1,1,1,1,1,1,0],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,0,0,0,1,1,0],[0,0,1,1,0,0,0],[0,1,1,0,0,0,0],[1,1,0,0,0,0,0],[1,1,0,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[1,1,1,1,1,1,1],[1,1,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,0,0,1,1,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0],[0,0,1,1,0,0,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,1,1,0]],[[0,1,1,1,1,1,0],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[1,1,0,0,0,1,1],[0,1,1,1,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,0,1,1],[0,0,0,0,1,1,0],[0,0,0,1,1,0,0],[0,1,1,0,0,0,0]],[[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0],[0,0,0,0,0,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,1,1,1,0,0],[0,0,0,0,0,0,0]]],e=document.getElementById("canvas");if(e.getContext){var l=e.getContext("2d");e.height=100,e.width=700,l.fillStyle="#f00",l.fillRect(10,10,50,50);var r=[],f=[],i=e.height/20-1;function n(t,e){for(var n=0;n<o[e].length;n++)for(var a=0;a<o[e][n].length;a++)1==o[e][n][a]&&(l.beginPath(),l.arc(14*(i+2)*t+2*a*(i+1)+(i+1),2*n*(i+1)+(i+1),i,0,2*Math.PI),l.closePath(),l.fill())}function h(t,e){for(var n=[1,2,3],a=["#3BE","#09C","#A6C","#93C","#9C0","#690","#FB3","#F80","#F44","#C00"],l=0;l<o[e].length;l++)for(var r=0;r<o[e][l].length;r++)if(1==o[e][l][r]){var h={x:14*(i+2)*t+2*r*(i+1)+(i+1),y:2*l*(i+1)+(i+1),stepX:Math.floor(4*Math.random()-2),stepY:-2*n[Math.floor(Math.random()*n.length)],color:a[Math.floor(Math.random()*a.length)],disY:1};f.push(h)}}t=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),r.push(t[1],t[2],10,t[3],t[4],10,t[5],t[6]),clearInterval(a);var a=setInterval(function(){!function(){var t=[],e=/(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date),n=[];n.push(e[1],e[2],10,e[3],e[4],10,e[5],e[6]);for(var a=r.length-1;0<=a;a--)n[a]!==r[a]&&t.push(a+"_"+(Number(r[a])+1)%10);for(a=0;a<t.length;a++)h.apply(this,t[a].split("_"));r=n.concat()}(),function(){for(var t=0;t<f.length;t++)f[t].stepY+=f[t].disY,f[t].x+=f[t].stepX,f[t].y+=f[t].stepY,(f[t].x>700+i||f[t].y>100+i)&&(f.splice(t,1),t--)}(),function(){e.height=100;for(var t=0;t<r.length;t++)n(t,r[t]);for(t=0;t<f.length;t++)l.beginPath(),l.arc(f[t].x,f[t].y,i,0,2*Math.PI),l.fillStyle=f[t].color,l.closePath(),l.fill()}()},50)}}()</script>
+        <div class="sidebar-links">
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                <a href="mailto:xyy1411@gmail.com" class="mdui-chip-title">谷歌邮箱</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-mail"></i></span>
+                <a href="mailto:xiaoyuyu1411@qq.com" class="mdui-chip-title">QQ邮箱</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-github"></i></span>
+                <a target="_blank" rel="noopener" href="https://github.com/XYY1411" class="mdui-chip-title">GitHub</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-twitter"></i></span>
+                <a target="_blank" rel="noopener" href="https://twitter.com/XYY1411" class="mdui-chip-title">推特</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-bilibili"></i></span>
+                <a target="_blank" rel="noopener" href="https://space.bilibili.com/470349774" class="mdui-chip-title">哔哩哔哩</a>
+            </div>
+            
+            
+            <div class="mdui-chip">
+                <span class="mdui-chip-icon"><i class="iconfont icon-blog"></i></span>
+                <a target="_blank" rel="noopener" href="https://www.luogu.com.cn/user/129562" class="mdui-chip-title">洛谷</a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="mdui-divider"></div>
+    
+    
+</aside>
+        
+        <main id="main-contain" class="mdui-container mdui-m-t-5">
+            
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/9512/">2021-04-10 杂谈</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-10
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a> > <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/%E6%9D%82%E8%B0%88/">杂谈</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="tag-line-space"></div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p>今天 $UNOI$ 开始了。</p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/9512/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/54665/">标记永久化线段树</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-07
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/ >线段树</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC-RMQ/ >区间最值, RMQ</a>
+      </i>
+    
+  </div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p><a target="_blank" rel="noopener" href="https://kamome.moe/">$\rm\color{red}S\color{black}iunaus$ ($\rm Zhang\_RQ$)</a> ：</p>
+<blockquote>
+<p>标记永久化线段树不需要 $\rm pushdown$ 。</p>
+</blockquote>
+<p>……</p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/54665/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/43706/">线段树, Segment Tree</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-06
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E7%BA%BF%E6%AE%B5%E6%A0%91/ >线段树</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC-RMQ/ >区间最值, RMQ</a>
+      </i>
+    
+  </div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p>这东西当初恶心了我很久了。</p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/43706/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/44518/">NOI大纲</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-04
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-06-28
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E8%B5%84%E6%96%99/">资料</a> > <a class="category-link" href="/categories/%E8%B5%84%E6%96%99/OI/">OI</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/NOI%E5%A4%A7%E7%BA%B2/ >NOI大纲</a>
+      </i>
+    
+  </div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p>终于有个规范了。</p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/44518/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/59112/">稀疏表, Sparse Table, ST表</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-04
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E5%9F%BA%E6%9C%AC%E7%AE%97%E6%B3%95/">基本算法</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%8C%BA%E9%97%B4%E6%9C%80%E5%80%BC-RMQ/ >区间最值, RMQ</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E7%A8%80%E7%96%8F%E8%A1%A8-ST%E8%A1%A8/ >稀疏表, ST表</a>
+      </i>
+    
+  </div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p>奇奇怪怪，写不出来。</p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/59112/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/52240/">预处理二进制对数表</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-04
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%8A%80%E5%B7%A7/">技巧</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%95%B0%E5%AD%A6/ >数学</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%8D%A1%E5%B8%B8/ >卡常</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E9%A2%84%E5%A4%84%E7%90%86/ >预处理</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%AF%B9%E6%95%B0/ >对数</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E4%BA%8C%E8%BF%9B%E5%88%B6%E5%AF%B9%E6%95%B0/ >二进制对数</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%AF%B9%E6%95%B0%E8%A1%A8/ >对数表</a>
+      </i>
+    
+  </div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p>预处理 $lb$ 表。</p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/52240/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/30428/">卢卡斯定理, Lucas&#39; theorem , lucas</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-04
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E5%AD%A6/">数学</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E5%8D%A2%E5%8D%A1%E6%96%AF%E5%AE%9A%E7%90%86-lucas/ >卢卡斯定理, lucas</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E7%BB%84%E5%90%88%E6%95%B0/ >组合数</a>
+      </i>
+    
+  </div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p><del>简介，不知道写啥了。</del></p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/30428/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/26296/">扩展欧拉定理（数论）, Extend Euler&#39;s theorem(Number Theory)</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-04
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E5%AD%A6/">数学</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/ >欧拉函数</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%89%A9%E5%B1%95%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%EF%BC%88%E6%95%B0%E8%AE%BA%EF%BC%89/ >扩展欧拉定理（数论）</a>
+      </i>
+    
+  </div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p>数竞生：信竞咋啥都扩展？</p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/26296/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/9023/">欧拉定理（数论）, Euler&#39;s theorem(Number Theory)</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-04
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/OI/">OI</a> > <a class="category-link" href="/categories/OI/%E6%95%B0%E5%AD%A6/">数学</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="post-tags">
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%AC%A7%E6%8B%89%E5%87%BD%E6%95%B0/ >欧拉函数</a>
+      </i>
+    
+      <i class="iconfont icon-tag">
+        <a rel="tag" href = /tags/%E6%AC%A7%E6%8B%89%E5%AE%9A%E7%90%86%EF%BC%88%E6%95%B0%E8%AE%BA%EF%BC%89/ >欧拉定理（数论）</a>
+      </i>
+    
+  </div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p><del>不是几何！</del></p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/9023/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+    <article class="mdui-card mdui-m-b-5 mdui-hoverable">
+        
+        
+            <div class="post-header"> 
+  <a class="post-header-title" href="/22936/">2021-04-03 更新</a>
+  <div class="post-header-meta">
+    <span>
+      <span class="iconfont icon-calendar"></span>
+      发布于:&nbsp;2021-04-03
+    </span>
+    <span>
+      <span class="iconfont icon-calendar-check"></span>
+      更新于:&nbsp;2021-05-29
+    </span>
+    <span>
+      <span class="iconfont icon-folder"></span>
+      分类于:&nbsp;<a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/">日志</a> > <a class="category-link" href="/categories/%E6%97%A5%E5%BF%97/%E7%BB%B4%E6%8A%A4/">维护</a>
+    </span>
+    
+  </div>
+</div>   
+    
+
+
+
+        
+        
+  <div class="tag-line-space"></div>
+
+        
+        <div id="achieve-abstract" class="mdui-card-content mdui-p-x-4">
+            <div class="post-abstract mdui-typo ">
+                
+                    <p>Valine 评论功能已开启。</p>
+                
+            </div>
+            
+            <div style="text-align:center;">
+                <a class="post-readmore mdui-btn mdui-ripple mdui-btn-raised" href="/22936/">阅读更多</a>
+            </div>
+        </div>
+    </article>
+
+
+  <nav style="text-align: center;">
+    <div class="pagination">
+      <a class="extend prev" rel="prev" href="/page/3/"><i class="iconfont icon-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><a class="page-number" href="/page/6/">6</a><a class="page-number" href="/page/7/">7</a><a class="extend next" rel="next" href="/page/5/"><i class="iconfont icon-angle-right"></i></a>
+    </div>
+  </nav>
+
+        </main>
+        <footer id="footer" class="mdui-text-center mdui-m-t-5 mdui-p-b-2 mdui-p-t-4 mdui-color-theme">
+  <div class="mdui-container">
+    <div class="mdui-row">
+      
+        <a href="https://beian.miit.gov.cn" rel="noopener" target="_blank"></a>
+      
+      <span>
+        &copy; 2017 - 2021 
+        
+          <span style="color:#d9333f" class="iconfont icon-heart"></span>
+        
+        XYY1411
+      </span>
+    </div>
+    <div class="mdui-row">
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span>驱动 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span>主题 <a href="https://github.com/kb1000fx/Meadow" rel="noopener" target="_blank">Meadow</a> 修改版</span>
+        </div>
+    </div>
+    <div class="mdui-row">
+      
+        <div class="mdui-col-xs-6 mdui-text-right">
+          <span id="busuanzi_container_site_uv" style="display: none;"> <span class="iconfont icon-user"></span>总访客量 <span id="busuanzi_value_site_uv"></span></span>
+        </div>
+        <div class="mdui-col-xs-6 mdui-text-left">
+          <span id="busuanzi_container_site_pv" style="display: none;"> <span class="iconfont icon-eye"></span>总访问量 <span id="busuanzi_value_site_pv"></span></span>
+        </div>
+      
+    </div>
+ </div>
+</footer>
+        
+        <button id="gotop" class="mdui-fab mdui-fab-fixed mdui-fab-hide mdui-ripple mdui-color-teal" style="z-index:100;"><i class="iconfont icon-arrowup"></i></button>
+        
+        
+
+    <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+
+
+
+    
+<script src="/js/mdui.min.v1.0.0.js"></script>
+
+
+
+
+<script src="/js/meadow.js"></script>
+
+    </body>
+</html >
