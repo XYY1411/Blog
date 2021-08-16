@@ -4,7 +4,7 @@
 #include <iostream>
 #include <algorithm>
 using namespace std;
-
+\r
 int as[5][5];
 int bs[5][5];
 int n, m, q, x, y, a, b, c, d;
@@ -50,4 +50,4 @@ int main() {
 	while (q--) sovle();
 	return 0;
 }
-
+\r

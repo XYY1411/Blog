@@ -47,7 +47,7 @@ inline ll dis (node &a, node &b) {
 	return min(myabs((ll)a.x - b.x), myabs((ll)a.y - b.y));
 }
 priority_queue<edge, vector<edge>, greater<edge> > pq;
-
+\r
 inline void kruskal() {
 	int k = 1;
 	while (k < n) {
@@ -87,4 +87,4 @@ int main() {
 	printf("%lld\n", ans);
 	return 0;
 }
-
+\r

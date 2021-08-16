@@ -5,9 +5,9 @@
 #include <queue>
 #include <vector>
 #define mp make_pair
-
+\r
 using namespace std;
-
+\r
 typedef long long ll;
 const int dx[] = {-1, 0, 0, 1}, dy[] = {0, -1, 1, 0};
 const ll end[] = {102030405060708LL, 910111213141500LL};
@@ -18,7 +18,7 @@ const int dis[16][2] = {{3, 3}, {0, 0}, {0, 1}, {0, 2}, {0, 3}, {1, 0},
 typedef pair<ll, ll> pll;
 typedef pair<ll, pll> pp;
 typedef map<pll, ll> mpp;
-
+\r
 int tb[4][4], x, y, nx, ny;
 ll ns[2], n[2], v, nv;
 mpp m;
@@ -32,7 +32,7 @@ inline bool check(void) {
     else
         return false;
 }
-
+\r
 inline void ft(void) {  // fill table
     ll k1 = n[0], k2 = n[1];
     for (int j = 3; j >= 0; --j) {
@@ -52,7 +52,7 @@ inline void ft(void) {  // fill table
             x = 2, y = j;
     }
 }
-
+\r
 inline void fn(void) {  // fill number
     ns[0] = ns[1] = 0;
     for (int j = 0; j < 4; ++j) {
@@ -64,7 +64,7 @@ inline void fn(void) {  // fill number
         ns[1] = ns[1] * 100 + tb[3][j];
     }
 }
-
+\r
 int main() {
 #ifndef LOCAL
     freopen("puzzle.in", "r", stdin);

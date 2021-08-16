@@ -3,11 +3,11 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
-
+\r
 using namespace std;
-
+\r
 int a, b, c, cnt, maxx;
-
+\r
 template <typename T>
 inline T qread(void) {
 	T n = 0;
@@ -17,16 +17,16 @@ inline T qread(void) {
 		ch = getchar();
 	return n;
 }
-
+\r
 template <typename T>
 inline T maxn(T a, T b, T c) {
 	return max<T>(max<T>(a, b), c);
 }
-
+\r
 inline void init(void) {
 	a = qread<int>(), b = qread<int>(), c = qread<int>();
 }
-
+\r
 inline void sovle(void) {
 	cnt = 0;
 	if (a == 0) cnt++;
@@ -74,7 +74,7 @@ inline void sovle(void) {
 	puts("3");
 	return;
 }
-
+\r
 int main() {
 #ifndef LOCAL
 	freopen("cake.in", "r", stdin);

@@ -3,11 +3,11 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
-
+\r
 using namespace std;
 const int maxn = 1005;
 int n, map[maxn][maxn];
-
+\r
 template <typename T>
 inline T qread(void) {
 	T n = 0;
@@ -17,14 +17,14 @@ inline T qread(void) {
 		ch = getchar();
 	return n;
 }
-
+\r
 inline void init(void) {
 	n = qread<int>();
 	for (int i = 1; i <= n; ++i)
 		for (int j = 1; j <= n; ++j)
 			map[i][j] = qread<int>();
 }
-
+\r
 inline void sovle(void) {
 	if (n == 1) {
 		printf("%d\n", map[1][1]);
@@ -44,7 +44,7 @@ inline void sovle(void) {
 	puts("64");
 	return;
 }
-
+\r
 int main() {
 #ifndef LOCAL
 	freopen("pacman.in", "r", stdin);

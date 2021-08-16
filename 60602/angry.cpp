@@ -3,14 +3,14 @@
 #include <cstring>
 #include <bitset>
 #include <iostream>
-
+\r
 using namespace std;
-
+\r
 typedef unsigned long long ull;
 const int maxlogn = 5e5 + 5, maxk = 505;
 const ull p = 1e9 + 7;
 typedef bitset<maxlogn << 1> bit;
-
+\r
 template <typename T>
 inline T qread(void) {
 	T n = 0;
@@ -20,12 +20,12 @@ inline T qread(void) {
 		ch = getchar();
 	return n;
 }
-
+\r
 char nstr[maxlogn];
 int k;
 ull a[maxk], n, tmp, ans, nlen;
 bit lev;
-
+\r
 inline void init(void) {
 	scanf("%s%d", nstr, &k);
 	nlen = strlen(nstr);
@@ -34,7 +34,7 @@ inline void init(void) {
 		if (nstr[i] == '1')
 			n |= (1 << (nlen - i - 1));
 }
-
+\r
 inline void sovle(void) {
 	ans = 0;
 	lev.reset();
@@ -53,7 +53,7 @@ inline void sovle(void) {
 			}
 		}
 }
-
+\r
 int main() {
 #ifndef LOCAL
 	freopen("angry.in", "r", stdin);

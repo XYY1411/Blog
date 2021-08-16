@@ -3,21 +3,21 @@
 #include <cstring>
 #include <iostream>
 #include <set>
-
+\r
 using namespace std;
 typedef unsigned long long ull;
-
+\r
 const int maxn = 3005;
 int n, lena, lenb;
 ull base=131, cnt = 0;;
 char a[maxn], b[maxn], c[maxn];
 set<ull> bin;
-
+\r
 inline bool have(ull k) {
 	if (bin.find(k) == bin.end()) return false;
 	else return true;
 }
-
+\r
 ull bkdrhashs(char* s){
     int len = strlen(s);
     ull ans = 0;
@@ -25,7 +25,7 @@ ull bkdrhashs(char* s){
         ans = ans * base + (ull)s[i];
     return ans & 0x7fffffff;
 }
-
+\r
 inline void init(void) {
 	scanf("%d%s%s", &n, a, b);
 	lena = n, lenb = n;
@@ -50,7 +50,7 @@ inline void sovle(void) {
 			}
 		}
 }
-
+\r
 int main() {
 #ifndef LOCAL
 	freopen("block.in", "r", stdin);

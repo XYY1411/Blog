@@ -3,12 +3,12 @@
 #include <cstring>
 #include <iostream>
 #include <algorithm>
-
+\r
 using namespace std;
 const int maxn = 1e5 + 5;
 int n, q, l, r, c, d, cnt;
 int a[maxn], b[maxn];
-
+\r
 template <typename T>
 inline T qread(void) {
 	T n = 0;
@@ -18,13 +18,13 @@ inline T qread(void) {
 		ch = getchar();
 	return n;
 }
-
+\r
 inline void init(void) {
 	n = qread<int>(), q = qread<int>();
 	for (int i = 1; i <= n; ++i)
 		a[i] = qread<int>(), b[i] = qread<int>();
 }
-
+\r
 inline void sovle(void) {
 	cnt = 0;
 	l = qread<int>(), r = qread<int>(), c = qread<int>(), d = qread<int>();
@@ -32,7 +32,7 @@ inline void sovle(void) {
 		if ((a[i] ^ c) <= min(b[i], d)) cnt++;
 	printf("%d\n", cnt);
 }
-
+\r
 int main() {
 #ifndef LOCAL
 	freopen("island.in", "r", stdin);

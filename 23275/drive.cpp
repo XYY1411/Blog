@@ -6,25 +6,25 @@
 #include <cmath>
 #include <cstdio>
 //#define LOCAL
-
+\r
 using namespace std;
-
+\r
 typedef long long ll;
 typedef long double ld;
 const int maxn = 1e5;
 const ld esp = 1e-8;
 ld inf = 0x3f3f3f3f;
-
+\r
 template <typename T>
 inline T abs(const T& a) {
     return a >= 0 ? a : -a;
 }
-
+\r
 template <typename T>
 inline int cmp(const T& x, const T& y) {
     return abs<T>(x - y) <= esp ? 0 : (x < y ? -1 : 1);
 }
-
+\r
 template <typename T>
 inline T qread(void) {
     T n = 0;
@@ -38,12 +38,12 @@ inline T qread(void) {
     else
         return n;
 }
-
+\r
 int n, m;
 ll h[maxn], x0, s[maxn], x[maxn];
 ll a[maxn], b[maxn], d1[maxn], d2[maxn], min1, min2, tmp;
 ll ans;
-
+\r
 inline void init(void) {
     n = qread<int>();
     for (int i = 1; i <= n; ++i) h[i] = qread<ll>();
@@ -51,7 +51,7 @@ inline void init(void) {
     m = qread<int>();
     for (int i = 1; i <= m; ++i) s[i] = qread<ll>(), x[i] = qread<ll>();
 }
-
+\r
 inline void pre(void) {
     for (int i = n - 1; i > 0; --i) {
         min1 = i + 1, min2 = 0;
@@ -67,7 +67,7 @@ inline void pre(void) {
         a[i] = min1, b[i] = min2;
     }
 }
-
+\r
 inline void sovle(void) {
     ans = 0;
     for (int i = 1; i <= n; ++i) {
@@ -108,7 +108,7 @@ inline void sovle(void) {
         printf("%lld %lld\n", ta, tb);
     }
 }
-
+\r
 int main() {
 #ifndef LOCAL
     freopen("drive.in", "r", stdin);

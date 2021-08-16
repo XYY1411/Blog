@@ -1,22 +1,22 @@
 #include <cstdio>
 #include <cctype>
 #include <algorithm>
-
+\r
 using namespace std;
 typedef long long ll;
 const int maxn = 1e5 + 5;
-
+\r
 ll n, ans = 0x7fffffffffffffffLL, len = -1, tmp;
-
+\r
 struct node {
 	ll v;
 	int k;
 } pre[maxn];
-
+\r
 inline bool cmp(const node &a, const node &b) {
 	return a.v < b.v;
 }
-
+\r
 template <typename T>
 inline T qread(void) {
     T n = 0;
@@ -28,7 +28,7 @@ inline T qread(void) {
     if (flag) n = -n;
     return n;
 }
-
+\r
 int main() {
 #ifndef LOCAL
     freopen("min.in", "r", stdin);

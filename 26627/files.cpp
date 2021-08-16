@@ -2,7 +2,7 @@
 #include <cstdio>
 #include <cstring>
 #include <map>
-
+\r
 using namespace std;
 const int maxn = 1e5 + 5, maxl = 15;
 typedef unsigned long long ull;
