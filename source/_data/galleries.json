@@ -1,0 +1,11 @@
+[
+    {
+        "name": "default",
+        "cover": "/images/theme/post-image.jpg",
+        "description": "默认",
+        "photos": [
+            "/images/theme/post-image.jpg",
+            "https://source.unsplash.com/random/690×455"
+        ]
+    }
+]

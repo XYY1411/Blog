@@ -1,0 +1,4 @@
+---
+title: default
+layout: "gallery"
+---

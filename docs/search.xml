@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2021/10/04/hello-world/</url>
+    <content><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo new <span class="hljs-string">&quot;My New Post&quot;</span><br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo server<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo generate<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash">$ hexo deploy<br></code></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>test</title>
+    <url>/2021/10/05/test/</url>
+    <content><![CDATA[<p><i class="iconfont iconmessage-fill"></i><br><i class="iconfont iconstar-fill"></i><br><i class="iconfont iconfenxiang"></i><br><i class="iconfont iconsend"></i><br><i class="iconfont iconclose-circle-fill"></i><br><i class="iconfont iconstar"></i><br><i class="iconfont iconheart-fill"></i><br><i class="iconfont iconDollar"></i><br><i class="iconfont icontransaction"></i><br><i class="iconfont iconwallet"></i><br><i class="iconfont icontupian"></i><br><i class="iconfont icontupian-copy"></i><br><i class="iconfont iconhuiyuan"></i><br><i class="iconfont iconhuiyuan-copy"></i><br><i class="iconfont iconshouye"></i><br><i class="iconfont iconshouye-copy"></i><br><i class="iconfont iconjingyu"></i><br><i class="iconfont iconsearch"></i><br><i class="iconfont iconqrcode"></i><br><i class="iconfont iconmoono"></i><br><i class="iconfont iconsuno"></i><br><i class="iconfont iconpushpin"></i><br><i class="iconfont iconalibaba"></i><br><i class="iconfont iconload"></i><br><i class="iconfont iconfile-text"></i><br><i class="iconfont iconbaseline-close-px"></i><br><i class="iconfont iconhome"></i><br><i class="iconfont iconcomment"></i><br><i class="iconfont icongithub-fill"></i><br><i class="iconfont iconpaypal"></i><br><i class="iconfont iconalipay"></i><br><i class="iconfont iconmail"></i><br><i class="iconfont iconinstagram"></i><br><i class="iconfont iconQQ"></i><br><i class="iconfont iconweibo"></i><br><i class="iconfont iconwechat-fill"></i><br><i class="iconfont iconclose-circle"></i><br><i class="iconfont iconfont-size"></i><br><i class="iconfont iconright"></i><br><i class="iconfont iconleft"></i><br><i class="iconfont iconfire"></i><br><i class="iconfont iconcaret-up"></i><br><i class="iconfont iconplus"></i><br><i class="iconfont iconmenu"></i><br><i class="iconfont iconcalendar"></i><br><i class="iconfont icontime-circle"></i><br><i class="iconfont iconmessage"></i><br><i class="iconfont iconeye"></i><br><i class="iconfont iconheart"></i><br><i class="iconfont iconMouse"></i></p>
+]]></content>
+  </entry>
+</search>
