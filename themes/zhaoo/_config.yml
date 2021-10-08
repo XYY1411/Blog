@@ -1,0 +1,303 @@
+# --------------------------------------------------
+# Site Settings
+# --------------------------------------------------
+
+# Menu
+menu:
+  home: / || 首页
+  galleries: /galleries/ || 相册
+  archives: /archives/ || 归档
+  tags: /tags/ || 标签
+  categories: /categories/ || 分类
+  about: /about/ || 关于
+
+# Color
+color:
+  text: '#3d3b4f'
+  text-secondary: '#665757'
+  text-third: '#f05654'
+  background: '#d3e0f3'
+  background-secondary: '#d2f0f4'
+  border: '#395260'
+  text-dark: '#fffbf0'
+  text-secondary-dark: '#d6ecf0'
+  text-third-dark: '#48c0a3'
+  background-dark: '#161823'
+  background-secondary-dark: '#758a99'
+  border-dark: '#2b3038'
+  link: '#ff4e20'
+  link-gradient: 'linear-gradient(-60deg, #ff5858 0%, #f09819 100%)'
+
+# Favicon
+favicon:
+  small: /images/icons/favicon/32x.ico
+  medium: /images/icons/favicon/48x.ico
+  apple_touch_icon: /images/icons/apple-touch-icon.png
+  safari_pinned_tab: /images/icons/stun-logo.svg
+  msapplication: /images/icons/favicon-144x144.png
+
+# Font
+font:
+  size: 14px
+  family:
+
+# Background Image
+background_image:
+#  https://source.unsplash.com/random/1920x1080
+# Loading
+loading:
+  gif: /images/loading.gif
+  lottie:
+
+# Preview
+preview:
+  enable: true
+  type: wave  # wave | cloud
+  background:
+    type: image # image video
+    default_image:
+      light: /images/theme/welcome-image.jpg
+      dark: /images/theme/welcome-image.jpg
+    video:
+    api: https://api.vvhan.com/api/bing?type=sj
+    size: cover # css: background-size
+    position: center # css: background-position
+  motto:
+    default: 星空在前，路在脚下。
+    color: '#ffffff'
+    typing: true
+    api: https://v1.hitokoto.cn/?c=a&encode=text&charset=utf-8min_length=5&max_length=20
+    data_contents:
+    # ex.one  =>  apl: https://v1.hitokoto.cn/?encode=text&c=i  data_contents:
+    # ex.two  =>  api: https://v2.jinrishici.com/one.json  data_contents: ['data', 'content']
+
+# Navbar
+navbar:
+  enable: true
+  back_home: true
+
+# Copyright
+copyright: <p>由 <a target="_blank" href="https://hexo.io/zh-cn/">Hexo</a> & <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a> 强力驱动 | <i class= "iconfont icon-copyright"></i> 2017 - 2021 XYY1411</p>
+
+# Social
+social:
+  github: https://github.com/XYY1411 || icongithub-fill
+  qq: https://qm.qq.com/cgi-bin/qm/qr?k=CrbY64daFPCPDXaZr9HFihoG-EsCrQhe&noverify=0 || iconQQ
+  email: mailto:xiaoyuyu1411@qq.com || iconmail
+  gmail: mailto:xyy1411@gmail.com || icon-gmail
+  twitter: https://twitter/XYY1411 || icon-twitter
+  telegram: https://t.me/XYY1411 || icon-telegram
+  bilibili: https://space.bilibili.com/470349774 || icon-bilibili-fill
+
+# Override Scrollbar
+scrollbar:
+  type: default # default | simple | normal | none
+
+# Fab (Float Action Button)
+fab:
+  enable: true
+  always_show: false
+
+# Search
+search:
+  enable: true
+
+# QR Code
+qrcode:
+  enable: false
+  type: url # url | image
+  image: /images/loading.gif
+
+# Color Mode
+color_mode:
+  enable: true
+
+# Gray (Mourning Mode)
+gray:
+  enable: false
+
+# --------------------------------------------------
+# Post Settings
+# --------------------------------------------------
+
+# Post Image
+post_image:
+  random: local # local galleries
+  default: /images/theme/post-image.jpg
+
+# Page Size
+post_page_size:
+  width: 800px
+
+# Caption
+caption:
+  enable: true
+
+# Indent
+indent:
+  content:
+  excerpt:
+
+# TOC
+toc:
+  enable: true
+  always_show: true
+  min_depth: 1
+  max_depth: 3
+
+# Donate
+donate:
+  enable: false
+  alipay: /images/loading.gif
+  wechat: /images/loading.gif
+
+# Copyright
+post_copyright:
+  enable: true
+
+# Carrier（copy article with one click）
+carrier:
+  enable: true
+  type: markdown # html | markdown | text
+
+# --------------------------------------------------
+# Page Settings
+# --------------------------------------------------
+
+# Galleries
+galleries:
+  enable: true
+  title: 相册
+  subtitle: 但愿每次回忆，对生活都不感到负疚。
+  type: waterfall # waterfall | grid
+  columns: 3
+
+# Links
+links:
+  enable: true
+  title: 友链
+  subtitle: 山河不足重，重在遇知己。
+  type: waterfall
+  columns: 3
+
+
+# --------------------------------------------------
+# Comment Settings
+# --------------------------------------------------
+
+comments:
+  enable: false
+  type: valine # gitalk | valine | changyan
+  button: true
+
+# Gitalk
+gitalk:
+  owner:
+  repo:
+  admin:
+  clientID:
+  clientSecret:
+
+# Valine
+valine:
+  appId:
+  appKey:
+  placeholder: 雁过留痕
+  avatar: mp
+  pageSize: 10
+  lang: zh-CN
+
+# ChangYan
+changyan:
+  appId:
+  conf:
+
+# --------------------------------------------------
+# Plugin settings
+# --------------------------------------------------
+
+# Notification
+notification:
+  enable: false
+  delay: 4500
+  page_white_list:
+  page_black_list:
+
+# Daovoice
+daovoice:
+  enable: false
+  appId: # app_id
+
+# Tencent Chao
+tencentChao:
+  enable: false
+  appId: # app_id
+
+# LeanCloud
+leancloud:
+  enable: false
+  appId:
+  appKey:
+  serverURLs: https://leancloud.cn/
+
+# Lazyload
+lazyload:
+  enable: true
+  only_post: false
+  loading:
+    gif: /images/loading.gif
+    lottie:
+
+# FancyBox
+fancybox: true
+
+# Pjax
+pjax: false
+
+# HighLight
+highlight:
+  enable: true
+  style: # https://highlightjs.org/static/demo/
+    light: xcode
+    dark: xt256
+
+# SEO
+seo:
+  baidu_auto_push: false
+
+# Analytics
+analytics:
+  baidu: # id
+  google: # id
+  tencent: # id
+  cnzz: # id
+
+# --------------------------------------------------
+# Script Settings
+# --------------------------------------------------
+
+# CDN
+vendors:
+  jquery_js: https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js
+  fancybox_js: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js
+  pjax_js: https://cdn.jsdelivr.net/npm/jquery-pjax@2/jquery.pjax.min.js
+  lazyload_js: https://cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js
+  qrcode_js: https://cdn.jsdelivr.net/npm/jquery.qrcode@1/jquery.qrcode.min.js
+  daovoice_js: https://widget.daovoice.io/widget/0f81ff2f.js
+  lottie_js: https://cdn.jsdelivr.net/npm/lottie-web@5/build/player/lottie.min.js
+  fancybox_css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css
+  highlight_css: https://cdn.jsdelivr.net/npm/highlight.js@11/styles/
+  iconfont_css: https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css
+
+# Custom
+custom:
+  head:
+  foot:
+  css: 
+    - https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.css
+    - https://at.alicdn.com/t/font_2849683_l8iylpqyvwm.css?spm=a313x.7781069.1998910419.45&file=font_2849683_l8iylpqyvwm.css
+  js:
+
+# Math
+math:
+  enable: true
