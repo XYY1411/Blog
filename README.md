@@ -2,7 +2,7 @@
 
 ## 关于
 
-XYY1411 的博客，网址为 https://blog.xyy1411.top/。
+XYY1411 的博客，网址为 [blog.xyy1411.top](https://blog.xyy1411.top/)。
 
 ## 版权
 
