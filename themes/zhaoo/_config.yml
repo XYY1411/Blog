@@ -9,6 +9,7 @@ menu:
   archives: /archives/ || 归档
   tags: /tags/ || 标签
   categories: /categories/ || 分类
+  links: /links/ || 友链
   about: /about/ || 关于
 
 # Color
