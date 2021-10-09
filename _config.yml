@@ -14,7 +14,7 @@ timezone: 'Asia/Hong_Kong'
 # 网址
 ## 在此处设置您的网站网址。 例如，如果您使用 GitHub Page，请将 url 设置为 'https://username.github.io/project'
 url: https://blog.xyy1411.top/
-permalink: :year/:month/:day/:title/
+permalink: :year/:abbrlink/
 permalink_defaults:
 pretty_urls:
   trailing_index: false # 是否在永久链接中保留尾部的 index.html，设置为 false 时去除
@@ -111,3 +111,10 @@ search:
   field: post  # post page all
   format: html  # 只支持 html 类型
   content: true  # 是否包含正文内容
+
+# abbrlink config
+abbrlink:
+  alg: crc16      #support crc16(default) and crc32
+  rep: dec        #support dec(default) and hex
+  allow: ['post'] #Allowed template types. The default is (" post ")
+  disallow: [] #Unallowed template type. Default is an empty list

@@ -5,7 +5,8 @@
         "description": "默认",
         "photos": [
             "/images/theme/post-image.jpg",
-            "https://source.unsplash.com/random/690×455"
+            "https://source.unsplash.com/random/690×455",
+            "/images/ice-flower.jpg"
         ]
     }
 ]
