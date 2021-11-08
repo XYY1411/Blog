@@ -33,8 +33,8 @@ color:
 favicon:
   small: /images/icons/favicon/32x.ico
   medium: /images/icons/favicon/48x.ico
-  apple_touch_icon: /images/icons/apple-touch-icon.png
-  safari_pinned_tab: /images/icons/stun-logo.svg
+  apple_touch_icon: 
+  safari_pinned_tab: 
   msapplication: /images/icons/favicon-144x144.png
 
 # Font
@@ -187,31 +187,9 @@ links:
 # --------------------------------------------------
 
 comments:
-  enable: false
-  type: valine # gitalk | valine | changyan
+  enable: true
+  type: disqus
   button: true
-
-# Gitalk
-gitalk:
-  owner:
-  repo:
-  admin:
-  clientID:
-  clientSecret:
-
-# Valine
-valine:
-  appId:
-  appKey:
-  placeholder: 雁过留痕
-  avatar: mp
-  pageSize: 10
-  lang: zh-CN
-
-# ChangYan
-changyan:
-  appId:
-  conf:
 
 # --------------------------------------------------
 # Plugin settings

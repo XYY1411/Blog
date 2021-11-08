@@ -1,4 +1,13 @@
-console.log("%c Github %c", "background:#333333; color:#ffffff", "", "https://github.com/izhaoo/hexo-theme-zhaoo");
+console.log("%c Author %c", "background:#333333; color:#ffffff", "", "XYY1411");
+console.log("%c Site %c", "background:#333333; color:#ffffff", "", "https://www.xyy1411.top");
+console.log(" ___    ___ ___    ___ ___    ___  _____  ___   ___    _____    _____     ");
+console.log("|\  \\  /  /|\\  \\  /  /|\\  \\  /  /|/ __  \\|\\  \\ |\\  \\  / __  \\  / __  \\    ");
+console.log("\\ \\  \\/  / | \\  \\/  / | \\  \\/  / /\\/_|\\  \\ \\  \\\\_\\  \\|\\/_|\\  \\|\\/_|\\  \\   ");
+console.log(" \\ \\    / / \\ \\    / / \\ \\    / /\\|/ \\ \\  \\ \\______  \\|/ \\ \\  \\|/ \\ \\  \\  ");
+console.log("  /     \\/   \\/  /  /   \\/  /  /      \\ \\  \\|_____|\\  \\   \\ \\  \\   \\ \\  \\ ");
+console.log(" /  /\\   \\ __/  / /   __/  / /         \\ \\__\\     \\ \\__\\   \\ \\__\\   \\ \\__\\");
+console.log("/__/ /\\ __\\\\___/ /   |\\___/ /           \\|__|      \\|__|    \\|__|    \\|__|");
+console.log("|__|/ \\|__\\|___|/    \\|___|/                                              ");
 
 (function ($) {
   "use strict";

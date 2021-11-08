@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- XYY1411's site qwq-->
 <html lang="<%= config.language || zh-CN %>" <%- theme.color_mode.enable || false ? `color-mode=light` : `` %>>
 <%- partial('_partial/head') %>
 <body class="lock-screen">
@@ -21,6 +22,7 @@
     <% if (theme.search.enable) { %>
         <%- partial('_partial/components/search') %>
     <% } %>
+    <script id="dsq-count-scr" src="//xyy1411-blog.disqus.com/count.js" async></script>
 </body>
 <%- partial('_partial/script') %>
 </html>
