@@ -16,7 +16,7 @@ abbrlink: 16107
 新博客做好了，还在添加更多功能。
 
 <script>
-	let hostname = location.hostname;
+let hostname = location.hostname;
 let pathname = location.pathname;
 function getPageCnt() {
     let url = "https://api.xyy1411.top/tools/viscnt/?hostname="
@@ -27,6 +27,6 @@ function getPageCnt() {
     });
     return text;
 }
-	</script>
-	<div id="cntsss"></div>
-	<script>$("#cntsss").html(getPageCnt());</script>
+</script>
+<div id="cntsss"></div>
+<script>$("#cntsss").html(getPageCnt());</script>
