@@ -4,6 +4,22 @@
     <title>Hello World</title>
     <url>/2021/16107/</url>
     <content><![CDATA[<p>新博客做好了，还在添加更多功能。</p>
+<script>
+    let hostname = location.hostname;
+let pathname = location.pathname;
+function getPageCnt() {
+    let url = "https://api.xyy1411.top/tools/viscnt/?hostname="
+               + hostname + "&pathname=" + pathname;
+    let text = "";
+    $.get(url, function(result) {
+        text = result;
+    });
+    return text;
+}
+    </script>
+<pre><code>&lt;div id=&quot;cntsss&quot;&gt;&lt;/div&gt;
+&lt;script&gt;$(&quot;#cntsss&quot;).html(getPageCnt());&lt;/script&gt;
+</code></pre>
 ]]></content>
   </entry>
 </search>

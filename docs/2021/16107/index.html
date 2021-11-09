@@ -14,7 +14,8 @@
     <meta name="google" content="notranslate" />
     <meta name="keywords" content="XYY1411, OI, C++, Blog">
     <meta name="description" content="新博客做好了，还在添加更多功能。
-">
+
+    let h...">
     <meta name="author" content="XYY1411">
     <link rel="icon" href="/images/icons/favicon/32x.ico" type="image/png" sizes="32x32">
     <link rel="icon" href="/images/icons/favicon/48x.ico" type="image/png" sizes="48x48">
@@ -204,13 +205,29 @@
     <div class="head-info">
       <span class="post-info-item"><i class="iconfont iconcalendar"></i>October 09, 2021</span>
       
-      <span class="post-info-item"><i class="iconfont iconfont-size"></i>17</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>458</span>
     </div>
   </div>
 </section>
     <section class="main">
       <section class="content">
         <p>新博客做好了，还在添加更多功能。</p>
+<script>
+    let hostname = location.hostname;
+let pathname = location.pathname;
+function getPageCnt() {
+    let url = "https://api.xyy1411.top/tools/viscnt/?hostname="
+               + hostname + "&pathname=" + pathname;
+    let text = "";
+    $.get(url, function(result) {
+        text = result;
+    });
+    return text;
+}
+    </script>
+<pre><code>&lt;div id=&quot;cntsss&quot;&gt;&lt;/div&gt;
+&lt;script&gt;$(&quot;#cntsss&quot;).html(getPageCnt());&lt;/script&gt;
+</code></pre>
 
       </section>
       <section class="extra">
