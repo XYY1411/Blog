@@ -22,4 +22,6 @@
   <% if (theme.copyright) { %>
     <div class="footer-copyright"><%- theme.copyright %></div>
   <% } %>
+  <div class="footer-copyright"><p>网站访问次数：<span id="sitecnt"></span>，页面访问次数：<span id="pagecnt"></span>。<p></div>
+    <%- js('js/viscnt.js') %>
 </footer>
