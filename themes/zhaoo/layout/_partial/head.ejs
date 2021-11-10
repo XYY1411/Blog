@@ -1,38 +1,19 @@
-<%
-    var keywords = '';
-    var description = '';
-    var author = page.author || config.author;
-    if (config.keywords) {
-        keywords += config.keywords;
-    }
-    if (page.keywords) {
-        if (keywords != '') keywords += ', ';
-        keywords += page.keywords;
-    }
-    if (config.description) {
-        description += config.description;
-    }
-    if (is_post()) {
-        if (page.description) {
-            description = page.description;
-        } else {
-            description = truncate(strip_html(page.content), 100);
-        }
-    }
-%>
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="content-type" content="text/html">
-    <meta http-equiv="charset" content="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta http-equiv="content-security-policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval'">
     <title><%= page_title() %></title>
+    <% for (i in theme.preconnect) { %>
+        <link rel="preconnect" href="<%= theme.preconnect[i] %>">
+    <% } %>
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="google" content="notranslate" />
-    <%- keywords ? `<meta name="keywords" content="${keywords}">` : null %>
-    <%- description ? `<meta name="description" content="${description}">` : null %>
-    <%- author ? `<meta name="author" content="${author}">` : null %>
+    <meta name="keywords" content="<%= page_keywords() %>">
+    <meta name="description" content="<%= page_description() %>">
+    <meta name="author" content="<%= page_author() %>">
     <%- theme.favicon.small ? `<link rel="icon" href="${theme.favicon.small}" type="image/png" sizes="32x32">` : null %>
     <%- theme.favicon.medium ? `<link rel="icon" href="${theme.favicon.medium}" type="image/png" sizes="48x48">` : null %>
     <%- theme.favicon.apple_touch_icon ? `<link rel="apple-touch-icon" href="${theme.favicon.apple_touch_icon}" sizes="180x180">` : null %>
@@ -42,6 +23,9 @@
         <meta rel="msapplication-TileColor" content="#000000">
     <% } %>
     <%- css(['css/style']) %>
+    <% for (i in theme.font.css) { %>
+        <link href="<%= theme.font.css[i] %>">
+    <% } %>
     <% if (theme.vendors.iconfont_css) { %>
         <%- css(theme.vendors.iconfont_css) %>
     <% } %>
@@ -66,4 +50,7 @@
         <%- css(theme.custom.css) %>
     <% } %>
     <%- theme.vendors.jquery_js ? js(theme.vendors.jquery_js) : js('lib/jquery/jquery.js') %>
+    <% if (theme.math.enable) { %>
+        <%- partial('_partial/plugins/math') %>
+    <% } %>
 </head>

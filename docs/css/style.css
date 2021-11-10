@@ -62,9 +62,9 @@
 }
 body {
   margin: 0;
-  font-size: 14px;
+  font-size: 15px;
   color: var(--color-text);
-  font-family: Hiragino Sans GB;
+  font-family: Roboto, Noto Sans SC, sans-serif;
   background-color: var(--color-background);
   background-repeat: no-repeat;
   background-attachment: fixed;

@@ -1,8 +1,8 @@
 # --------------------------------------------------
-# Site Settings
+# 站点设置
 # --------------------------------------------------
 
-# Menu
+# 菜单
 menu:
   home: / || 首页
   galleries: /galleries/ || 相册
@@ -12,7 +12,7 @@ menu:
   links: /links/ || 友链
   about: /about/ || 关于
 
-# Color
+# 颜色
 color:
   text: '#3d3b4f'
   text-secondary: '#665757'
@@ -29,28 +29,31 @@ color:
   link: '#ff4e20'
   link-gradient: 'linear-gradient(-60deg, #ff5858 0%, #f09819 100%)'
 
-# Favicon
+# 图标
 favicon:
   small: /images/icons/favicon/32x.ico
   medium: /images/icons/favicon/48x.ico
   apple_touch_icon: 
   safari_pinned_tab: 
-  msapplication: /images/icons/favicon-144x144.png
+  msapplication: 
 
-# Font
+# 字体
 font:
-  size: 14px
-  family:
+  size: 15px
+  family: 'Roboto, Noto Sans SC, sans-serif'
+  css:
+    - https://fonts.loli.net/css2?family=Roboto
+    - https://fonts.loli.net/css2?family=Noto+Sans+SC
 
-# Background Image
+# 背景图片
 background_image:
-#  https://source.unsplash.com/random/1920x1080
-# Loading
+# https://source.unsplash.com/random/1920x1080
+# 加载动画
 loading:
   gif: /images/loading.gif
   lottie:
 
-# Preview
+# 欢迎页面
 preview:
   enable: true
   type: wave  # wave | cloud
@@ -72,15 +75,15 @@ preview:
     # ex.one  =>  apl: https://v1.hitokoto.cn/?encode=text&c=i  data_contents:
     # ex.two  =>  api: https://v2.jinrishici.com/one.json  data_contents: ['data', 'content']
 
-# Navbar
+# 导航栏
 navbar:
   enable: true
   back_home: true
 
-# Copyright
+# 版权声名
 copyright: <p>由 <a target="_blank" href="https://hexo.io/zh-cn/">Hexo</a> & <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a> 强力驱动 | <i class= "iconfont icon-copyright"></i> 2017 - 2021 XYY1411</p>
 
-# Social
+# 社交
 social:
   github: https://github.com/XYY1411 || icongithub-fill
   qq: https://qm.qq.com/cgi-bin/qm/qr?k=CrbY64daFPCPDXaZr9HFihoG-EsCrQhe&noverify=0 || iconQQ
@@ -99,7 +102,7 @@ fab:
   enable: true
   always_show: false
 
-# Search
+# 搜索
 search:
   enable: true
 
@@ -142,7 +145,7 @@ indent:
 # TOC
 toc:
   enable: true
-  always_show: true
+  always_show: false
   min_depth: 1
   max_depth: 3
 
@@ -202,23 +205,6 @@ notification:
   page_white_list:
   page_black_list:
 
-# Daovoice
-daovoice:
-  enable: false
-  appId: # app_id
-
-# Tencent Chao
-tencentChao:
-  enable: false
-  appId: # app_id
-
-# LeanCloud
-leancloud:
-  enable: false
-  appId:
-  appKey:
-  serverURLs: https://leancloud.cn/
-
 # Lazyload
 lazyload:
   enable: true
@@ -240,10 +226,6 @@ highlight:
     light: xcode
     dark: xt256
 
-# SEO
-seo:
-  baidu_auto_push: false
-
 # Analytics
 analytics:
   baidu: # id
@@ -251,9 +233,30 @@ analytics:
   tencent: # id
   cnzz: # id
 
+# Viscnt
+viscnt:
+  enable: true
+
 # --------------------------------------------------
 # Script Settings
 # --------------------------------------------------
+
+# 预连接
+
+preconnect:
+  - https://cdn.jsdelivr.net
+  - https://at.alicdn.com
+  - https://fonts.loli.net
+  - https://gstatic.loli.net
+  - https://i.loli.net
+  - https://widget.daovoice.io
+  - https://xyy1411-blog.disqus.com
+  - https://a.disquscdn.com
+  - https://c.disquscdn.com
+  - https://disqus.com
+  - https://glitter.services.disqus.com
+  - https://fonts.googleapis.com
+  - https://fonts.gstatic.com
 
 # CDN
 vendors:
@@ -267,6 +270,7 @@ vendors:
   fancybox_css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css
   highlight_css: https://cdn.jsdelivr.net/npm/highlight.js@11/styles/
   iconfont_css: https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css
+  viscnt_js:
 
 # Custom
 custom:
@@ -279,4 +283,4 @@ custom:
 
 # Math
 math:
-  enable: true
+  enable: mathjax # mathjax | katex

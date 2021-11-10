@@ -20,16 +20,6 @@
 
 <%- js(['js/utils', 'js/script']) %>
 
-<% if (theme.leancloud.enable) { %>
-  <%- partial('_partial/plugins/leancloud') %>
-<% } %>
-
-<% if (theme.daovoice.enable) { %>
-  <%- partial('_partial/plugins/daovoice') %>
-<% } %>
-
-<%- partial('_partial/plugins/seo') %>
-
 <%- partial('_partial/plugins/analytics') %>
 
 <% if (theme.custom.foot) { %>
