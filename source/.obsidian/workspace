@@ -1,29 +1,32 @@
 {
   "main": {
-    "id": "bd1b5544c862635d",
+    "id": "a8f721b0935dff29",
     "type": "split",
     "children": [
       {
-        "id": "2bad12c003470da5",
+        "id": "4b83b6b8d78626b9",
         "type": "leaf",
         "state": {
-          "type": "empty",
-          "state": {}
+          "type": "markdown",
+          "state": {
+            "file": "_posts/disjoint-set-data-structure.md",
+            "mode": "source"
+          }
         }
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "32fdc1e28b2dab69",
+    "id": "7a30a82f9cdeec72",
     "type": "split",
     "children": [
       {
-        "id": "38c7e4769c3f4213",
+        "id": "589af8dc530eeabc",
         "type": "tabs",
         "children": [
           {
-            "id": "50e415e5022285e9",
+            "id": "3d57c3b240344d37",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -31,7 +34,7 @@
             }
           },
           {
-            "id": "837d58f8e5d016fb",
+            "id": "e10473a89c03f941",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -49,22 +52,23 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 215
   },
   "right": {
-    "id": "58e6bd7fd9529962",
+    "id": "77a0d4b50294f55f",
     "type": "split",
     "children": [
       {
-        "id": "231da31bd2596072",
+        "id": "edd596d5e7ff7530",
         "type": "tabs",
         "children": [
           {
-            "id": "1b577a6466c720be",
+            "id": "cdb4181b8aca45f5",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
+                "file": "_posts/disjoint-set-data-structure.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -82,8 +86,13 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "2bad12c003470da5",
+  "active": "4b83b6b8d78626b9",
   "lastOpenFiles": [
-    "hello-world.md"
+    "_posts/disjoint-set-data-structure.md",
+    "_posts/hello-world.md",
+    "about/index.md",
+    "_posts/catalan-number.md",
+    "404.md",
+    "categories/index.md"
   ]
 }

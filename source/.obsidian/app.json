@@ -1,0 +1,9 @@
+{
+  "strictLineBreaks": true,
+  "showFrontmatter": true,
+  "foldHeading": true,
+  "showLineNumber": true,
+  "useTab": false,
+  "useMarkdownLinks": true,
+  "promptDelete": false
+}

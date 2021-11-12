@@ -3,7 +3,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta http-equiv="x-ua-compatible" content="IE=edge">
-    <meta http-equiv="content-security-policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval'">
+    <meta http-equiv="content-security-policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval';img-src * 'self' 'unsafe-inline' 'unsafe-eval' data:">
     <title><%= page_title() %></title>
     <% for (i in theme.preconnect) { %>
         <link rel="preconnect" href="<%= theme.preconnect[i] %>">
@@ -22,35 +22,39 @@
         <meta rel="msapplication-TileImage" content="<%- theme.favicon.msapplication %>">
         <meta rel="msapplication-TileColor" content="#000000">
     <% } %>
-    <%- css(['css/style']) %>
-    <% for (i in theme.font.css) { %>
-        <link href="<%= theme.font.css[i] %>">
-    <% } %>
-    <% if (theme.vendors.iconfont_css) { %>
-        <%- css(theme.vendors.iconfont_css) %>
-    <% } %>
-    <% if (theme.fancybox) { %>
-        <%- theme.vendors.fancybox_css ? css(theme.vendors.fancybox_css) : css('lib/fancybox/fancybox.css') %>
-    <% } %>
-    <% if(theme.highlight.enable) { %>
-        <% if(theme.vendors.highlight_css) { %>
-            <% for (i in theme.highlight.style) { %>
-                <% style = theme.highlight.style[i].toLowerCase().replace(/(?<!([0-9]))\s(?!([0-9]))/g, '-').replace(/\s/g, '') %>
-                <%- css({href: theme.vendors.highlight_css + style + '.min.css', name: 'highlight-style', mode: i}) %>
-            <% } %>
-        <% } else { %>
-        <%- css('lib/highlight/a11y-dark.css')%>
+    <% if (page.layout == '404') { %>
+        <%- css('/css/404') %>
+    <% } else { %>
+        <%- css(['css/style']) %>
+        <% for (i in theme.font.css) { %>
+            <link href="<%= theme.font.css[i] %>">
         <% } %>
-    <% } %>
-    <%- partial('_partial/globaldefs') %>
-    <% if (theme.custom.head) { %>
-        <%- theme.custom.head %>
-    <% } %>
-    <% if (theme.custom.css) { %>
-        <%- css(theme.custom.css) %>
-    <% } %>
-    <%- theme.vendors.jquery_js ? js(theme.vendors.jquery_js) : js('lib/jquery/jquery.js') %>
-    <% if (theme.math.enable) { %>
-        <%- partial('_partial/plugins/math') %>
+        <% if (theme.vendors.iconfont_css) { %>
+            <%- css(theme.vendors.iconfont_css) %>
+        <% } %>
+        <% if (theme.fancybox) { %>
+            <%- theme.vendors.fancybox_css ? css(theme.vendors.fancybox_css) : css('lib/fancybox/fancybox.css') %>
+        <% } %>
+        <% if(theme.highlight.enable) { %>
+            <% if(theme.vendors.highlight_css) { %>
+                <% for (i in theme.highlight.style) { %>
+                    <% style = theme.highlight.style[i].toLowerCase().replace(/(?<!([0-9]))\s(?!([0-9]))/g, '-').replace(/\s/g, '') %>
+                    <%- css({href: theme.vendors.highlight_css + style + '.min.css', name: 'highlight-style', mode: i}) %>
+                <% } %>
+            <% } else { %>
+            <%- css('lib/highlight/a11y-dark.css')%>
+            <% } %>
+        <% } %>
+        <%- partial('_partial/globaldefs') %>
+        <% if (theme.custom.head) { %>
+            <%- theme.custom.head %>
+        <% } %>
+        <% if (theme.custom.css) { %>
+            <%- css(theme.custom.css) %>
+        <% } %>
+        <%- theme.vendors.jquery_js ? js(theme.vendors.jquery_js) : js('lib/jquery/jquery.js') %>
+        <% if (theme.math.enable) { %>
+            <%- partial('_partial/plugins/math') %>
+        <% } %>
     <% } %>
 </head>
