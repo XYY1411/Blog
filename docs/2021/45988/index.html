@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<!-- XYY1411's site qwq-->
+<html lang="zh-Hans-CN" color-mode=light>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta http-equiv="content-security-policy" content="default-src * 'self' 'unsafe-inline' 'unsafe-eval';img-src * 'self' 'unsafe-inline' 'unsafe-eval' data:">
+    <title>Treasures and Vikings | 寂静的角落</title>
+    
+        <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    
+        <link rel="preconnect" href="https://at.alicdn.com">
+    
+        <link rel="preconnect" href="https://fonts.loli.net">
+    
+        <link rel="preconnect" href="https://gstatic.loli.net">
+    
+        <link rel="preconnect" href="https://i.loli.net">
+    
+        <link rel="preconnect" href="https://widget.daovoice.io">
+    
+        <link rel="preconnect" href="https://xyy1411-blog.disqus.com">
+    
+        <link rel="preconnect" href="https://a.disquscdn.com">
+    
+        <link rel="preconnect" href="https://c.disquscdn.com">
+    
+        <link rel="preconnect" href="https://disqus.com">
+    
+        <link rel="preconnect" href="https://glitter.services.disqus.com">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+    
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="google" content="notranslate" />
+    <meta name="keywords" content="XYY1411, OI, C++, Blog, problem solution,宝藏与维京海盗,Treasures and Vikings">
+    <meta name="description" content="宝藏与维京海盗，一道大暴搜。">
+    <meta name="author" content="XYY1411">
+    <link rel="icon" href="/images/icons/favicon/32x.ico" type="image/png" sizes="32x32">
+    <link rel="icon" href="/images/icons/favicon/48x.ico" type="image/png" sizes="48x48">
+    
+    
+    
+    
+        
+<link rel="stylesheet" href="/css/style.css">
+
+        
+            <link href="https://fonts.loli.net/css2?family=Roboto">
+        
+            <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC">
+        
+        
+            
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css">
+
+        
+        
+            
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+        
+        
+            
+                
+                    
+                    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/xcode.min.css" name="highlight-style" mode="light">
+
+                
+                    
+                    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@11/styles/xt256.min.css" name="highlight-style" mode="dark">
+
+                
+            
+        
+        <script>
+    var CONFIG = window.CONFIG || {};
+    var ZHAOO = window.ZHAOO || {};
+    CONFIG = {
+        isHome: false,
+        fancybox: true,
+        pjax: false,
+        loading: {
+            gif: '/images/loading.gif',
+            lottie: ''
+        },
+        lazyload: {
+            enable: true,
+            only_post: 'false',
+            loading: {
+                gif: '/images/loading.gif',
+                lottie: ''
+            }
+        },
+        donate: {
+            enable: false,
+            alipay: '/images/loading.gif',
+            wechat: '/images/loading.gif'
+        },
+        galleries: {
+            enable: true
+        },
+        fab: {
+            enable: true,
+            always_show: false
+        },
+        carrier: {
+            enable: true
+        },
+        preview: {
+            background: {
+                default: '',
+                api: 'https://api.vvhan.com/api/bing?type=sj'
+            },
+            motto: {
+                default: '星空在前，路在脚下。',
+                typing: true,
+                api: 'https://v1.hitokoto.cn/?c=a&encode=text&charset=utf-8min_length=5&max_length=20',
+                data_contents: ''
+            },
+        },
+        qrcode: {
+            enable: false,
+            type: 'url',
+            image: '/images/loading.gif',
+        },
+        toc: {
+            enable: true
+        },
+        scrollbar: {
+            type: 'default'
+        },
+        notification: {
+            enable: false,
+            delay: 4500,
+            list: '',
+            page_white_list: '',
+            page_black_list: ''
+        },
+        search: {
+            enable: true,
+            path: '/search.xml'
+        }
+    }
+</script>
+        
+        
+            
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icon-css@3.5.0/css/flag-icon.css">
+<link rel="stylesheet" href="https://at.alicdn.com/t/font_2849683_l8iylpqyvwm.css?spm=a313x.7781069.1998910419.45&file=font_2849683_l8iylpqyvwm.css">
+
+        
+        
+<script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+
+        
+            
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$']]
+            }
+        };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+
+        
+    
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+
+    <body class="lock-screen">
+        <div class="loading" id="loading"></div>
+        
+            
+
+
+  <nav class="navbar">
+    <div class="left">
+      
+        <i class="iconfont iconhome j-navbar-back-home"></i>
+      
+      
+      
+        <i class="iconfont iconmoono" id="color-toggle" color-toggle="light"></i>
+      
+      
+        <i class="iconfont iconsearch j-navbar-search"></i>
+      
+    </div>
+    <div class="center">Treasures and Vikings</div>
+    <div class="right">
+      <i class="iconfont iconmenu j-navbar-menu"></i>
+    </div>
+    
+  </nav>
+
+        
+        
+
+<nav class="menu">
+  <div class="menu-container">
+    <div class="menu-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <ul class="menu-content"><li class="menu-item">
+        <a href="/ " class="underline "> 首页</a>
+      </li><li class="menu-item">
+        <a href="/galleries/ " class="underline "> 相册</a>
+      </li><li class="menu-item">
+        <a href="/archives/ " class="underline "> 归档</a>
+      </li><li class="menu-item">
+        <a href="/tags/ " class="underline "> 标签</a>
+      </li><li class="menu-item">
+        <a href="/categories/ " class="underline "> 分类</a>
+      </li><li class="menu-item">
+        <a href="/links/ " class="underline "> 友链</a>
+      </li><li class="menu-item">
+        <a href="/about/ " class="underline "> 关于</a>
+      </li></ul>
+    
+      <div class="menu-copyright"><p>由 <a target="_blank" href="https://hexo.io/zh-cn/">Hexo</a> & <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a> 强力驱动 | <i class= "iconfont icon-copyright"></i> 2017 - 2021 XYY1411</p></div>
+    
+  </div>
+</nav>
+        <main id="main">
+  <div class="article-wrap">
+    <div class="row container">
+      <div class="col-xl-3"></div>
+      <div class="col-xl-6"><article class="article">
+  <div class="wrap">
+    <section class="head">
+  <img   class="lazyload" data-original="/images/ice-flower.jpg" src="data:image/gif;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVQImWNgYGBgAAAABQABh6FO1AAAAABJRU5ErkJggg=="  draggable="false">
+  <div class="head-mask">
+    <h1 class="head-title">Treasures and Vikings</h1>
+    <div class="head-info">
+      <span class="post-info-item"><i class="iconfont iconcalendar"></i>December 18, 2021</span>
+      <span class="post-info-item"><i class="iconfont iconfont-size"></i>4605</span>
+    </div>
+  </div>
+</section>
+    <section class="main">
+      <section class="content">
+        <p>提交地址：<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/P4668">洛谷 Luogu4668</a>，<a target="_blank" rel="noopener" href="https://www.luogu.com.cn/problem/SP10128">洛谷 SP10128</a>，<a target="_blank" rel="noopener" href="https://www.spoj.com/problems/TANDV/">Sphere online judge SP10128</a>，<a target="_blank" rel="noopener" href="https://sjzezoj.com/problem/1159">S2 Online Judge</a></p>
+<h2 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h2><p>有 $n \times m$ 的地图，地图上可能有海（<code>.</code>）、陆地（<code>I</code>）、你的船（<code>Y</code>）、维京船（<code>V</code>）和宝藏（<code>T</code>）。</p>
+<p>你的目的是在不被维京人干掉的情况下得到宝藏。</p>
+<p>你和维京船每回合可以移动到一个四联通块，也可以不移动，每个回合你先移动。</p>
+<p>维京船会在回合结束时攻击与其在同一列或同一行的船，攻击不能穿过陆地。</p>
+<p>如果有一条路径，使得无论维京船如何移动你都能得到宝藏，输出 <code>YES</code> 否则输出 <code>NO</code>。</p>
+<h2 id="分析"><a href="#分析" class="headerlink" title="分析"></a>分析</h2><p>数据范围是 $n, m \le 700$，考虑直接广搜暴搜。</p>
+<p>先看一个简单的问题：</p>
+<p>有一张 $n \times m$ 的地图，地图上有个怪物，你和怪物每回合可以移动到一个四联通块，也可以不移动，问对于第 $i$ 个回合，哪里是安全的（怪物移动不到）。</p>
+<p>答案很显然，直接让怪物扩展 $i$ 次，没扩展到的地方都是安全的。</p>
+<p>那么这道题同理，我们每回合都让自己和维京扩展一格，然后给维京船能攻击到的地方打上标记即可。</p>
+<p>注意如何打标记，我们准备两种标记，一种是竖着攻击，一种是横着攻击，如果这一格已经打过一种标记了不用再打第二次，但是另一种还是要打。</p>
+<p>这样可以保证每个格最多只打两次标记，复杂度为 $O(nm)$。</p>
+<p>整体复杂度 $O(nm)$。</p>
+<h2 id="rm-color-Green-code"><a href="#rm-color-Green-code" class="headerlink" title="$\rm\color{Green}code$"></a>$\rm\color{Green}code$</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstring&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdio&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;queue&gt;</span></span><br><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span><br><span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> std;<br><span class="hljs-comment">// 枚举类型，用于存储每个格子状态，这么写可以将每个状态压到一个二进制位内</span><br><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">crt</span>&#123;</span>land = <span class="hljs-number">0</span>, sea = <span class="hljs-number">1</span>, trea = <span class="hljs-number">2</span>, you = <span class="hljs-number">4</span>, youvis = <span class="hljs-number">8</span>, vik = <span class="hljs-number">16</span>, vikvis = <span class="hljs-number">32</span>, atkw = <span class="hljs-number">64</span>, atkh = <span class="hljs-number">128</span>&#125;;<br><span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int</span> maxn = <span class="hljs-number">705</span>;<br><span class="hljs-function"><span class="hljs-keyword">inline</span> <span class="hljs-keyword">void</span> <span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-keyword">bool</span> t)</span> </span>&#123;<br>    <span class="hljs-built_in">puts</span>(t ? <span class="hljs-string">&quot;YES&quot;</span> : <span class="hljs-string">&quot;NO&quot;</span>);<br>    <span class="hljs-built_in">exit</span>(<span class="hljs-number">0</span>);<br>&#125;<br><span class="hljs-keyword">int</span> mp[maxn][maxn];<br><span class="hljs-keyword">char</span> s[maxn];<br><span class="hljs-keyword">int</span> n, m;<br><span class="hljs-keyword">int</span> yx, yy, vx, vy, sx, sy;<br><span class="hljs-comment">// 给维京船能攻击到的地方打标记</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">vikatk</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>&#123;<br>    mp[x][y] |= vikvis;<br>    <span class="hljs-keyword">if</span> (!(mp[x][y] &amp; atkw)) &#123; <span class="hljs-comment">// 打过了跳，下面同理</span><br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = y; j &gt; <span class="hljs-number">0</span>; --j)<br>            <span class="hljs-keyword">if</span> (mp[x][j] &amp; sea)<br>                mp[x][j] |= atkw;<br>            <span class="hljs-keyword">else</span><br>                <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = y; j &lt;= m; ++j)<br>            <span class="hljs-keyword">if</span> (mp[x][j] &amp; sea)<br>                mp[x][j] |= atkw;<br>            <span class="hljs-keyword">else</span><br>                <span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-keyword">if</span> (!(mp[x][y] &amp; atkh)) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = x; i &gt; <span class="hljs-number">0</span>; --i)<br>            <span class="hljs-keyword">if</span> (mp[i][y] &amp; sea)<br>                mp[i][y] |= atkh;<br>            <span class="hljs-keyword">else</span><br>                <span class="hljs-keyword">break</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = x; i &lt;= n; ++i)<br>            <span class="hljs-keyword">if</span> (mp[i][y] &amp; sea)<br>                mp[i][y] |= atkh;<br>            <span class="hljs-keyword">else</span><br>                <span class="hljs-keyword">break</span>;<br>    &#125;<br>&#125;<br><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">node</span> &#123;</span><br>    <span class="hljs-keyword">int</span> x, y, p;<br>&#125;;<br><span class="hljs-keyword">constexpr</span> <span class="hljs-keyword">int</span> dx[] = &#123;<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>&#125;, dy[] = &#123;<span class="hljs-number">1</span>, <span class="hljs-number">0</span>, <span class="hljs-number">-1</span>, <span class="hljs-number">0</span>&#125;;<br>queue&lt;node&gt; vm;<br>queue&lt;node&gt; ym;<br><span class="hljs-comment">// 维京船移动</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">vikmove</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> p = <span class="hljs-number">0</span>;<br>    ++p;<br>    <span class="hljs-keyword">while</span> (!vm.<span class="hljs-built_in">empty</span>() &amp;&amp; vm.<span class="hljs-built_in">front</span>().p &lt;= p) &#123;<br>        <span class="hljs-keyword">int</span> x = vm.<span class="hljs-built_in">front</span>().x, y = vm.<span class="hljs-built_in">front</span>().y;<br>        vm.<span class="hljs-built_in">pop</span>();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">4</span>; ++k) &#123;<br>            <span class="hljs-keyword">int</span> tx = x + dx[k], ty = y + dy[k];<br>            <span class="hljs-keyword">if</span> (mp[tx][ty] == land) <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">if</span> (!(mp[tx][ty] &amp; vikvis)) &#123;<br>                vm.<span class="hljs-built_in">push</span>(&#123;tx, ty, p + <span class="hljs-number">1</span>&#125;);<br>                <span class="hljs-built_in">vikatk</span>(tx, ty);<br>                <span class="hljs-comment">// 如果维京船打到了宝藏就不可能能拿到了</span><br>                <span class="hljs-keyword">if</span> ((mp[sx][sy] &amp; atkh) || (mp[sx][sy] &amp; atkw)) <span class="hljs-built_in">print</span>(<span class="hljs-number">0</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-comment">// 自己移动</span><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">youmove</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-keyword">static</span> <span class="hljs-keyword">int</span> p = <span class="hljs-number">0</span>;<br>    ++p;<br>    <span class="hljs-keyword">while</span> (!ym.<span class="hljs-built_in">empty</span>() &amp;&amp; ym.<span class="hljs-built_in">front</span>().p &lt;= p) &#123;<br>        <span class="hljs-keyword">int</span> x = ym.<span class="hljs-built_in">front</span>().x, y = ym.<span class="hljs-built_in">front</span>().y;<br>        ym.<span class="hljs-built_in">pop</span>();<br>        <span class="hljs-comment">// 如果这个位置被打了就不能扩展</span><br>        <span class="hljs-keyword">if</span> ((mp[x][y] &amp; atkw) || (mp[x][y] &amp; atkh)) <span class="hljs-keyword">continue</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> k = <span class="hljs-number">0</span>; k &lt; <span class="hljs-number">4</span>; ++k) &#123;<br>            <span class="hljs-keyword">int</span> tx = x + dx[k], ty = y + dy[k];<br>            <span class="hljs-keyword">if</span> (mp[tx][ty] == land) <span class="hljs-keyword">continue</span>;<br>            <span class="hljs-keyword">if</span> (!((mp[tx][ty] &amp; youvis) || (mp[tx][ty] &amp; atkw) || (mp[tx][ty] &amp; atkh))) &#123;<br>                mp[tx][ty] |= youvis;<br>                ym.<span class="hljs-built_in">push</span>(&#123;tx, ty, p + <span class="hljs-number">1</span>&#125;);<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span> </span>&#123;<br>    <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%d%d&quot;</span>, &amp;n, &amp;m);<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt;= n; ++i) &#123;<br>        <span class="hljs-built_in">scanf</span>(<span class="hljs-string">&quot;%s&quot;</span>, s + <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">1</span>; j &lt;= m; ++j)<br>            <span class="hljs-built_in"><span class="hljs-keyword">switch</span></span> (s[j]) &#123; <span class="hljs-comment">// 存状态</span><br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;.&#x27;</span>: mp[i][j] = sea; <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;I&#x27;</span>: mp[i][j] = land; <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;Y&#x27;</span>: mp[i][j] = sea | you | youvis;<br>                          yx = i, yy = j;<br>                          <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;V&#x27;</span>: mp[i][j] = sea | vik | vikvis;<br>                          vx = i, vy = j;<br>                          <span class="hljs-keyword">break</span>;<br>                <span class="hljs-keyword">case</span> <span class="hljs-string">&#x27;T&#x27;</span>: mp[i][j] = sea | trea;<br>                          sx = i, sy = j;<br>                          <span class="hljs-keyword">break</span>;<br>            &#125;<br>    &#125;<br>    <span class="hljs-comment">// 初始状态入队</span><br>    ym.<span class="hljs-built_in">push</span>(&#123;yx, yy, <span class="hljs-number">1</span>&#125;);<br>    vm.<span class="hljs-built_in">push</span>(&#123;vx, vy, <span class="hljs-number">1</span>&#125;);<br>    <span class="hljs-keyword">while</span> (!(ym.<span class="hljs-built_in">empty</span>() &amp;&amp; vm.<span class="hljs-built_in">empty</span>())) &#123;<br>        <span class="hljs-built_in">youmove</span>();<br>        <span class="hljs-built_in">vikmove</span>();<br>        <span class="hljs-comment">// 得到了</span><br>        <span class="hljs-keyword">if</span> (mp[sx][sy] &amp; youvis) <span class="hljs-built_in">print</span>(<span class="hljs-number">1</span>);<br>    &#125;<br>    <span class="hljs-comment">// 死路</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-number">0</span>);<br>    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+      </section>
+      <section class="extra">
+        
+          <ul class="copyright">
+    <li><strong>本文作者：</strong>XYY1411</li>
+    <li><strong>本文链接：</strong><a href="https://blog.xyy1411.top/2021/45988/index.html" title="https:&#x2F;&#x2F;blog.xyy1411.top&#x2F;2021&#x2F;45988&#x2F;index.html">https:&#x2F;&#x2F;blog.xyy1411.top&#x2F;2021&#x2F;45988&#x2F;index.html</a></li>
+    
+        <li><strong>版权声明：</strong>本文章采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" title="CC BY-NC-SA 4.0" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> 许可协议，转载请注明出处！</li>
+    
+</ul>
+        
+        
+        
+  <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88%E6%90%9C%E7%B4%A2/" rel="tag">广度优先搜索</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%9A%B4%E5%8A%9B/" rel="tag">暴力</a></li></ul> 
+
+        
+  <nav class="nav">
+    <a></a>
+    <a href="/2021/61809/">并查集<i class="iconfont iconright"></i></a>
+  </nav>
+
+      </section>
+      
+        <section class="comments">
+  
+    <div class="btn" id="comments-btn">查看评论</div>
+  
+  <div id="disqus_thread"></div>
+<script>
+    /**
+    *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+    *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables    */
+    /*
+    var disqus_config = function () {
+    this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+    this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+    };
+    */
+    (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://xyy1411-blog.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+<script>
+    $("#disqus_thread").hide();
+    $("#comments-btn").on("click", function() {
+        $(this).hide();
+        $("#disqus_thread").show();
+    });
+</script>
+
+<noscript>Please enable JavaScript to view the <a target="_blank" rel="noopener" href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+      
+    </section>
+  </div>
+</article></div>
+      <div class="col-xl-3">
+        
+          
+  <aside class="toc-wrap">
+    <h3 class="toc-title">文章目录：</h3>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%98%E7%9B%AE%E5%A4%A7%E6%84%8F"><span class="toc-text">题目大意</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E6%9E%90"><span class="toc-text">分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#rm-color-Green-code"><span class="toc-text">$\rm\color{Green}code$</span></a></li></ol>
+  </aside>
+
+        
+      </div>
+    </div>
+  </div>
+</main>
+        
+<footer class="footer">
+    <div class="footer-social"><a 
+                href="https://github.com/XYY1411 "
+                target="_blank"
+                class="footer-social-item"
+                onMouseOver="this.style.color=#ff4e20" 
+                onMouseOut="this.style.color='#3d3b4f'">
+                    <i class="iconfont  icongithub-fill"></i>
+            </a><a 
+                href="https://qm.qq.com/cgi-bin/qm/qr?k=CrbY64daFPCPDXaZr9HFihoG-EsCrQhe&noverify=0 "
+                target="_blank"
+                class="footer-social-item"
+                onMouseOver="this.style.color=#ff4e20" 
+                onMouseOut="this.style.color='#3d3b4f'">
+                    <i class="iconfont  iconQQ"></i>
+            </a><a 
+                href="mailto:xiaoyuyu1411@qq.com "
+                target="_blank"
+                class="footer-social-item"
+                onMouseOver="this.style.color=#ff4e20" 
+                onMouseOut="this.style.color='#3d3b4f'">
+                    <i class="iconfont  iconmail"></i>
+            </a><a 
+                href="mailto:xyy1411@gmail.com "
+                target="_blank"
+                class="footer-social-item"
+                onMouseOver="this.style.color=#ff4e20" 
+                onMouseOut="this.style.color='#3d3b4f'">
+                    <i class="iconfont  icon-gmail"></i>
+            </a><a 
+                href="https://twitter.com/XYY1411 "
+                target="_blank"
+                class="footer-social-item"
+                onMouseOver="this.style.color=#ff4e20" 
+                onMouseOut="this.style.color='#3d3b4f'">
+                    <i class="iconfont  icon-twitter"></i>
+            </a><a 
+                href="https://t.me/XYY1411 "
+                target="_blank"
+                class="footer-social-item"
+                onMouseOver="this.style.color=#ff4e20" 
+                onMouseOut="this.style.color='#3d3b4f'">
+                    <i class="iconfont  icon-telegram"></i>
+            </a><a 
+                href="https://space.bilibili.com/470349774 "
+                target="_blank"
+                class="footer-social-item"
+                onMouseOver="this.style.color=#ff4e20" 
+                onMouseOut="this.style.color='#3d3b4f'">
+                    <i class="iconfont  icon-bilibili-fill"></i>
+            </a></div>
+    
+        <div class="footer-copyright"><p>由 <a target="_blank" href="https://hexo.io/zh-cn/">Hexo</a> & <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a> 强力驱动 | <i class= "iconfont icon-copyright"></i> 2017 - 2021 XYY1411</p></div>
+    
+    
+    <div class="footer-copyright">
+        <p><b>🟢 <span id="sitecnt"></span> | 🔵 <span id="pagecnt"></span></b><p>
+    </div>
+    
+<script src="/js/viscnt.js"></script>
+
+    
+</footer>
+        
+              <div class="fab fab-plus">
+    <i class="iconfont iconplus"></i>
+  </div>
+  <div class="fab fab-up">
+    <i class="iconfont iconcaret-up"></i>
+  </div>
+        
+        
+        
+            
+<script src="/js/color-mode.js"></script>
+
+        
+        
+            <div class="search">
+  <div class="search-container">
+    <div class="search-close">
+      <i class="iconfont iconbaseline-close-px"></i>
+    </div>
+    <div class="search-input-wrapper">
+      <i class="search-input-icon iconfont iconsearch"></i>
+      <input class="search-input" type="search" id="search-input" placeholder="Search..." autofocus autocomplete="off"
+        autocorrect="off" autocapitalize="off">
+    </div>
+    <div class="search-output" id="search-output"></div>
+  </div>
+</div>
+        
+        <script id="dsq-count-scr" src="//xyy1411-blog.disqus.com/count.js" async></script>
+    </body>
+    
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery-lazyload@1/jquery.lazyload.min.js"></script>
+
+
+
+
+  
+<script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+
+
+
+
+
+
+
+
+<script src="/js/utils.js"></script>
+<script src="/js/script.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>

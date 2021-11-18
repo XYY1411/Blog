@@ -39,16 +39,6 @@ abbrlink: 61809
 提供 C++ 编写，同时使用路径压缩和按秩合并优化的版本。
 
 ```cpp
-/**
-* @file disjoint-set-data-structure.cpp
-* @breif Disjoint-set data structure.
-* @author XYY1411
-* @email xyy1411@gmail.com
-* @date 2021-12-11
-* @license CC BY-NC-SA 4.0
-* Compile instruction: g++ Luogu3367.cpp -o Luogu3367 -std=c++14 -Wall
-*   -Wextra -fsanitize=address,undefined,bounds-strict -O2
-*/
 #include <cstdio>
 #include <cctype>
 #include <algorithm>
