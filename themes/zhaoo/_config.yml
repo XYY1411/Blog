@@ -81,12 +81,11 @@ navbar:
   back_home: true
 
 # 版权声名
-copyright: <p>由 <a target="_blank" href="https://hexo.io/zh-cn/">Hexo</a> & <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a> 强力驱动 | <i class= "iconfont icon-copyright"></i> 2017 - 2021 XYY1411</p>
+copyright: <p>由 <a target="_blank" href="https://hexo.io/zh-cn/">Hexo</a> & <a target="_blank" href="https://github.com/izhaoo/hexo-theme-zhaoo">zhaoo</a> 强力驱动 | <i class= "iconfont icon-copyright"></i> 2017 - 2023 XYY1411</p>
 
 # 社交
 social:
   github: https://github.com/XYY1411 || icongithub-fill
-  qq: https://qm.qq.com/cgi-bin/qm/qr?k=CrbY64daFPCPDXaZr9HFihoG-EsCrQhe&noverify=0 || iconQQ
   email: mailto:xiaoyuyu1411@qq.com || iconmail
   gmail: mailto:xyy1411@gmail.com || icon-gmail
   twitter: https://twitter.com/XYY1411 || icon-twitter
@@ -270,7 +269,7 @@ vendors:
   fancybox_css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css
   highlight_css: https://cdn.jsdelivr.net/npm/highlight.js@11/styles/
   iconfont_css: https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css
-  viscnt_js:
+  viscnt_js: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 
 # Custom
 custom:
