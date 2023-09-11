@@ -232,10 +232,6 @@ analytics:
   tencent: # id
   cnzz: # id
 
-# Viscnt
-viscnt:
-  enable: true
-
 # --------------------------------------------------
 # Script Settings
 # --------------------------------------------------
@@ -269,7 +265,6 @@ vendors:
   fancybox_css: https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3/dist/jquery.fancybox.min.css
   highlight_css: https://cdn.jsdelivr.net/npm/highlight.js@11/styles/
   iconfont_css: https://at.alicdn.com/t/font_1445822_p6ry5n7lrr.css
-  viscnt_js: https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js
 
 # Custom
 custom:

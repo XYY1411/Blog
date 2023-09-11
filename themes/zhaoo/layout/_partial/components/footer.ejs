@@ -21,10 +21,4 @@
     <% if (theme.copyright) { %>
         <div class="footer-copyright"><%- theme.copyright %></div>
     <% } %>
-    <% if (theme.viscnt.enable == true) { %>
-    <div class="footer-copyright">
-        <p><span id="busuanzi_container_site_pv">🟢<span id="busuanzi_value_site_pv"></span>🔵</span></p>
-    </div>
-    <%- theme.vendors.viscnt_js ? js(theme.vendors.viscnt_js) : js('js/viscnt.js') %>
-    <% } %>
 </footer>
