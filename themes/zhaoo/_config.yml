@@ -105,7 +105,7 @@ fab:
 search:
   enable: true
 
-# QR Code
+# 二维码
 qrcode:
   enable: false
   type: url # url | image
@@ -141,24 +141,24 @@ indent:
   content:
   excerpt:
 
-# TOC
+# 导航栏
 toc:
   enable: true
   always_show: false
   min_depth: 1
   max_depth: 3
 
-# Donate
+# 捐赠
 donate:
   enable: false
   alipay: /images/loading.gif
   wechat: /images/loading.gif
 
-# Copyright
+# 版权
 post_copyright:
   enable: true
 
-# Carrier（copy article with one click）
+# 搬运
 carrier:
   enable: true
   type: markdown # html | markdown | text
@@ -167,7 +167,7 @@ carrier:
 # Page Settings
 # --------------------------------------------------
 
-# Galleries
+# 相册
 galleries:
   enable: true
   title: 相册
@@ -175,7 +175,7 @@ galleries:
   type: waterfall # waterfall | grid
   columns: 3
 
-# Links
+# 链接
 links:
   enable: true
   title: 友链
